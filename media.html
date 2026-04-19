@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Media & Production — Rajaa Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
+    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
+    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+  }
+  ::selection{background:var(--maroon);color:var(--cream)}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
+  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover{color:var(--maroon)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--maroon)}
+  .nav-links a.active::after{width:100%}
+  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
+  .nav-cta:hover{background:transparent;color:var(--maroon)}
+
+  section{position:relative;z-index:1;padding:140px 32px 100px}
+  .container{max-width:1240px;margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  .section-head{margin-bottom:60px;text-align:center}
+  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
+  .section-head h2 em{font-style:italic;color:var(--maroon)}
+  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+
+  .media-section{background:var(--maroon-deep);color:var(--cream);position:relative;overflow:hidden}
+  .media-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0}
+  .media-section::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, var(--maroon-deep) 0%, rgba(74,21,32,0.85) 50%, var(--maroon-deep) 100%)}
+  .media-section .container{position:relative;z-index:2}
+  .media-section .section-head h2{color:var(--cream)}
+  .media-section .section-head p{color:rgba(251,246,238,0.7)}
+  .media-section .eyebrow{color:var(--gold-soft)}
+  .media-section .eyebrow::before,.media-section .eyebrow::after{background:var(--gold-soft)}
+
+  .filmmaker-intro{display:grid;grid-template-columns:1fr 2fr;gap:50px;align-items:center;margin-bottom:80px;padding:40px;background:rgba(26,10,14,0.5);border:1px solid rgba(212,169,97,0.2);backdrop-filter:blur(8px)}
+  .filmmaker-photo{aspect-ratio:1;background:var(--maroon-deep);overflow:hidden;border:1px solid rgba(212,169,97,0.4);position:relative}
+  .filmmaker-photo img{width:100%;height:100%;object-fit:cover;object-position:75% center;filter:grayscale(20%) contrast(1.05);transition:all .6s}
+  .filmmaker-photo:hover img{filter:grayscale(0%) contrast(1)}
+  .filmmaker-text h3{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--cream);margin-bottom:18px;line-height:1.1}
+  .filmmaker-text h3 em{font-style:italic;color:var(--gold-soft)}
+  .filmmaker-text p{color:rgba(251,246,238,0.85);font-size:15.5px;line-height:1.75;margin-bottom:14px}
+  .filmmaker-roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .filmmaker-roles span{padding:6px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,169,97,0.12);color:var(--gold-soft);border:1px solid rgba(212,169,97,0.3)}
+
+  .sub-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid rgba(212,169,97,0.25)}
+  .sub-head h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--cream)}
+  .sub-head h3 em{font-style:italic;color:var(--gold-soft)}
+  .sub-head .count{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);opacity:.8}
+
+  .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:80px}
+  .video-item{background:#1a0a0e;border:1px solid rgba(212,169,97,0.2);transition:all .4s;overflow:hidden}
+  .video-item:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 30px 60px -20px rgba(0,0,0,0.6)}
+  .video-frame{position:relative;aspect-ratio:16/9;background:#000}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-meta{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .video-info h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);font-weight:600;line-height:1.2;margin-bottom:4px}
+  .video-info h4 em{font-style:italic;color:var(--gold-soft)}
+  .video-info .video-type{font-size:11px;color:rgba(251,246,238,0.6);letter-spacing:1.5px;text-transform:uppercase}
+  .video-quality{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);padding:5px 10px;border:1px solid rgba(212,169,97,0.3);background:rgba(212,169,97,0.08);white-space:nowrap}
+
+  .photo-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:80px}
+  .photo-card{position:relative;overflow:hidden;aspect-ratio:4/5;cursor:pointer;background:#1a0a0e;border:1px solid rgba(212,169,97,0.15);transition:all .4s}
+  .photo-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 30px 60px -20px rgba(0,0,0,0.6)}
+  .photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:all .6s}
+  .photo-card:hover img{transform:scale(1.08)}
+  .photo-card .photo-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(26,10,14,0.95) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:var(--cream)}
+  .photo-card .photo-cat{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px;font-weight:600}
+  .photo-card .photo-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;line-height:1;margin-bottom:10px}
+  .photo-card .photo-title em{font-style:italic;color:var(--gold-soft)}
+  .photo-card .photo-desc{font-size:13px;color:rgba(251,246,238,0.75);line-height:1.55}
+
+  .drive-embed{background:#1a0a0e;border:1px solid rgba(212,169,97,0.25);overflow:hidden;margin-bottom:24px}
+  .drive-embed iframe{width:100%;height:520px;border:0;background:#fff}
+  .drive-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:rgba(0,0,0,0.3);border-bottom:1px solid rgba(212,169,97,0.2);flex-wrap:wrap;gap:10px}
+  .drive-header h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);font-weight:600}
+  .drive-header h4 em{font-style:italic;color:var(--gold-soft)}
+  .drive-header a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);text-decoration:none;padding:6px 12px;border:1px solid rgba(212,169,97,0.3);transition:all .25s}
+  .drive-header a:hover{background:var(--gold);color:var(--maroon-deep);border-color:var(--gold)}
+
+  /* MEDIA STACK SECTION */
+  .stack-section{background:var(--cream-2)}
+  .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .stack-category{background:var(--cream);border:1px solid var(--line);padding:32px 24px;transition:all .3s;position:relative;overflow:hidden}
+  .stack-category::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--maroon);transform:scaleY(0);transition:transform .3s}
+  .stack-category:hover{transform:translateY(-4px);border-color:var(--maroon)}
+  .stack-category:hover::before{transform:scaleY(1)}
+  .stack-cat-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600}
+  .stack-list{list-style:none}
+  .stack-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);display:flex;align-items:center;gap:12px}
+  .stack-list li:last-child{border-bottom:none}
+  .stack-list li::before{content:'◆';color:var(--maroon);font-size:8px}
+
+  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
+  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .filmmaker-intro,.video-grid,.photo-gallery,.stack-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:90px 20px 70px}
+    .filmmaker-text h3{font-size:30px}
+    .drive-embed iframe{height:400px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <ul class="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="media.html" class="active">Media</a></li>
+      <li><a href="cx.html">CX</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="marketing.html">Marketing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow left" style="color:var(--gold-soft)">Portfolio · Vol. II</div>
+    <h1>Media & <em>Production.</em></h1>
+    <p>Before product, there was story. Films, ads, documentaries & photography from a NUST Mass Comm Production graduate.</p>
+  </div>
+</div>
+
+<!-- MEDIA SECTION -->
+<section class="media-section" style="padding-top:80px">
+  <video class="media-bg-video" autoplay muted loop playsinline>
+    <source src="https://rajaajk.github.io/Rajaa-portfolio/img/video/drone-footage.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    
+    <div class="filmmaker-intro reveal">
+      <div class="filmmaker-photo">
+        <img src="20240117231405_IMG_0405~2.jpg" alt="Rajaa Khan" />
+      </div>
+      <div class="filmmaker-text">
+        <h3>An aspiring filmmaker telling stories that <em>matter.</em></h3>
+        <p>I've worked on several projects across pre-production, production, and post-production — script writing, directing, acting, cinematography, editing, and sound engineering. There isn't a part of the production process I'm not well versed in.</p>
+        <p>Shot primarily on the <b style="color:var(--gold-soft)">Canon M50 Mark II</b> with the 18-45mm kit lens.</p>
+        <div class="filmmaker-roles">
+          <span>Director</span>
+          <span>Cinematographer</span>
+          <span>Editor</span>
+          <span>Scriptwriter</span>
+          <span>Sound Engineer</span>
+          <span>Actor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="sub-head">
+        <h3>Films & <em>Productions</em></h3>
+        <span class="count">07 Projects · Current Reel</span>
+      </div>
+      <div class="video-grid">
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1rVfX81N5TpDTh4wG4w3QWt7YxKDQ0X3B/preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4><em>Rafay</em></h4>
+              <div class="video-type">Short Film</div>
+            </div>
+            <div class="video-quality">1080p · 30fps</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1aor7OkG0f_Jy04Qe1JLWlR_EnLDgy9Zu/preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4>StarCode <em>1</em></h4>
+              <div class="video-type">Infographic Ad</div>
+            </div>
+            <div class="video-quality">1080p · 60fps</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1RoGd_QpRpS_lRuHhIW59l5DNE33yPsmc/preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4>A Decade in Pakistan <em>Media</em></h4>
+              <div class="video-type">Documentary</div>
+            </div>
+            <div class="video-quality">1080p · 30fps</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1mN4nLqxcgW6r4ZZ1Q2fxXYmbfgrGPQAT/preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4>Entrepreneur <em>Interview</em></h4>
+              <div class="video-type">Online Interview Series</div>
+            </div>
+            <div class="video-quality">1080p · 30fps</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/XcvP17sn8G0" loading="lazy" title="Ma'mool 360" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4>Ma'<em>mool</em></h4>
+              <div class="video-type">360° Experience</div>
+            </div>
+            <div class="video-quality">2880p · 60fps</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1gtwNYIii9cCMO_vyvfq0AJyLwMSe8kDr/preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4><em>Recording</em></h4>
+              <div class="video-type">Short Film</div>
+            </div>
+            <div class="video-quality">1080p · 60fps</div>
+          </div>
+        </div>
+
+        <div class="video-item" style="grid-column:1 / -1">
+          <div class="video-frame" style="aspect-ratio:auto;height:560px">
+            <iframe src="https://drive.google.com/embeddedfolderview?id=1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW#grid" loading="lazy"></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-info">
+              <h4>English <em>Teacher</em></h4>
+              <div class="video-type">Short Film · Full Project Folder</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <span class="video-quality">1080p · 60fps</span>
+              <a href="https://drive.google.com/drive/folders/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW" target="_blank" class="video-quality" style="text-decoration:none;background:var(--gold);color:var(--maroon-deep);border-color:var(--gold)">Open in Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="sub-head">
+        <h3>Photo<em>graphy</em></h3>
+        <span class="count">03 Categories</span>
+      </div>
+      <div class="photo-gallery">
+        <div class="photo-card">
+          <img src="https://rajaajk.github.io/Rajaa-portfolio/img/photography/product1.JPG" alt="Product Photography" />
+          <div class="photo-overlay">
+            <div class="photo-cat">01 / Commercial</div>
+            <div class="photo-title"><em>Product</em></div>
+            <div class="photo-desc">Promoting products through curated visuals — composition, lighting, and storytelling.</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://rajaajk.github.io/Rajaa-portfolio/img/photography/event1.jpg" alt="Event Photography" />
+          <div class="photo-overlay">
+            <div class="photo-cat">02 / Documentary</div>
+            <div class="photo-title"><em>Events</em></div>
+            <div class="photo-desc">Memories worth remembering — frames that capture moments before they pass.</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://rajaajk.github.io/Rajaa-portfolio/img/photography/nature1.JPG" alt="Outdoor Photography" />
+          <div class="photo-overlay">
+            <div class="photo-cat">03 / Landscape</div>
+            <div class="photo-title"><em>Outdoor</em></div>
+            <div class="photo-desc">Exploring nature — landscapes, light, and the world beyond the frame.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="sub-head">
+        <h3>Media <em>Certificates</em></h3>
+        <span class="count">Workshops · Bootcamps · Training</span>
+      </div>
+      <div class="drive-embed">
+        <div class="drive-header">
+          <h4>Production & Digital Media <em>Credentials</em></h4>
+          <a href="https://drive.google.com/drive/folders/1_N6p3rzmJqj0y1u1-fHntpKsB38uZLZK" target="_blank">Open Full Folder ↗</a>
+        </div>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1_N6p3rzmJqj0y1u1-fHntpKsB38uZLZK#grid" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:60px">
+      <div class="sub-head">
+        <h3>Recognition & <em>Feedback</em></h3>
+        <span class="count">Awards · Letters · Reviews</span>
+      </div>
+      <div class="drive-embed">
+        <div class="drive-header">
+          <h4>Professional <em>Recognition</em></h4>
+          <a href="https://drive.google.com/drive/folders/1a_-7luJoRu8DSMhKDIueckXPlN2Z0Kwy" target="_blank">Open Full Folder ↗</a>
+        </div>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1a_-7luJoRu8DSMhKDIueckXPlN2Z0Kwy#grid" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:60px" class="reveal">
+      <a href="https://rajaajk.github.io/Rajaa-portfolio/" target="_blank" class="btn" style="background:var(--gold);color:var(--maroon-deep);border:1px solid var(--gold);padding:15px 30px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:all .3s">View Original Media Portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA STACK -->
+<section class="stack-section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:40px">
+      <div class="eyebrow">Stack</div>
+      <h2>Production & Creative <em>Toolkit</em></h2>
+    </div>
+
+    <div class="stack-grid reveal">
+      <div class="stack-category">
+        <div class="stack-cat-title">Camera & Gear</div>
+        <ul class="stack-list">
+          <li>Canon M50 Mark II</li>
+          <li>18-45mm Kit Lens</li>
+          <li>4K Video Capability</li>
+          <li>Dual Pixel AF</li>
+          <li>Mirrorless System</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <div class="stack-cat-title">Production</div>
+        <ul class="stack-list">
+          <li>Direction</li>
+          <li>Cinematography</li>
+          <li>Scene Blocking</li>
+          <li>Continuity Management</li>
+          <li>Production Coordination</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <div class="stack-cat-title">Post-Production</div>
+        <ul class="stack-list">
+          <li>Adobe Premiere Pro</li>
+          <li>Adobe After Effects</li>
+          <li>DaVinci Resolve</li>
+          <li>Color Grading</li>
+          <li>Motion Graphics</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <div class="stack-cat-title">Audio & Design</div>
+        <ul class="stack-list">
+          <li>Sound Engineering</li>
+          <li>Adobe Audition</li>
+          <li>Adobe Photoshop</li>
+          <li>Adobe Lightroom</li>
+          <li>Figma (UI/UX)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--maroon-deep);color:rgba(251,246,238,0.6);border-top:1px solid rgba(212,169,97,0.2)">
+  <div class="ornament" style="color:var(--gold-soft)">· · · ✦ · · ·</div>
+  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="product.html">View Product Work</a>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

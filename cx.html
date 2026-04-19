@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Customer Experience — Rajaa Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
+    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
+    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+  }
+  ::selection{background:var(--maroon);color:var(--cream)}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
+  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover{color:var(--maroon)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--maroon)}
+  .nav-links a.active::after{width:100%}
+  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
+  .nav-cta:hover{background:transparent;color:var(--maroon)}
+
+  section{position:relative;z-index:1;padding:140px 32px 100px}
+  .container{max-width:1240px;margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  .section-head{margin-bottom:60px;text-align:center}
+  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
+  .section-head h2 em{font-style:italic;color:var(--maroon)}
+  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+
+  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
+  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
+
+  /* CX HERO STATS */
+  .cx-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:60px 0}
+  .cx-hero-stat{background:var(--cream-2);border:1px solid var(--line);padding:32px 24px;text-align:center;transition:all .3s}
+  .cx-hero-stat:hover{border-color:var(--maroon);transform:translateY(-4px)}
+  .cx-hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--maroon);line-height:1}
+  .cx-hero-stat-num em{font-style:italic;color:var(--gold)}
+  .cx-hero-stat-label{font-size:11px;color:var(--ink-soft);margin-top:10px;letter-spacing:2px;text-transform:uppercase}
+
+  /* CX ROLES */
+  .cx-role{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:60px;padding:40px;background:var(--cream-2);border:1px solid var(--line);transition:all .3s}
+  .cx-role:hover{border-color:var(--maroon)}
+  .cx-role-header{display:flex;flex-direction:column;gap:8px}
+  .cx-role-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .cx-role-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--ink);line-height:1.1}
+  .cx-role-title em{font-style:italic;color:var(--maroon)}
+  .cx-role-company{font-size:14px;color:var(--ink-soft);font-weight:500}
+  .cx-role-body ul{list-style:none;padding:0}
+  .cx-role-body li{position:relative;padding-left:24px;padding-top:8px;padding-bottom:8px;font-size:15px;color:var(--ink-soft);line-height:1.7}
+  .cx-role-body li::before{content:'—';position:absolute;left:0;top:8px;color:var(--gold);font-weight:600}
+  .cx-role-body li b{color:var(--maroon)}
+  .cx-award{display:inline-block;margin-top:16px;padding:10px 16px;background:var(--maroon);color:var(--cream);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+
+  /* CX COMPETENCIES */
+  .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .comp-card{padding:32px;background:var(--cream);border:1px solid var(--line);transition:all .3s;position:relative;overflow:hidden}
+  .comp-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--maroon);transform:scaleY(0);transition:transform .3s}
+  .comp-card:hover{transform:translateY(-4px);border-color:var(--maroon)}
+  .comp-card:hover::before{transform:scaleY(1)}
+  .comp-icon{font-size:32px;color:var(--maroon);margin-bottom:16px}
+  .comp-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .comp-card p{font-size:14px;color:var(--ink-soft);line-height:1.6}
+
+  /* CX STACK - PURE CX TOOLS ONLY */
+  .tools-section{background:var(--maroon-deep);color:var(--cream);position:relative;overflow:hidden}
+  .tools-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(74,21,32,0.9), rgba(107,31,44,0.8))}
+  .tools-section .container{position:relative;z-index:2}
+  .tools-section .eyebrow{color:var(--gold-soft)}
+  .tools-section .eyebrow::before,.tools-section .eyebrow::after{background:var(--gold-soft)}
+  .tools-section h2{color:var(--cream)}
+  .tools-section h2 em{color:var(--gold-soft)}
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .tool-item{padding:40px 28px;background:rgba(251,246,238,0.05);border:1px solid rgba(212,169,97,0.2);text-align:center;transition:all .3s}
+  .tool-item:hover{background:rgba(251,246,238,0.1);border-color:var(--gold-soft);transform:translateY(-4px)}
+  .tool-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--cream);margin-bottom:8px}
+  .tool-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
+
+  /* TESTIMONIAL */
+  .testimonial{background:var(--cream-2);border:1px solid var(--line);padding:48px;position:relative;margin-top:60px}
+  .testimonial::before{content:'"';position:absolute;top:20px;left:24px;font-family:'Cormorant Garamond',serif;font-size:120px;color:var(--maroon);opacity:.1;line-height:1}
+  .testimonial-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:24px;position:relative}
+  .testimonial-author{font-size:14px;color:var(--ink-soft)}
+  .testimonial-author b{color:var(--maroon);display:block;margin-bottom:4px}
+
+  footer{text-align:center;padding:50px 32px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2)}
+  footer a{color:var(--maroon);text-decoration:none}
+  footer .ornament{color:var(--gold);font-size:18px;margin-bottom:16px;letter-spacing:8px}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .cx-hero-stats,.comp-grid,.tools-grid,.cx-role{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:90px 20px 70px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <ul class="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="cx.html" class="active">CX</a></li>
+      <li><a href="marketing.html">Marketing</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow left" style="color:var(--gold-soft)">Customer Experience</div>
+    <h1>Built on <em>service.</em></h1>
+    <p>Before product management, I honed my craft in customer-facing roles across fintech and banking — understanding user pain points from the front lines.</p>
+  </div>
+</div>
+
+<!-- CX OVERVIEW -->
+<section style="padding-top:80px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Foundation</div>
+      <h2>CX is where product <em>meets people.</em></h2>
+      <p>My journey began in customer experience — resolving 100+ daily queries at SadaPay, then scaling to cross-departmental coordination at Zindigi by JS Bank. This foundation taught me that great products are built on empathy, clear communication, and relentless user advocacy.</p>
+    </div>
+
+    <div class="cx-hero-stats reveal">
+      <div class="cx-hero-stat">
+        <div class="cx-hero-stat-num">100<em>+</em></div>
+        <div class="cx-hero-stat-label">Daily Clients Supported</div>
+      </div>
+      <div class="cx-hero-stat">
+        <div class="cx-hero-stat-num">8</div>
+        <div class="cx-hero-stat-label">Departments Coordinated</div>
+      </div>
+      <div class="cx-hero-stat">
+        <div class="cx-hero-stat-num">7,576<em>%</em></div>
+        <div class="cx-hero-stat-label">Social Growth in 9 Days</div>
+      </div>
+      <div class="cx-hero-stat">
+        <div class="cx-hero-stat-num"><em>AHT</em></div>
+        <div class="cx-hero-stat-label">Optimization Focus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CX ROLES -->
+<section style="background:var(--cream-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Roles</div>
+      <h2>Frontline to <em>strategy.</em></h2>
+    </div>
+
+    <div class="cx-role reveal">
+      <div class="cx-role-header">
+        <div class="cx-role-date">May 2023 – May 2024</div>
+        <div class="cx-role-title">Customer Excellence <em>Associate</em></div>
+        <div class="cx-role-company">Zindigi · JS Bank · Islamabad, PK</div>
+        <div class="cx-award">Top Performance Award 2023</div>
+      </div>
+      <div class="cx-role-body">
+        <ul>
+          <li>Achieved <b>Top Performance Award 2023</b> for spearheading initiatives across 8 departments, elevating customer satisfaction.</li>
+          <li>Championed a Facebook social media campaign that grew followers by <b>7,576.92% in 9 days</b>.</li>
+          <li>Acquired SQL development proficiency to streamline <b>Average Handling Time (AHT)</b> reduction in financial and technical support.</li>
+          <li>Directed talent acquisition and recruitment processes, facilitating new team member onboarding.</li>
+          <li>Managed interdepartmental coordination to resolve complex customer inquiries and escalations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cx-role reveal">
+      <div class="cx-role-header">
+        <div class="cx-role-date">Aug – Nov 2022</div>
+        <div class="cx-role-title">Customer Experience <em>Associate</em></div>
+        <div class="cx-role-company">SadaPay · Islamabad, PK</div>
+      </div>
+      <div class="cx-role-body">
+        <ul>
+          <li>Provided exemplary daily support to <b>100+ clients</b> — resolving queries and coordinating interdepartmentally.</li>
+          <li>Managed complaint resolution and escalation workflows for fintech products.</li>
+          <li>Developed deep understanding of user pain points in digital banking onboarding and transactions.</li>
+          <li>Collaborated with product and engineering teams to flag recurring issues and suggest UX improvements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cx-role reveal">
+      <div class="cx-role-header">
+        <div class="cx-role-date">Jun – Dec 2020</div>
+        <div class="cx-role-title">Social Media <em>Manager</em></div>
+        <div class="cx-role-company">Freelance · Remote</div>
+      </div>
+      <div class="cx-role-body">
+        <ul>
+          <li>Managed posts and profiles for <b>Facebook and Instagram</b>, expanding respective reach and engagement.</li>
+          <li>Developed content calendars and community management strategies for small business clients.</li>
+          <li>Analyzed engagement metrics to optimize posting schedules and content formats.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CX COMPETENCIES -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Expertise</div>
+      <h2>Core CX <em>Competencies</em></h2>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card reveal">
+        <div class="comp-icon">◈</div>
+        <h4>Stakeholder Coordination</h4>
+        <p>Bridging gaps between customers, product, engineering, and compliance teams to resolve issues efficiently.</p>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon">◉</div>
+        <h4>Complaint Resolution</h4>
+        <p>Managing escalations and complex inquiries with empathy while maintaining brand reputation and user trust.</p>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon">◆</div>
+        <h4>AHT Optimization</h4>
+        <p>Using data analysis to identify bottlenecks and streamline support workflows for faster resolution.</p>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon">◇</div>
+        <h4>VoC & Feedback Loops</h4>
+        <p>Capturing voice of customer insights and translating them into actionable product improvements.</p>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon">✦</div>
+        <h4>Community Management</h4>
+        <p>Building engaged user communities through social media, content strategy, and responsive communication.</p>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon">✧</div>
+        <h4>Training & Onboarding</h4>
+        <p>Developing knowledge bases and training programs to scale team capabilities and maintain quality.</p>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <div class="testimonial-text">The CX mindset now drives how I coordinate products at Aik by Bank Islami — bridging user needs with engineering realities, ensuring every feature we ship has been validated by real customer pain points.</div>
+      <div class="testimonial-author"><b>Rajaa J. Khan</b>Project Coordinator · Aik by Bank Islami</div>
+    </div>
+  </div>
+</section>
+
+<!-- CX STACK - PURE CX TOOLS ONLY -->
+<section class="tools-section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:40px">
+      <div class="eyebrow">Stack</div>
+      <h2>Customer Experience <em>Toolkit</em></h2>
+    </div>
+
+    <div class="tools-grid reveal">
+      <div class="tool-item">
+        <div class="tool-name">Intercom</div>
+        <div class="tool-cat">Customer Messaging</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Antlere</div>
+        <div class="tool-cat">Feedback & Surveys</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Freshdesk</div>
+        <div class="tool-cat">Helpdesk & Ticketing</div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-name">Klaus</div>
+        <div class="tool-cat">QA & Coaching</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ornament">· · · ✦ · · ·</div>
+  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="product.html">View Product Work</a>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Product Portfolio — Rajaa Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
+    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
+    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+  }
+  ::selection{background:var(--maroon);color:var(--cream)}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
+  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover{color:var(--maroon)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--maroon)}
+  .nav-links a.active::after{width:100%}
+  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
+  .nav-cta:hover{background:transparent;color:var(--maroon)}
+
+  section{position:relative;z-index:1;padding:140px 32px 100px}
+  .container{max-width:1240px;margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  .section-head{margin-bottom:60px;text-align:center}
+  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
+  .section-head h2 em{font-style:italic;color:var(--maroon)}
+  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+
+  .filters{display:flex;gap:0;flex-wrap:wrap;justify-content:center;margin-bottom:50px;border:1px solid var(--line);background:var(--cream-2);padding:6px;width:fit-content;margin-left:auto;margin-right:auto}
+  .filter-btn{padding:11px 22px;background:transparent;border:none;color:var(--ink-soft);cursor:pointer;font-family:inherit;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:all .25s}
+  .filter-btn:hover{color:var(--maroon)}
+  .filter-btn.active{background:var(--maroon);color:var(--cream)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:32px}
+  .card{background:var(--cream-2);border:1px solid var(--line);transition:all .35s;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .card:hover{transform:translateY(-6px);border-color:var(--maroon);box-shadow:0 30px 60px -20px rgba(107,31,44,0.25)}
+
+  .card-media{
+    aspect-ratio:16/10;position:relative;overflow:hidden;
+    background-color:var(--maroon-deep);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card-media img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:top center;
+    transition:transform .6s, filter .4s;
+  }
+  .card:hover .card-media img{transform:scale(1.04)}
+  .card-media .media-overlay{
+    position:absolute;inset:0;z-index:2;
+    background:linear-gradient(180deg, rgba(74,21,32,0.05) 0%, rgba(26,10,14,0.5) 100%);
+    transition:all .4s;
+  }
+  .card:hover .card-media .media-overlay{background:linear-gradient(180deg, rgba(74,21,32,0) 0%, rgba(26,10,14,0.2) 100%)}
+  .card-media .media-tag{
+    position:absolute;bottom:14px;left:18px;z-index:3;
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--cream);font-size:24px;font-weight:600;
+    text-shadow:0 2px 12px rgba(0,0,0,0.6);letter-spacing:.5px;
+  }
+  .card-media .media-tag em{color:var(--gold-soft);font-style:italic}
+  .card-media .media-corner{
+    position:absolute;top:14px;right:14px;z-index:3;
+    font-size:9px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold-soft);background:rgba(26,10,14,0.6);
+    padding:5px 10px;border:1px solid rgba(212,169,97,0.3);
+    backdrop-filter:blur(4px);
+  }
+
+  .card-body{padding:30px;display:flex;flex-direction:column;flex:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:12px}
+  .card h3{font-size:26px;font-weight:600;color:var(--ink);font-family:'Cormorant Garamond',serif;letter-spacing:-.3px}
+  .badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 10px;white-space:nowrap;background:var(--cream);border:1px solid var(--line);color:var(--ink-soft)}
+  .b-ai{background:rgba(107,31,44,0.08);color:var(--maroon);border-color:var(--line-strong)}
+  .b-ott{background:rgba(184,137,62,0.1);color:var(--gold);border-color:rgba(184,137,62,0.3)}
+  .b-game{background:rgba(139,45,61,0.08);color:var(--maroon-soft);border-color:var(--line-strong)}
+  .b-ent{background:rgba(74,21,32,0.08);color:var(--maroon-deep);border-color:var(--line-strong)}
+  .b-media{background:rgba(184,137,62,0.08);color:var(--gold);border-color:rgba(184,137,62,0.3)}
+  .partner-tag{font-size:11px;color:var(--ink-soft);margin-bottom:14px;letter-spacing:1.5px;text-transform:uppercase}
+  .partner-tag b{color:var(--maroon);font-weight:600}
+  .card p{color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;flex-grow:1;line-height:1.65}
+  .card-impact{font-size:13px;color:var(--ink);padding:14px 16px;background:var(--cream);border-left:2px solid var(--maroon);margin-bottom:18px;font-style:italic}
+  .card-impact b{color:var(--maroon);font-style:normal}
+  .links{display:flex;gap:8px;flex-wrap:wrap}
+  .links a{font-size:11px;text-decoration:none;padding:8px 14px;background:transparent;color:var(--maroon);border:1px solid var(--maroon);transition:all .25s;display:inline-flex;align-items:center;gap:5px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+  .links a:hover{background:var(--maroon);color:var(--cream)}
+
+  /* TELCO SUMMARY */
+  .telcos{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:60px}
+  .telco{padding:36px 28px;text-align:center;background:var(--cream-2);border:1px solid var(--line);transition:all .3s;position:relative;overflow:hidden}
+  .telco::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:50px;height:3px;background:var(--maroon)}
+  .telco:hover{transform:translateY(-6px);border-color:var(--maroon)}
+  .telco-name{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--maroon);margin-bottom:4px;font-style:italic}
+  .telco-count{font-size:11px;color:var(--gold);margin-bottom:20px;letter-spacing:2px;text-transform:uppercase}
+  .telco ul{list-style:none;text-align:left;font-size:14px;color:var(--ink)}
+  .telco li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .telco li:last-child{border-bottom:none}
+  .telco li span{color:var(--ink-soft);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+
+  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
+  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .grid,.telcos{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:90px 20px 70px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <ul class="nav-links">
+      <li><a href="product.html" class="active">Product</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow left" style="color:var(--gold-soft)">Portfolio · Vol. I</div>
+    <h1>Products I've <em>shipped.</em></h1>
+    <p>14+ digital products across AI, OTT/VOD, Gaming, Cloud Storage, and Enterprise solutions — built for Pakistan's leading telecoms and fintechs.</p>
+  </div>
+</div>
+
+<!-- PRODUCT GRID -->
+<section id="products" style="padding-top:80px">
+  <div class="container">
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="ott">OTT / VOD</button>
+      <button class="filter-btn" data-filter="game">Gaming</button>
+      <button class="filter-btn" data-filter="ent">Enterprise</button>
+      <button class="filter-btn" data-filter="media">Digital Media</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <!-- OzGPT -->
+      <article class="card reveal" data-cat="ai">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1hzE918ZZiyrM4uoik9j4GNBAjELAuqsL" alt="OzGPT" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Zong</div>
+          <div class="media-tag">Oz<em>GPT</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>OzGPT</h3><span class="badge b-ai">AI</span></div>
+          <div class="partner-tag">Partner · <b>Zong</b></div>
+          <p>Pakistan's first telecom-integrated AI assistant — accessible via SMS, IVR, USSD, web, and the My Zong app.</p>
+          <div class="card-impact"><b>Role:</b> Led development & optimization, managing core AI functionality & client requirements.</div>
+          <div class="links">
+            <a href="https://ozgpt.com.pk/home" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.ideation.ozgpt" target="_blank">Play Store</a>
+            <a href="#" onclick="alert('SMS: Send Hi to 6131 · IVR: Dial 6131 · USSD: *6131# (Zong only)');return false;">Telco</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ZongTV -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1DnmSmqc1GrYqtRVUqbCHu-sVd3l-AlDH" alt="ZongTV" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Zong</div>
+          <div class="media-tag">Zong<em>TV</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>ZongTV</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Zong</b></div>
+          <p>OTT/VOD platform with TV shows, movies & 40+ live channels. Focused on content curation and feature prioritization.</p>
+          <div class="card-impact"><b>Role:</b> Enhanced user engagement through curated content strategy & platform upgrades.</div>
+          <div class="links">
+            <a href="https://zongmobiletv.com/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/search?q=zong%20tv&c=apps" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/pk/app/zong-live-tv/id6476647040" target="_blank">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Deikho -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1GT0Y2PrwwbFjM4U1hyR5fTRVLR7D-N-j" alt="Deikho" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Jazz</div>
+          <div class="media-tag"><em>Deikho</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Deikho</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Jazz</b></div>
+          <p>Premium Pakistani OTT with original web series, shows & celebrity content for a young, trend-driven audience.</p>
+          <div class="card-impact"><b>Role:</b> Took charge post-handover — drove new feature rollouts, expanded content strategy & iOS deployment.</div>
+          <div class="links">
+            <a href="https://deikho.com/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.jazz.pakistani.drama.videos.deikho" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/pk/app/deikho/id6745093169" target="_blank">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Comedy Corner -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1sDVGVZ4vSyvi2Sc6lFMoqeqiqNibU9c5" alt="Comedy Corner" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Zong</div>
+          <div class="media-tag">Comedy <em>Corner</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Comedy Corner</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Zong</b></div>
+          <p>Comedy-focused OTT offering stand-up, sketches & light entertainment for Zong subscribers.</p>
+          <div class="card-impact"><b>Role:</b> Executed end-to-end content & operational management.</div>
+          <div class="links"><a href="https://comedycorner.tv/" target="_blank">Web</a></div>
+        </div>
+      </article>
+
+      <!-- Whatsin -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/11IH7E6bw9zOHvph_IkTcHRKwY1F8A16x" alt="Whatsin" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Telenor</div>
+          <div class="media-tag"><em>Whats</em>in</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Whatsin</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Telenor</b></div>
+          <p>Lifestyle OTT with diverse content — focused on content management, UI improvements & technical development.</p>
+          <div class="card-impact"><b>Role:</b> Content management, UI improvements & technical development oversight.</div>
+          <div class="links">
+            <a href="https://whatsin.live/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.lifestyle.whatsin" target="_blank">Play Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Qabeelah -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1OPrOrUwcu8KMSGmUtoheFP8lnyQzP3_j" alt="Qabeelah" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · In-house</div>
+          <div class="media-tag"><em>Qabeelah</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Qabeelah</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>In-house</b></div>
+          <p>Short-form video & community platform for creators to upload, watch, and go viral — designed mood-first.</p>
+          <div class="card-impact"><b>Role:</b> Directed development centered on scalable content delivery & user-first design.</div>
+          <div class="links">
+            <a href="https://qabeelah.com/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.ideation.qabeelah" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/pk/app/qabeelah/id6740258193" target="_blank">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Goonj TV -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1mn3xcSug9o-37lWYdDhj2PiaRDbBI2Z1" alt="Goonj TV" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Telenor</div>
+          <div class="media-tag">Goonj<em> TV</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Goonj TV</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Telenor</b></div>
+          <p>Hybrid OTT featuring live TV channels and curated video content across diverse genres.</p>
+          <div class="card-impact"><b>Role:</b> Directed content strategy, UX updates & cross-functional operations.</div>
+          <div class="links">
+            <a href="https://goonj.pk/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.dmdmax.goonj" target="_blank">Play Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trendin -->
+      <article class="card reveal" data-cat="ott">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1ThrJbkeyqOiYCFmpGdwZfKzdsRZbC9oE" alt="Trendin" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Telenor</div>
+          <div class="media-tag"><em>Trendin</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Trendin</h3><span class="badge b-ott">OTT</span></div>
+          <div class="partner-tag">Partner · <b>Telenor</b></div>
+          <p>Reimagined lifestyle OTT — curated content across fashion, food, fitness & entertainment for modern audiences.</p>
+          <div class="card-impact"><b>Role:</b> Led repositioning, content enrichment, usability & performance optimization.</div>
+          <div class="links">
+            <a href="https://trendin.com.pk/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.lifestyle.trending" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/pk/app/trendin-app/id6754063776" target="_blank">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PlaySpot -->
+      <article class="card reveal" data-cat="game">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1t86ZJoLDE8yTzkv37APJxIOsGSxK6Mwr" alt="PlaySpot" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Jazz</div>
+          <div class="media-tag">Play<em>Spot</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>PlaySpot</h3><span class="badge b-game">Gaming</span></div>
+          <div class="partner-tag">Partner · <b>Jazz</b></div>
+          <p>Digital gaming platform with HTML5 games across action, adventure & sports — accessible on web and mobile.</p>
+          <div class="card-impact"><b>Role:</b> Managed platform ops, content updates, UI/UX improvements & client coordination.</div>
+          <div class="links"><a href="https://playspot.gamenow.com.pk/" target="_blank">Web</a></div>
+        </div>
+      </article>
+
+      <!-- Game Play Land -->
+      <article class="card reveal" data-cat="game">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1wTEVTMXgsh5FLPPsXLB1yHhIm_D7mBF7" alt="Game Play Land" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Jazz</div>
+          <div class="media-tag">Game<em>Play</em> Land</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Game Play Land</h3><span class="badge b-game">Gaming</span></div>
+          <div class="partner-tag">Partner · <b>Jazz</b></div>
+          <p>HTML5 platform offering a wide catalog of instant-play games across multiple genres for casual audiences.</p>
+          <div class="card-impact"><b>Role:</b> Managed post-handover — platform operations, game curation & UX optimization.</div>
+          <div class="links"><a href="https://gameplayland.com.pk/" target="_blank">Web</a></div>
+        </div>
+      </article>
+
+      <!-- Game Club -->
+      <article class="card reveal" data-cat="game">
+        <div class="card-media">
+          <img src="https://image.thum.io/get/width/800/crop/500/https://gameclub.com.pk/" alt="Game Club" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Ufone</div>
+          <div class="media-tag">Game<em>Club</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Game Club</h3><span class="badge b-game">Gaming</span></div>
+          <div class="partner-tag">Partner · <b>Ufone</b></div>
+          <p>Ufone's HTML5 gaming platform with an extensive catalog of casual & premium games for mobile and web.</p>
+          <div class="card-impact"><b>Role:</b> Led end-to-end development & launch — strategy, feature design, content integration & ops.</div>
+          <div class="links"><a href="https://gameclub.com.pk/" target="_blank">Web</a></div>
+        </div>
+      </article>
+
+      <!-- Portall -->
+      <article class="card reveal" data-cat="ent">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1YT7xoi_gCLSenXS-ijMFnk2w9eHkUAuh" alt="Portall" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Jazz</div>
+          <div class="media-tag">Port<em>All</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Portall</h3><span class="badge b-ent">Storage</span></div>
+          <div class="partner-tag">Partner · <b>Jazz</b></div>
+          <p>Cloud-native storage platform with secure, multi-device access to photos, videos & documents while freeing up phone storage.</p>
+          <div class="card-impact"><b>Role:</b> Managed end-to-end product lifecycle — features, content integration, UX & operations.</div>
+          <div class="links">
+            <a href="https://portallapp.com/" target="_blank">Web</a>
+            <a href="https://play.google.com/store/apps/details?id=com.ideation.portall" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/pk/app/portall-cloud-storage-drive/id6475351765" target="_blank">App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Digital Signage -->
+      <article class="card reveal" data-cat="ent">
+        <div class="card-media">
+          <img src="https://lh3.googleusercontent.com/d/1ng3CGCjUPny-MOvzpuegEHSrx2lzpBuZ" alt="Digital Signage" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Enterprise · Jazz</div>
+          <div class="media-tag">Digital <em>Signage</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Digital Signage</h3><span class="badge b-ent">Enterprise</span></div>
+          <div class="partner-tag">Partner · <b>Jazz Business</b></div>
+          <p>Enterprise-grade content display & management solution to schedule and broadcast dynamic media across multiple screens in real time.</p>
+          <div class="card-impact"><b>Role:</b> Led requirement gathering, dev coordination & end-to-end testing for enterprise deployment.</div>
+          <div class="links">
+            <a href="#" onclick="alert('Available for Corporate & Retail Enterprise Clients via Jazz Business Solutions');return false;">Enterprise Only</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mobile Akhbaar -->
+      <article class="card reveal" data-cat="media">
+        <div class="card-media">
+          <img src="https://image.thum.io/get/width/800/crop/500/https://mobileakhbaar.com/" alt="Mobile Akhbaar" loading="lazy" />
+          <div class="media-overlay"></div>
+          <div class="media-corner">Live · Ufone</div>
+          <div class="media-tag">Mobile <em>Akhbaar</em></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top"><h3>Mobile Akhbaar</h3><span class="badge b-media">Media</span></div>
+          <div class="partner-tag">Partner · <b>Ufone</b></div>
+          <p>Digital news aggregation platform — real-time updates, breaking stories & trending content across politics, sports, entertainment & tech.</p>
+          <div class="card-impact"><b>Role:</b> Led development & launch — content strategy, UI/UX & platform operations.</div>
+          <div class="links"><a href="https://mobileakhbaar.com/" target="_blank">Web</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- TELCO PARTNERS -->
+    <div style="margin-top:100px">
+      <div class="section-head reveal">
+        <div class="eyebrow">Partners</div>
+        <h2>Trusted by Pakistan's <em>leading</em> brands.</h2>
+      </div>
+      
+      <div class="telcos reveal">
+        <div class="telco">
+          <div class="telco-name">Jazz</div>
+          <div class="telco-count">5 Products</div>
+          <ul>
+            <li>Portall <span>Cloud</span></li>
+            <li>Deikho <span>OTT</span></li>
+            <li>PlaySpot <span>Gaming</span></li>
+            <li>Game Play Land <span>Gaming</span></li>
+            <li>Digital Signage <span>Enterprise</span></li>
+          </ul>
+        </div>
+        <div class="telco">
+          <div class="telco-name">Zong</div>
+          <div class="telco-count">3 Products</div>
+          <ul>
+            <li>OzGPT <span>AI</span></li>
+            <li>ZongTV <span>OTT</span></li>
+            <li>Comedy Corner <span>OTT</span></li>
+          </ul>
+        </div>
+        <div class="telco">
+          <div class="telco-name">Telenor</div>
+          <div class="telco-count">3 Products</div>
+          <ul>
+            <li>Whatsin <span>OTT</span></li>
+            <li>Goonj TV <span>OTT</span></li>
+            <li>Trendin <span>OTT</span></li>
+          </ul>
+        </div>
+        <div class="telco">
+          <div class="telco-name">Ufone</div>
+          <div class="telco-count">2 Products</div>
+          <ul>
+            <li>Mobile Akhbaar <span>Media</span></li>
+            <li>Game Club <span>Gaming</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ornament">· · · ✦ · · ·</div>
+  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="media.html">View Media Work</a>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#grid .card');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    cards.forEach(c => {
+      const show = f === 'all' || c.dataset.cat === f;
+      c.style.display = show ? '' : 'none';
+    });
+  }));
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

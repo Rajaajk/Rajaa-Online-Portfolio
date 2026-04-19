@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marketing — Rajaa Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
+    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
+    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+  }
+  ::selection{background:var(--maroon);color:var(--cream)}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
+  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover{color:var(--maroon)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--maroon)}
+  .nav-links a.active::after{width:100%}
+  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
+  .nav-cta:hover{background:transparent;color:var(--maroon)}
+
+  section{position:relative;z-index:1;padding:140px 32px 100px}
+  .container{max-width:1240px;margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  .section-head{margin-bottom:60px;text-align:center}
+  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
+  .section-head h2 em{font-style:italic;color:var(--maroon)}
+  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+
+  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
+  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
+
+  /* MARKETING STATS */
+  .mkt-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:60px 0}
+  .mkt-hero-stat{background:var(--cream-2);border:1px solid var(--line);padding:32px 24px;text-align:center;transition:all .3s}
+  .mkt-hero-stat:hover{border-color:var(--maroon);transform:translateY(-4px)}
+  .mkt-hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--maroon);line-height:1}
+  .mkt-hero-stat-num em{font-style:italic;color:var(--gold)}
+  .mkt-hero-stat-label{font-size:11px;color:var(--ink-soft);margin-top:10px;letter-spacing:2px;text-transform:uppercase}
+
+  /* CAMPAIGNS */
+  .campaign{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:60px;padding:40px;background:var(--cream-2);border:1px solid var(--line);transition:all .3s}
+  .campaign:hover{border-color:var(--maroon)}
+  .campaign-header{display:flex;flex-direction:column;gap:8px}
+  .campaign-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .campaign-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--ink);line-height:1.1}
+  .campaign-title em{font-style:italic;color:var(--maroon)}
+  .campaign-company{font-size:14px;color:var(--ink-soft);font-weight:500}
+  .campaign-metric{display:inline-block;margin-top:16px;padding:10px 16px;background:var(--maroon);color:var(--cream);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+  .campaign-body ul{list-style:none;padding:0}
+  .campaign-body li{position:relative;padding-left:24px;padding-top:8px;padding-bottom:8px;font-size:15px;color:var(--ink-soft);line-height:1.7}
+  .campaign-body li::before{content:'—';position:absolute;left:0;top:8px;color:var(--gold);font-weight:600}
+  .campaign-body li b{color:var(--maroon)}
+
+  /* CHANNELS */
+  .channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .channel-card{padding:32px;background:var(--cream);border:1px solid var(--line);transition:all .3s;position:relative;overflow:hidden;text-align:center}
+  .channel-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--maroon);transform:scaleX(0);transition:transform .3s}
+  .channel-card:hover{transform:translateY(-4px);border-color:var(--maroon)}
+  .channel-card:hover::before{transform:scaleX(1)}
+  .channel-icon{font-size:40px;color:var(--maroon);margin-bottom:16px}
+  .channel-card h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .channel-card p{font-size:14px;color:var(--ink-soft);line-height:1.6}
+
+  /* STACK */
+  .stack-section{background:var(--maroon-deep);color:var(--cream);position:relative;overflow:hidden}
+  .stack-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(74,21,32,0.9), rgba(107,31,44,0.8))}
+  .stack-section .container{position:relative;z-index:2}
+  .stack-section .eyebrow{color:var(--gold-soft)}
+  .stack-section .eyebrow::before,.stack-section .eyebrow::after{background:var(--gold-soft)}
+  .stack-section h2{color:var(--cream)}
+  .stack-section h2 em{color:var(--gold-soft)}
+  .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .stack-item{padding:32px 24px;background:rgba(251,246,238,0.05);border:1px solid rgba(212,169,97,0.2);text-align:center;transition:all .3s}
+  .stack-item:hover{background:rgba(251,246,238,0.1);border-color:var(--gold-soft);transform:translateY(-4px)}
+  .stack-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--cream);margin-bottom:6px}
+  .stack-cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft)}
+
+  /* CONTENT TYPES */
+  .content-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+  .content-item{padding:40px;background:var(--cream-2);border:1px solid var(--line);transition:all .3s}
+  .content-item:hover{border-color:var(--maroon);transform:translateX(8px)}
+  .content-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--maroon);opacity:.3;line-height:1;margin-bottom:16px}
+  .content-item h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:12px}
+  .content-item p{font-size:14px;color:var(--ink-soft);line-height:1.7}
+
+  footer{text-align:center;padding:50px 32px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2)}
+  footer a{color:var(--maroon);text-decoration:none}
+  footer .ornament{color:var(--gold);font-size:18px;margin-bottom:16px;letter-spacing:8px}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .mkt-hero-stats,.channels-grid,.stack-grid,.content-grid,.campaign{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:90px 20px 70px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <ul class="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="cx.html">CX</a></li>
+      <li><a href="marketing.html" class="active">Marketing</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow left" style="color:var(--gold-soft)">Growth & Engagement</div>
+    <h1>Marketing that <em>moves.</em></h1>
+    <p>From viral social campaigns to paid acquisition across Google and TikTok — driving measurable growth for fintech, media, and telecom products.</p>
+  </div>
+</div>
+
+<!-- MARKETING OVERVIEW -->
+<section style="padding-top:80px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Impact</div>
+      <h2>Data-driven <em>storytelling.</em></h2>
+      <p>I combine creative direction with analytical rigor — crafting campaigns that resonate emotionally while delivering quantifiable business results. From 7,576% social growth to optimized ad spend across multiple platforms.</p>
+    </div>
+
+    <div class="mkt-hero-stats reveal">
+      <div class="mkt-hero-stat">
+        <div class="mkt-hero-stat-num">7,576<em>%</em></div>
+        <div class="mkt-hero-stat-label">Viral Growth (9 Days)</div>
+      </div>
+      <div class="mkt-hero-stat">
+        <div class="mkt-hero-stat-num">4</div>
+        <div class="mkt-hero-stat-label">Ad Platforms Managed</div>
+      </div>
+      <div class="mkt-hero-stat">
+        <div class="mkt-hero-stat-num">8</div>
+        <div class="mkt-hero-stat-label">Departments Coordinated</div>
+      </div>
+      <div class="mkt-hero-stat">
+        <div class="mkt-hero-stat-num"><em>ROI</em></div>
+        <div class="mkt-hero-stat-label">Focused Optimization</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section style="background:var(--cream-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Campaigns</div>
+      <h2>Notable <em>Work</em></h2>
+    </div>
+
+    <div class="campaign reveal">
+      <div class="campaign-header">
+        <div class="campaign-date">May 2023 – May 2024</div>
+        <div class="campaign-title">Zindigi Social <em>Growth</em></div>
+        <div class="campaign-company">JS Bank · Fintech</div>
+        <div class="campaign-metric">+7,576.92% Followers</div>
+      </div>
+      <div class="campaign-body">
+        <ul>
+          <li>Championed a <b>Facebook social media campaign</b> that grew followers by 7,576.92% in just 9 days.</li>
+          <li>Developed content strategy balancing educational fintech content with engaging community-building posts.</li>
+          <li>Coordinated across 8 departments to align messaging with product launches and brand positioning.</li>
+          <li>Analyzed engagement metrics to optimize posting schedules, content formats, and audience targeting.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="campaign reveal">
+      <div class="campaign-header">
+        <div class="campaign-date">May 2024 – Nov 2025</div>
+        <div class="campaign-title">OTT Platform <em>Acquisition</em></div>
+        <div class="campaign-company">Ideation Technologies · Multiple Products</div>
+        <div class="campaign-metric">Multi-Product Scale</div>
+      </div>
+      <div class="campaign-body">
+        <ul>
+          <li>Managed <b>Google Ads and TikTok Ads</b> campaigns across 14+ OTT, gaming, and AI products.</li>
+          <li>Utilized <b>Firebase and Google Analytics</b> to track user acquisition, retention, and engagement metrics.</li>
+          <li>Optimized campaign performance through A/B testing, audience segmentation, and creative iteration.</li>
+          <li>Collaborated with product teams to align marketing messaging with platform features and user value props.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="campaign reveal">
+      <div class="campaign-header">
+        <div class="campaign-date">Oct 2022 – Jun 2023</div>
+        <div class="campaign-title">GDG Live <em>Content</em></div>
+        <div class="campaign-company">Google Developers Group · Remote</div>
+        <div class="campaign-metric">Community Engagement</div>
+      </div>
+      <div class="campaign-body">
+        <ul>
+          <li>Engineered and managed <b>video campaigns and reels</b> to enhance social media following and community engagement.</li>
+          <li>Produced engaging short-form content optimized for platform algorithms (Instagram Reels, TikTok, YouTube Shorts).</li>
+          <li>Developed content calendars balancing educational tech content with trend-driven viral formats.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="campaign reveal">
+      <div class="campaign-header">
+        <div class="campaign-date">Jun – Dec 2020</div>
+        <div class="campaign-title">Freelance Social <em>Management</em></div>
+        <div class="campaign-company">Small Business Clients · Remote</div>
+        <div class="campaign-metric">Multi-Client Scale</div>
+      </div>
+      <div class="campaign-body">
+        <ul>
+          <li>Managed <b>Facebook and Instagram profiles</b> for multiple clients, expanding reach and engagement.</li>
+          <li>Developed content calendars and community management strategies tailored to each brand's voice.</li>
+          <li>Analyzed engagement metrics to optimize posting schedules and content formats for maximum impact.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Channels</div>
+      <h2>Platform <em>Expertise</em></h2>
+    </div>
+
+    <div class="channels-grid">
+      <div class="channel-card reveal">
+        <div class="channel-icon">f</div>
+        <h4>Facebook & Instagram</h4>
+        <p>Community building, viral campaigns, organic growth strategies, and paid amplification for fintech and media brands.</p>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon">▶</div>
+        <h4>Google Ads</h4>
+        <p>Search, display, and video campaigns with focus on app installs, user acquisition, and conversion optimization.</p>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon">♪</div>
+        <h4>TikTok Ads</h4>
+        <p>Short-form video advertising, trend-jacking, and Gen Z audience engagement for gaming and entertainment products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT TYPES -->
+<section style="background:var(--cream-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Content</div>
+      <h2>Formats I <em>Create</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-item reveal">
+        <div class="content-num">01</div>
+        <h4>Short-Form Video</h4>
+        <p>Reels, TikToks, and Shorts optimized for algorithmic reach — from quick tutorials to trend-driven viral content.</p>
+      </div>
+      <div class="content-item reveal">
+        <div class="content-num">02</div>
+        <h4>Infographic Ads</h4>
+        <p>Data-driven visual storytelling that simplifies complex fintech or tech concepts into engaging, shareable graphics.</p>
+      </div>
+      <div class="content-item reveal">
+        <div class="content-num">03</div>
+        <h4>Product Campaigns</h4>
+        <p>End-to-end campaign management from concept to execution — messaging, creative, targeting, and performance analysis.</p>
+      </div>
+      <div class="content-item reveal">
+        <div class="content-num">04</div>
+        <h4>Community Content</h4>
+        <p>Engagement-driven posts that build brand loyalty, user education, and organic advocacy across social platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETING STACK -->
+<section class="stack-section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:40px">
+      <div class="eyebrow">Stack</div>
+      <h2>Marketing <em>Toolkit</em></h2>
+    </div>
+
+    <div class="stack-grid reveal">
+      <div class="stack-item">
+        <div class="stack-name">Google Ads</div>
+        <div class="stack-cat">Search & Display</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">TikTok Ads</div>
+        <div class="stack-cat">Short-Form Video</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Meta Ads</div>
+        <div class="stack-cat">Facebook & Instagram</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Firebase</div>
+        <div class="stack-cat">Analytics & Attribution</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Google Analytics</div>
+        <div class="stack-cat">Web & App Analytics</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Mixpanel</div>
+        <div class="stack-cat">Product Analytics</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Figma</div>
+        <div class="stack-cat">Creative Design</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Adobe Suite</div>
+        <div class="stack-cat">Visual Content</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ornament">· · · ✦ · · ·</div>
+  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="product.html">View Product Work</a>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
