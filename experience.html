@@ -9,126 +9,193 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
-    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
-    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+    --maroon:#6B2D2D; 
+    --maroon-deep:#4A1F1F; 
+    --maroon-light:#8B3D3D;
+    --blush:#E8D5D0; 
+    --blush-deep:#D4B8B0;
+    --cream:#FAF6F0; 
+    --cream-warm:#F5EDE5;
+    --navy:#1A2230;
+    --ink:#2A1A1E; 
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
-  body::before{
-    content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+  
+  /* Abstract Background Shapes */
+  .bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .bg-shapes::before{
+    content:'';position:absolute;top:-10%;right:-5%;width:60vw;height:60vw;
+    background:radial-gradient(circle,var(--blush) 0%,transparent 70%);
+    border-radius:50%;opacity:0.6;
   }
+  .bg-shapes::after{
+    content:'';position:absolute;bottom:-20%;left:-10%;width:50vw;height:50vw;
+    background:radial-gradient(circle,var(--maroon-light) 0%,transparent 70%);
+    border-radius:50%;opacity:0.08;
+  }
+  .shape-circle{
+    position:absolute;border-radius:50%;opacity:0.1;
+  }
+  .shape-1{top:20%;left:5%;width:300px;height:300px;background:var(--maroon);}
+  .shape-2{top:60%;right:10%;width:200px;height:200px;background:var(--navy);}
+  .shape-3{top:40%;left:15%;width:150px;height:150px;background:var(--blush-deep);}
+  
   ::selection{background:var(--maroon);color:var(--cream)}
-  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
-  .nav-links{display:flex;gap:26px;list-style:none}
-  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
-  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
-  .nav-links a:hover{color:var(--maroon)}
-  .nav-links a:hover::after{width:100%}
-  .nav-links a.active{color:var(--maroon)}
-  .nav-links a.active::after{width:100%}
-  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
+  /* Navigation */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);background:rgba(250,246,240,0.9);border-bottom:1px solid rgba(107,45,45,0.1)}
+  .nav-wrap{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;color:var(--maroon);text-decoration:none;letter-spacing:-0.5px}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:13px;letter-spacing:1px;text-transform:uppercase;transition:all .3s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{padding:12px 28px;background:var(--maroon);color:var(--cream);font-weight:600;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:all .3s;border:2px solid var(--maroon)}
   .nav-cta:hover{background:transparent;color:var(--maroon)}
 
-  section{position:relative;z-index:1;padding:140px 32px 100px}
-  .container{max-width:1240px;margin:0 auto}
+  /* Hero Section */
+  .hero{position:relative;z-index:1;padding:200px 40px 120px;background:linear-gradient(135deg,var(--cream) 0%,var(--blush) 100%);overflow:hidden}
+  .hero::before{
+    content:'';position:absolute;top:-50px;right:-50px;width:400px;height:400px;
+    background:var(--maroon);border-radius:50%;opacity:0.08;
+  }
+  .hero-container{max-width:1400px;margin:0 auto;position:relative}
+  .hero-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px;padding:8px 16px;background:rgba(107,45,45,0.08);border-left:3px solid var(--maroon)}
+  .hero h1{font-size:clamp(56px,10vw,120px);font-weight:500;letter-spacing:-4px;line-height:0.9;margin-bottom:32px;color:var(--maroon-deep)}
+  .hero h1 em{font-style:italic;color:var(--maroon-light);display:block}
+  .hero p{font-size:20px;color:var(--ink);max-width:600px;line-height:1.7;font-weight:300}
+  
+  .hero-accent{position:absolute;bottom:40px;right:40px;width:120px;height:120px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;opacity:0.9}
 
-  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
-  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
-  .eyebrow.left::before,.eyebrow.left::after{display:none}
+  /* Timeline Section */
+  .timeline-section{position:relative;z-index:1;padding:120px 40px;background:var(--cream)}
+  .timeline-container{max-width:1400px;margin:0 auto}
+  
+  .section-intro{text-align:center;margin-bottom:100px}
+  .section-intro h2{font-size:clamp(32px,5vw,56px);color:var(--maroon-deep);margin-bottom:20px;letter-spacing:-2px}
+  .section-intro p{color:var(--ink);max-width:600px;margin:0 auto;font-size:16px}
 
-  .section-head{margin-bottom:60px;text-align:center}
-  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
-  .section-head h2 em{font-style:italic;color:var(--maroon)}
-  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+  /* Asymmetric Timeline */
+  .timeline{position:relative}
+  .timeline-line{
+    position:absolute;left:50%;transform:translateX(-50%);
+    width:2px;height:100%;background:linear-gradient(to bottom,var(--maroon),var(--blush-deep),var(--navy));
+    opacity:0.3;
+  }
+  
+  .tl-item{position:relative;margin-bottom:120px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .tl-item:nth-child(even){direction:rtl}
+  .tl-item:nth-child(even) > *{direction:ltr}
+  
+  .tl-content{position:relative;padding:40px;background:var(--cream-warm);border-radius:20px;box-shadow:0 20px 60px rgba(107,45,45,0.08);transition:all .4s}
+  .tl-content:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(107,45,45,0.12)}
+  
+  .tl-marker{
+    position:absolute;width:24px;height:24px;background:var(--maroon);
+    border-radius:50%;top:50%;transform:translateY(-50%);
+    border:4px solid var(--cream);box-shadow:0 0 0 3px var(--maroon);
+    z-index:10;
+  }
+  .tl-item:nth-child(odd) .tl-marker{right:-62px}
+  .tl-item:nth-child(even) .tl-marker{left:-62px}
+  
+  .tl-current .tl-marker{background:var(--navy);box-shadow:0 0 0 3px var(--navy);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.2)}}
+  
+  .tl-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;margin-bottom:16px}
+  .tl-badge.now{background:var(--navy);color:var(--cream)}
+  .tl-badge.fintech{background:var(--maroon);color:var(--cream)}
+  .tl-badge.product{background:var(--blush-deep);color:var(--maroon-deep)}
+  .tl-badge.media{background:var(--cream);color:var(--maroon);border:1px solid var(--maroon)}
+  .tl-badge.cert{background:var(--maroon-light);color:var(--cream)}
+  
+  .tl-role{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--maroon-deep);margin-bottom:8px;letter-spacing:-1px}
+  .tl-company{font-size:13px;color:var(--maroon-light);font-weight:600;margin-bottom:16px;letter-spacing:1px}
+  .tl-date{font-size:11px;color:var(--ink);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;opacity:0.7}
+  .tl-content ul{list-style:none}
+  .tl-content li{padding:8px 0;padding-left:20px;position:relative;font-size:14px;color:var(--ink);line-height:1.6}
+  .tl-content li::before{content:'•';position:absolute;left:0;color:var(--maroon);font-size:18px;line-height:1.2}
+  .tl-content li b{color:var(--maroon-deep);font-weight:600}
 
-  .timeline{position:relative;max-width:920px;margin:0 auto}
-  .timeline::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:1px;background:var(--line-strong)}
-  .tl-item{position:relative;padding-left:50px;padding-bottom:48px}
-  .tl-item:last-child{padding-bottom:0}
-  .tl-dot{position:absolute;left:0;top:8px;width:19px;height:19px;border-radius:50%;background:var(--cream);border:2px solid var(--maroon)}
-  .tl-dot::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--maroon)}
-  .tl-current .tl-dot{border-color:var(--gold);background:var(--gold)}
-  .tl-current .tl-dot::after{background:var(--maroon-deep)}
-  .tl-current .tl-dot::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);animation:pulse 2s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:0;transform:scale(1.4)}}
-  .tl-card{background:var(--cream-2);border:1px solid var(--line);padding:32px;transition:all .3s}
-  .tl-card:hover{transform:translateX(6px);border-color:var(--maroon)}
-  .tl-current .tl-card{border-color:var(--gold);background:linear-gradient(135deg,var(--cream-2),rgba(212,169,97,0.08))}
-  .tl-now-pill{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:var(--gold);color:var(--maroon-deep);padding:3px 10px;margin-left:10px;font-weight:700;vertical-align:middle}
-  .tl-domain{display:inline-block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-left:8px;font-weight:600}
-  .tl-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px}
-  .tl-role{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink)}
-  .tl-date{font-size:12px;color:var(--ink-soft);letter-spacing:1.5px;text-transform:uppercase;background:var(--cream);padding:6px 12px;border:1px solid var(--line);white-space:nowrap}
-  .tl-company{font-size:14px;color:var(--maroon);font-weight:600;margin-bottom:18px;letter-spacing:.3px}
-  .tl-card ul{list-style:none;padding:0}
-  .tl-card li{position:relative;padding-left:20px;padding-top:6px;padding-bottom:6px;font-size:14.5px;color:var(--ink-soft)}
-  .tl-card li::before{content:'—';position:absolute;left:0;top:6px;color:var(--gold);font-weight:600}
-  .tl-card li b{color:var(--maroon)}
+  /* Certificates Grid */
+  .certs-section{padding:120px 40px;background:var(--cream-warm)}
+  .certs-container{max-width:1400px;margin:0 auto}
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:30px}
+  .cert-card{background:var(--cream);padding:30px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:all 0.3s;border:1px solid rgba(107,45,45,0.05)}
+  .cert-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(107,45,45,0.1)}
+  .cert-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--maroon-deep);margin-bottom:10px}
+  .cert-type{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--maroon-light);margin-bottom:15px;display:block}
+  .cert-link{font-size:12px;color:var(--maroon);text-decoration:none;font-weight:600;border-bottom:1px solid var(--maroon);padding-bottom:2px}
 
-  .highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px}
-  .highlight{padding:32px;background:var(--cream-2);border-left:3px solid var(--maroon);position:relative}
-  .highlight::after{content:'"';position:absolute;top:8px;right:24px;font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--maroon);opacity:.15;line-height:1}
-  .highlight-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--maroon);margin-bottom:8px;line-height:1}
-  .highlight-text{font-size:14px;color:var(--ink-soft);line-height:1.6}
+  /* Decorative Elements */
+  .tl-decoration{position:absolute;width:100px;height:100px;opacity:0.15;z-index:0}
+  .tl-item:nth-child(odd) .tl-decoration{right:-80px;top:-40px}
+  .tl-item:nth-child(even) .tl-decoration{left:-80px;bottom:-40px}
+  .tl-decoration.circle{border:3px solid var(--maroon);border-radius:50%}
+  .tl-decoration.square{border:3px solid var(--navy);transform:rotate(45deg)}
 
-  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
-  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
-  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
-  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
+  /* Stats Section */
+  .stats{position:relative;z-index:1;padding:120px 40px;background:var(--maroon-deep);color:var(--cream);overflow:hidden}
+  .stats::before{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .stats-container{max-width:1400px;margin:0 auto;position:relative}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px}
+  .stat-item{text-align:center;padding:40px;position:relative}
+  .stat-item::before{
+    content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:60px;height:60px;background:var(--blush);border-radius:50%;
+    opacity:0.2;
+  }
+  .stat-number{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:600;color:var(--blush);line-height:1;margin-bottom:16px;letter-spacing:-3px}
+  .stat-label{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:0.9;line-height:1.6}
 
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
+  /* Footer */
+  footer{position:relative;z-index:1;text-align:center;padding:80px 40px;background:var(--cream-warm);border-top:1px solid rgba(107,45,45,0.1)}
+  .footer-ornament{font-size:24px;color:var(--maroon);margin-bottom:24px;letter-spacing:8px}
+  footer p{color:var(--ink);font-size:13px;letter-spacing:1px}
+  footer a{color:var(--maroon);text-decoration:none;margin:0 12px;font-weight:600;transition:opacity .3s}
+  footer a:hover{opacity:0.7}
+
+  /* Animations */
+  .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(0.5,0,0,1)}
   .reveal.in{opacity:1;transform:none}
 
-  @media(max-width:880px){
-    .highlights{grid-template-columns:1fr}
+  /* Responsive */
+  @media(max-width:968px){
+    .tl-item,.tl-item:nth-child(even){grid-template-columns:1fr;gap:40px}
+    .tl-item:nth-child(even){direction:ltr}
+    .tl-marker{left:20px !important;right:auto !important}
+    .timeline-line{left:32px}
+    .tl-content{padding-left:80px}
+    .tl-decoration{display:none}
+    .stats-grid{grid-template-columns:1fr;gap:40px}
+    .hero{padding:160px 24px 80px}
+    .hero h1{font-size:48px}
+    .timeline-section{padding:80px 24px}
     .nav-links{display:none}
-    section{padding:90px 20px 70px}
   }
-footer{
-  text-align:center;
-  padding:60px 32px;
-  border-top:1px solid var(--line);
-  background:var(--cream-2);
-  color:var(--ink-soft);
-  font-size:13px;
-  letter-spacing:.3px;
-}
-footer .ornament{
-  font-size:18px;
-  color:var(--maroon);
-  margin-bottom:18px;
-  letter-spacing:4px;
-}
-footer a{
-  color:var(--maroon);
-  text-decoration:none;
-  border-bottom:1px solid var(--line-strong);
-  transition:border-color .25s;
-  margin:0 8px;
-}
-footer a:hover{
-  border-color:var(--maroon);
-}
 </style>
 </head>
 <body>
 
+<div class="bg-shapes">
+  <div class="shape-circle shape-1"></div>
+  <div class="shape-circle shape-2"></div>
+  <div class="shape-circle shape-3"></div>
+</div>
+
 <nav>
   <div class="nav-wrap">
-    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <a href="index.html" class="logo">Rajaa Khan</a>
     <ul class="nav-links">
       <li><a href="product.html">Product</a></li>
       <li><a href="media.html">Media</a></li>
       <li><a href="cx.html">CX</a></li>
-      <li><a href="marketing.html">Marketing</a></li>
       <li><a href="experience.html" class="active">Experience</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -136,142 +203,226 @@ footer a:hover{
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="container">
-    <div class="eyebrow left" style="color:var(--gold-soft)">Career Timeline</div>
-    <h1>The <em>journey</em> so far.</h1>
-    <p>From production sets to fintech support, OTT product launches to my current role coordinating digital banking products at Aik.</p>
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-label">Career Journey</div>
+    <h1><em>Beyond</em> boundaries.</h1>
+    <p>From film sets to fintech, OTT platforms to digital banking — a non-linear path driven by curiosity, impact, and the courage to pivot.</p>
+    <div class="hero-accent">RK</div>
   </div>
-</div>
+</section>
 
-<!-- TIMELINE -->
-<section style="padding-top:80px">
-  <div class="container">
-    <div class="timeline">
-      <div class="tl-item tl-current reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Project Coordinator <span class="tl-now-pill">Now</span><span class="tl-domain">Fintech</span></div>
-            <div class="tl-date">2025 – Present</div>
-          </div>
-          <div class="tl-company">Aik by Bank Islami · Islamabad, PK</div>
-          <ul>
-            <li>Coordinating cross-functional digital banking projects across product, engineering, compliance, and design teams.</li>
-            <li>Bridging stakeholder requirements with delivery roadmaps to ensure timely rollout of fintech features.</li>
-            <li>Applying product analytics & customer experience insight to refine the digital banking journey.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Product Executive <span class="tl-domain">Product</span></div>
-            <div class="tl-date">May 2024 – Nov 2025</div>
-          </div>
-          <div class="tl-company">Ideation Technologies · Islamabad, PK</div>
-          <ul>
-            <li>Orchestrated management of multiple OTT/VOD, cloud storage, and gaming platforms — optimizing UX and platform performance.</li>
-            <li>Cultivated client relationships, addressed inquiries, and ensured customer satisfaction across all platforms.</li>
-            <li>Collaborated with cross-functional teams to implement product updates, UI/UX enhancements, and feature improvements.</li>
-            <li>Leveraged data insights and market research to inform product strategies and enhance performance metrics.</li>
-            <li>Monitored traffic and revenue metrics to identify growth opportunities and capitalize on market trends.</li>
-            <li>Utilized Firebase, Google Analytics, OneSignal, Google Ads, and TikTok Ads for tracking and engagement optimization.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Customer Excellence Associate <span class="tl-domain">Fintech</span></div>
-            <div class="tl-date">May 2023 – May 2024</div>
-          </div>
-          <div class="tl-company">Zindigi · JS Bank · Islamabad, PK</div>
-          <ul>
-            <li>Achieved <b>Top Performance Award 2023</b> for spearheading initiatives across 8 departments, elevating customer satisfaction.</li>
-            <li>Championed a Facebook social media campaign that grew followers by <b>7,576.92% in 9 days</b>.</li>
-            <li>Acquired SQL development proficiency to streamline AHT reduction in financial and technical support.</li>
-            <li>Directed talent acquisition and recruitment processes, facilitating new team member onboarding.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Assistant Director <span class="tl-domain">Media</span></div>
-            <div class="tl-date">Jan – Mar 2023</div>
-          </div>
-          <div class="tl-company">The Marblous Four · Chakwal & Lahore, PK</div>
-          <ul>
-            <li>Coordinated daily shoot schedules and managed videography operations for a 15-day production.</li>
-            <li>Acted as liaison between director, cast, and crew — streamlining communication and creative direction.</li>
-            <li>Managed scene blocking, timing, and continuity to maintain production quality and schedule.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Content Curator <span class="tl-domain">Media</span></div>
-            <div class="tl-date">Nov 2022 – Jun 2023</div>
-          </div>
-          <div class="tl-company">Google Developers' Group Live · Remote</div>
-          <ul>
-            <li>Engineered and managed video campaigns to enhance social media following and community engagement.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-role">Customer Experience Associate <span class="tl-domain">Fintech</span></div>
-            <div class="tl-date">Aug – Nov 2022</div>
-          </div>
-          <div class="tl-company">SadaPay · Islamabad, PK</div>
-          <ul>
-            <li>Provided exemplary daily support to 100+ clients — resolving queries and coordinating interdepartmentally.</li>
-          </ul>
-        </div>
-      </div>
+<section class="timeline-section">
+  <div class="timeline-container">
+    <div class="section-intro reveal">
+      <h2>The trajectory</h2>
+      <p>Each role built on the last, creating a unique intersection of product thinking, customer obsession, and creative execution.</p>
     </div>
 
-    <div class="highlights">
-      <div class="highlight reveal">
-        <div class="highlight-num">7,576%</div>
-        <div class="highlight-text">Facebook follower growth in just 9 days via a campaign I championed at JS Bank's Zindigi.</div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="tl-item tl-current reveal">
+        <div class="tl-content">
+          <span class="tl-badge now">Current Role</span>
+          <h3 class="tl-role">Project Coordinator</h3>
+          <div class="tl-company">Aik by Bank Islami</div>
+          <div class="tl-date">2025 – Present · Islamabad</div>
+          <ul>
+            <li>Coordinating cross-functional digital bank operations</li>
+            <li>Applying product analytics & CX insights to refine the digital banking journey</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+        <div class="tl-decoration circle"></div>
       </div>
-      <div class="highlight reveal">
-        <div class="highlight-num">100+</div>
-        <div class="highlight-text">Daily clients supported with cross-departmental coordination at SadaPay's CX team.</div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <span class="tl-badge product">Product</span>
+          <h3 class="tl-role">Product Executive</h3>
+          <div class="tl-company">Ideation Technologies</div>
+          <div class="tl-date">May 2024 – Nov 2025 · Islamabad</div>
+          <ul>
+            <li>Orchestrated management of multiple OTT/VOD, cloud storage, and gaming platforms</li>
+            <li>Leveraged Firebase, Google Analytics, OneSignal, Google Ads, and TikTok Ads for optimization</li>
+            <li>Monitored traffic and revenue metrics to identify growth opportunities</li>
+            <li>Collaborated with cross-functional teams on UI/UX enhancements and feature improvements</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+        <div class="tl-decoration square"></div>
       </div>
-      <div class="highlight reveal">
-        <div class="highlight-num">15-day</div>
-        <div class="highlight-text">Film production coordinated end-to-end as Assistant Director at The Marblous Four.</div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <span class="tl-badge fintech">Fintech</span>
+          <h3 class="tl-role">Customer Excellence Associate</h3>
+          <div class="tl-company">Zindigi · JS Bank</div>
+          <div class="tl-date">May 2023 – May 2024 · Islamabad</div>
+          <ul>
+            <li><b>Top Performance Award 2023</b> for initiatives across 8 departments</li>
+            <li>Facebook campaign that grew followers by <b>7,576.92% in 9 days</b></li>
+            <li>Acquired SQL proficiency to streamline AHT reduction in financial support</li>
+            <li>Directed talent acquisition and onboarding processes</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+        <div class="tl-decoration circle"></div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <span class="tl-badge media">Media</span>
+          <h3 class="tl-role">Assistant Director</h3>
+          <div class="tl-company">The Marblous Four</div>
+          <div class="tl-date">Jan – Mar 2023 · Chakwal & Lahore</div>
+          <ul>
+            <li>Coordinated daily shoot schedules for a 15-day production</li>
+            <li>Liaison between director, cast, and crew — streamlining communication</li>
+            <li>Managed scene blocking, timing, and continuity</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+        <div class="tl-decoration square"></div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <span class="tl-badge media">Media</span>
+          <h3 class="tl-role">Content Curator</h3>
+          <div class="tl-company">Google Developers' Group Live</div>
+          <div class="tl-date">Nov 2022 – Jun 2023 · Remote</div>
+          <ul>
+            <li>Engineered video campaigns to enhance social media following and community engagement</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <span class="tl-badge fintech">Fintech</span>
+          <h3 class="tl-role">Customer Experience Associate</h3>
+          <div class="tl-company">SadaPay</div>
+          <div class="tl-date">Aug – Nov 2022 · Islamabad</div>
+          <ul>
+            <li>Provided daily support to 100+ clients with cross-departmental coordination</li>
+          </ul>
+        </div>
+        <div class="tl-marker"></div>
+        <div class="tl-decoration circle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certs-section">
+  <div class="certs-container">
+    <div class="section-intro reveal">
+      <h2>Certifications & Letters</h2>
+      <p>A collection of professional milestones, academic achievements, and recognition from industry leaders.</p>
+    </div>
+    
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <span class="cert-type">Professional Certificate</span>
+        <h4 class="cert-title">Product Analytics Completion</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Issued by Industry Standard Platform</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Performance Recognition</span>
+        <h4 class="cert-title">Appraisal Letter - 2024</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Recognition of excellence and growth at Ideation Technologies.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Promotion</span>
+        <h4 class="cert-title">Promotion Letter - 2024</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Advancement to Product Executive role.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Recommendation</span>
+        <h4 class="cert-title">Recommendation Letter</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Endorsement from leadership for outstanding contributions.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Regulatory Training</span>
+        <h4 class="cert-title">SBP Regulatory Framework</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">NIBAF Certification on Banking Policy.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Internship</span>
+        <h4 class="cert-title">Muasa Solutions Certificate</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Completion of technical internship program.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Media Training</span>
+        <h4 class="cert-title">Fundamentals of Screenwriting</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Creative writing and production certification.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="cert-type">Media Workshop</span>
+        <h4 class="cert-title">Media Production Bootcamp</h4>
+        <p style="font-size: 14px; margin-bottom: 20px;">Intensive training in film and digital media.</p>
+        <a href="#" class="cert-link">View Document</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number">7,576%</div>
+        <div class="stat-label">Facebook follower growth<br>in 9 days</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Daily clients supported<br>at SadaPay</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">15</div>
+        <div class="stat-label">Day film production<br>coordinated end-to-end</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="ornament">· · · ✦ · · ·</div>
-  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="product.html">View Product Work</a>
+  <div class="footer-ornament">✦ ✦ </div>
+  <p>© 2025 Rajaa Khan</p>
+  <p style="margin-top:16px">
+    <a href="index.html">Home</a>
+    <a href="product.html">Product Work</a>
+    <a href="contact.html">Let's talk</a>
+  </p>
 </footer>
 
 <script>
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
