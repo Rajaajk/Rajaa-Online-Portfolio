@@ -147,6 +147,7 @@
   .sub-head h3 em{font-style:italic;color:var(--gold-soft)}
   .sub-head .count{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);opacity:.8}
 
+  /* FIX: video grid — uniform 2-col, no full-width override */
   .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:80px}
   .video-item{background:#1a0a0e;border:1px solid rgba(212,169,97,0.2);transition:all .4s;overflow:hidden;border-radius:12px;position:relative}
   .video-item:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 30px 60px -20px rgba(0,0,0,0.6)}
@@ -183,8 +184,9 @@
   .lightbox-close:hover{color:var(--gold-soft)}
   .lightbox-caption{text-align:center;color:var(--cream);margin-top:16px;font-family:'Cormorant Garamond',serif;font-size:18px}
 
-  .drive-embed{background:#1a0a0e;border:1px solid rgba(212,169,97,0.25);overflow:hidden;margin-bottom:24px;border-radius:16px}
-  .drive-embed iframe{width:100%;height:520px;border:0;background:#fff}
+  
+  .drive-embed{background:#1a0a0e;border:1px solid rgba(212,169,97,0.25);margin-bottom:24px;border-radius:16px;width:100%;display:flex;flex-direction:column}
+  .drive-embed iframe{width:100%;min-width:0;height:520px;border:0;background:#fff;display:block;flex:1}
   .drive-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:rgba(0,0,0,0.3);border-bottom:1px solid rgba(212,169,97,0.2);flex-wrap:wrap;gap:10px}
   .drive-header h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);font-weight:600}
   .drive-header h4 em{font-style:italic;color:var(--gold-soft)}
@@ -216,8 +218,8 @@
   .stack-list li:last-child{border-bottom:none}
   .stack-list li::before{content:'◆';color:var(--maroon);font-size:8px}
 
-  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0;position:relative;overflow:hidden}
-  .page-header::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;max-width:900px;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0;position:relative;}
+  .page-header::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(212,169,97,0.5) 20%,rgba(212,169,97,0.9) 50%,rgba(212,169,97,0.5) 80%,transparent 100%);}
   .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
   .page-header h1 em{font-style:italic;color:var(--gold-soft)}
   .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
@@ -268,7 +270,9 @@
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
+    <!-- FIX: Added Projects tab linking to project-management.html -->
     <ul class="nav-links" id="nav-links">
+      <li><a href="project-management.html">Projects</a></li>
       <li><a href="product.html">Product</a></li>
       <li><a href="media.html" class="active" aria-current="page">Media</a></li>
       <li><a href="cx.html">CX</a></li>
@@ -315,7 +319,6 @@
              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 viewBox=%220 0 400 400%22%3E%3Crect fill=%22%236B1F2C%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23FBF6EE%22 font-family=%22Cormorant Garamond%22 font-size=%2232%22%3ERK%3C/text%3E%3C/svg%3E'" />
       </div>
       <div class="filmmaker-text">
-        <!-- ✨ UPDATED: Credible title + IMDb link -->
         <h3>Assistant Director on <em><a href="https://www.imdb.com/title/tt37484575/" target="_blank" rel="noopener">The Marblous Four</a></em> — and a multi-hyphenate creator.</h3>
         <p>I've worked across pre-production, production, and post-production — script writing, directing, acting, cinematography, editing, and sound engineering. There isn't a part of the production process I'm not well versed in.</p>
         <p>Shot primarily on the <b style="color:var(--gold-soft)">Canon M50 Mark II</b> with the 18-45mm kit lens.</p>
@@ -330,7 +333,7 @@
       </div>
     </div>
 
-    <!-- ✨ NEW: Featured Professional Credit Badge -->
+    <!-- Featured Professional Credit Badge -->
     <div class="featured-credit reveal">
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
         <span class="featured-credit-badge">Featured Credit</span>
@@ -349,7 +352,7 @@
       </div>
       <div class="video-grid">
 
-        <!-- ✨ NEW: The Marblous Four - Featured First -->
+        <!-- The Marblous Four -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://www.imdb.com/videoembed/vi2163553305" loading="lazy" title="The Marblous Four - Official Trailer" allowfullscreen></iframe>
@@ -360,14 +363,14 @@
               <div class="video-type">TV Movie · Assistant Director</div>
               <div class="video-context">Pareidolia Films | Supported director Hamza Baig on pre-pro, on-set coordination, and post workflow</div>
             </div>
-            <div style="display:flex;gap:8px;align-items:center">
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
               <span class="video-quality">22min · Fantasy</span>
               <a href="https://www.imdb.com/title/tt37484575/" target="_blank" rel="noopener" class="video-quality" style="background:var(--gold);color:var(--maroon-deep);border-color:var(--gold);text-decoration:none">IMDb ↗</a>
             </div>
           </div>
         </div>
 
-        <!-- ✨ UPDATED: Rafay with role context -->
+        <!-- Rafay -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://drive.google.com/file/d/1rVfX81N5TpDTh4wG4w3QWt7YxKDQ0X3B/preview" loading="lazy" title="Rafay - Short Film by Rajaa Khan" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -382,6 +385,7 @@
           </div>
         </div>
 
+        <!-- StarCode 1 -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://drive.google.com/file/d/1aor7OkG0f_Jy04Qe1JLWlR_EnLDgy9Zu/preview" loading="lazy" title="StarCode 1 - Infographic Ad" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -396,6 +400,7 @@
           </div>
         </div>
 
+        <!-- A Decade in Pakistan Media -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://drive.google.com/file/d/1RoGd_QpRpS_lRuHhIW59l5DNE33yPsmc/preview" loading="lazy" title="A Decade in Pakistan Media - Documentary" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -410,6 +415,7 @@
           </div>
         </div>
 
+        <!-- Entrepreneur Interview -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://drive.google.com/file/d/1mN4nLqxcgW6r4ZZ1Q2fxXYmbfgrGPQAT/preview" loading="lazy" title="Entrepreneur Interview Series" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -424,6 +430,7 @@
           </div>
         </div>
 
+        <!-- Ma'mool -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://www.youtube.com/embed/XcvP17sn8G0" loading="lazy" title="Ma'mool 360° Experience" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -438,6 +445,7 @@
           </div>
         </div>
 
+        <!-- Recording -->
         <div class="video-item">
           <div class="video-frame">
             <iframe src="https://drive.google.com/file/d/1gtwNYIii9cCMO_vyvfq0AJyLwMSe8kDr/preview" loading="lazy" title="Recording - Short Film" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -452,19 +460,20 @@
           </div>
         </div>
 
-        <div class="video-item" style="grid-column:1 / -1">
-          <div class="video-frame" style="aspect-ratio:auto;height:560px">
-            <iframe src="https://drive.google.com/embeddedfolderview?id=1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW#grid" loading="lazy" title="English Teacher - Full Project Folder"></iframe>
+        <!-- FIX: English Teacher — same layout as other video items, no grid-column span -->
+        <div class="video-item">
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW/preview" loading="lazy" title="English Teacher - Short Film" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="video-meta">
             <div class="video-info">
               <h4>English <em>Teacher</em></h4>
-              <div class="video-type">Short Film · Full Project Folder</div>
-              <div class="video-context">Complete production assets: script, shot lists, rushes, edit project, final deliverables</div>
+              <div class="video-type">Short Film · Director, Writer, Editor</div>
+              <div class="video-context">Complete production: script, shot lists, rushes, edit project, final deliverables</div>
             </div>
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
               <span class="video-quality">1080p · 60fps</span>
-              <a href="https://drive.google.com/drive/folders/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW" target="_blank" rel="noopener" class="video-quality" style="text-decoration:none;background:var(--gold);color:var(--maroon-deep);border-color:var(--gold)">Open in Drive ↗</a>
+              <a href="https://drive.google.com/drive/folders/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW" target="_blank" rel="noopener" class="video-quality" style="text-decoration:none;background:var(--gold);color:var(--maroon-deep);border-color:var(--gold)">Drive ↗</a>
             </div>
           </div>
         </div>
@@ -528,7 +537,7 @@
       </div>
     </div>
 
-    <!-- ✨ NEW: Professional Experience Section -->
+    <!-- Professional Experience Section -->
     <div class="reveal">
       <div class="sub-head">
         <h3>Professional <em>Experience</em></h3>
@@ -569,7 +578,8 @@
       </div>
     </div>
 
-    <div class="reveal">
+    <!-- FIX: Certificates section — full-width drive embed -->
+    <div class="reveal" style="margin-top:60px">
       <div class="sub-head">
         <h3>Media <em>Certificates</em></h3>
         <span class="count">Workshops · Bootcamps · Training</span>
@@ -579,7 +589,7 @@
           <h4>Production & Digital Media <em>Credentials</em></h4>
           <a href="https://drive.google.com/drive/folders/1_N6p3rzmJqj0y1u1-fHntpKsB38uZLZK" target="_blank" rel="noopener">Open Full Folder ↗</a>
         </div>
-        <iframe src="https://drive.google.com/embeddedfolderview?id=1_N6p3rzmJqj0y1u1-fHntpKsB38uZLZK#grid" loading="lazy" title="Production and Digital Media Certificates"></iframe>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1_N6p3rzmJqj0y1u1-fHntpKsB38uZLZK#grid" width="100%" height="520" loading="lazy" title="Production and Digital Media Certificates" style="border:0;display:block;width:100%;height:520px;"></iframe>
       </div>
     </div>
 
@@ -593,11 +603,11 @@
           <h4>Professional <em>Recognition</em></h4>
           <a href="https://drive.google.com/drive/folders/1a_-7luJoRu8DSMhKDIueckXPlN2Z0Kwy" target="_blank" rel="noopener">Open Full Folder ↗</a>
         </div>
-        <iframe src="https://drive.google.com/embeddedfolderview?id=1a_-7luJoRu8DSMhKDIueckXPlN2Z0Kwy#grid" loading="lazy" title="Professional Recognition and Feedback"></iframe>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1a_-7luJoRu8DSMhKDIueckXPlN2Z0Kwy#grid" width="100%" height="520" loading="lazy" title="Professional Recognition and Feedback" style="border:0;display:block;width:100%;height:520px;"></iframe>
       </div>
     </div>
 
-    <!-- ✨ NEW: Clear CTA Box -->
+    <!-- CTA Box -->
     <div class="cta-box reveal">
       <p>Interested in collaborating on a film, campaign, or creative project?</p>
       <a href="contact.html" class="btn-primary">Let's Create Together →</a>
