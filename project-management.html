@@ -25,1279 +25,885 @@
   nav.scrolled{padding:8px 0;box-shadow:var(--shadow-sm)}
   .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none;position:relative}
-  .logo-mark{
-    width:40px;height:40px;border-radius:50%;
-    background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));
-    color:var(--cream);display:grid;place-items:center;
-    font-style:italic;font-size:20px;font-weight:600;
-    box-shadow:0 4px 16px rgba(107,31,44,0.3);
-    transition:var(--transition)
-  }
+  .logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:20px;font-weight:600;box-shadow:0 4px 16px rgba(107,31,44,0.3);transition:var(--transition)}
   .logo:hover .logo-mark{transform:rotate(15deg) scale(1.05)}
   
   .nav-links{display:flex;gap:28px;list-style:none}
-  .nav-links a{
-    color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;
-    letter-spacing:.3px;transition:var(--transition);position:relative;padding:4px 0
-  }
-  .nav-links a::after{
-    content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-    background:linear-gradient(90deg,var(--maroon),var(--gold));
-    transition:width 0.3s;border-radius:2px
-  }
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:var(--transition);position:relative;padding:4px 0}
+  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--maroon),var(--gold));transition:width 0.3s;border-radius:2px}
   .nav-links a:hover, .nav-links a.active{color:var(--maroon)}
   .nav-links a:hover::after, .nav-links a.active::after{width:100%}
   
-  .nav-cta{
-    padding:11px 24px;background:var(--maroon);color:var(--cream);
-    font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.8px;
-    text-transform:uppercase;transition:var(--transition);border:1px solid var(--maroon);
-    border-radius:30px;position:relative;overflow:hidden
-  }
+  .nav-cta{padding:11px 24px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.8px;text-transform:uppercase;transition:var(--transition);border:1px solid var(--maroon);border-radius:30px;position:relative;overflow:hidden}
   .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
   .nav-cta span{position:relative;z-index:1}
 
   /* Mobile Menu Toggle */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px;
-    z-index: 101;
-  }
-  .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--maroon);
-    transition: var(--transition);
-  }
+  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
+  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:var(--transition)}
 
-  @media (max-width: 992px) {
-    .nav-wrap { padding: 15px 24px; }
-    .nav-links { display: none; }
-    .menu-toggle { display: flex; }
-    .nav-cta { display: none; }
-    
-    .nav-links.mobile-active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--cream);
-      padding: 40px;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-      box-shadow: var(--shadow-md);
-      text-align: center;
-      animation: slideDown 0.4s ease forwards;
-    }
-    .nav-links.mobile-active a { font-size: 18px; }
-    
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  }
-
-  @media (max-width: 480px) {
-    .logo { font-size: 20px; }
-    .logo-mark { width: 32px; height: 32px; font-size: 16px; }
-  }
-
+  /* Scroll Progress */
+  .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));z-index:200;transition:width 0.1s ease;transform-origin:left}
 
   /* Footer */
-  footer{
-    text-align:center;padding:60px 32px;color:var(--ink-soft);
-    font-size:13.5px;border-top:1px solid var(--line);
-    background:linear-gradient(180deg,var(--cream-2),var(--cream));
-    position:relative;
-    clear: both;
-  }
-  footer::before{
-    content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
-    width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)
-  }
-  footer .ornament{
-    color:var(--gold);font-size:20px;margin-bottom:20px;
-    letter-spacing:10px;opacity:0.8
-  }
+  footer{text-align:center;padding:60px 32px;color:var(--ink-soft);font-size:13.5px;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--cream-2),var(--cream));position:relative;clear:both}
+  footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  footer .ornament{color:var(--gold);font-size:20px;margin-bottom:20px;letter-spacing:10px;opacity:0.8}
   footer a{color:var(--maroon);text-decoration:none;font-weight:500;transition:color 0.2s}
   footer a:hover{color:var(--maroon-deep);text-decoration:underline}
 
-  /* Scroll Progress Indicator */
-  .scroll-progress{
-    position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));
-    z-index:200;transition:width 0.1s ease;transform-origin:left
+  /* ===== BASE STYLES ===== */
+  :root {
+    --maroon: #5D1A2D;
+    --maroon-deep: #3D0F1C;
+    --maroon-muted: #8B3A4A;
+    --maroon-light: #7A2A3E;
+    --beige: #D4A574;
+    --beige-light: #E8C9A0;
+    --beige-warm: #C49460;
+    --cream: #F7F0E6;
+    --cream-dark: #EDE4D3;
+    --cream-warm: #F0E8DA;
   }
 
-
-        :root {
-            --maroon: #5D1A2D;
-            --maroon-deep: #3D0F1C;
-            --maroon-muted: #8B3A4A;
-            --maroon-light: #7A2A3E;
-            --beige: #D4A574;
-            --beige-light: #E8C9A0;
-            --beige-warm: #C49460;
-            --cream: #F7F0E6;
-            --cream-dark: #EDE4D3;
-            --cream-warm: #F0E8DA;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--cream);
-            color: var(--maroon);
-            line-height: 1.6;
-            font-weight: 300;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(247, 240, 230, 0.92);
-            backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid var(--beige-light);
-        }
-
-        .nav-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--maroon);
-            text-decoration: none;
-        }
-
-        .nav-logo em {
-            font-style: italic;
-            font-weight: 300;
-            color: var(--maroon-muted);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--maroon);
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--maroon-muted);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--beige-warm);
-        }
-
-        .hero {
-            padding: 12rem 4rem 6rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -80px;
-            width: 350px;
-            height: 350px;
-            background: var(--beige-light);
-            border-radius: 50%;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 80px;
-            right: 60px;
-            width: 140px;
-            height: 140px;
-            background: var(--beige);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--beige-warm);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            color: var(--maroon);
-            margin-bottom: 1.5rem;
-        }
-
-        h1 em {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--maroon-deep);
-        }
-
-        .hero-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 300;
-            font-style: italic;
-            color: var(--beige-warm);
-            max-width: 700px;
-        }
-
-        .stats-bar {
-            display: flex;
-            gap: 3rem;
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--beige-light);
-            flex-wrap: wrap;
-            row-gap: 2rem;
-        }
-
-        .stat {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            color: var(--maroon);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--beige-warm);
-            margin-top: 0.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        section {
-            padding: 5rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            border-bottom: 1px solid var(--beige-light);
-            padding-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--maroon);
-        }
-
-        .section-title em {
-            font-style: italic;
-            color: var(--maroon-deep);
-        }
-
-        .section-meta {
-            font-size: 0.85rem;
-            color: var(--beige-warm);
-            letter-spacing: 0.05em;
-        }
-
-        .verticals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .vertical-card {
-            background: white;
-            border: 1px solid var(--beige-light);
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .vertical-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--maroon);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .vertical-card:hover {
-            box-shadow: 0 20px 40px rgba(93, 26, 45, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .vertical-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .vertical-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--maroon);
-            margin-bottom: 0.5rem;
-        }
-
-        .vertical-count {
-            font-size: 0.8rem;
-            color: var(--beige-warm);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .vertical-desc {
-            font-size: 0.9rem;
-            color: var(--beige-warm);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .vertical-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .v-tag {
-            font-size: 0.7rem;
-            padding: 0.3rem 0.7rem;
-            background: var(--cream);
-            color: var(--maroon);
-            border-radius: 20px;
-            letter-spacing: 0.02em;
-        }
-
-        .category-section {
-            background: var(--cream-dark);
-            padding: 4rem;
-            margin: 4rem auto;
-            max-width: 1200px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-section::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            left: -80px;
-            width: 300px;
-            height: 300px;
-            background: var(--beige-light);
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .category-section::after {
-            content: '';
-            position: absolute;
-            bottom: -60px;
-            right: -60px;
-            width: 250px;
-            height: 250px;
-            background: var(--beige);
-            border-radius: 50%;
-            opacity: 0.3;
-        }
-
-        .category-section > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .category-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border: 1px solid var(--beige-light);
-            transition: all 0.3s ease;
-        }
-
-        .category-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(93, 26, 45, 0.06);
-        }
-
-        .category-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--maroon);
-            line-height: 1;
-        }
-
-        .category-title {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--maroon);
-            margin: 1rem 0 0.5rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .category-desc {
-            font-size: 0.85rem;
-            color: var(--beige-warm);
-            line-height: 1.6;
-        }
-
-        /* ===== PROCESS VISUAL SECTION ===== */
-        .process-section {
-            padding: 5rem 4rem 6rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: visible;
-        }
-
-        .process-visual {
-            display: flex;
-            align-items: stretch;
-            gap: 0;
-            margin-top: 3rem;
-            position: relative;
-        }
-
-        .process-step {
-            flex: 1;
-            background: var(--maroon);
-            border: none;
-            padding: 3rem 2rem 2.5rem;
-            text-align: center;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            overflow: hidden;
-            min-height: 280px;
-        }
-
-        .process-step:nth-child(1) { background: var(--maroon); }
-        .process-step:nth-child(2) { background: var(--maroon-light); }
-        .process-step:nth-child(3) { background: var(--maroon-muted); }
-        .process-step:nth-child(4) { background: var(--maroon-deep); }
-
-        .process-step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255,255,255,0.06);
-            transform: translateY(100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .process-step:hover::before {
-            transform: translateY(0);
-        }
-
-        .process-step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -14px;
-            width: 28px;
-            height: 28px;
-            border-top: 3px solid var(--beige);
-            border-right: 3px solid var(--beige);
-            transform: translateY(-50%) rotate(45deg);
-            background: var(--cream);
-            z-index: 2;
-            transition: all 0.3s;
-        }
-
-        .process-step:hover:not(:last-child)::after {
-            border-color: var(--beige-light);
-            right: -16px;
-        }
-
-        .process-step:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 24px 48px rgba(93, 26, 45, 0.25);
-            z-index: 5;
-        }
-
-        .process-step > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            color: rgba(212, 165, 116, 0.35);
-            line-height: 1;
-            margin-bottom: 1rem;
-            transition: all 0.4s;
-        }
-
-        .process-step:hover .process-number {
-            color: var(--beige);
-            transform: scale(1.1);
-        }
-
-        .process-title {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--cream);
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .process-desc {
-            font-size: 0.85rem;
-            color: rgba(247, 240, 230, 0.7);
-            line-height: 1.7;
-            transition: color 0.3s;
-        }
-
-        .process-step:hover .process-desc {
-            color: rgba(247, 240, 230, 0.95);
-        }
-
-        .process-icon {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1rem;
-            border: 1.5px solid var(--beige);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s;
-        }
-
-        .process-step:hover .process-icon {
-            background: var(--beige);
-            transform: rotate(360deg);
-        }
-
-        .process-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--beige);
-            fill: none;
-            stroke-width: 1.5;
-            transition: stroke 0.3s;
-        }
-
-        .process-step:hover .process-icon svg {
-            stroke: var(--maroon);
-        }
-
-        /* ===== HORIZONTAL SCROLL SECTION ===== */
-        .scroll-section {
-            padding: 5rem 0;
-            margin: 0 auto;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .scroll-section .section-header {
-            padding: 0 4rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-        }
-
-        .scroll-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .filter-dropdown {
-            position: relative;
-        }
-
-        .filter-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: white;
-            border: 1px solid var(--beige-light);
-            color: var(--maroon);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--beige-warm);
-            background: var(--cream);
-        }
-
-        .filter-menu {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            right: 0;
-            background: white;
-            border: 1px solid var(--beige-light);
-            min-width: 160px;
-            box-shadow: 0 8px 24px rgba(93, 26, 45, 0.08);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-8px);
-            transition: all 0.3s ease;
-            z-index: 50;
-        }
-
-        .filter-menu.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .filter-menu button {
-            display: block;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: none;
-            border: none;
-            color: var(--maroon);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            text-align: left;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .filter-menu button:hover {
-            background: var(--cream);
-        }
-
-        .filter-menu button.active {
-            background: var(--cream-dark);
-            font-weight: 500;
-        }
-
-        .scroll-track-wrapper {
-            position: relative;
-            padding: 0 4rem;
-        }
-
-        .scroll-track {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 2rem;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .scroll-track::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .scroll-track::-webkit-scrollbar-track {
-            background: var(--cream-dark);
-        }
-
-        .scroll-track::-webkit-scrollbar-thumb {
-            background: var(--beige);
-            border-radius: 2px;
-        }
-
-        .scroll-card {
-            flex: 0 0 420px;
-            scroll-snap-align: start;
-            background: white;
-            border: 1px solid var(--beige-light);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .scroll-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--maroon);
-            transform: scaleY(0);
-            transition: transform 0.4s ease;
-        }
-
-        .scroll-card:hover {
-            box-shadow: 0 20px 40px rgba(93, 26, 45, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .scroll-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .scroll-card-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--beige-light);
-            background: linear-gradient(135deg, var(--cream-dark), var(--cream-warm));
-        }
-
-        .scroll-card-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .project-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: currentColor;
-        }
-
-        .status-live {
-            color: var(--maroon-deep);
-        }
-
-        .status-ongoing {
-            color: var(--beige-warm);
-        }
-
-        .project-org {
-            font-size: 0.75rem;
-            color: var(--beige-warm);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--maroon);
-            margin-bottom: 0.8rem;
-            line-height: 1.2;
-        }
-
-        .project-description {
-            font-size: 0.9rem;
-            color: var(--beige-warm);
-            line-height: 1.6;
-        }
-
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.2rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--beige-light);
-        }
-
-        .meta-tag {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.6rem;
-            background: var(--cream);
-            color: var(--maroon);
-            border-radius: 20px;
-        }
-
-        /* Post Preview Card */
-        /* LinkedIn Embed Wrapper */
-        /* Partner Post Preview (no iframe) */
-        .partner-preview {
-            margin-top: auto;
-            border: 1px solid var(--beige-light);
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        .partner-preview:hover {
-            border-color: var(--beige-warm);
-            box-shadow: 0 8px 24px rgba(93, 26, 45, 0.08);
-        }
-
-        .partner-preview a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            padding: 1.2rem;
-        }
-
-        .partner-preview-header {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .partner-preview-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--maroon);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .partner-preview-icon svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
-        .partner-preview-title {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--maroon);
-        }
-
-        .partner-preview-desc {
-            font-size: 0.8rem;
-            color: var(--beige-warm);
-            line-height: 1.5;
-            margin-bottom: 0.8rem;
-        }
-
-        .partner-preview-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
-            color: var(--maroon);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .partner-preview-btn svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--maroon);
-            transition: transform 0.3s;
-        }
-
-        .partner-preview:hover .partner-preview-btn svg {
-            transform: translateX(4px);
-        }
-
-        .linkedin-embed-wrapper {
-            margin-top: auto;
-            border: 1px solid var(--beige-light);
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-            position: relative;
-            min-height: 320px;
-        }
-
-        .linkedin-embed-wrapper iframe {
-            width: 100%;
-            height: 320px;
-            border: none;
-            display: block;
-        }
-
-        .linkedin-embed-fallback {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--cream);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 2rem;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .linkedin-embed-fallback img {
-            width: 100%;
-            max-height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-        }
-
-        .linkedin-embed-fallback p {
-            font-size: 0.85rem;
-            color: var(--maroon);
-            line-height: 1.5;
-            margin-bottom: 0.5rem;
-        }
-
-        .linkedin-view-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: var(--maroon);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .linkedin-view-btn:hover {
-            background: var(--maroon-deep);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(93, 26, 45, 0.2);
-        }
-
-        .linkedin-view-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
-        .post-preview {
-            margin-top: 1.2rem;
-            border: 1px solid var(--beige-light);
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        .post-preview:hover {
-            border-color: var(--beige-warm);
-            box-shadow: 0 8px 24px rgba(93, 26, 45, 0.08);
-        }
-
-        .post-preview a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .post-preview-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid var(--beige-light);
-        }
-
-        .post-preview-body {
-            padding: 1rem 1.2rem;
-        }
-
-        .post-preview-header {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .post-preview-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--maroon);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .post-preview-avatar svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
-        .post-preview-author {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--maroon);
-        }
-
-        .post-preview-time {
-            font-size: 0.7rem;
-            color: var(--beige-warm);
-        }
-
-        .post-preview-text {
-            font-size: 0.85rem;
-            color: var(--maroon);
-            line-height: 1.5;
-            margin-bottom: 0.6rem;
-        }
-
-        .post-preview-engagement {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
-            color: var(--beige-warm);
-        }
-
-        .post-preview-engagement svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--beige-warm);
-        }
-
-        .linkedin-preview {
-            margin-top: auto;
-            border: 1px solid var(--beige-light);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .linkedin-preview:hover {
-            border-color: var(--beige-warm);
-            box-shadow: 0 4px 12px rgba(93, 26, 45, 0.06);
-        }
-
-        .linkedin-preview a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 1.5rem;
-            text-decoration: none;
-            color: var(--maroon);
-            background: var(--cream);
-            transition: background 0.3s;
-        }
-
-        .linkedin-preview a:hover {
-            background: var(--cream-dark);
-        }
-
-        .linkedin-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--maroon);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .linkedin-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
-        .linkedin-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-
-        .linkedin-label {
-            font-size: 0.75rem;
-            color: var(--beige-warm);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .linkedin-title {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--maroon);
-        }
-
-        .linkedin-arrow {
-            margin-left: auto;
-            color: var(--maroon);
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .linkedin-preview:hover .linkedin-arrow {
-            transform: translateX(4px);
-        }
-
-        .scroll-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: white;
-            border: 1px solid var(--beige-light);
-            color: var(--maroon);
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(93, 26, 45, 0.08);
-            transition: all 0.3s;
-            z-index: 10;
-        }
-
-        .scroll-nav-btn:hover {
-            background: var(--maroon);
-            color: white;
-            border-color: var(--maroon);
-        }
-
-        .scroll-nav-btn.prev {
-            left: 1.5rem;
-        }
-
-        .scroll-nav-btn.next {
-            right: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem;
-            border-top: 1px solid var(--beige-light);
-            margin-top: 4rem;
-            background: var(--cream-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: 10%;
-            width: 200px;
-            height: 200px;
-            background: var(--beige-light);
-            border-radius: 50%;
-            opacity: 0.4;
-        }
-
-        footer::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            left: 15%;
-            width: 180px;
-            height: 180px;
-            background: var(--beige);
-            border-radius: 50%;
-            opacity: 0.3;
-        }
-
-        footer > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--beige-warm);
-        }
-
-        
-    
-
-/* ============================================================
-   RESPONSIVE BREAKPOINTS
-   ============================================================ */
-
-/* Small Desktop (1024px - 1199px) */
-@media (max-width: 1199px) and (min-width: 1024px) {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--maroon);
+    line-height: 1.6;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 12rem 4rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: var(--beige-light);
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+    width: 140px;
+    height: 140px;
+    background: var(--beige);
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--beige-warm);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--maroon);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--maroon-deep);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--beige-warm);
+    max-width: 700px;
+  }
+
+  .stats-bar {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--beige-light);
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+
+  .stat { text-align: left; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--maroon);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--beige-warm);
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  section {
+    padding: 5rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--beige-light);
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--maroon);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--maroon-deep);
+  }
+
+  .section-meta {
+    font-size: 0.85rem;
+    color: var(--beige-warm);
+    letter-spacing: 0.05em;
+  }
+
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .vertical-card {
+    background: white;
+    border: 1px solid var(--beige-light);
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vertical-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--maroon);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .vertical-card:hover { box-shadow: 0 20px 40px rgba(93, 26, 45, 0.08); transform: translateY(-4px); }
+  .vertical-card:hover::before { transform: scaleX(1); }
+
+  .vertical-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--maroon);
+    margin-bottom: 0.5rem;
+  }
+
+  .vertical-count { font-size: 0.8rem; color: var(--beige-warm); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
+  .vertical-desc { font-size: 0.9rem; color: var(--beige-warm); line-height: 1.6; margin-bottom: 1.5rem; }
+
+  .vertical-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .v-tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--cream);
+    color: var(--maroon);
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .category-section {
+    background: var(--cream-dark);
+    padding: 4rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .category-section::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 300px; height: 300px;
+    background: var(--beige-light);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .category-section::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 250px; height: 250px;
+    background: var(--beige);
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .category-section > * { position: relative; z-index: 1; }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .category-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border: 1px solid var(--beige-light);
+    transition: all 0.3s ease;
+  }
+
+  .category-item:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(93, 26, 45, 0.06); }
+
+  .category-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--maroon);
+    line-height: 1;
+  }
+
+  .category-title { font-size: 0.9rem; font-weight: 500; color: var(--maroon); margin: 1rem 0 0.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .category-desc { font-size: 0.85rem; color: var(--beige-warm); line-height: 1.6; }
+
+  /* PROCESS */
+  .process-section {
+    padding: 5rem 4rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .process-visual {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .process-step {
+    flex: 1;
+    background: var(--maroon);
+    border: none;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+    min-height: 280px;
+  }
+
+  .process-step:nth-child(1) { background: var(--maroon); }
+  .process-step:nth-child(2) { background: var(--maroon-light); }
+  .process-step:nth-child(3) { background: var(--maroon-muted); }
+  .process-step:nth-child(4) { background: var(--maroon-deep); }
+
+  .process-step::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.06);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .process-step:hover::before { transform: translateY(0); }
+
+  .process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    width: 28px;
+    height: 28px;
+    border-top: 3px solid var(--beige);
+    border-right: 3px solid var(--beige);
+    transform: translateY(-50%) rotate(45deg);
+    background: var(--cream);
+    z-index: 2;
+    transition: all 0.3s;
+  }
+
+  .process-step:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 24px 48px rgba(93, 26, 45, 0.25); z-index: 5; }
+  .process-step > * { position: relative; z-index: 1; }
+
+  .process-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(212, 165, 116, 0.35);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: all 0.4s;
+  }
+
+  .process-step:hover .process-number { color: var(--beige); transform: scale(1.1); }
+
+  .process-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .process-desc { font-size: 0.85rem; color: rgba(247, 240, 230, 0.7); line-height: 1.7; transition: color 0.3s; }
+  .process-step:hover .process-desc { color: rgba(247, 240, 230, 0.95); }
+
+  .process-icon {
+    width: 48px; height: 48px;
+    margin: 0 auto 1rem;
+    border: 1.5px solid var(--beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+  }
+
+  .process-step:hover .process-icon { background: var(--beige); transform: rotate(360deg); }
+
+  .process-icon svg { width: 20px; height: 20px; stroke: var(--beige); fill: none; stroke-width: 1.5; transition: stroke 0.3s; }
+  .process-step:hover .process-icon svg { stroke: var(--maroon); }
+
+  /* SCROLL SECTION */
+  .scroll-section {
+    padding: 5rem 0;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-section .section-header { padding: 0 4rem; max-width: 1200px; margin: 0 auto 3rem; }
+
+  .scroll-controls { display: flex; align-items: center; gap: 1rem; }
+
+  .filter-dropdown { position: relative; }
+
+  .filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid var(--beige-light);
+    color: var(--maroon);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn:hover { border-color: var(--beige-warm); background: var(--cream); }
+
+  .filter-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: white;
+    border: 1px solid var(--beige-light);
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(93, 26, 45, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.3s ease;
+    z-index: 50;
+  }
+
+  .filter-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  .filter-menu button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    color: var(--maroon);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .filter-menu button:hover { background: var(--cream); }
+  .filter-menu button.active { background: var(--cream-dark); font-weight: 500; }
+
+  .scroll-track-wrapper { position: relative; padding: 0 4rem; }
+
+  .scroll-track {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-track::-webkit-scrollbar { height: 4px; }
+  .scroll-track::-webkit-scrollbar-track { background: var(--cream-dark); }
+  .scroll-track::-webkit-scrollbar-thumb { background: var(--beige); border-radius: 2px; }
+
+  .scroll-card {
+    flex: 0 0 420px;
+    scroll-snap-align: start;
+    background: white;
+    border: 1px solid var(--beige-light);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--maroon);
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+  }
+
+  .scroll-card:hover { box-shadow: 0 20px 40px rgba(93, 26, 45, 0.08); transform: translateY(-4px); }
+  .scroll-card:hover::before { transform: scaleY(1); }
+
+  .scroll-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .status-live { color: var(--maroon-deep); }
+  .status-ongoing { color: var(--beige-warm); }
+
+  .project-org { font-size: 0.75rem; color: var(--beige-warm); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
+
+  .project-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--maroon);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .project-description { font-size: 0.9rem; color: var(--beige-warm); line-height: 1.6; }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--beige-light);
+  }
+
+  .meta-tag { font-size: 0.7rem; padding: 0.25rem 0.6rem; background: var(--cream); color: var(--maroon); border-radius: 20px; }
+
+    /* LinkedIn embed wrapper */
+  .linkedin-embed-wrapper {
+    margin-top: 1.2rem;
+    border: 1px solid var(--beige-light);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--cream);
+    position: relative;
+    height: 320px;
+  }
+
+  .linkedin-embed-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 2;
+    background: transparent;
+  }
+
+  /* Fallback: hidden by JS once iframe loads; visible if it fails */
+  .linkedin-embed-fallback {
+    position: absolute;
+    inset: 0;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .linkedin-embed-fallback img { width: 100%; max-height: 120px; object-fit: cover; border-radius: 8px; }
+  .linkedin-embed-fallback p { font-size: 0.82rem; color: var(--maroon); line-height: 1.5; }
+
+  .linkedin-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    background: var(--maroon);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .linkedin-view-btn:hover { background: var(--maroon-deep); transform: translateY(-2px); }
+  .linkedin-view-btn svg { width: 15px; height: 15px; fill: white; }
+
+  .scroll-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--beige-light);
+    color: var(--maroon);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(93, 26, 45, 0.08);
+    transition: all 0.3s;
+    z-index: 10;
+  }
+
+  .scroll-nav-btn:hover { background: var(--maroon); color: white; border-color: var(--maroon); }
+  .scroll-nav-btn.prev { left: 1.5rem; }
+  .scroll-nav-btn.next { right: 1.5rem; }
+
+  footer {
+    text-align: center;
+    padding: 4rem;
+    border-top: 1px solid var(--beige-light);
+    margin-top: 4rem;
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: 10%;
+    width: 200px; height: 200px;
+    background: var(--beige-light);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
+  footer::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 15%;
+    width: 180px; height: 180px;
+    background: var(--beige);
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  footer > * { position: relative; z-index: 1; }
+
+  .footer-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--beige-warm); }
+
+
+  /* ============================================================
+     RESPONSIVE BREAKPOINTS
+     ============================================================ */
+
+  /* ── Mobile (≤ 767px) ── */
+  @media (max-width: 767px) {
+
+    /* NAV */
+    .nav-wrap { padding: 12px 16px !important; gap: 0 !important; }
+    .logo { font-size: 18px !important; gap: 8px !important; }
+    .logo-mark { width: 32px !important; height: 32px !important; font-size: 15px !important; }
+    .nav-links { display: none; }
+    .menu-toggle { display: flex !important; }
+    .nav-cta { display: none !important; }
+
+    .nav-links.mobile-active {
+      display: flex !important;
+      flex-direction: column !important;
+      position: fixed !important;
+      top: 57px !important;
+      left: 0 !important; right: 0 !important;
+      background: var(--cream) !important;
+      padding: 28px 24px !important;
+      gap: 20px !important;
+      border-bottom: 1px solid var(--beige-light) !important;
+      box-shadow: 0 12px 40px rgba(93,26,45,0.15) !important;
+      text-align: center !important;
+      z-index: 99 !important;
+      animation: slideDown 0.3s ease forwards !important;
+    }
+
+    .nav-links.mobile-active a { font-size: 16px !important; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 6.5rem 20px 3rem !important;
+    }
+    .hero::before { width: 180px !important; height: 180px !important; right: -50px !important; top: -20px !important; opacity: 0.25 !important; }
+    .hero::after { display: none !important; }
+    h1 { font-size: clamp(1.9rem, 7.5vw, 2.6rem) !important; margin-bottom: 1rem !important; }
+    .hero-subtitle { font-size: 1.05rem !important; }
+    .hero-label { font-size: 0.68rem !important; margin-bottom: 1rem !important; }
+
+    /* STATS */
+    .stats-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0 !important;
+      row-gap: 1.5rem !important;
+      column-gap: 1.5rem !important;
+      margin-top: 2rem !important;
+      padding-top: 1.8rem !important;
+    }
+    .stat-number { font-size: 2.2rem !important; }
+    .stat-label { font-size: 0.72rem !important; }
+
+    /* SECTIONS */
+    section, .process-section {
+      padding: 2.5rem 20px !important;
+    }
+    .section-title { font-size: 1.7rem !important; }
+    .section-header {
+      flex-direction: column !important;
+      gap: 0.4rem !important;
+      padding-bottom: 1rem !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    /* VERTICALS */
+    .verticals-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+    .vertical-card { padding: 1.3rem !important; }
+    .vertical-name { font-size: 1.3rem !important; }
+    .vertical-desc { font-size: 0.85rem !important; }
+
+    /* CATEGORY SECTION */
+    .category-section {
+      padding: 2.5rem 20px !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+    .categories-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0.8rem !important;
+      margin-top: 1.8rem !important;
+    }
+    .category-item { padding: 1.1rem 0.9rem !important; }
+    .category-number { font-size: 1.8rem !important; }
+    .category-title { font-size: 0.75rem !important; margin: 0.7rem 0 0.3rem !important; }
+    .category-desc { font-size: 0.75rem !important; }
+
+    /* PROCESS — stack vertically as horizontal rows */
+    .process-visual {
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+
+    .process-step {
+      flex: none !important;
+      width: 100% !important;
+      min-height: auto !important;
+      padding: 1.4rem 1.4rem !important;
+      display: grid !important;
+      grid-template-columns: 48px 1fr !important;
+      grid-template-rows: auto auto !important;
+      align-items: start !important;
+      gap: 0 0.8rem !important;
+      text-align: left !important;
+    }
+
+    .process-step:not(:last-child)::after { display: none !important; }
+    .process-step:hover { transform: none !important; }
+
+    .process-number {
+      font-size: 2.8rem !important;
+      grid-row: 1 / 3 !important;
+      grid-column: 1 !important;
+      margin-bottom: 0 !important;
+      align-self: center !important;
+      color: rgba(212, 165, 116, 0.45) !important;
+    }
+
+    .process-icon { display: none !important; }
+
+    .process-title {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      font-size: 0.82rem !important;
+      margin-bottom: 0.3rem !important;
+      align-self: end !important;
+    }
+
+    .process-desc {
+      grid-column: 2 !important;
+      grid-row: 2 !important;
+      font-size: 0.8rem !important;
+      color: rgba(247, 240, 230, 0.75) !important;
+    }
+
+    /* SCROLL SECTION */
+    .scroll-section { padding: 2.5rem 0 !important; }
+    .scroll-section .section-header { padding: 0 20px !important; }
+    .scroll-controls { flex-wrap: wrap !important; gap: 0.5rem !important; }
+    .scroll-track-wrapper { padding: 0 20px !important; }
+    .scroll-track { gap: 1rem !important; padding-bottom: 1rem !important; }
+    .scroll-card { flex: 0 0 calc(100vw - 56px) !important; max-width: 340px !important; }
+    .scroll-card-body { padding: 1.1rem !important; }
+    .project-name { font-size: 1.15rem !important; }
+    .project-description { font-size: 0.82rem !important; }
+    .scroll-nav-btn { display: none !important; }
+
+    /* LinkedIn embeds */
+    .linkedin-embed-wrapper { min-height: 260px !important; }
+    .linkedin-embed-wrapper iframe { height: 260px !important; }
+
+    /* FOOTER */
+    footer { padding: 2.5rem 20px !important; font-size: 12px !important; line-height: 1.8 !important; }
+    footer .ornament { font-size: 16px !important; letter-spacing: 6px !important; margin-bottom: 14px !important; }
+  }
+
+  /* ── Tablet (768px – 1023px) ── */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .nav-wrap { padding: 14px 28px; }
+    .nav-links { display: none; }
+    .menu-toggle { display: flex !important; }
+    .nav-cta { display: none; }
+
+    .nav-links.mobile-active {
+      display: flex !important;
+      flex-direction: column !important;
+      position: fixed !important;
+      top: 60px !important;
+      left: 0 !important; right: 0 !important;
+      background: var(--cream) !important;
+      padding: 32px 40px !important;
+      gap: 22px !important;
+      border-bottom: 1px solid var(--beige-light) !important;
+      box-shadow: 0 12px 40px rgba(93,26,45,0.12) !important;
+      text-align: center !important;
+      z-index: 99 !important;
+    }
+    .nav-links.mobile-active a { font-size: 17px !important; }
+
+    .hero { padding: 9rem 3rem 4rem; }
+    h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+    .hero-subtitle { font-size: 1.2rem; }
+    .stats-bar { gap: 2rem; }
+    .stat-number { font-size: 2.5rem; }
+
+    section, .process-section { padding: 3.5rem 2.5rem; }
+    .section-title { font-size: 2rem; }
+
+    .verticals-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .vertical-card { padding: 1.5rem; }
+
+    .category-section { padding: 3rem 2.5rem; margin: 3rem auto; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+    .process-visual { flex-wrap: wrap; gap: 2px; }
+    .process-step { flex: 1 1 calc(50% - 1px); min-height: 220px; }
+    .process-step:not(:last-child)::after { display: none; }
+
+    .scroll-section .section-header { padding: 0 2.5rem; }
+    .scroll-track-wrapper { padding: 0 2.5rem; }
+    .scroll-card { flex: 0 0 360px; }
+    .scroll-nav-btn { display: none; }
+
+    footer { padding: 3rem 2.5rem; }
+  }
+
+  /* ── Small Desktop (1024px – 1199px) ── */
+  @media (max-width: 1199px) and (min-width: 1024px) {
     .nav-wrap { padding: 14px 24px; gap: 20px; }
     .nav-links { gap: 18px; }
     .nav-links a { font-size: 12px; letter-spacing: 0.2px; }
@@ -1305,155 +911,38 @@
 
     .hero { padding: 10rem 2.5rem 4rem; }
     h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-    .hero-subtitle { font-size: 1.25rem; }
-
-    .stats-bar { gap: 2rem; margin-top: 3rem; padding-top: 2rem; }
-    .stat-number { font-size: 2.5rem; }
 
     section { padding: 3.5rem 2.5rem; }
-    .section-title { font-size: 2rem; }
-
     .verticals-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .vertical-card { padding: 1.5rem; }
-
     .category-section { padding: 3rem; margin: 3rem auto; }
     .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .category-item { padding: 1.5rem; }
 
     .process-visual { flex-wrap: wrap; gap: 1rem; }
-    .process-step { flex: 1 1 calc(50% - 0.5rem); padding: 2rem 1.5rem 2.5rem; min-height: 240px; }
+    .process-step { flex: 1 1 calc(50% - 0.5rem); min-height: 240px; }
     .process-step:not(:last-child)::after { display: none; }
-    .process-number { font-size: 3rem; }
 
     .scroll-card { flex: 0 0 340px; }
     .scroll-track-wrapper { padding: 0 2.5rem; }
     .scroll-section .section-header { padding: 0 2.5rem; }
-}
+  }
 
-/* Standard Desktop (1200px - 1399px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .hero { padding: 11rem 3rem 5rem; }
-    section { padding: 4.5rem 3rem; }
-    .verticals-grid { grid-template-columns: repeat(3, 1fr); }
-    .categories-grid { grid-template-columns: repeat(3, 1fr); }
-    .scroll-track-wrapper { padding: 0 3rem; }
-    .scroll-section .section-header { padding: 0 3rem; }
-}
-
-/* Large Desktop (1400px - 1599px) */
-@media (min-width: 1400px) and (max-width: 1599px) {
-    .hero { padding: 12rem 4rem 6rem; max-width: 1320px; }
-    section { padding: 5rem 4rem; max-width: 1320px; }
-    .category-section { max-width: 1320px; padding: 4.5rem; }
-    .scroll-section .section-header { padding: 0 4rem; max-width: 1320px; }
-    .scroll-track-wrapper { padding: 0 4rem; }
-    .verticals-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-    .categories-grid { gap: 2.5rem; }
-}
-
-/* Extra Large Desktop (1600px - 1919px) */
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .hero { padding: 13rem 5rem 7rem; max-width: 1440px; }
-    section { padding: 6rem 5rem; max-width: 1440px; }
-    .category-section { max-width: 1440px; padding: 5rem; margin: 5rem auto; }
-    .scroll-section .section-header { padding: 0 5rem; max-width: 1440px; }
-    .scroll-track-wrapper { padding: 0 5rem; }
-
-    h1 { font-size: clamp(3.5rem, 5vw, 5.5rem); }
-    .hero-subtitle { font-size: 1.6rem; max-width: 750px; }
-    .section-title { font-size: 2.8rem; }
-
-    .vertical-card { padding: 2.5rem; }
-    .vertical-name { font-size: 1.8rem; }
-    .category-item { padding: 2.5rem; }
-    .category-number { font-size: 3rem; }
-
-    .process-step { padding: 3.5rem 2.5rem 3rem; min-height: 300px; }
-    .process-number { font-size: 4.5rem; }
-
-    .scroll-card { flex: 0 0 460px; }
-    .scroll-card-image { height: 240px; }
-}
-
-/* Full HD (1920px - 2559px) */
-@media (min-width: 1920px) {
-    .hero { padding: 14rem 6rem 8rem; max-width: 1600px; }
-    section { padding: 7rem 6rem; max-width: 1600px; }
-    .category-section { max-width: 1600px; padding: 6rem; margin: 6rem auto; }
-    .scroll-section .section-header { padding: 0 6rem; max-width: 1600px; }
-    .scroll-track-wrapper { padding: 0 6rem; }
-
-    h1 { font-size: 5.5rem; letter-spacing: -0.02em; }
-    .hero-subtitle { font-size: 1.75rem; max-width: 800px; line-height: 1.5; }
-    .section-title { font-size: 3rem; }
-    .section-meta { font-size: 0.9rem; }
-
-    .stats-bar { gap: 4rem; margin-top: 5rem; padding-top: 4rem; }
-    .stat-number { font-size: 3.5rem; }
-    .stat-label { font-size: 0.85rem; }
-
-    .verticals-grid { grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
-    .vertical-card { padding: 2.5rem; }
-    .vertical-name { font-size: 1.8rem; }
-    .vertical-desc { font-size: 0.95rem; }
-
-    .categories-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-    .category-item { padding: 3rem; }
-    .category-number { font-size: 3.5rem; }
-    .category-title { font-size: 1rem; }
-    .category-desc { font-size: 0.9rem; }
-
-    .process-step { padding: 4rem 3rem 3.5rem; min-height: 320px; }
-    .process-number { font-size: 5rem; }
-    .process-title { font-size: 1rem; }
-    .process-desc { font-size: 0.9rem; }
-    .process-icon { width: 56px; height: 56px; }
-    .process-icon svg { width: 24px; height: 24px; }
-
-    .scroll-card { flex: 0 0 480px; }
-    .scroll-card-image { height: 260px; }
-    .project-name { font-size: 1.5rem; }
-    .project-description { font-size: 0.95rem; }
-
-    footer { padding: 5rem 6rem; }
-}
-
-/* 4K (2560px+) */
-@media (min-width: 2560px) {
-    .hero { padding: 16rem 8rem 10rem; max-width: 1800px; }
-    section { padding: 8rem 8rem; max-width: 1800px; }
-    .category-section { max-width: 1800px; padding: 7rem; margin: 7rem auto; }
-    .scroll-section .section-header { padding: 0 8rem; max-width: 1800px; }
-    .scroll-track-wrapper { padding: 0 8rem; }
-
-    h1 { font-size: 6.5rem; }
-    .hero-subtitle { font-size: 2rem; max-width: 900px; }
-    .section-title { font-size: 3.5rem; }
-
-    .verticals-grid { grid-template-columns: repeat(5, 1fr); gap: 3rem; }
-
-    .scroll-card { flex: 0 0 520px; }
-    .scroll-card-image { height: 280px; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
-}
-</style>
+  }
+    </style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
 
-    
 <nav id="navbar">
   <div class="nav-wrap">
-    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <a href="index.html" class="logo" target="_self"><span class="logo-mark">R</span> Rajaa Khan</a>
     
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
       <span></span>
@@ -1462,513 +951,541 @@
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="project-management.html">Projects</a></li>
-      <li><a href="product.html">Product</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="cx.html">CX</a></li>
-      <li><a href="marketing.html">Marketing</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="project-management.html" target="_self">Project Management</a></li>
+      <li><a href="product.html" target="_self">Product</a></li>
+      <li><a href="media.html" target="_self">Media</a></li>
+      <li><a href="cx.html" target="_self">CX</a></li>
+      <li><a href="marketing.html" target="_self">Marketing</a></li>
+      <li><a href="experience.html" target="_self">Experience</a></li>
+      <li><a href="contact.html" target="_self">Contact</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta"><span>Get in touch</span></a>
+    <a href="contact.html" class="nav-cta" target="_self"><span>Get in touch</span></a>
   </div>
 </nav>
 
+<header class="hero">
+    <span class="hero-label">Project Coordinator · Aik by Bank Islami</span>
+    <h1>Coordinating <em>Across</em> Verticals</h1>
+    <p class="hero-subtitle">Managing a diverse portfolio spanning Open Banking, Consumer & Merchant Apps, Corporate Clients, and Core Banking — from partner integrations to product launches.</p>
 
-    <header class="hero">
-        <span class="hero-label">Project Coordinator · Aik by Bank Islami</span>
-        <h1>Coordinating <em>Across</em> Verticals</h1>
-        <p class="hero-subtitle">Managing a diverse portfolio spanning Open Banking, Consumer & Merchant Apps, Corporate Clients, and Core Banking — from partner integrations to product launches.</p>
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">Projects Tracked</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Business Verticals</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Partner Integrations</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Present</div>
+        </div>
+    </div>
+</header>
 
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-number">60+</div>
-                <div class="stat-label">Projects Tracked</div>
+<section class="process-section" id="process">
+    <div class="section-header">
+        <h2 class="section-title"><em>Coordination</em> Framework</h2>
+        <span class="section-meta">How Projects Are Managed</span>
+    </div>
+
+    <div class="process-visual">
+        <div class="process-step">
+            <div class="process-number">01</div>
+            <div class="process-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
             </div>
-            <div class="stat">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Business Verticals</div>
+            <div class="process-title">Track</div>
+            <div class="process-desc">Weekly sprint updates, priority matrix (P0–P4), ETA monitoring across all verticals and stakeholders.</div>
+        </div>
+        <div class="process-step">
+            <div class="process-number">02</div>
+            <div class="process-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="stat">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Partner Integrations</div>
+            <div class="process-title">Align</div>
+            <div class="process-desc">Cross-functional sync between Product, Engineering, Infosec, Finance, and external partners.</div>
+        </div>
+        <div class="process-step">
+            <div class="process-number">03</div>
+            <div class="process-icon">
+                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <div class="stat">
-                <div class="stat-number">2026</div>
-                <div class="stat-label">Present</div>
+            <div class="process-title">Unblock</div>
+            <div class="process-desc">Escalation management, dependency resolution, and signoff coordination to keep delivery on track.</div>
+        </div>
+        <div class="process-step">
+            <div class="process-number">04</div>
+            <div class="process-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="process-title">Ship</div>
+            <div class="process-desc">VAPT clearance, UAT coordination, production deployment, and post-launch monitoring.</div>
+        </div>
+    </div>
+</section>
+
+<section id="verticals">
+    <div class="section-header">
+        <h2 class="section-title"><em>Verticals</em> Managed</h2>
+        <span class="section-meta">Scope of Coordination</span>
+    </div>
+
+    <div class="verticals-grid">
+        <div class="vertical-card">
+            <div class="vertical-name">Open Banking</div>
+            <div class="vertical-count">15+ Partner Integrations</div>
+            <div class="vertical-desc">Third-party API integrations, merchant onboarding portals, QR solutions, and campaign management systems.</div>
+            <div class="vertical-tags">
+                <span class="v-tag">APIs</span>
+                <span class="v-tag">Partner Onboarding</span>
+                <span class="v-tag">QR</span>
+                <span class="v-tag">Campaigns</span>
             </div>
         </div>
-    </header>
-
-    <!-- PROCESS VISUAL MOVED TO TOP -->
-    <section class="process-section" id="process">
-        <div class="section-header">
-            <h2 class="section-title"><em>Coordination</em> Framework</h2>
-            <span class="section-meta">How Projects Are Managed</span>
-        </div>
-
-        <div class="process-visual">
-            <div class="process-step">
-                <div class="process-number">01</div>
-                <div class="process-icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
-                </div>
-                <div class="process-title">Track</div>
-                <div class="process-desc">Weekly sprint updates, priority matrix (P0–P4), ETA monitoring across all verticals and stakeholders.</div>
-            </div>
-            <div class="process-step">
-                <div class="process-number">02</div>
-                <div class="process-icon">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div class="process-title">Align</div>
-                <div class="process-desc">Cross-functional sync between Product, Engineering, Infosec, Finance, and external partners.</div>
-            </div>
-            <div class="process-step">
-                <div class="process-number">03</div>
-                <div class="process-icon">
-                    <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                </div>
-                <div class="process-title">Unblock</div>
-                <div class="process-desc">Escalation management, dependency resolution, and signoff coordination to keep delivery on track.</div>
-            </div>
-            <div class="process-step">
-                <div class="process-number">04</div>
-                <div class="process-icon">
-                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                </div>
-                <div class="process-title">Ship</div>
-                <div class="process-desc">VAPT clearance, UAT coordination, production deployment, and post-launch monitoring.</div>
+        <div class="vertical-card">
+            <div class="vertical-name">Consumer App</div>
+            <div class="vertical-count">10+ Active Workstreams</div>
+            <div class="vertical-desc">Feature rollouts, biometric verification, NFC payments, AI assistants, complaint centers, and faith-based features.</div>
+            <div class="vertical-tags">
+                <span class="v-tag">Mobile</span>
+                <span class="v-tag">Biometrics</span>
+                <span class="v-tag">AI</span>
+                <span class="v-tag">UX</span>
             </div>
         </div>
-    </section>
-
-    <section id="verticals">
-        <div class="section-header">
-            <h2 class="section-title"><em>Verticals</em> Managed</h2>
-            <span class="section-meta">Scope of Coordination</span>
-        </div>
-
-        <div class="verticals-grid">
-            <div class="vertical-card">
-                <div class="vertical-name">Open Banking</div>
-                <div class="vertical-count">15+ Partner Integrations</div>
-                <div class="vertical-desc">Third-party API integrations, merchant onboarding portals, QR solutions, and campaign management systems.</div>
-                <div class="vertical-tags">
-                    <span class="v-tag">APIs</span>
-                    <span class="v-tag">Partner Onboarding</span>
-                    <span class="v-tag">QR</span>
-                    <span class="v-tag">Campaigns</span>
-                </div>
-            </div>
-
-            <div class="vertical-card">
-                <div class="vertical-name">Consumer App</div>
-                <div class="vertical-count">10+ Active Workstreams</div>
-                <div class="vertical-desc">Feature rollouts, biometric verification, NFC payments, AI assistants, complaint centers, and faith-based features.</div>
-                <div class="vertical-tags">
-                    <span class="v-tag">Mobile</span>
-                    <span class="v-tag">Biometrics</span>
-                    <span class="v-tag">AI</span>
-                    <span class="v-tag">UX</span>
-                </div>
-            </div>
-
-            <div class="vertical-card">
-                <div class="vertical-name">Merchant App</div>
-                <div class="vertical-count">8+ Development Tracks</div>
-                <div class="vertical-desc">Merchant onboarding flows, till ID management, sales apps, soundbox devices, and specialized account types.</div>
-                <div class="vertical-tags">
-                    <span class="v-tag">Onboarding</span>
-                    <span class="v-tag">Till ID</span>
-                    <span class="v-tag">Soundbox</span>
-                    <span class="v-tag">P2M</span>
-                </div>
-            </div>
-
-            <div class="vertical-card">
-                <div class="vertical-name">Corporate Client</div>
-                <div class="vertical-count">12+ Client Projects</div>
-                <div class="vertical-desc">B2B portals, virtual accounts, takaful integrations, logistics platforms, and customized API solutions.</div>
-                <div class="vertical-tags">
-                    <span class="v-tag">B2B</span>
-                    <span class="v-tag">Virtual Accounts</span>
-                    <span class="v-tag">Takaful</span>
-                    <span class="v-tag">VAPT</span>
-                </div>
-            </div>
-
-            <div class="vertical-card">
-                <div class="vertical-name">Core Banking</div>
-                <div class="vertical-count">6+ Infrastructure Projects</div>
-                <div class="vertical-desc">Card management systems, GL movements, data warehousing, DR site readiness, and cloud hosting frameworks.</div>
-                <div class="vertical-tags">
-                    <span class="v-tag">Cards</span>
-                    <span class="v-tag">Data Warehouse</span>
-                    <span class="v-tag">DR Site</span>
-                    <span class="v-tag">Cloud</span>
-                </div>
+        <div class="vertical-card">
+            <div class="vertical-name">Merchant App</div>
+            <div class="vertical-count">8+ Development Tracks</div>
+            <div class="vertical-desc">Merchant onboarding flows, till ID management, sales apps, soundbox devices, and specialized account types.</div>
+            <div class="vertical-tags">
+                <span class="v-tag">Onboarding</span>
+                <span class="v-tag">Till ID</span>
+                <span class="v-tag">Soundbox</span>
+                <span class="v-tag">P2M</span>
             </div>
         </div>
-    </section>
-
-    <section class="category-section">
-        <div class="section-header" style="border-bottom-color: var(--beige-light);">
-            <h2 class="section-title"><em>Project</em> Categories</h2>
-            <span class="section-meta">Types of Work Coordinated</span>
-        </div>
-
-        <div class="categories-grid">
-            <div class="category-item">
-                <div class="category-number">20+</div>
-                <div class="category-title">Partner Integrations</div>
-                <div class="category-desc">Third-party API onboarding, UAT coordination, pre-prod deployment</div>
-            </div>
-            <div class="category-item">
-                <div class="category-number">15+</div>
-                <div class="category-title">Feature Launches</div>
-                <div class="category-desc">Consumer-facing features, app updates, notification systems</div>
-            </div>
-            <div class="category-item">
-                <div class="category-number">10+</div>
-                <div class="category-title">Security & Compliance</div>
-                <div class="category-desc">VAPT cycles, infosec signoffs, security guideline rollouts</div>
-            </div>
-            <div class="category-item">
-                <div class="category-number">8+</div>
-                <div class="category-title">Infrastructure</div>
-                <div class="category-desc">Cloud migration, DR readiness, network procurement, hosting</div>
-            </div>
-            <div class="category-item">
-                <div class="category-number">12+</div>
-                <div class="category-title">B2B Solutions</div>
-                <div class="category-desc">Corporate portals, merchant management, customized reporting</div>
-            </div>
-            <div class="category-item">
-                <div class="category-number">6+</div>
-                <div class="category-title">Strategic Initiatives</div>
-                <div class="category-desc">Digital transformation, financing products, AI implementations</div>
+        <div class="vertical-card">
+            <div class="vertical-name">Corporate Client</div>
+            <div class="vertical-count">12+ Client Projects</div>
+            <div class="vertical-desc">B2B portals, virtual accounts, takaful integrations, logistics platforms, and customized API solutions.</div>
+            <div class="vertical-tags">
+                <span class="v-tag">B2B</span>
+                <span class="v-tag">Virtual Accounts</span>
+                <span class="v-tag">Takaful</span>
+                <span class="v-tag">VAPT</span>
             </div>
         </div>
-    </section>
+        <div class="vertical-card">
+            <div class="vertical-name">Core Banking</div>
+            <div class="vertical-count">6+ Infrastructure Projects</div>
+            <div class="vertical-desc">Card management systems, GL movements, data warehousing, DR site readiness, and cloud hosting frameworks.</div>
+            <div class="vertical-tags">
+                <span class="v-tag">Cards</span>
+                <span class="v-tag">Data Warehouse</span>
+                <span class="v-tag">DR Site</span>
+                <span class="v-tag">Cloud</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- MERGED HORIZONTAL SCROLL: FEATURED DELIVERIES + CLIENTS & PARTNERS -->
-    <section class="scroll-section" id="deliveries">
-        <div class="section-header">
-            <h2 class="section-title"><em>Featured</em> Deliveries & Partners</h2>
-            <div class="scroll-controls">
-                <span class="section-meta">Live Projects & Integrated Platforms</span>
-                <div class="filter-dropdown">
-                    <button class="filter-btn" onclick="toggleFilter(this)">
-                        Sort by <span id="deliveries-sort-label">Relevance</span>
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                    <div class="filter-menu" id="deliveries-filter-menu">
-                        <button class="active" onclick="sortCards('deliveries', 'relevance', this)">Relevance</button>
-                        <button onclick="sortCards('deliveries', 'date', this)">Date</button>
-                        <button onclick="sortCards('deliveries', 'alphabetical', this)">Alphabetical</button>
-                    </div>
+<section class="category-section">
+    <div class="section-header" style="border-bottom-color: var(--beige-light);">
+        <h2 class="section-title"><em>Project</em> Categories</h2>
+        <span class="section-meta">Types of Work Coordinated</span>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-item">
+            <div class="category-number">20+</div>
+            <div class="category-title">Partner Integrations</div>
+            <div class="category-desc">Third-party API onboarding, UAT coordination, pre-prod deployment</div>
+        </div>
+        <div class="category-item">
+            <div class="category-number">15+</div>
+            <div class="category-title">Feature Launches</div>
+            <div class="category-desc">Consumer-facing features, app updates, notification systems</div>
+        </div>
+        <div class="category-item">
+            <div class="category-number">10+</div>
+            <div class="category-title">Security & Compliance</div>
+            <div class="category-desc">VAPT cycles, infosec signoffs, security guideline rollouts</div>
+        </div>
+        <div class="category-item">
+            <div class="category-number">8+</div>
+            <div class="category-title">Infrastructure</div>
+            <div class="category-desc">Cloud migration, DR readiness, network procurement, hosting</div>
+        </div>
+        <div class="category-item">
+            <div class="category-number">12+</div>
+            <div class="category-title">B2B Solutions</div>
+            <div class="category-desc">Corporate portals, merchant management, customized reporting</div>
+        </div>
+        <div class="category-item">
+            <div class="category-number">6+</div>
+            <div class="category-title">Strategic Initiatives</div>
+            <div class="category-desc">Digital transformation, financing products, AI implementations</div>
+        </div>
+    </div>
+</section>
+
+<section class="scroll-section" id="deliveries">
+    <div class="section-header">
+        <h2 class="section-title"><em>Featured</em> Deliveries & Partners</h2>
+        <div class="scroll-controls">
+            <span class="section-meta">Live Projects & Integrated Platforms</span>
+            <div class="filter-dropdown">
+                <button class="filter-btn" onclick="toggleFilter(this)">
+                    Sort by <span id="deliveries-sort-label">Relevance</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="filter-menu" id="deliveries-filter-menu">
+                    <button class="active" onclick="sortCards('deliveries', 'relevance', this)">Relevance</button>
+                    <button onclick="sortCards('deliveries', 'date', this)">Date</button>
+                    <button onclick="sortCards('deliveries', 'alphabetical', this)">Alphabetical</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="scroll-track-wrapper">
-            <button class="scroll-nav-btn prev" onclick="scrollTrack('deliveries', -1)">&#8249;</button>
-            <div class="scroll-track" id="deliveries-track">
+    <div class="scroll-track-wrapper">
+        <button class="scroll-nav-btn prev" onclick="scrollTrack('deliveries', -1)">&#8249;</button>
+        <div class="scroll-track" id="deliveries-track">
 
-                <!-- FEATURED DELIVERIES -->
-                <article class="scroll-card" data-relevance="10" data-date="2026-03-15" data-name="Namaz Alerts & Azaan Notifications">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Consumer App</div>
-                        <h3 class="project-name">Namaz Alerts & Azaan Notifications</h3>
-                        <p class="project-description">Faith-based feature delivering prayer time alerts and Azaan notifications, blending digital banking with everyday spiritual needs.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Feature Launch</span>
-                            <span class="meta-tag">Notifications</span>
-                            <span class="meta-tag">Mobile</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7454144903212806144?collapsed=1" allowfullscreen="" title="Namaz Alerts LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <img src="https://kimi-web-img.moonshot.cn/img/bankislami.com.pk/9bdf217732fd50db85d3d98ea00f4a4d049867a9.png" alt="Namaz Alerts Feature" onerror="this.style.display='none'">
-                                <p>Har Namaz waqt par — Azaan alerts ke saath. Ab Aik app se prayer time notifications aur Azaan sunain.</p>
-                                <a href="https://www.linkedin.com/posts/aikbybankislami_har-namaz-waqt-par-azaan-alerts-ke-sath-activity-7454145036998365184-uwhu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+            <article class="scroll-card" data-relevance="10" data-date="2026-03-15" data-name="Namaz Alerts & Azaan Notifications">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Consumer App</div>
+                    <h3 class="project-name">Namaz Alerts & Azaan Notifications</h3>
+                    <p class="project-description">Faith-based feature delivering prayer time alerts and Azaan notifications, blending digital banking with everyday spiritual needs.</p>
+                    <div class="project-meta"><span class="meta-tag">Feature Launch</span><span class="meta-tag">Notifications</span><span class="meta-tag">Mobile</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7454144903212806144?collapsed=1"
+                            allowfullscreen=""
+                            title="Namaz Alerts & Azaan Notifications LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            <img src="https://kimi-web-img.moonshot.cn/img/bankislami.com.pk/9bdf217732fd50db85d3d98ea00f4a4d049867a9.png" alt="Namaz Alerts & Azaan Notifications" onerror="this.style.display='none'">
+                            <p>Har Namaz waqt par — Azaan alerts ke saath. Ab Aik app se prayer time notifications aur Azaan sunain.</p>
+                            <a href="https://www.linkedin.com/posts/aikbybankislami_har-namaz-waqt-par-azaan-alerts-ke-sath-activity-7454145036998365184-uwhu" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="9" data-date="2026-04-20" data-name="Hajj & Umrah Guide">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Consumer App</div>
-                        <h3 class="project-name">Hajj & Umrah Guide</h3>
-                        <p class="project-description">Comprehensive pilgrimage companion providing step-by-step guidance for Hajj and Umrah rituals, travel tips, and spiritual support throughout the journey.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Customer Support</span>
-                            <span class="meta-tag">CX</span>
-                            <span class="meta-tag">Digital Banking</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462114649807872002?collapsed=1" allowfullscreen="" title="Hajj Umrah Guide LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <img src="https://kimi-web-img.moonshot.cn/img/aikdigital.io/fecc35d15b0a25dddc99770fe9eeff08b6eaa037.png" alt="Hajj Umrah Guide" onerror="this.style.display='none'">
-                                <p>Har qadam par rehnumayi, har dua mein sukoon. Aik app ka Hajj & Umrah guide — step-by-step rituals aur spiritual support.</p>
-                                <a href="https://www.linkedin.com/posts/aikbybankislami_har-qadam-par-rehnumayi-har-dua-mein-sukoon-activity-7462114650617401344-iMAK?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="9" data-date="2026-04-20" data-name="Hajj & Umrah Guide">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Consumer App</div>
+                    <h3 class="project-name">Hajj & Umrah Guide</h3>
+                    <p class="project-description">Comprehensive pilgrimage companion providing step-by-step guidance for Hajj and Umrah rituals, travel tips, and spiritual support.</p>
+                    <div class="project-meta"><span class="meta-tag">Customer Support</span><span class="meta-tag">CX</span><span class="meta-tag">Digital Banking</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462114649807872002?collapsed=1"
+                            allowfullscreen=""
+                            title="Hajj & Umrah Guide LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            <img src="https://kimi-web-img.moonshot.cn/img/aikdigital.io/fecc35d15b0a25dddc99770fe9eeff08b6eaa037.png" alt="Hajj & Umrah Guide" onerror="this.style.display='none'">
+                            <p>Har qadam par rehnumayi, har dua mein sukoon. Aik app ka Hajj & Umrah guide — step-by-step rituals aur spiritual support.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:share:7462114649807872002" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="8" data-date="2026-02-10" data-name="Cattle Merchant Digital Payments">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Merchant App</div>
-                        <h3 class="project-name">Cattle Merchant Digital Payments</h3>
-                        <p class="project-description">Specialized digital payment solution for cattle merchants, enabling seamless transactions during peak livestock trading seasons with till ID management and soundbox integration.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">B2B</span>
-                            <span class="meta-tag">Payments</span>
-                            <span class="meta-tag">Merchant</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7460643202560176128?collapsed=1" allowfullscreen="" title="Cattle Merchant LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <img src="https://kimi-web-img.moonshot.cn/img/propakistani.pk/de11a0326f5a47e71cf725f80cf3aa6db299d4fd.jpg" alt="Cattle Market Digital Payments" onerror="this.style.display='none'">
-                                <p>Building momentum towards a more digital Pakistan. Enabling Raast QR payments in cattle markets ahead of Eid-ul-Azha.</p>
-                                <a href="https://www.linkedin.com/posts/aikbybankislami_building-momentum-towards-a-more-digital-activity-7460643641183584257-gxwr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="8" data-date="2026-02-10" data-name="Cattle Merchant Digital Payments">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Merchant App</div>
+                    <h3 class="project-name">Cattle Merchant Digital Payments</h3>
+                    <p class="project-description">Specialized digital payment solution for cattle merchants, enabling seamless transactions during peak livestock trading seasons.</p>
+                    <div class="project-meta"><span class="meta-tag">B2B</span><span class="meta-tag">Payments</span><span class="meta-tag">Merchant</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7460643202560176128?collapsed=1"
+                            allowfullscreen=""
+                            title="Cattle Merchant Digital Payments LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            <img src="https://kimi-web-img.moonshot.cn/img/propakistani.pk/de11a0326f5a47e71cf725f80cf3aa6db299d4fd.jpg" alt="Cattle Merchant Digital Payments" onerror="this.style.display='none'">
+                            <p>Building momentum towards a more digital Pakistan. Enabling Raast QR payments in cattle markets ahead of Eid-ul-Azha.</p>
+                            <a href="https://www.linkedin.com/posts/aikbybankislami_building-momentum-towards-a-more-digital-activity-7460643641183584257-gxwr" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <!-- CLIENTS & PARTNERS -->
-                <article class="scroll-card" data-relevance="7" data-date="2025-08-15" data-name="Asaanpay">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Corporate Client</div>
-                        <h3 class="project-name">Asaanpay</h3>
-                        <p class="project-description">B2B payment solution streamlining corporate transactions with simplified onboarding and processing flows. VAPT cleared and production-ready.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">B2B</span>
-                            <span class="meta-tag">Payments</span>
-                            <span class="meta-tag">VAPT Cleared</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410223718901223426?collapsed=1" allowfullscreen="" title="Asaanpay LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>We are excited to share that Asaanpay has joined the Aik by Bank Islami ecosystem to simplify B2B payments for corporate clients.</p>
-                                <a href="https://www.linkedin.com/posts/were-excited-to-share-that-assanpay-has-ugcPost-7410223718901223426-Ue18?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="7" data-date="2025-08-15" data-name="Asaanpay">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Corporate Client</div>
+                    <h3 class="project-name">Asaanpay</h3>
+                    <p class="project-description">B2B payment solution streamlining corporate transactions with simplified onboarding and processing flows. VAPT cleared and production-ready.</p>
+                    <div class="project-meta"><span class="meta-tag">B2B</span><span class="meta-tag">Payments</span><span class="meta-tag">VAPT Cleared</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410223718901223426?collapsed=1"
+                            allowfullscreen=""
+                            title="Asaanpay LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>We are excited to share that Asaanpay has joined the Aik by Bank Islami ecosystem to simplify B2B payments for corporate clients.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7410223718901223426" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="6" data-date="2025-11-20" data-name="Desire More">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Open Banking</div>
-                        <h3 class="project-name">Desire More</h3>
-                        <p class="project-description">Open Banking partner successfully integrated and live, enabling seamless third-party service connectivity for enhanced customer experiences.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Open Banking</span>
-                            <span class="meta-tag">Partner API</span>
-                            <span class="meta-tag">Live</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7379379906436124672?collapsed=1" allowfullscreen="" title="Desire More LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>Digital banking meets eKYC innovation. Desire More partners with Aik by Bank Islami to bring seamless identity verification to Open Banking.</p>
-                                <a href="https://www.linkedin.com/posts/digitalbanking-ekyc-fintechpartnership-ugcPost-7379379906436124672-UYct?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="6" data-date="2025-11-20" data-name="Desire More">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Open Banking</div>
+                    <h3 class="project-name">Desire More</h3>
+                    <p class="project-description">Open Banking partner successfully integrated and live, enabling seamless third-party service connectivity for enhanced customer experiences.</p>
+                    <div class="project-meta"><span class="meta-tag">Open Banking</span><span class="meta-tag">Partner API</span><span class="meta-tag">Live</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7379379906436124672?collapsed=1"
+                            allowfullscreen=""
+                            title="Desire More LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>Digital banking meets eKYC innovation. Desire More partners with Aik by Bank Islami to bring seamless identity verification to Open Banking.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7379379906436124672" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="5" data-date="2025-09-30" data-name="Vizpro">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Open Banking</div>
-                        <h3 class="project-name">Vizpro</h3>
-                        <p class="project-description">Digital banking partner integrated for enhanced visual analytics and customer engagement dashboards within the Aik ecosystem.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Analytics</span>
-                            <span class="meta-tag">Partner API</span>
-                            <span class="meta-tag">Live</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7397537346449051648?collapsed=1" allowfullscreen="" title="Vizpro LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>Aik by Bank Islami has partnered with Vizpro to bring advanced visual analytics and customer engagement dashboards to digital banking.</p>
-                                <a href="https://www.linkedin.com/posts/aik-by-bankislami-has-partnered-with-vizpro-share-7397537346449051648-0E-a?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="5" data-date="2025-09-30" data-name="Vizpro">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Open Banking</div>
+                    <h3 class="project-name">Vizpro</h3>
+                    <p class="project-description">Digital banking partner integrated for enhanced visual analytics and customer engagement dashboards within the Aik ecosystem.</p>
+                    <div class="project-meta"><span class="meta-tag">Analytics</span><span class="meta-tag">Partner API</span><span class="meta-tag">Live</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7397537346449051648?collapsed=1"
+                            allowfullscreen=""
+                            title="Vizpro LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>Aik by Bank Islami has partnered with Vizpro to bring advanced visual analytics and customer engagement dashboards to digital banking.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7397537346449051648" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="4" data-date="2025-07-10" data-name="Warmbytes">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Technology Partner</div>
-                        <h3 class="project-name">Warmbytes</h3>
-                        <p class="project-description">Technology partner powering backend infrastructure and development acceleration for Aik's digital banking platform.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Infrastructure</span>
-                            <span class="meta-tag">Development</span>
-                            <span class="meta-tag">Live</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7376649472036036608?collapsed=1" allowfullscreen="" title="Warmbytes LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>Warmbytes partners with Bank Islami to power the Aik digital banking platform with cutting-edge backend infrastructure and development.</p>
-                                <a href="https://www.linkedin.com/posts/warmbytes-bankislami-aik-share-7376649472036036608-CcJw?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="4" data-date="2025-07-10" data-name="Warmbytes">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Technology Partner</div>
+                    <h3 class="project-name">Warmbytes</h3>
+                    <p class="project-description">Technology partner powering backend infrastructure and development acceleration for Aik's digital banking platform.</p>
+                    <div class="project-meta"><span class="meta-tag">Infrastructure</span><span class="meta-tag">Development</span><span class="meta-tag">Live</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7376649472036036608?collapsed=1"
+                            allowfullscreen=""
+                            title="Warmbytes LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>Warmbytes partners with Bank Islami to power the Aik digital banking platform with cutting-edge backend infrastructure and development.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7376649472036036608" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="3" data-date="2025-06-20" data-name="Eocean">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · Financial Services</div>
-                        <h3 class="project-name">Eocean</h3>
-                        <p class="project-description">Financial services partner integrated for digital transaction processing and real-time payment settlement within the Aik ecosystem.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">Payments</span>
-                            <span class="meta-tag">Settlement</span>
-                            <span class="meta-tag">Live</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7371892641753370624?collapsed=1" allowfullscreen="" title="Eocean LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>Eocean joins forces with Aik Digital to deliver real-time payment settlement and financial services infrastructure.</p>
-                                <a href="https://www.linkedin.com/posts/eocean-aikdigital-financialservices-share-7371892641753370624-Ge3s?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="3" data-date="2025-06-20" data-name="Eocean">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · Financial Services</div>
+                    <h3 class="project-name">Eocean</h3>
+                    <p class="project-description">Financial services partner integrated for digital transaction processing and real-time payment settlement within the Aik ecosystem.</p>
+                    <div class="project-meta"><span class="meta-tag">Payments</span><span class="meta-tag">Settlement</span><span class="meta-tag">Live</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7371892641753370624?collapsed=1"
+                            allowfullscreen=""
+                            title="Eocean LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>Eocean joins forces with Aik Digital to deliver real-time payment settlement and financial services infrastructure.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7371892641753370624" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                <article class="scroll-card" data-relevance="2" data-date="2025-08-01" data-name="Synergates / PulseCX">
-                    <div class="scroll-card-body">
-                        <div class="project-status status-live">
-                            <span class="status-dot"></span>
-                            Live
-                        </div>
-                        <div class="project-org">Aik by Bank Islami · CX & Innovation</div>
-                        <h3 class="project-name">Synergates / PulseCX</h3>
-                        <p class="project-description">Customer experience and innovation partner driving digital transformation initiatives and user journey optimization for Aik.</p>
-                        <div class="project-meta">
-                            <span class="meta-tag">CX</span>
-                            <span class="meta-tag">Innovation</span>
-                            <span class="meta-tag">Live</span>
-                        </div>
-                        <div class="linkedin-embed-wrapper">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7387088359543865344?collapsed=1" allowfullscreen="" title="Synergates LinkedIn Post" onload="this.nextElementSibling.style.display='none'"></iframe>
-                            <div class="linkedin-embed-fallback">
-                                <p>Synergates and PulseCX partner with Aik by Bank Islami to drive digital transformation and optimize customer experience journeys.</p>
-                                <a href="https://www.linkedin.com/posts/synergates-pulsecx-innovation-share-7387088359543865344-x20a?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmH8YIBTfg_qpOW7bXQszL0YTkEN9v2Y78" target="_project" rel="noopener noreferrer" class="linkedin-view-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    View on LinkedIn
-                                </a>
-                            </div>
+                </div>
+            </article>
+            <article class="scroll-card" data-relevance="2" data-date="2025-08-01" data-name="Synergates / PulseCX">
+                <div class="scroll-card-body">
+                    <div class="project-status status-live"><span class="status-dot"></span>Live</div>
+                    <div class="project-org">Aik by Bank Islami · CX & Innovation</div>
+                    <h3 class="project-name">Synergates / PulseCX</h3>
+                    <p class="project-description">Customer experience and innovation partner driving digital transformation initiatives and user journey optimization for Aik.</p>
+                    <div class="project-meta"><span class="meta-tag">CX</span><span class="meta-tag">Innovation</span><span class="meta-tag">Live</span></div>
+                    <div class="linkedin-embed-wrapper">
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7387088359543865344?collapsed=1"
+                            allowfullscreen=""
+                            title="Synergates / PulseCX LinkedIn Post"
+                        ></iframe>
+                        <div class="linkedin-embed-fallback">
+                            
+                            <p>Synergates and PulseCX partner with Aik by Bank Islami to drive digital transformation and optimize customer experience journeys.</p>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7387088359543865344" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                View on LinkedIn
+                            </a>
                         </div>
                     </div>
-                </article>
-
-                            </div>
-            <button class="scroll-nav-btn next" onclick="scrollTrack('deliveries', 1)">&#8250;</button>
+                </div>
+            </article>
         </div>
-    </section>
+        <button class="scroll-nav-btn next" onclick="scrollTrack('deliveries', 1)">&#8250;</button>
+    </div>
+</section>
 
-    
 <footer>
   <div class="ornament">✦ · · · ✦ · · · ✦</div>
   © 2025 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br/>
-  <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
+  <a href="mailto:rajaa.j.khan97@gmail.com" target="_self">rajaa.j.khan97@gmail.com</a>
 </footer>
 
 <script>
-  // Scroll Progress Indicator
+  // Scroll Progress
   window.addEventListener('scroll', () => {
     const scrollTop = document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollTop / scrollHeight) * 100;
-    document.getElementById('scrollProgress').style.width = scrolled + '%';
-    
-    // Navbar shadow on scroll
+    document.getElementById('scrollProgress').style.width = ((scrollTop / scrollHeight) * 100) + '%';
     const nav = document.getElementById('navbar');
-    if(scrollTop > 50) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+    nav.classList.toggle('scrolled', scrollTop > 50);
   });
 
-  // Reveal on scroll
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { 
-      if(e.isIntersecting){ 
-        e.target.classList.add('in'); 
-        io.unobserve(e.target); 
-      } 
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
-  // Portal card mouse follow effect
-  document.querySelectorAll('.portal-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-active');
+    const spans = menuToggle.querySelectorAll('span');
+    if (navLinks.classList.contains('mobile-active')) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('mobile-active');
+      const spans = menuToggle.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('mobile-active');
+      const spans = menuToggle.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  // Filter dropdown
+  function toggleFilter(btn) {
+    const menu = btn.nextElementSibling;
+    menu.classList.toggle('open');
+    document.addEventListener('click', function closeMenu(e) {
+      if (!btn.parentElement.contains(e.target)) {
+        menu.classList.remove('open');
+        document.removeEventListener('click', closeMenu);
+      }
+    });
+  }
+
+  // Sort cards
+  function sortCards(trackId, method, btn) {
+    const track = document.getElementById(trackId + '-track');
+    const cards = Array.from(track.querySelectorAll('.scroll-card'));
+    
+    cards.sort((a, b) => {
+      if (method === 'relevance') return parseInt(b.dataset.relevance) - parseInt(a.dataset.relevance);
+      if (method === 'date') return new Date(b.dataset.date) - new Date(a.dataset.date);
+      if (method === 'alphabetical') return a.dataset.name.localeCompare(b.dataset.name);
+    });
+
+    cards.forEach(card => track.appendChild(card));
+    
+    const menu = btn.closest('.filter-menu');
+    menu.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(trackId + '-sort-label').textContent = btn.textContent;
+    menu.classList.remove('open');
+  }
+
+  // Scroll track navigation
+  function scrollTrack(trackId, dir) {
+    const track = document.getElementById(trackId + '-track');
+    track.scrollBy({ left: dir * 440, behavior: 'smooth' });
+  }
+
+  // LinkedIn iframe: hide fallback when iframe loads, show fallback on failure
+  document.querySelectorAll('.linkedin-embed-wrapper').forEach(wrapper => {
+    const iframe = wrapper.querySelector('iframe');
+    const fallback = wrapper.querySelector('.linkedin-embed-fallback');
+    if (!iframe || !fallback) return;
+
+    iframe.addEventListener('load', () => {
+      // Cross-origin so we can't read content — just hide the fallback
+      fallback.style.display = 'none';
+    });
+
+    iframe.addEventListener('error', () => {
+      iframe.style.display = 'none';
     });
   });
 
@@ -1977,7 +1494,7 @@
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 </script>
