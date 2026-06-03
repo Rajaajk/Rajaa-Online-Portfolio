@@ -41,10 +41,6 @@
   .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
   .nav-cta span{position:relative;z-index:1}
 
-  /* Mobile Menu Toggle */
-  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
-  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:var(--transition)}
-
   /* Scroll Progress */
   .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));z-index:200;transition:width 0.1s ease;transform-origin:left}
 
@@ -912,31 +908,56 @@
       scroll-behavior: auto !important;
     }
   }
-    </style>
+    
+  /* Mobile Menu Toggle */
+  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
+  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
+
+  /* Mobile nav open state */
+  @media(max-width:880px){
+    .menu-toggle{display:flex}
+    .nav-cta{display:none}
+    .nav-links{display:none}
+    .nav-links.mobile-active{
+      display:flex;
+      flex-direction:column;
+      position:fixed;
+      top:61px;
+      left:0;right:0;
+      background:var(--cream,#FBF6EE);
+      padding:28px 24px;
+      gap:20px;
+      border-bottom:1px solid rgba(107,31,44,0.15);
+      box-shadow:0 12px 40px rgba(107,31,44,0.15);
+      text-align:center;
+      z-index:99;
+      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
+    }
+    .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
+    @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+  }
+
+</style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <nav id="navbar">
   <div class="nav-wrap">
-    <a href="index.html" class="logo" target="_self"><span class="logo-mark">R</span> Rajaa Khan</a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
-
     <ul class="nav-links" id="navLinks">
-      <li><a href="project-management.html" class="active" target="_self">Projects</a></li>
-      <li><a href="product.html" target="_self">Product</a></li>
-      <li><a href="media.html" target="_self">Media</a></li>
-      <li><a href="cx.html" target="_self">CX</a></li>
-      <li><a href="marketing.html" target="_self">Marketing</a></li>
-      <li><a href="experience.html" target="_self">Experience</a></li>
-      <li><a href="contact.html" target="_self">Contact</a></li>
+      <li><a href="project-management.html" class="active">Projects</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="cx.html">CX</a></li>
+      <li><a href="marketing.html">Marketing</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta" target="_self"><span>Get in touch</span></a>
+    <a href="contact.html" class="nav-cta"><span>Get in touch</span></a>
   </div>
 </nav>
 
@@ -1341,24 +1362,6 @@
     nav.classList.toggle('scrolled', scrollTop > 50);
   });
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-active');
-    const spans = menuToggle.querySelectorAll('span');
-    if (navLinks.classList.contains('mobile-active')) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-    } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
-    }
-  });
-
   // Close menu on link click
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
@@ -1444,5 +1447,32 @@
   });
 </script>
 
+<script>
+  // Mobile menu
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links  = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    function closeMenu(){
+      links.classList.remove('mobile-active');
+      var s = toggle.querySelectorAll('span');
+      s[0].style.transform=''; s[1].style.opacity=''; s[2].style.transform='';
+    }
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('mobile-active');
+      var s = toggle.querySelectorAll('span');
+      if(open){
+        s[0].style.transform='rotate(45deg) translate(5px,6px)';
+        s[1].style.opacity='0';
+        s[2].style.transform='rotate(-45deg) translate(5px,-6px)';
+      } else { closeMenu(); }
+    });
+    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('click', function(e){
+      if(!toggle.contains(e.target) && !links.contains(e.target)) closeMenu();
+    });
+  })();
+
+</script>
 </body>
 </html>
