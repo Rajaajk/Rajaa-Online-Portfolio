@@ -472,6 +472,7 @@
   }
 
   /* Highlights Section */
+  .highlights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:44px}
   .highlight-card{
     background:linear-gradient(145deg,var(--cream-2),var(--cream));
     border:1px solid var(--line);padding:44px;border-radius:20px;
@@ -546,6 +547,7 @@
     .portrait{max-width:400px;margin:0 auto}
     .contact-wrap{padding:70px 30px}
     .abstract-shapes{display:none}
+    .highlights-grid{grid-template-columns:1fr;gap:24px}
   }
   
   /* Reduced motion */
@@ -792,7 +794,7 @@
       <h2 style="font-size:clamp(32px,4vw,48px);font-weight:500;color:var(--ink)">Latest <em>Highlights</em></h2>
     </div>
     
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:44px">
+    <div class="highlights-grid">
       <div class="highlight-card reveal">
         <div class="category">Currently</div>
         <h3>Project Coordinator @ Aik</h3>
