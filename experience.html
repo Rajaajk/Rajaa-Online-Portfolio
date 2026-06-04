@@ -9,214 +9,176 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --maroon:#6B2D2D; 
-    --maroon-deep:#4A1F1F; 
-    --maroon-light:#8B3D3D;
-    --blush:#E8D5D0; 
-    --blush-deep:#D4B8B0;
-    --cream:#FAF6F0; 
-    --cream-warm:#F5EDE5;
-    --navy:#1A2230;
-    --ink:#2A1A1E; 
+    --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D; --maroon-light:#A67B7D;
+    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0; --cream-3:#EDE4D8;
+    --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
-  
-  /* Abstract Background Shapes */
-  .bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-  .bg-shapes::before{
-    content:'';position:absolute;top:-10%;right:-5%;width:60vw;height:60vw;
-    background:radial-gradient(circle,var(--blush) 0%,transparent 70%);
-    border-radius:50%;opacity:0.6;
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+  body::before{
+    content:'';position:fixed;top:-20%;right:-10%;width:800px;height:800px;pointer-events:none;z-index:0;
+    background:radial-gradient(circle at 30% 30%, rgba(107,31,44,0.08), transparent 60%);
+    border-radius:50%;filter:blur(60px);
   }
-  .bg-shapes::after{
-    content:'';position:absolute;bottom:-20%;left:-10%;width:50vw;height:50vw;
-    background:radial-gradient(circle,var(--maroon-light) 0%,transparent 70%);
-    border-radius:50%;opacity:0.08;
+  body::after{
+    content:'';position:fixed;bottom:-30%;left:-10%;width:600px;height:600px;pointer-events:none;z-index:0;
+    background:radial-gradient(circle at 70% 70%, rgba(184,137,62,0.06), transparent 60%);
+    border-radius:50%;filter:blur(50px);
   }
-  .shape-circle{
-    position:absolute;border-radius:50%;opacity:0.1;
-  }
-  .shape-1{top:20%;left:5%;width:300px;height:300px;background:var(--maroon);}
-  .shape-2{top:60%;right:10%;width:200px;height:200px;background:var(--navy);}
-  .shape-3{top:40%;left:15%;width:150px;height:150px;background:var(--blush-deep);}
-  
+
   ::selection{background:var(--maroon);color:var(--cream)}
-  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
 
   /* Navigation */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);background:rgba(250,246,240,0.9);border-bottom:1px solid rgba(107,45,45,0.1)}
-  .nav-wrap{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;color:var(--maroon);text-decoration:none;letter-spacing:-0.5px}
-  .nav-links{display:flex;gap:32px;list-style:none}
-  .nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:13px;letter-spacing:1px;text-transform:uppercase;transition:all .3s;position:relative}
-  .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--maroon);transition:width .3s}
-  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-  .nav-cta{padding:12px 28px;background:var(--maroon);color:var(--cream);font-weight:600;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:all .3s;border:2px solid var(--maroon)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line)}
+  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:40px;height:40px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600;position:relative;overflow:hidden}
+  .logo-mark::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle, rgba(251,246,238,0.3), transparent 70%);border-radius:50%}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
+  .nav-links a:hover{color:var(--maroon)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--maroon)}
+  .nav-links a.active::after{width:100%}
+  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon);border-radius:30px}
   .nav-cta:hover{background:transparent;color:var(--maroon)}
 
-  /* Hero Section */
-  .hero{position:relative;z-index:1;padding:200px 40px 120px;background:linear-gradient(135deg,var(--cream) 0%,var(--blush) 100%);overflow:hidden}
-  .hero::before{
-    content:'';position:absolute;top:-50px;right:-50px;width:400px;height:400px;
-    background:var(--maroon);border-radius:50%;opacity:0.08;
+  section{position:relative;z-index:1;padding:140px 32px 100px}
+  .container{max-width:1240px;margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  .section-head{margin-bottom:60px;text-align:center;position:relative}
+  .section-head h2{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px;line-height:1.1}
+  .section-head h2 em{font-style:italic;color:var(--maroon)}
+  .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
+
+  /* Page Header */
+  .page-header{
+    background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 100%);
+    padding:160px 32px 100px;position:relative;overflow:hidden;z-index:1;
   }
-  .hero-container{max-width:1400px;margin:0 auto;position:relative}
-  .hero-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px;padding:8px 16px;background:rgba(107,45,45,0.08);border-left:3px solid var(--maroon)}
-  .hero h1{font-size:clamp(56px,10vw,120px);font-weight:500;letter-spacing:-4px;line-height:0.9;margin-bottom:32px;color:var(--maroon-deep)}
-  .hero h1 em{font-style:italic;color:var(--maroon-light);display:block}
-  .hero p{font-size:20px;color:var(--ink);max-width:600px;line-height:1.7;font-weight:300}
-  
-  .hero-accent{position:absolute;bottom:40px;right:40px;width:120px;height:120px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;opacity:0.9}
+  .page-header::before{
+    content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;
+    background:rgba(255,255,255,0.04);border-radius:50%;
+  }
+  .page-header::after{
+    content:'';position:absolute;bottom:-80px;left:10%;width:300px;height:300px;
+    background:rgba(184,137,62,0.12);border-radius:50%;
+  }
+  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px;position:relative;color:var(--cream)}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.85);max-width:600px;line-height:1.7;position:relative}
 
-  /* Timeline Section */
-  .timeline-section{position:relative;z-index:1;padding:120px 40px;background:var(--cream)}
-  .timeline-container{max-width:1400px;margin:0 auto}
-  
-  .section-intro{text-align:center;margin-bottom:100px}
-  .section-intro h2{font-size:clamp(32px,5vw,56px);color:var(--maroon-deep);margin-bottom:20px;letter-spacing:-2px}
-  .section-intro p{color:var(--ink);max-width:600px;margin:0 auto;font-size:16px}
-
-  /* Asymmetric Timeline */
+  /* Timeline */
+  .timeline-section{background:var(--cream);padding:100px 32px}
   .timeline{position:relative}
   .timeline-line{
     position:absolute;left:50%;transform:translateX(-50%);
-    width:2px;height:100%;background:linear-gradient(to bottom,var(--maroon),var(--blush-deep),var(--navy));
-    opacity:0.3;
+    width:1px;height:100%;background:var(--line-strong);opacity:0.4;
   }
-  
-  .tl-item{position:relative;margin-bottom:120px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .tl-item{position:relative;margin-bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
   .tl-item:nth-child(even){direction:rtl}
   .tl-item:nth-child(even) > *{direction:ltr}
-  
-  .tl-content{position:relative;padding:40px;background:var(--cream-warm);border-radius:20px;box-shadow:0 20px 60px rgba(107,45,45,0.08);transition:all .4s}
-  .tl-content:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(107,45,45,0.12)}
-  
+
+  .tl-content{position:relative;padding:36px;background:var(--cream-2);border-radius:16px;border:1px solid var(--line);transition:all .3s}
+  .tl-content:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(107,31,44,0.1)}
+
   .tl-marker{
-    position:absolute;width:24px;height:24px;background:var(--maroon);
+    position:absolute;width:16px;height:16px;background:var(--maroon);
     border-radius:50%;top:50%;transform:translateY(-50%);
-    border:4px solid var(--cream);box-shadow:0 0 0 3px var(--maroon);
-    z-index:10;
+    border:3px solid var(--cream);box-shadow:0 0 0 2px var(--maroon);z-index:10;
   }
-  .tl-item:nth-child(odd) .tl-marker{right:-62px}
-  .tl-item:nth-child(even) .tl-marker{left:-62px}
-  
-  .tl-current .tl-marker{background:var(--navy);box-shadow:0 0 0 3px var(--navy);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.2)}}
-  
-  .tl-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;margin-bottom:16px}
-  .tl-badge.now{background:var(--navy);color:var(--cream)}
+  .tl-item:nth-child(odd) .tl-marker{right:-42px}
+  .tl-item:nth-child(even) .tl-marker{left:-42px}
+
+  .tl-current .tl-marker{background:var(--gold);box-shadow:0 0 0 2px var(--gold);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.3)}}
+
+  .tl-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;margin-bottom:14px;border-radius:3px}
+  .tl-badge.now{background:var(--gold-soft);color:var(--maroon-deep)}
   .tl-badge.fintech{background:var(--maroon);color:var(--cream)}
-  .tl-badge.product{background:var(--blush-deep);color:var(--maroon-deep)}
-  .tl-badge.media{background:var(--cream);color:var(--maroon);border:1px solid var(--maroon)}
-  .tl-badge.cert{background:var(--maroon-light);color:var(--cream)}
-  
-  .tl-role{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--maroon-deep);margin-bottom:8px;letter-spacing:-1px}
-  .tl-company{font-size:13px;color:var(--maroon-light);font-weight:600;margin-bottom:16px;letter-spacing:1px}
-  .tl-date{font-size:11px;color:var(--ink);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;opacity:0.7}
+  .tl-badge.product{background:var(--cream-3);color:var(--maroon)}
+  .tl-badge.media{background:transparent;color:var(--maroon);border:1px solid var(--maroon)}
+
+  .tl-role{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.5px}
+  .tl-company{font-size:13px;color:var(--maroon);font-weight:600;margin-bottom:10px;letter-spacing:.5px}
+  .tl-date{font-size:11px;color:var(--ink-soft);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
   .tl-content ul{list-style:none}
-  .tl-content li{padding:8px 0;padding-left:20px;position:relative;font-size:14px;color:var(--ink);line-height:1.6}
-  .tl-content li::before{content:'•';position:absolute;left:0;color:var(--maroon);font-size:18px;line-height:1.2}
-  .tl-content li b{color:var(--maroon-deep);font-weight:600}
+  .tl-content li{padding:6px 0 6px 18px;position:relative;font-size:14px;color:var(--ink-soft);line-height:1.6}
+  .tl-content li::before{content:'—';position:absolute;left:0;color:var(--maroon);font-size:12px;line-height:1.8}
+  .tl-content li b{color:var(--ink);font-weight:600}
 
-  /* Certificates Grid */
-  .certs-section{padding:120px 40px;background:var(--cream-warm)}
-  .certs-container{max-width:1400px;margin:0 auto}
-  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:30px}
-  .cert-card{background:var(--cream);padding:30px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:all 0.3s;border:1px solid rgba(107,45,45,0.05)}
-  .cert-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(107,45,45,0.1)}
-  .cert-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--maroon-deep);margin-bottom:10px}
-  .cert-type{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--maroon-light);margin-bottom:15px;display:block}
-  .cert-link{font-size:12px;color:var(--maroon);text-decoration:none;font-weight:600;border-bottom:1px solid var(--maroon);padding-bottom:2px}
-
-  /* Decorative Elements */
-  .tl-decoration{position:absolute;width:100px;height:100px;opacity:0.15;z-index:0}
-  .tl-item:nth-child(odd) .tl-decoration{right:-80px;top:-40px}
-  .tl-item:nth-child(even) .tl-decoration{left:-80px;bottom:-40px}
-  .tl-decoration.circle{border:3px solid var(--maroon);border-radius:50%}
-  .tl-decoration.square{border:3px solid var(--navy);transform:rotate(45deg)}
-
-  /* Stats Section */
-  .stats{position:relative;z-index:1;padding:120px 40px;background:var(--maroon-deep);color:var(--cream);overflow:hidden}
-  .stats::before{
-    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Stats */
+  .stats-section{background:var(--maroon-deep);padding:100px 32px;position:relative;overflow:hidden;z-index:1}
+  .stats-section::before{
+    content:'';position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  .stats-container{max-width:1400px;margin:0 auto;position:relative}
-  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px}
-  .stat-item{text-align:center;padding:40px;position:relative}
-  .stat-item::before{
-    content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
-    width:60px;height:60px;background:var(--blush);border-radius:50%;
-    opacity:0.2;
-  }
-  .stat-number{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:600;color:var(--blush);line-height:1;margin-bottom:16px;letter-spacing:-3px}
-  .stat-label{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:0.9;line-height:1.6}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1240px;margin:0 auto;position:relative}
+  .stat-item{text-align:center;padding:40px 20px}
+  .stat-number{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--gold-soft);line-height:1;margin-bottom:14px;letter-spacing:-2px}
+  .stat-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,246,238,0.75);line-height:1.7}
+
+  /* Certs */
+  .certs-section{background:var(--cream-2);padding:100px 32px;z-index:1;position:relative}
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px,1fr));gap:24px}
+  .cert-card{background:var(--cream);padding:28px;border-radius:12px;border:1px solid var(--line);transition:all .3s}
+  .cert-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(107,31,44,0.08)}
+  .cert-type{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--maroon);margin-bottom:12px;display:block;font-weight:600}
+  .cert-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:10px}
+  .cert-desc{font-size:13px;color:var(--ink-soft);margin-bottom:18px;line-height:1.6}
+  .cert-link{font-size:12px;color:var(--maroon);text-decoration:none;font-weight:600;border-bottom:1px solid var(--maroon);padding-bottom:2px;transition:opacity .2s}
+  .cert-link:hover{opacity:0.7}
 
   /* Footer */
-  footer{position:relative;z-index:1;text-align:center;padding:80px 40px;background:var(--cream-warm);border-top:1px solid rgba(107,45,45,0.1)}
-  .footer-ornament{font-size:24px;color:var(--maroon);margin-bottom:24px;letter-spacing:8px}
-  footer p{color:var(--ink);font-size:13px;letter-spacing:1px}
-  footer a{color:var(--maroon);text-decoration:none;margin:0 12px;font-weight:600;transition:opacity .3s}
-  footer a:hover{opacity:0.7}
+  footer{text-align:center;padding:60px 32px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2);position:relative;z-index:1}
+  footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold-soft));border-radius:3px}
+  footer a{color:var(--maroon);text-decoration:none;font-weight:500}
+  footer .ornament{color:var(--gold);font-size:18px;margin-bottom:20px;letter-spacing:8px}
 
-  /* Animations */
-  .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(0.5,0,0,1)}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(0.4,0,0.2,1), transform .8s cubic-bezier(0.4,0,0.2,1)}
   .reveal.in{opacity:1;transform:none}
-
-  /* Responsive */
-  @media(max-width:968px){
-    .tl-item,.tl-item:nth-child(even){grid-template-columns:1fr;gap:40px}
-    .tl-item:nth-child(even){direction:ltr}
-    .tl-marker{left:20px !important;right:auto !important}
-    .timeline-line{left:32px}
-    .tl-content{padding-left:80px}
-    .tl-decoration{display:none}
-    .stats-grid{grid-template-columns:1fr;gap:40px}
-    .hero{padding:160px 24px 80px}
-    .hero h1{font-size:48px}
-    .timeline-section{padding:80px 24px}
-    .nav-links{display:none}
-  }
 
   /* Mobile Menu Toggle */
   .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
   .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
 
-  /* Mobile nav open state */
   @media(max-width:880px){
     .menu-toggle{display:flex}
     .nav-cta{display:none}
     .nav-links{display:none}
     .nav-links.mobile-active{
-      display:flex;
-      flex-direction:column;
-      position:fixed;
-      top:61px;
-      left:0;right:0;
-      background:var(--cream,#FBF6EE);
-      padding:28px 24px;
-      gap:20px;
-      border-bottom:1px solid rgba(107,31,44,0.15);
-      box-shadow:0 12px 40px rgba(107,31,44,0.15);
-      text-align:center;
-      z-index:99;
+      display:flex;flex-direction:column;position:fixed;top:61px;left:0;right:0;
+      background:var(--cream);padding:28px 24px;gap:20px;
+      border-bottom:1px solid var(--line);box-shadow:0 12px 40px rgba(107,31,44,0.12);
+      text-align:center;z-index:99;
       animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
     }
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-  }
 
+    .page-header{padding:120px 20px 70px}
+    .timeline-section,.stats-section,.certs-section{padding:70px 20px}
+    .tl-item,.tl-item:nth-child(even){grid-template-columns:1fr;gap:0;direction:ltr}
+    .tl-item:nth-child(even) > *{direction:ltr}
+    .timeline-line{left:20px}
+    .tl-marker{left:12px !important;right:auto !important}
+    .tl-content{padding-left:52px;padding-top:24px;padding-right:20px;padding-bottom:24px}
+    .stats-grid{grid-template-columns:1fr;gap:0}
+    .stat-item{padding:28px 20px;border-bottom:1px solid rgba(251,246,238,0.1)}
+    .stat-item:last-child{border-bottom:none}
+    .stat-number{font-size:48px}
+    .certs-grid{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
-
-<div class="bg-shapes">
-  <div class="shape-circle shape-1"></div>
-  <div class="shape-circle shape-2"></div>
-  <div class="shape-circle shape-3"></div>
-</div>
 
 <nav id="navbar">
   <div class="nav-wrap">
@@ -237,20 +199,21 @@
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-container">
-    <div class="hero-label">Career Journey</div>
-    <h1><em>Beyond</em> boundaries.</h1>
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow left" style="color:var(--gold-soft)">Career Journey</div>
+    <h1>Beyond <em>boundaries.</em></h1>
     <p>From film sets to fintech, OTT platforms to digital banking — a non-linear path driven by curiosity, impact, and the courage to pivot.</p>
-    <div class="hero-accent">RK</div>
   </div>
-</section>
+</div>
 
+<!-- TIMELINE -->
 <section class="timeline-section">
-  <div class="timeline-container">
-    <div class="section-intro reveal">
-      <h2>The trajectory</h2>
-      <p>Each role built on the last, creating a unique intersection of product thinking, customer obsession, and creative execution.</p>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Trajectory</div>
+      <h2>Each role built <em>on the last.</em></h2>
+      <p>A unique intersection of product thinking, customer obsession, and creative execution.</p>
     </div>
 
     <div class="timeline">
@@ -268,7 +231,6 @@
           </ul>
         </div>
         <div class="tl-marker"></div>
-        <div class="tl-decoration circle"></div>
       </div>
 
       <div class="tl-item reveal">
@@ -285,7 +247,6 @@
           </ul>
         </div>
         <div class="tl-marker"></div>
-        <div class="tl-decoration square"></div>
       </div>
 
       <div class="tl-item reveal">
@@ -302,7 +263,6 @@
           </ul>
         </div>
         <div class="tl-marker"></div>
-        <div class="tl-decoration circle"></div>
       </div>
 
       <div class="tl-item reveal">
@@ -318,7 +278,6 @@
           </ul>
         </div>
         <div class="tl-marker"></div>
-        <div class="tl-decoration square"></div>
       </div>
 
       <div class="tl-item reveal">
@@ -345,120 +304,100 @@
           </ul>
         </div>
         <div class="tl-marker"></div>
-        <div class="tl-decoration circle"></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="certs-section">
-  <div class="certs-container">
-    <div class="section-intro reveal">
-      <h2>Certifications & Letters</h2>
-      <p>A collection of professional milestones, academic achievements, and recognition from industry leaders.</p>
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number">7,576%</div>
+      <div class="stat-label">Facebook follower growth<br>in 9 days</div>
     </div>
-    
+    <div class="stat-item reveal">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Daily clients supported<br>at SadaPay</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number">15</div>
+      <div class="stat-label">Day film production<br>coordinated end-to-end</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2>Certifications &amp; <em>Letters</em></h2>
+      <p>Professional milestones, academic achievements, and recognition from industry leaders.</p>
+    </div>
+
     <div class="certs-grid">
       <div class="cert-card reveal">
         <span class="cert-type">Professional Certificate</span>
         <h4 class="cert-title">Product Analytics Completion</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Issued by Industry Standard Platform</p>
+        <p class="cert-desc">Issued by Industry Standard Platform</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Performance Recognition</span>
-        <h4 class="cert-title">Appraisal Letter - 2024</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Recognition of excellence and growth at Ideation Technologies.</p>
+        <h4 class="cert-title">Appraisal Letter — 2024</h4>
+        <p class="cert-desc">Recognition of excellence and growth at Ideation Technologies.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Promotion</span>
-        <h4 class="cert-title">Promotion Letter - 2024</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Advancement to Product Executive role.</p>
+        <h4 class="cert-title">Promotion Letter — 2024</h4>
+        <p class="cert-desc">Advancement to Product Executive role.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Recommendation</span>
         <h4 class="cert-title">Recommendation Letter</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Endorsement from leadership for outstanding contributions.</p>
+        <p class="cert-desc">Endorsement from leadership for outstanding contributions.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Regulatory Training</span>
         <h4 class="cert-title">SBP Regulatory Framework</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">NIBAF Certification on Banking Policy.</p>
+        <p class="cert-desc">NIBAF Certification on Banking Policy.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Internship</span>
         <h4 class="cert-title">Muasa Solutions Certificate</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Completion of technical internship program.</p>
+        <p class="cert-desc">Completion of technical internship program.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Media Training</span>
         <h4 class="cert-title">Fundamentals of Screenwriting</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Creative writing and production certification.</p>
+        <p class="cert-desc">Creative writing and production certification.</p>
         <a href="#" class="cert-link">View Document</a>
       </div>
-
       <div class="cert-card reveal">
         <span class="cert-type">Media Workshop</span>
         <h4 class="cert-title">Media Production Bootcamp</h4>
-        <p style="font-size: 14px; margin-bottom: 20px;">Intensive training in film and digital media.</p>
+        <p class="cert-desc">Intensive training in film and digital media.</p>
         <a href="#" class="cert-link">View Document</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="stats-container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-number">7,576%</div>
-        <div class="stat-label">Facebook follower growth<br>in 9 days</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Daily clients supported<br>at SadaPay</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">15</div>
-        <div class="stat-label">Day film production<br>coordinated end-to-end</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>· · · ✦ · · ·</p>
-  <p>
-    © 2025 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br>
-    Open to fintech product roles, telco VAS, and AI product opportunities in GCC, UK, EU, and remote.
-  </p>
-  <p>
-    <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
-    · <a href="https://linkedin.com/in/rajaa-j-khan">LinkedIn</a>
-  </p>
+  <div class="ornament">· · · ✦ · · ·</div>
+  © 2025 Rajaa Khan · <a href="index.html">Back to Home</a> · <a href="contact.html">Get in Touch</a>
 </footer>
 
 <script>
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-  
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
@@ -487,7 +426,6 @@
       if(!toggle.contains(e.target) && !links.contains(e.target)) closeMenu();
     });
   })();
-
 </script>
 </body>
 </html>
