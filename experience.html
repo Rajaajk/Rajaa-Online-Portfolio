@@ -78,8 +78,8 @@
   .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon);border-radius:30px}
   .nav-cta:hover{background:transparent;color:var(--maroon)}
 
-  section{position:relative;z-index:1;padding:140px 32px 100px}
-  .container{max-width:1240px;margin:0 auto}
+  section{position:relative;z-index:1;padding:140px 0 100px}
+  .container{max-width:1400px;margin:0 auto;padding:0 16px}
 
   .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
   .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
@@ -121,7 +121,7 @@
 
   /* Resume Download Button */
   .resume-section{
-    background:var(--cream-2);padding:60px 32px;text-align:center;position:relative;overflow:hidden;
+    background:var(--cream-2);padding:60px 0;text-align:center;position:relative;overflow:hidden;
   }
   .resume-section::before{
     content:'';position:absolute;inset:0;
@@ -160,7 +160,7 @@
   .modal-overlay.active{display:flex;opacity:1}
   .modal-box{
     background:var(--cream);border-radius:20px;overflow:hidden;
-    max-width:900px;width:100%;max-height:90vh;display:flex;flex-direction:column;
+    max-width:1000px;width:100%;max-height:90vh;display:flex;flex-direction:column;
     box-shadow:0 30px 80px rgba(0,0,0,0.3);transform:scale(0.9) translateY(20px);
     transition:transform .4s cubic-bezier(0.16,1,0.3,1);
   }
@@ -193,17 +193,17 @@
   .modal-download-btn svg{width:16px;height:16px}
 
   /* Timeline */
-  .timeline-section{background:var(--cream);padding:100px 32px;position:relative}
+  .timeline-section{background:var(--cream);padding:100px 0;position:relative}
   .timeline{position:relative}
   .timeline-line{
     position:absolute;left:50%;transform:translateX(-50%);
     width:2px;height:100%;background:linear-gradient(to bottom, transparent, var(--maroon-light), var(--gold-soft), var(--maroon-light), transparent);opacity:0.5;
   }
-  .tl-item{position:relative;margin-bottom:60px;display:flex;flex-direction:column;align-items:center;max-width:700px;margin-left:auto;margin-right:auto}
+  .tl-item{position:relative;margin-bottom:60px;display:flex;flex-direction:column;align-items:stretch;width:100%;margin-left:auto;margin-right:auto}
   .tl-item:nth-child(even){direction:ltr}
   .tl-item:nth-child(even) > *{direction:ltr}
 
-  .tl-content{position:relative;padding:36px;background:var(--cream-2);border-radius:16px;border:1px solid var(--line);transition:all .3s}
+  .tl-content{position:relative;padding:40px 56px;background:var(--cream-2);border-radius:16px;border:1px solid var(--line);transition:all .3s;width:100%;box-sizing:border-box}
   .tl-content:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(107,31,44,0.1)}
 
   .tl-marker{
@@ -244,7 +244,7 @@
   .tl-graphic-2{bottom:20%;left:3%;width:150px;height:150px}
 
   /* Stats */
-  .stats-section{background:var(--maroon-deep);padding:100px 32px;position:relative;overflow:hidden;z-index:1}
+  .stats-section{background:var(--maroon-deep);padding:100px 0;position:relative;overflow:hidden;z-index:1}
   .stats-section::before{
     content:'';position:absolute;inset:0;
     background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -264,7 +264,7 @@
   .stat-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,246,238,0.75);line-height:1.7;position:relative}
 
   /* CERTIFICATIONS - Vertical Scroll Carousel */
-  .certs-section{background:var(--cream-2);padding:100px 32px;z-index:1;position:relative;overflow:hidden}
+  .certs-section{background:var(--cream-2);padding:100px 0;z-index:1;position:relative;overflow:hidden}
   .certs-section::before{
     content:'';position:absolute;top:0;right:0;width:300px;height:300px;
     background:radial-gradient(circle, rgba(184,137,62,0.05), transparent 60%);border-radius:50%;
@@ -289,7 +289,7 @@
     display:flex;gap:24px;min-width:max-content;padding:4px 4px 8px;
   }
   .cert-card{
-    width:340px;flex-shrink:0;
+    width:420px;flex-shrink:0;
   }
 
 
@@ -353,7 +353,7 @@
   }
   .cert-modal-overlay.active{display:flex;opacity:1}
   .cert-modal-box{
-    max-width:900px;max-height:85vh;width:100%;position:relative;
+    max-width:1000px;max-height:85vh;width:100%;position:relative;
     transform:scale(0.9);transition:transform .4s cubic-bezier(0.16,1,0.3,1);
   }
   .cert-modal-overlay.active .cert-modal-box{transform:scale(1)}
@@ -403,7 +403,7 @@
   .deco-cross::after{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
 
   /* Footer */
-  footer{text-align:center;padding:60px 32px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2);position:relative;z-index:1}
+  footer{text-align:center;padding:60px 0;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2);position:relative;z-index:1}
   footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold-soft));border-radius:3px}
   footer .ornament{color:var(--gold);font-size:18px;margin-bottom:20px;letter-spacing:8px}
   .footer-main{color:var(--ink);font-weight:500;margin-bottom:12px}
@@ -434,19 +434,19 @@
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
-    .page-header{padding:120px 20px 70px}
+    .page-header{padding:120px 16px 70px}
     .page-header .container{grid-template-columns:1fr !important}
     .header-graphic{display:none}
     .section-head{grid-template-columns:1fr !important;text-align:center !important}
     .section-head h2{text-align:center !important}
     .section-head p{text-align:center !important;margin:0 auto !important}
     .trajectory-graphic{display:none}
-    .timeline-section,.stats-section,.certs-section{padding:70px 20px}
+    .timeline-section,.stats-section,.certs-section{padding:70px 16px}
     .tl-item,.tl-item:nth-child(even){flex-direction:column;gap:0;direction:ltr;max-width:100%}
     .tl-item:nth-child(even) > *{direction:ltr}
     .timeline-line{left:50%;transform:translateX(-50%)}
     .tl-marker{top:-28px;left:50%;transform:translateX(-50%) !important}
-    .tl-content{padding:36px 24px;margin-top:20px}
+    .tl-content{padding:28px 20px;margin-top:20px}
     .stats-grid{grid-template-columns:1fr;gap:0}
     .stat-item{padding:28px 20px;border-bottom:1px solid rgba(251,246,238,0.1)}
     .stat-item:last-child{border-bottom:none}
@@ -914,7 +914,7 @@
       <div class="certs-grid">
         <div class="cert-card reveal" data-cert="product-analytics">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=280&fit=crop" alt="Product Analytics Certificate Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR" alt="Product Analytics Certificate" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -925,7 +925,7 @@
             <h4 class="cert-title">Product Analytics Completion</h4>
             <p class="cert-desc">Issued by Industry Standard Platform</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -936,7 +936,7 @@
 
         <div class="cert-card reveal" data-cert="appraisal-2024">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=280&fit=crop" alt="Appraisal Letter Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC" alt="Appraisal Letter 2024" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -947,7 +947,7 @@
             <h4 class="cert-title">Appraisal Letter — 2024</h4>
             <p class="cert-desc">Recognition of excellence and growth at Ideation Technologies.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -958,7 +958,7 @@
 
         <div class="cert-card reveal" data-cert="promotion-2024">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=280&fit=crop" alt="Promotion Letter Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1_pDY43gHED5xz3kZC810CuKh2ndKrqdl" alt="Promotion Letter 2024" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -969,7 +969,7 @@
             <h4 class="cert-title">Promotion Letter — 2024</h4>
             <p class="cert-desc">Advancement to Product Executive role.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1_pDY43gHED5xz3kZC810CuKh2ndKrqdl/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -980,7 +980,7 @@
 
         <div class="cert-card reveal" data-cert="recommendation">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=400&h=280&fit=crop" alt="Recommendation Letter Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy" alt="Recommendation Letter" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -991,7 +991,7 @@
             <h4 class="cert-title">Recommendation Letter</h4>
             <p class="cert-desc">Endorsement from leadership for outstanding contributions.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -1002,7 +1002,7 @@
 
         <div class="cert-card reveal" data-cert="sbp-nibaf">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=280&fit=crop" alt="SBP Certification Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr" alt="SBP NIBAF Regulatory Certificate" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -1013,7 +1013,7 @@
             <h4 class="cert-title">SBP Regulatory Framework</h4>
             <p class="cert-desc">NIBAF Certification on Banking Policy.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -1024,7 +1024,7 @@
 
         <div class="cert-card reveal" data-cert="muasa">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=280&fit=crop" alt="Muasa Certificate Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt" alt="Muasa Solutions Certificate" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -1035,7 +1035,7 @@
             <h4 class="cert-title">Muasa Solutions Certificate</h4>
             <p class="cert-desc">Completion of technical internship program.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -1046,7 +1046,7 @@
 
         <div class="cert-card reveal" data-cert="screenwriting">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=280&fit=crop" alt="Screenwriting Certificate Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid" alt="Fundamentals of Screenwriting Certificate" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -1057,7 +1057,7 @@
             <h4 class="cert-title">Fundamentals of Screenwriting</h4>
             <p class="cert-desc">Creative writing and production certification.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -1068,7 +1068,7 @@
 
         <div class="cert-card reveal" data-cert="media-bootcamp">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=280&fit=crop" alt="Media Bootcamp Certificate Preview" loading="lazy">
+            <img class="cert-preview-img" src="https://drive.google.com/uc?export=view&id=1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR" alt="Media Bootcamp Certificate Preview" loading="lazy">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
@@ -1079,7 +1079,7 @@
             <h4 class="cert-title">Media Production Bootcamp</h4>
             <p class="cert-desc">Intensive training in film and digital media.</p>
             <div class="cert-actions">
-              <a href="#" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -1103,7 +1103,7 @@
 
 <footer>
   <div class="ornament">· · · ✦ · · ·</div>
-  <p class="footer-main">© 2026 Rajaa Khan · Senior Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan</p>
+  <p class="footer-main">© 2025 Rajaa Khan · Project & Operations @ Aik by Bank Islami · Islamabad, Pakistan</p>
   <p class="footer-sub">
     Open to fintech product roles, telco VAS, and AI product opportunities in GCC, UK, EU, and remote.
   </p>
