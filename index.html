@@ -23,74 +23,29 @@
   html{scroll-behavior:smooth}
   body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
   
-  /* Abstract Background Shapes - Inspired by reference image */
+  /* Abstract Background Shapes */
   .abstract-shapes{
-    position:fixed;
-    pointer-events:none;
-    z-index:0;
-    inset:0;
-    overflow:hidden;
+    position:fixed;pointer-events:none;z-index:0;inset:0;overflow:hidden;
   }
-  
-  /* Large cream curve on right */
   .abstract-shapes::before{
-    content:'';
-    position:absolute;
-    top:-20%;
-    right:-10%;
-    width:70%;
-    height:90%;
-    background:var(--cream-2);
-    border-radius:50%;
-    opacity:0.6;
+    content:'';position:absolute;top:-20%;right:-10%;width:70%;height:90%;
+    background:var(--cream-2);border-radius:50%;opacity:0.6;
   }
-  
-  /* Medium maroon circle */
   .abstract-shapes .shape-circle{
-    position:absolute;
-    top:35%;
-    right:15%;
-    width:180px;
-    height:180px;
-    background:var(--maroon);
-    border-radius:50%;
-    opacity:0.9;
+    position:absolute;top:35%;right:15%;width:180px;height:180px;
+    background:var(--maroon);border-radius:50%;opacity:0.9;
   }
-  
-  /* Dark navy semi-circle at bottom */
   .abstract-shapes .shape-semicircle{
-    position:absolute;
-    bottom:-5%;
-    right:20%;
-    width:280px;
-    height:280px;
-    background:var(--navy);
-    border-radius:50%;
-    opacity:0.85;
+    position:absolute;bottom:-5%;right:20%;width:280px;height:280px;
+    background:var(--navy);border-radius:50%;opacity:0.85;
   }
-  
-  /* Small accent circle */
   .abstract-shapes .shape-small{
-    position:absolute;
-    top:60%;
-    right:8%;
-    width:60px;
-    height:60px;
-    background:var(--maroon-deep);
-    border-radius:50%;
-    opacity:0.7;
+    position:absolute;top:60%;right:8%;width:60px;height:60px;
+    background:var(--maroon-deep);border-radius:50%;opacity:0.7;
   }
-  
-  /* Left side decorative curve */
   .abstract-shapes .shape-left{
-    position:absolute;
-    top:10%;
-    left:-15%;
-    width:50%;
-    height:70%;
-    background:var(--cream-3);
-    border-radius:50%;
-    opacity:0.4;
+    position:absolute;top:10%;left:-15%;width:50%;height:70%;
+    background:var(--cream-3);border-radius:50%;opacity:0.4;
   }
 
   /* Animated Background */
@@ -131,7 +86,16 @@
   /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px) saturate(180%);background:rgba(251,246,238,0.92);border-bottom:1px solid var(--line);transition:var(--transition)}
   nav.scrolled{padding:8px 0;box-shadow:var(--shadow-sm)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  
+  .nav-wrap{
+    margin:0 auto;
+    padding:18px 48px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+  }
+  
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none;position:relative}
   .logo-mark{
     width:40px;height:40px;border-radius:50%;
@@ -142,23 +106,37 @@
     transition:var(--transition)
   }
   .logo:hover .logo-mark{transform:rotate(15deg) scale(1.05)}
-  .nav-links{display:flex;gap:28px;list-style:none}
+  
+  .nav-links{display:flex;gap:36px;list-style:none;margin:0;padding:0}
   .nav-links a{
     color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;
-    letter-spacing:.3px;transition:var(--transition);position:relative;padding:4px 0
+    letter-spacing:.3px;transition:var(--transition);position:relative;padding:4px 0;
+    white-space:nowrap
   }
   .nav-links a::after{
     content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
     background:linear-gradient(90deg,var(--maroon),var(--gold));
     transition:width 0.3s;border-radius:2px
   }
-  .nav-links a:hover{color:var(--maroon)}
-  .nav-links a:hover::after{width:100%}
+  .nav-links a:hover,.nav-links a.active{color:var(--maroon)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  
   .nav-cta{
-    padding:11px 24px;background:var(--maroon);color:var(--cream);
-    font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.8px;
-    text-transform:uppercase;transition:var(--transition);border:1px solid var(--maroon);
-    border-radius:30px;position:relative;overflow:hidden
+    margin-left:60px;
+    padding:12px 28px;
+    background:var(--maroon);
+    color:var(--cream);
+    font-weight:500;
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:var(--transition);
+    border:1px solid var(--maroon);
+    border-radius:30px;
+    position:relative;
+    overflow:hidden;
+    display:inline-block
   }
   .nav-cta::before{
     content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--maroon-deep),var(--maroon-soft));
@@ -183,7 +161,7 @@
   .eyebrow.left::before{display:none}
 
   /* Hero Section */
-  .hero{min-height:100vh;display:flex;align-items:center;padding-top:160px;padding-bottom:80px;position:relative}
+  .hero{min-height:100vh;display:flex;align-items:center;padding:10rem 4rem 2rem;margin:0 auto;position:relative;overflow:hidden}
   .hero::after{
     content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
     width:80%;max-width:900px;height:1px;
@@ -538,8 +516,12 @@
     z-index:200;transition:width 0.1s ease;transform-origin:left
   }
   
+  /* Mobile Menu Toggle */
+  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
+  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
+
   /* Responsive */
-  @media(max-width:880px){
+  @media(max-width:767px){
     .hero-grid{grid-template-columns:1fr;gap:40px}
     .hero-text{order:2}
     .portrait{order:1;max-width:360px;width:100%;margin:0 auto;height:420px;aspect-ratio:unset}
@@ -551,31 +533,22 @@
     .contact-wrap{padding:70px 30px}
     .abstract-shapes{display:none}
     .highlights-grid{grid-template-columns:1fr;gap:24px}
-  }
-  @media(max-width:480px){
-    .portals{grid-template-columns:1fr}
-  }
-  
-  /* Reduced motion */
-  @media(prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
-    html{scroll-behavior:auto}
-  }
-
-  /* Mobile Menu Toggle */
-  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
-  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
-
-  /* Mobile nav open state */
-  @media(max-width:880px){
+    
+    /* Mobile Nav Fixes */
+    .nav-wrap { padding: 12px 16px !important; gap: 0 !important; }
+    .logo { font-size: 18px !important; gap: 8px !important; }
+    .logo-mark { width: 32px !important; height: 32px !important; font-size: 15px !important; }
+    
+    /* Mobile Header Fixes */
+    .hero { padding: 6.5rem 20px 3rem !important; }
+    
     .menu-toggle{display:flex}
     .nav-cta{display:none}
-    .nav-links{display:none}
     .nav-links.mobile-active{
       display:flex;
       flex-direction:column;
       position:fixed;
-      top:61px;
+      top:57px;
       left:0;right:0;
       background:var(--cream,#FBF6EE);
       padding:28px 24px;
@@ -589,12 +562,21 @@
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
   }
-
+  
+  @media(max-width:480px){
+    .portals{grid-template-columns:1fr}
+  }
+  
+  /* Reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
 
-<!-- Abstract Shapes Background - Inspired by reference image -->
+<!-- Abstract Shapes Background -->
 <div class="abstract-shapes">
   <div class="shape-circle"></div>
   <div class="shape-semicircle"></div>
@@ -632,7 +614,7 @@
       <li><a href="experience.html">Experience</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta"><span>Get in touch</span></a>
+    <a href="contact.html" class="nav-cta"><span>GET IN TOUCH</span></a>
   </div>
 </nav>
 
@@ -836,7 +818,7 @@
 
 <footer>
   <div class="ornament">✦ · · · ✦ · · · ✦</div>
-  © 2025 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br/>
+  © 2026 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br/>
   <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
 </footer>
 
@@ -911,7 +893,6 @@
       if(!toggle.contains(e.target) && !links.contains(e.target)) closeMenu();
     });
   })();
-
 </script>
 </body>
 </html>
