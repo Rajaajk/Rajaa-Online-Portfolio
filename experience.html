@@ -403,12 +403,15 @@
   .deco-cross::after{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
 
   /* Footer */
-  footer{text-align:center;padding:60px 0;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2);position:relative;z-index:1}
-  footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold-soft));border-radius:3px}
-  footer .ornament{color:var(--gold);font-size:18px;margin-bottom:20px;letter-spacing:8px}
-  .footer-main{color:var(--ink);font-weight:500;margin-bottom:12px}
+  /* Footer */
+  footer{text-align:center;padding:60px 32px;color:var(--ink-soft);font-size:13.5px;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--cream-2),var(--cream));position:relative;z-index:1}
+  footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  footer .ornament{color:var(--gold);font-size:20px;margin-bottom:20px;letter-spacing:10px;opacity:0.8}
+  footer a{color:var(--maroon);text-decoration:none;font-weight:500;transition:color 0.2s}
+  footer a:hover{color:var(--maroon-deep);text-decoration:underline}
+  .footer-main{color:var(--ink);font-weight:500;margin-bottom:8px}
   .footer-sub{font-style:italic;opacity:0.75;max-width:500px;margin:0 auto 20px;font-size:12px;line-height:1.7}
-  .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+  .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}
   .footer-links a{color:var(--maroon);text-decoration:none;font-weight:500;transition:opacity .2s}
   .footer-links a:hover{opacity:0.7}
   .footer-dot{color:var(--gold);font-size:16px;line-height:1}
@@ -457,6 +460,7 @@
     .deco-graphic{display:none}
   }
 </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -631,6 +635,7 @@
       </svg>
     </div>
   </div>
+</div>
 
 <!-- RESUME DOWNLOAD SECTION -->
 <section class="resume-section">
@@ -1101,11 +1106,9 @@
 </div>
 
 <footer>
-  <div class="ornament">· · · ✦ · · ·</div>
+  <div class="ornament">✦ · · · ✦ · · · ✦</div>
   <p class="footer-main">© 2025 Rajaa Khan · Project & Operations @ Aik by Bank Islami · Islamabad, Pakistan</p>
-  <p class="footer-sub">
-    Open to fintech product roles, telco VAS, and AI product opportunities in GCC, UK, EU, and remote.
-  </p>
+  <p class="footer-sub">Open to fintech product roles, telco VAS, and AI product opportunities in GCC, UK, EU, and remote.</p>
   <div class="footer-links">
     <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
     <span class="footer-dot">·</span>
