@@ -17,50 +17,19 @@
   html{scroll-behavior:smooth}
   body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
 
-  /* Animated background blobs */
-  .bg-blob{
-    position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(80px);
-    animation:blobFloat 20s ease-in-out infinite;
-  }
-  .bg-blob-1{
-    top:-10%;right:-5%;width:700px;height:700px;
-    background:radial-gradient(circle, rgba(107,31,44,0.07), transparent 60%);
-    animation-delay:0s;
-  }
-  .bg-blob-2{
-    bottom:-20%;left:-8%;width:600px;height:600px;
-    background:radial-gradient(circle, rgba(184,137,62,0.06), transparent 60%);
-    animation-delay:-7s;
-  }
-  .bg-blob-3{
-    top:40%;left:50%;width:500px;height:500px;
-    background:radial-gradient(circle, rgba(107,31,44,0.04), transparent 60%);
-    animation-delay:-14s;
-  }
-  @keyframes blobFloat{
-    0%,100%{transform:translate(0,0) scale(1)}
-    25%{transform:translate(30px,-20px) scale(1.05)}
-    50%{transform:translate(-20px,30px) scale(0.95)}
-    75%{transform:translate(20px,20px) scale(1.02)}
-  }
+  .bg-blob{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(80px);animation:blobFloat 20s ease-in-out infinite;}
+  .bg-blob-1{top:-10%;right:-5%;width:700px;height:700px;background:radial-gradient(circle, rgba(107,31,44,0.07), transparent 60%);animation-delay:0s;}
+  .bg-blob-2{bottom:-20%;left:-8%;width:600px;height:600px;background:radial-gradient(circle, rgba(184,137,62,0.06), transparent 60%);animation-delay:-7s;}
+  .bg-blob-3{top:40%;left:50%;width:500px;height:500px;background:radial-gradient(circle, rgba(107,31,44,0.04), transparent 60%);animation-delay:-14s;}
+  @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-20px) scale(1.05)}50%{transform:translate(-20px,30px) scale(0.95)}75%{transform:translate(20px,20px) scale(1.02)}}
 
   ::selection{background:var(--maroon);color:var(--cream)}
   h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
 
-  /* Floating particles */
   .particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-  .particle{
-    position:absolute;width:4px;height:4px;background:var(--gold-soft);border-radius:50%;opacity:0.3;
-    animation:particleDrift linear infinite;
-  }
-  @keyframes particleDrift{
-    0%{transform:translateY(100vh) rotate(0deg);opacity:0}
-    10%{opacity:0.3}
-    90%{opacity:0.3}
-    100%{transform:translateY(-10vh) rotate(720deg);opacity:0}
-  }
+  .particle{position:absolute;width:4px;height:4px;background:var(--gold-soft);border-radius:50%;opacity:0.3;animation:particleDrift linear infinite;}
+  @keyframes particleDrift{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:0.3}90%{opacity:0.3}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
 
-  /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line);transition:box-shadow .3s}
   nav.scrolled{box-shadow:0 4px 30px rgba(107,31,44,0.08)}
   .nav-wrap{margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
@@ -90,144 +59,63 @@
   .section-head h2 em{font-style:italic;color:var(--maroon)}
   .section-head p{color:var(--ink-soft);max-width:600px;margin:0 auto;font-size:16px;font-weight:400}
 
-  /* Page Header */
-  .page-header{
-    background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 100%);
-    padding:10rem 4rem 2rem;margin-top:0;position:relative;overflow:hidden;z-index:1;
-  }
-  .page-header::before{
-    content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;
-    background:rgba(255,255,255,0.04);border-radius:50%;
-    animation:headerOrb1 15s ease-in-out infinite;
-  }
-  .page-header::after{
-    content:'';position:absolute;bottom:-80px;left:10%;width:300px;height:300px;
-    background:rgba(184,137,62,0.12);border-radius:50%;
-    animation:headerOrb2 12s ease-in-out infinite;
-  }
-  @keyframes headerOrb1{
-    0%,100%{transform:translate(0,0)}
-    50%{transform:translate(-30px,20px)}
-  }
-  @keyframes headerOrb2{
-    0%,100%{transform:translate(0,0)}
-    50%{transform:translate(20px,-30px)}
-  }
+  .page-header{background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 100%);padding:10rem 4rem 2rem;margin-top:0;position:relative;overflow:hidden;z-index:1;}
+  .page-header::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:rgba(255,255,255,0.04);border-radius:50%;animation:headerOrb1 15s ease-in-out infinite;}
+  .page-header::after{content:'';position:absolute;bottom:-80px;left:10%;width:300px;height:300px;background:rgba(184,137,62,0.12);border-radius:50%;animation:headerOrb2 12s ease-in-out infinite;}
+  @keyframes headerOrb1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,20px)}}
+  @keyframes headerOrb2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
   .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px;position:relative;color:var(--cream)}
   .header-graphic{animation:headerGraphicFloat 10s ease-in-out infinite}
   @keyframes headerGraphicFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(1deg)}}
   .page-header h1 em{font-style:italic;color:var(--gold-soft)}
   .page-header p{font-size:18px;color:rgba(251,246,238,0.85);max-width:600px;line-height:1.7;position:relative}
 
-  /* Resume Download Button */
-  .resume-section{
-    background:var(--cream-2);padding:60px 0;text-align:center;position:relative;overflow:hidden;
-  }
-  .resume-section::before{
-    content:'';position:absolute;inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%236B1F2C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-  .resume-btn{
-    display:inline-flex;align-items:center;gap:12px;
-    padding:16px 40px;background:var(--maroon);color:var(--cream);
-    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
-    letter-spacing:.5px;text-transform:uppercase;text-decoration:none;
-    border-radius:50px;border:2px solid var(--maroon);
-    transition:all .4s cubic-bezier(0.16,1,0.3,1);
-    cursor:pointer;position:relative;overflow:hidden;
-    box-shadow:0 8px 30px rgba(107,31,44,0.25);
-  }
-  .resume-btn::before{
-    content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,0.15) 50%,transparent 70%);
-    transform:translateX(-100%);transition:transform .6s;
-  }
+  .resume-section{background:var(--cream-2);padding:60px 0;text-align:center;position:relative;overflow:hidden;}
+  .resume-section::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%236B1F2C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .resume-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 40px;background:var(--maroon);color:var(--cream);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-radius:50px;border:2px solid var(--maroon);transition:all .4s cubic-bezier(0.16,1,0.3,1);cursor:pointer;position:relative;overflow:hidden;box-shadow:0 8px 30px rgba(107,31,44,0.25);}
+  .resume-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,0.15) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s;}
   .resume-btn:hover::before{transform:translateX(100%)}
-  .resume-btn:hover{
-    background:transparent;color:var(--maroon);transform:translateY(-3px);
-    box-shadow:0 12px 40px rgba(107,31,44,0.15);
-  }
+  .resume-btn:hover{background:transparent;color:var(--maroon);transform:translateY(-3px);box-shadow:0 12px 40px rgba(107,31,44,0.15);}
   .resume-btn svg{width:20px;height:20px;transition:transform .3s}
   .resume-btn:hover svg{transform:translateY(3px)}
   .resume-section h3{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);margin-bottom:12px}
   .resume-section p{color:var(--ink-soft);margin-bottom:28px;font-size:15px}
 
-  /* Resume Modal */
-  .modal-overlay{
-    position:fixed;inset:0;background:rgba(42,26,30,0.7);backdrop-filter:blur(8px);
-    z-index:200;display:none;align-items:center;justify-content:center;
-    padding:20px;opacity:0;transition:opacity .4s;
-  }
+  .modal-overlay{position:fixed;inset:0;background:rgba(42,26,30,0.7);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .4s;}
   .modal-overlay.active{display:flex;opacity:1}
-  .modal-box{
-    background:var(--cream);border-radius:20px;overflow:hidden;
-    max-width:1000px;width:100%;max-height:90vh;display:flex;flex-direction:column;
-    box-shadow:0 30px 80px rgba(0,0,0,0.3);transform:scale(0.9) translateY(20px);
-    transition:transform .4s cubic-bezier(0.16,1,0.3,1);
-  }
+  .modal-box{background:var(--cream);border-radius:20px;overflow:hidden;max-width:1000px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,0.3);transform:scale(0.9) translateY(20px);transition:transform .4s cubic-bezier(0.16,1,0.3,1);}
   .modal-overlay.active .modal-box{transform:scale(1) translateY(0)}
-  .modal-header{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px 28px;border-bottom:1px solid var(--line);background:var(--cream-2);
-  }
+  .modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;border-bottom:1px solid var(--line);background:var(--cream-2);}
   .modal-header h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink)}
-  .modal-close{
-    width:36px;height:36px;border-radius:50%;border:none;background:var(--line);
-    color:var(--maroon);cursor:pointer;font-size:20px;display:grid;place-items:center;
-    transition:all .3s;
-  }
+  .modal-close{width:36px;height:36px;border-radius:50%;border:none;background:var(--line);color:var(--maroon);cursor:pointer;font-size:20px;display:grid;place-items:center;transition:all .3s;}
   .modal-close:hover{background:var(--maroon);color:var(--cream)}
   .modal-body{flex:1;overflow:auto;padding:0}
   .modal-body iframe{width:100%;height:70vh;border:none}
-  .modal-footer{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 28px;border-top:1px solid var(--line);background:var(--cream-2);gap:12px;
-  }
-  .modal-download-btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 28px;background:var(--maroon);color:var(--cream);
-    font-weight:600;font-size:13px;letter-spacing:.5px;text-transform:uppercase;
-    text-decoration:none;border-radius:30px;border:none;cursor:pointer;
-    transition:all .3s;
-  }
+  .modal-footer{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-top:1px solid var(--line);background:var(--cream-2);gap:12px;}
+  .modal-download-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--maroon);color:var(--cream);font-weight:600;font-size:13px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-radius:30px;border:none;cursor:pointer;transition:all .3s;}
   .modal-download-btn:hover{background:var(--maroon-deep);transform:translateY(-2px)}
   .modal-download-btn svg{width:16px;height:16px}
 
-  /* Timeline */
   .timeline-section{background:var(--cream);padding:100px 0;position:relative}
   .timeline{position:relative}
-  .timeline-line{
-    position:absolute;left:50%;transform:translateX(-50%);
-    width:2px;height:100%;background:linear-gradient(to bottom, transparent, var(--maroon-light), var(--gold-soft), var(--maroon-light), transparent);opacity:0.5;
-  }
+  .timeline-line{position:absolute;left:50%;transform:translateX(-50%);width:2px;height:100%;background:linear-gradient(to bottom, transparent, var(--maroon-light), var(--gold-soft), var(--maroon-light), transparent);opacity:0.5;}
   .tl-item{position:relative;margin-bottom:60px;display:flex;flex-direction:column;align-items:stretch;width:100%;margin-left:auto;margin-right:auto}
   .tl-item:nth-child(even){direction:ltr}
   .tl-item:nth-child(even) > *{direction:ltr}
-
   .tl-content{position:relative;padding:40px 56px;background:var(--cream-2);border-radius:16px;border:1px solid var(--line);transition:all .3s;width:100%;box-sizing:border-box}
   .tl-content:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(107,31,44,0.1)}
-
-  .tl-marker{
-    position:absolute;width:44px;height:44px;background:var(--maroon);
-    border-radius:50%;top:50%;transform:translateY(-50%);
-    border:3px solid var(--cream);box-shadow:0 0 0 2px var(--maroon);z-index:10;
-    display:grid;place-items:center;transition:all .3s;
-  }
+  .tl-marker{position:absolute;width:44px;height:44px;background:var(--maroon);border-radius:50%;top:50%;transform:translateY(-50%);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--maroon);z-index:10;display:grid;place-items:center;transition:all .3s;}
   .tl-marker svg{width:18px;height:18px;stroke:var(--cream);stroke-width:2;fill:none}
   .tl-item:hover .tl-marker{transform:translateY(-50%) scale(1.15);box-shadow:0 0 0 4px rgba(107,31,44,0.2)}
+  .tl-item .tl-marker{top:-28px;left:50%;transform:translateX(-50%)}
   .tl-current .tl-marker{background:var(--gold);box-shadow:0 0 0 2px var(--gold);animation:pulse 2s infinite;top:-28px;left:50%;transform:translateX(-50%)}
   .tl-current .tl-marker svg{stroke:var(--maroon-deep)}
-  .tl-item .tl-marker{top:-28px;left:50%;transform:translateX(-50%)}
-  
-
-  .tl-current .tl-marker{background:var(--gold);box-shadow:0 0 0 2px var(--gold);animation:pulse 2s infinite;top:-28px;left:50%;transform:translateX(-50%)}
   @keyframes pulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.2)}}
-
   .tl-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;margin-bottom:14px;border-radius:3px}
   .tl-badge.now{background:var(--gold-soft);color:var(--maroon-deep)}
   .tl-badge.fintech{background:var(--maroon);color:var(--cream)}
   .tl-badge.product{background:var(--cream-3);color:var(--maroon)}
   .tl-badge.media{background:transparent;color:var(--maroon);border:1px solid var(--maroon)}
-
   .tl-role{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.5px}
   .tl-company{font-size:13px;color:var(--maroon);font-weight:600;margin-bottom:10px;letter-spacing:.5px}
   .tl-date{font-size:11px;color:var(--ink-soft);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
@@ -236,174 +124,63 @@
   .tl-content li::before{content:'—';position:absolute;left:0;color:var(--maroon);font-size:12px;line-height:1.8}
   .tl-content li b{color:var(--ink);font-weight:600}
 
-  /* Decorative timeline graphics */
-  .tl-graphic{
-    position:absolute;pointer-events:none;opacity:0.06;z-index:0;
-  }
-  .tl-graphic-1{top:10%;right:5%;width:200px;height:200px}
-  .tl-graphic-2{bottom:20%;left:3%;width:150px;height:150px}
-
-  /* Stats */
   .stats-section{background:var(--maroon-deep);padding:100px 0;position:relative;overflow:hidden;z-index:1}
-  .stats-section::before{
-    content:'';position:absolute;inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
+  .stats-section::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1240px;margin:0 auto;position:relative}
   .stat-item{text-align:center;padding:40px 20px;position:relative}
-  .stat-item::before{
-    content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:120px;height:120px;border:1px solid rgba(184,137,62,0.15);border-radius:50%;
-    animation:statRing 8s linear infinite;
-  }
-  @keyframes statRing{
-    0%{transform:translate(-50%,-50%) rotate(0deg)}
-    100%{transform:translate(-50%,-50%) rotate(360deg)}
-  }
+  .stat-item::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border:1px solid rgba(184,137,62,0.15);border-radius:50%;animation:statRing 8s linear infinite;}
+  @keyframes statRing{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
   .stat-number{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--gold-soft);line-height:1;margin-bottom:14px;letter-spacing:-2px;position:relative}
   .stat-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,246,238,0.75);line-height:1.7;position:relative}
 
-  /* CERTIFICATIONS - Vertical Scroll Carousel */
   .certs-section{background:var(--cream-2);padding:100px 0;z-index:1;position:relative;overflow:hidden}
-  .certs-section::before{
-    content:'';position:absolute;top:0;right:0;width:300px;height:300px;
-    background:radial-gradient(circle, rgba(184,137,62,0.05), transparent 60%);border-radius:50%;
-  }
-  .certs-section::after{
-    content:'';position:absolute;bottom:0;left:0;width:250px;height:250px;
-    background:radial-gradient(circle, rgba(107,31,44,0.04), transparent 60%);border-radius:50%;
-  }
-
-  /* Vertical scroll container */
-  .certs-scroll-container{
-    overflow-x:auto;overflow-y:hidden;
-    padding-bottom:16px;position:relative;
-    scrollbar-width:thin;scrollbar-color:var(--maroon-light) transparent;
-    -webkit-overflow-scrolling:touch;
-  }
+  .certs-section::before{content:'';position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle, rgba(184,137,62,0.05), transparent 60%);border-radius:50%;}
+  .certs-section::after{content:'';position:absolute;bottom:0;left:0;width:250px;height:250px;background:radial-gradient(circle, rgba(107,31,44,0.04), transparent 60%);border-radius:50%;}
+  .certs-scroll-container{overflow-x:auto;overflow-y:hidden;padding-bottom:16px;position:relative;scrollbar-width:thin;scrollbar-color:var(--maroon-light) transparent;-webkit-overflow-scrolling:touch;}
   .certs-scroll-container::-webkit-scrollbar{height:6px}
   .certs-scroll-container::-webkit-scrollbar-track{background:transparent}
   .certs-scroll-container::-webkit-scrollbar-thumb{background:var(--maroon-light);border-radius:3px}
   .certs-scroll-container::-webkit-scrollbar-thumb:hover{background:var(--maroon)}
-  .certs-grid{
-    display:flex;gap:24px;min-width:max-content;padding:4px 4px 8px;
-  }
-  .cert-card{
-    width:420px;flex-shrink:0;
-  }
-
-
-
-  .cert-card{
-    background:var(--cream);padding:0;border-radius:16px;border:1px solid var(--line);
-    transition:all .4s cubic-bezier(0.16,1,0.3,1);overflow:hidden;position:relative;
-  }
-  .cert-card:hover{
-    transform:translateY(-6px);box-shadow:0 20px 50px rgba(107,31,44,0.1);
-    border-color:var(--maroon-light);
-  }
-  .cert-preview{
-    width:100%;height:180px;background:linear-gradient(135deg, var(--cream-3), var(--cream-2));
-    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
-    cursor:pointer;
-  }
-  .cert-preview::before{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(135deg, rgba(107,31,44,0.03), rgba(184,137,62,0.03));
-  }
-  .cert-preview-img{
-    max-width:85%;max-height:85%;object-fit:contain;transition:transform .4s;
-    border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  }
+  .certs-grid{display:flex;gap:24px;min-width:max-content;padding:4px 4px 8px;}
+  .cert-card{width:420px;flex-shrink:0;background:var(--cream);padding:0;border-radius:16px;border:1px solid var(--line);transition:all .4s cubic-bezier(0.16,1,0.3,1);overflow:hidden;position:relative;}
+  .cert-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(107,31,44,0.1);border-color:var(--maroon-light);}
+  .cert-preview{width:100%;height:180px;background:linear-gradient(135deg, var(--cream-3), var(--cream-2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer;}
+  .cert-preview::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(107,31,44,0.03), rgba(184,137,62,0.03));}
+  .cert-preview-img{max-width:85%;max-height:85%;object-fit:contain;transition:transform .4s;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.1);}
   .cert-card:hover .cert-preview-img{transform:scale(1.05)}
-  .cert-preview-overlay{
-    position:absolute;inset:0;background:rgba(107,31,44,0.6);
-    display:flex;align-items:center;justify-content:center;gap:8px;
-    opacity:0;transition:opacity .3s;
-  }
+  .cert-preview-overlay{position:absolute;inset:0;background:rgba(107,31,44,0.6);display:flex;align-items:center;justify-content:center;gap:8px;opacity:0;transition:opacity .3s;}
   .cert-card:hover .cert-preview-overlay{opacity:1}
-  .cert-preview-overlay span{
-    color:var(--cream);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  }
+  .cert-preview-overlay span{color:var(--cream);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
   .cert-preview-overlay svg{width:16px;height:16px;stroke:var(--cream)}
-
   .cert-body{padding:24px 24px 20px}
   .cert-type{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--maroon);margin-bottom:10px;display:block;font-weight:600}
   .cert-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:8px}
   .cert-desc{font-size:13px;color:var(--ink-soft);margin-bottom:16px;line-height:1.6}
   .cert-actions{display:flex;gap:12px;align-items:center}
-  .cert-link{
-    font-size:12px;color:var(--maroon);text-decoration:none;font-weight:600;
-    border-bottom:1px solid var(--maroon);padding-bottom:2px;transition:opacity .2s;
-  }
+  .cert-link{font-size:12px;color:var(--maroon);text-decoration:none;font-weight:600;border-bottom:1px solid var(--maroon);padding-bottom:2px;transition:opacity .2s;}
   .cert-link:hover{opacity:0.7}
-  .cert-view-btn{
-    display:inline-flex;align-items:center;gap:6px;
-    padding:8px 16px;background:var(--maroon);color:var(--cream);
-    font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
-    border:none;border-radius:20px;cursor:pointer;transition:all .3s;
-  }
+  .cert-view-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--maroon);color:var(--cream);font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:none;border-radius:20px;cursor:pointer;transition:all .3s;}
   .cert-view-btn:hover{background:var(--maroon-deep);transform:translateY(-1px)}
 
-  /* Certificate Image Modal */
-  .cert-modal-overlay{
-    position:fixed;inset:0;background:rgba(42,26,30,0.85);backdrop-filter:blur(12px);
-    z-index:300;display:none;align-items:center;justify-content:center;
-    padding:40px;opacity:0;transition:opacity .4s;
-  }
+  .cert-modal-overlay{position:fixed;inset:0;background:rgba(42,26,30,0.85);backdrop-filter:blur(12px);z-index:300;display:none;align-items:center;justify-content:center;padding:40px;opacity:0;transition:opacity .4s;}
   .cert-modal-overlay.active{display:flex;opacity:1}
-  .cert-modal-box{
-    max-width:1000px;max-height:85vh;width:100%;position:relative;
-    transform:scale(0.9);transition:transform .4s cubic-bezier(0.16,1,0.3,1);
-  }
+  .cert-modal-box{max-width:1000px;max-height:85vh;width:100%;position:relative;transform:scale(0.9);transition:transform .4s cubic-bezier(0.16,1,0.3,1);}
   .cert-modal-overlay.active .cert-modal-box{transform:scale(1)}
-  .cert-modal-box img{
-    width:100%;max-height:85vh;object-fit:contain;border-radius:12px;
-    box-shadow:0 30px 80px rgba(0,0,0,0.4);
-  }
-  .cert-modal-close{
-    position:absolute;top:-48px;right:0;width:40px;height:40px;
-    border-radius:50%;border:2px solid rgba(251,246,238,0.3);background:transparent;
-    color:var(--cream);cursor:pointer;font-size:20px;display:grid;place-items:center;
-    transition:all .3s;
-  }
+  .cert-modal-box img{width:100%;max-height:85vh;object-fit:contain;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.4);}
+  .cert-modal-close{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;border:2px solid rgba(251,246,238,0.3);background:transparent;color:var(--cream);cursor:pointer;font-size:20px;display:grid;place-items:center;transition:all .3s;}
   .cert-modal-close:hover{background:var(--cream);color:var(--maroon)}
-  .cert-modal-caption{
-    position:absolute;bottom:-50px;left:0;right:0;text-align:center;
-    color:var(--cream);font-size:14px;font-weight:500;
-  }
+  .cert-modal-caption{position:absolute;bottom:-50px;left:0;right:0;text-align:center;color:var(--cream);font-size:14px;font-weight:500;}
 
-  /* Decorative graphics for empty spaces */
-  .deco-graphic{
-    position:absolute;pointer-events:none;z-index:0;
-  }
-  .deco-dots{
-    width:120px;height:120px;
-    background-image:radial-gradient(circle, var(--maroon-light) 1.5px, transparent 1.5px);
-    background-size:12px 12px;opacity:0.15;
-  }
-  .deco-ring{
-    width:200px;height:200px;border:1px solid var(--gold-soft);border-radius:50%;opacity:0.1;
-    animation:ringPulse 6s ease-in-out infinite;
-  }
-  @keyframes ringPulse{
-    0%,100%{transform:scale(1);opacity:0.1}
-    50%{transform:scale(1.1);opacity:0.05}
-  }
-  .deco-line{
-    width:1px;height:150px;background:linear-gradient(to bottom, transparent, var(--maroon-light), transparent);opacity:0.2;
-  }
-  .deco-cross{
-    width:60px;height:60px;position:relative;opacity:0.08;
-  }
-  .deco-cross::before,.deco-cross::after{
-    content:'';position:absolute;background:var(--maroon);
-  }
+  .deco-graphic{position:absolute;pointer-events:none;z-index:0;}
+  .deco-dots{width:120px;height:120px;background-image:radial-gradient(circle, var(--maroon-light) 1.5px, transparent 1.5px);background-size:12px 12px;opacity:0.15;}
+  .deco-ring{width:200px;height:200px;border:1px solid var(--gold-soft);border-radius:50%;opacity:0.1;animation:ringPulse 6s ease-in-out infinite;}
+  @keyframes ringPulse{0%,100%{transform:scale(1);opacity:0.1}50%{transform:scale(1.1);opacity:0.05}}
+  .deco-line{width:1px;height:150px;background:linear-gradient(to bottom, transparent, var(--maroon-light), transparent);opacity:0.2;}
+  .deco-cross{width:60px;height:60px;position:relative;opacity:0.08;}
+  .deco-cross::before,.deco-cross::after{content:'';position:absolute;background:var(--maroon);}
   .deco-cross::before{top:50%;left:0;right:0;height:1px;transform:translateY(-50%)}
   .deco-cross::after{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
 
-  /* Footer */
-  /* Footer */
   footer{text-align:center;padding:60px 32px;color:var(--ink-soft);font-size:13.5px;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--cream-2),var(--cream));position:relative;z-index:1}
   footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
   footer .ornament{color:var(--gold);font-size:20px;margin-bottom:20px;letter-spacing:10px;opacity:0.8}
@@ -419,7 +196,6 @@
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(0.4,0,0.2,1), transform .8s cubic-bezier(0.4,0,0.2,1)}
   .reveal.in{opacity:1;transform:none}
 
-  /* Mobile Menu Toggle */
   .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
   .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
 
@@ -427,16 +203,9 @@
     .menu-toggle{display:flex}
     .nav-cta{display:none}
     .nav-links{display:none}
-    .nav-links.mobile-active{
-      display:flex;flex-direction:column;position:fixed;top:61px;left:0;right:0;
-      background:var(--cream);padding:28px 24px;gap:20px;
-      border-bottom:1px solid var(--line);box-shadow:0 12px 40px rgba(107,31,44,0.12);
-      text-align:center;z-index:99;
-      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
-    }
+    .nav-links.mobile-active{display:flex;flex-direction:column;position:fixed;top:61px;left:0;right:0;background:var(--cream);padding:28px 24px;gap:20px;border-bottom:1px solid var(--line);box-shadow:0 12px 40px rgba(107,31,44,0.12);text-align:center;z-index:99;animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards}
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-
     .page-header{padding:6.5rem 20px 3rem !important}
     .page-header .container{grid-template-columns:1fr !important}
     .header-graphic{display:none}
@@ -461,15 +230,10 @@
   }
 </style>
 <base target="_blank">
-<base target="_blank">
-<base target="_blank">
 </head>
 <body>
 
-<!-- Floating particles -->
 <div class="particles" id="particles"></div>
-
-<!-- Background blobs -->
 <div class="bg-blob bg-blob-1"></div>
 <div class="bg-blob bg-blob-2"></div>
 <div class="bg-blob bg-blob-3"></div>
@@ -502,145 +266,29 @@
     </div>
     <div class="header-graphic" style="width:100%;max-width:600px;height:350px;position:relative;flex-shrink:0;margin-left:auto">
       <svg viewBox="0 0 600 350" fill="none" style="width:100%;height:100%">
-        <!-- Background filled shapes -->
         <ellipse cx="300" cy="175" rx="260" ry="200" fill="rgba(107,31,44,0.04)"/>
         <ellipse cx="300" cy="175" rx="210" ry="160" fill="rgba(107,31,44,0.03)"/>
         <ellipse cx="300" cy="175" rx="160" ry="120" fill="rgba(184,137,62,0.03)"/>
-
-        <!-- Large outer orbital ring -->
         <circle cx="300" cy="175" r="220" stroke="rgba(184,137,62,0.14)" stroke-width="1.5" stroke-dasharray="16 10"/>
-        <circle cx="300" cy="175" r="220" stroke="rgba(184,137,62,0.06)" stroke-width="1"/>
-
-        <!-- Second orbital ring -->
-        <circle cx="300" cy="175" r="175" stroke="rgba(251,246,238,0.08)" stroke-width="1"/>
         <circle cx="300" cy="175" r="175" stroke="rgba(184,137,62,0.1)" stroke-width="1" stroke-dasharray="8 12"/>
-
-        <!-- Third orbital ring -->
         <circle cx="300" cy="175" r="130" stroke="rgba(184,137,62,0.16)" stroke-width="1.5"/>
-        <circle cx="300" cy="175" r="130" stroke="rgba(251,246,238,0.05)" stroke-width="1" stroke-dasharray="4 8"/>
-
-        <!-- Inner orbital ring -->
         <circle cx="300" cy="175" r="85" stroke="rgba(184,137,62,0.2)" stroke-width="2"/>
-        <circle cx="300" cy="175" r="85" stroke="rgba(251,246,238,0.06)" stroke-width="1" stroke-dasharray="3 6"/>
-
-        <!-- Core rings -->
         <circle cx="300" cy="175" r="50" stroke="rgba(184,137,62,0.25)" stroke-width="2"/>
         <circle cx="300" cy="175" r="32" stroke="rgba(184,137,62,0.35)" stroke-width="1.5"/>
-
-        <!-- Center glow layers -->
         <circle cx="300" cy="175" r="26" fill="rgba(184,137,62,0.18)"/>
         <circle cx="300" cy="175" r="18" fill="rgba(184,137,62,0.28)"/>
         <circle cx="300" cy="175" r="11" fill="var(--gold-soft)"/>
         <circle cx="300" cy="175" r="5" fill="var(--cream)"/>
-
-        <!-- Orbital nodes -->
-        <!-- Node 1: Top -->
-        <g>
-          <circle cx="300" cy="21" r="16" fill="rgba(184,137,62,0.25)"/>
-          <circle cx="300" cy="21" r="10" fill="var(--gold-soft)"/>
-          <circle cx="300" cy="21" r="4" fill="var(--cream)"/>
-          <animateTransform attributeName="transform" type="rotate" from="0 300 250" to="360 300 250" dur="28s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Node 2: Bottom-left -->
-        <g>
-          <circle cx="80" cy="280" r="14" fill="rgba(251,246,238,0.2)"/>
-          <circle cx="80" cy="280" r="8" fill="rgba(251,246,238,0.55)"/>
-          <circle cx="80" cy="280" r="3" fill="var(--cream)"/>
-          <animateTransform attributeName="transform" type="rotate" from="120 300 250" to="480 300 250" dur="20s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Node 3: Bottom-right -->
-        <g>
-          <circle cx="520" cy="280" r="12" fill="rgba(184,137,62,0.3)"/>
-          <circle cx="520" cy="280" r="7" fill="rgba(184,137,62,0.65)"/>
-          <circle cx="520" cy="280" r="2.5" fill="var(--gold-soft)"/>
-          <animateTransform attributeName="transform" type="rotate" from="240 300 250" to="600 300 250" dur="24s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Node 4: Left -->
-        <g>
-          <circle cx="80" cy="175" r="10" fill="rgba(251,246,238,0.15)"/>
-          <circle cx="80" cy="175" r="6" fill="rgba(251,246,238,0.45)"/>
-          <circle cx="80" cy="175" r="2" fill="var(--cream)"/>
-          <animateTransform attributeName="transform" type="rotate" from="60 300 250" to="420 300 250" dur="16s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Node 5: Right -->
-        <g>
-          <circle cx="520" cy="175" r="12" fill="rgba(184,137,62,0.22)"/>
-          <circle cx="520" cy="175" r="7" fill="rgba(184,137,62,0.55)"/>
-          <circle cx="520" cy="175" r="2.5" fill="var(--gold-soft)"/>
-          <animateTransform attributeName="transform" type="rotate" from="300 300 250" to="660 300 250" dur="18s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Node 6: Top-left -->
-        <g>
-          <circle cx="140" cy="62" r="8" fill="rgba(251,246,238,0.12)"/>
-          <circle cx="140" cy="62" r="4" fill="rgba(251,246,238,0.35)"/>
-          <animateTransform attributeName="transform" type="rotate" from="30 300 250" to="390 300 250" dur="12s" repeatCount="indefinite"/>
-        </g>
-
-        <!-- Connection lines from center -->
-        <line x1="300" y1="175" x2="300" y2="21" stroke="rgba(184,137,62,0.12)" stroke-width="1"/>
-        <line x1="300" y1="175" x2="80" y2="280" stroke="rgba(251,246,238,0.08)" stroke-width="1"/>
-        <line x1="300" y1="175" x2="520" y2="280" stroke="rgba(184,137,62,0.1)" stroke-width="1"/>
-        <line x1="300" y1="175" x2="80" y2="175" stroke="rgba(251,246,238,0.06)" stroke-width="1"/>
-        <line x1="300" y1="175" x2="520" y2="175" stroke="rgba(184,137,62,0.1)" stroke-width="1"/>
-        <line x1="300" y1="175" x2="140" y2="62" stroke="rgba(251,246,238,0.05)" stroke-width="1"/>
-
-        <!-- Large decorative arcs -->
-        <path d="M 80 360 A 220 220 0 0 1 520 360" stroke="rgba(184,137,62,0.1)" stroke-width="1.5" fill="none" stroke-dasharray="10 8"/>
-        <path d="M 100 120 A 200 200 0 0 0 500 120" stroke="rgba(251,246,238,0.05)" stroke-width="1" fill="none"/>
-        <path d="M 60 280 A 240 240 0 0 0 540 280" stroke="rgba(184,137,62,0.06)" stroke-width="1" fill="none" stroke-dasharray="6 6"/>
-
-        <!-- Cross decorations -->
-        <g opacity="0.25">
-          <line x1="140" y1="70" x2="140" y2="87" stroke="var(--gold-soft)" stroke-width="2"/>
-          <line x1="127" y1="78" x2="153" y2="78" stroke="var(--gold-soft)" stroke-width="2"/>
-        </g>
-        <g opacity="0.2">
-          <line x1="460" y1="266" x2="460" y2="283" stroke="var(--cream)" stroke-width="2"/>
-          <line x1="447" y1="274" x2="473" y2="274" stroke="var(--cream)" stroke-width="2"/>
-        </g>
-        <g opacity="0.18">
-          <line x1="200" y1="294" x2="200" y2="308" stroke="var(--gold-soft)" stroke-width="1.5"/>
-          <line x1="190" y1="301" x2="210" y2="301" stroke="var(--gold-soft)" stroke-width="1.5"/>
-        </g>
-        <g opacity="0.15">
-          <line x1="400" y1="42" x2="400" y2="56" stroke="var(--cream)" stroke-width="1.5"/>
-          <line x1="390" y1="49" x2="410" y2="49" stroke="var(--cream)" stroke-width="1.5"/>
-        </g>
-        <g opacity="0.12">
-          <line x1="100" y1="125" x2="100" y2="136" stroke="var(--gold-soft)" stroke-width="1"/>
-          <line x1="92" y1="130" x2="108" y2="130" stroke="var(--gold-soft)" stroke-width="1"/>
-        </g>
-
-        <!-- Floating dots -->
-        <circle cx="220" cy="98" r="3" fill="var(--gold-soft)" opacity="0.35"/>
-        <circle cx="380" cy="224" r="2.5" fill="var(--cream)" opacity="0.25"/>
-        <circle cx="170" cy="244" r="3.5" fill="var(--gold-soft)" opacity="0.2"/>
-        <circle cx="430" cy="118" r="2.5" fill="var(--cream)" opacity="0.3"/>
-        <circle cx="260" cy="56" r="3" fill="var(--gold-soft)" opacity="0.25"/>
-        <circle cx="340" cy="287" r="2.5" fill="var(--cream)" opacity="0.2"/>
-        <circle cx="120" cy="210" r="2" fill="var(--gold-soft)" opacity="0.15"/>
-        <circle cx="480" cy="84" r="2" fill="var(--cream)" opacity="0.2"/>
-        <circle cx="250" cy="315" r="3" fill="var(--gold-soft)" opacity="0.1"/>
-        <circle cx="350" cy="35" r="2" fill="var(--cream)" opacity="0.15"/>
-
-        <!-- Small ring accents -->
-        <circle cx="160" cy="224" r="20" stroke="var(--maroon)" stroke-width="1" fill="none" opacity="0.08"/>
-        <circle cx="440" cy="125" r="18" stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.1"/>
-        <circle cx="320" cy="70" r="15" stroke="var(--maroon)" stroke-width="1" fill="none" opacity="0.06"/>
-        <circle cx="180" cy="140" r="12" stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.08"/>
+        <g><circle cx="300" cy="21" r="16" fill="rgba(184,137,62,0.25)"/><circle cx="300" cy="21" r="10" fill="var(--gold-soft)"/><circle cx="300" cy="21" r="4" fill="var(--cream)"/><animateTransform attributeName="transform" type="rotate" from="0 300 250" to="360 300 250" dur="28s" repeatCount="indefinite"/></g>
+        <g><circle cx="80" cy="280" r="14" fill="rgba(251,246,238,0.2)"/><circle cx="80" cy="280" r="8" fill="rgba(251,246,238,0.55)"/><animateTransform attributeName="transform" type="rotate" from="120 300 250" to="480 300 250" dur="20s" repeatCount="indefinite"/></g>
+        <g><circle cx="520" cy="280" r="12" fill="rgba(184,137,62,0.3)"/><circle cx="520" cy="280" r="7" fill="rgba(184,137,62,0.65)"/><animateTransform attributeName="transform" type="rotate" from="240 300 250" to="600 300 250" dur="24s" repeatCount="indefinite"/></g>
       </svg>
     </div>
   </div>
 </div>
 
-<!-- RESUME DOWNLOAD SECTION -->
+<!-- TIMELINE -->
 <section class="timeline-section">
-  <!-- Decorative graphics -->
   <div class="deco-graphic deco-dots" style="top:15%;right:8%"></div>
   <div class="deco-graphic deco-ring" style="top:40%;left:-5%"></div>
   <div class="deco-graphic deco-line" style="top:60%;right:12%"></div>
@@ -655,90 +303,19 @@
       </div>
       <div class="trajectory-graphic" style="width:100%;height:380px;position:relative">
         <svg viewBox="0 0 500 380" fill="none" style="width:100%;height:100%">
-          <!-- Large background shape -->
           <ellipse cx="250" cy="190" rx="220" ry="160" fill="rgba(107,31,44,0.03)"/>
-          <ellipse cx="250" cy="190" rx="180" ry="130" fill="rgba(107,31,44,0.02)"/>
-
-          <!-- Main timeline path -->
-          <path d="M 60 320 Q 150 280 200 220 T 280 160 T 380 100 T 460 60" 
-                stroke="var(--maroon)" stroke-width="2" fill="none" opacity="0.2" stroke-dasharray="8 6"/>
-          <path d="M 60 320 Q 150 280 200 220 T 280 160 T 380 100 T 460 60" 
-                stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.3"/>
-
-          <!-- Timeline nodes along the path -->
-          <circle cx="60" cy="320" r="14" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/>
-          <circle cx="60" cy="320" r="6" fill="var(--maroon)"/>
-
-          <circle cx="200" cy="220" r="12" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/>
-          <circle cx="200" cy="220" r="5" fill="var(--maroon)"/>
-
-          <circle cx="280" cy="160" r="12" fill="var(--cream-2)" stroke="var(--gold)" stroke-width="2"/>
-          <circle cx="280" cy="160" r="5" fill="var(--gold)"/>
-
-          <circle cx="380" cy="100" r="12" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/>
-          <circle cx="380" cy="100" r="5" fill="var(--maroon)"/>
-
-          <circle cx="460" cy="60" r="16" fill="var(--cream-2)" stroke="var(--gold)" stroke-width="2.5"/>
-          <circle cx="460" cy="60" r="7" fill="var(--gold)"/>
-          <circle cx="460" cy="60" r="3" fill="var(--cream)"/>
-
-          <!-- Year labels -->
+          <path d="M 60 320 Q 150 280 200 220 T 280 160 T 380 100 T 460 60" stroke="var(--maroon)" stroke-width="2" fill="none" opacity="0.2" stroke-dasharray="8 6"/>
+          <path d="M 60 320 Q 150 280 200 220 T 280 160 T 380 100 T 460 60" stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.3"/>
+          <circle cx="60" cy="320" r="14" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/><circle cx="60" cy="320" r="6" fill="var(--maroon)"/>
+          <circle cx="200" cy="220" r="12" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/><circle cx="200" cy="220" r="5" fill="var(--maroon)"/>
+          <circle cx="280" cy="160" r="12" fill="var(--cream-2)" stroke="var(--gold)" stroke-width="2"/><circle cx="280" cy="160" r="5" fill="var(--gold)"/>
+          <circle cx="380" cy="100" r="12" fill="var(--cream-2)" stroke="var(--maroon)" stroke-width="2"/><circle cx="380" cy="100" r="5" fill="var(--maroon)"/>
+          <circle cx="460" cy="60" r="16" fill="var(--cream-2)" stroke="var(--gold)" stroke-width="2.5"/><circle cx="460" cy="60" r="7" fill="var(--gold)"/><circle cx="460" cy="60" r="3" fill="var(--cream)"/>
           <text x="60" y="355" text-anchor="middle" fill="var(--ink-soft)" font-size="11" font-family="Inter,sans-serif" font-weight="500">2022</text>
           <text x="200" y="255" text-anchor="middle" fill="var(--ink-soft)" font-size="11" font-family="Inter,sans-serif" font-weight="500">2023</text>
           <text x="280" y="195" text-anchor="middle" fill="var(--ink-soft)" font-size="11" font-family="Inter,sans-serif" font-weight="500">2024</text>
           <text x="380" y="135" text-anchor="middle" fill="var(--ink-soft)" font-size="11" font-family="Inter,sans-serif" font-weight="500">2025</text>
           <text x="460" y="95" text-anchor="middle" fill="var(--maroon)" font-size="12" font-family="Inter,sans-serif" font-weight="700">Now</text>
-
-          <!-- Connecting vertical lines to labels -->
-          <line x1="60" y1="334" x2="60" y2="345" stroke="var(--ink-soft)" stroke-width="1" opacity="0.3"/>
-          <line x1="200" y1="232" x2="200" y2="245" stroke="var(--ink-soft)" stroke-width="1" opacity="0.3"/>
-          <line x1="280" y1="172" x2="280" y2="185" stroke="var(--ink-soft)" stroke-width="1" opacity="0.3"/>
-          <line x1="380" y1="112" x2="380" y2="125" stroke="var(--ink-soft)" stroke-width="1" opacity="0.3"/>
-          <line x1="460" y1="76" x2="460" y2="85" stroke="var(--maroon)" stroke-width="1" opacity="0.5"/>
-
-          <!-- Decorative rings -->
-          <circle cx="120" cy="280" r="30" stroke="var(--maroon)" stroke-width="1" fill="none" opacity="0.08"/>
-          <circle cx="320" cy="140" r="25" stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.1"/>
-          <circle cx="420" cy="80" r="20" stroke="var(--maroon)" stroke-width="1" fill="none" opacity="0.06"/>
-
-          <!-- Decorative dots grid -->
-          <g opacity="0.1">
-            <circle cx="100" cy="100" r="2" fill="var(--maroon)"/>
-            <circle cx="120" cy="100" r="2" fill="var(--maroon)"/>
-            <circle cx="140" cy="100" r="2" fill="var(--maroon)"/>
-            <circle cx="100" cy="120" r="2" fill="var(--maroon)"/>
-            <circle cx="120" cy="120" r="2" fill="var(--maroon)"/>
-            <circle cx="140" cy="120" r="2" fill="var(--maroon)"/>
-            <circle cx="100" cy="140" r="2" fill="var(--maroon)"/>
-            <circle cx="120" cy="140" r="2" fill="var(--maroon)"/>
-            <circle cx="140" cy="140" r="2" fill="var(--maroon)"/>
-          </g>
-
-          <g opacity="0.08">
-            <circle cx="350" cy="240" r="2" fill="var(--gold-soft)"/>
-            <circle cx="370" cy="240" r="2" fill="var(--gold-soft)"/>
-            <circle cx="390" cy="240" r="2" fill="var(--gold-soft)"/>
-            <circle cx="350" cy="260" r="2" fill="var(--gold-soft)"/>
-            <circle cx="370" cy="260" r="2" fill="var(--gold-soft)"/>
-            <circle cx="390" cy="260" r="2" fill="var(--gold-soft)"/>
-          </g>
-
-          <!-- Arrow at the end -->
-          <polygon points="460,60 450,55 450,65" fill="var(--gold)" opacity="0.6"/>
-
-          <!-- Small cross decorations -->
-          <g opacity="0.15">
-            <line x1="80" y1="180" x2="80" y2="195" stroke="var(--maroon)" stroke-width="1"/>
-            <line x1="72" y1="187" x2="88" y2="187" stroke="var(--maroon)" stroke-width="1"/>
-          </g>
-          <g opacity="0.12">
-            <line x1="400" y1="200" x2="400" y2="215" stroke="var(--gold-soft)" stroke-width="1"/>
-            <line x1="392" y1="207" x2="408" y2="207" stroke="var(--gold-soft)" stroke-width="1"/>
-          </g>
-
-          <!-- Curved decorative lines -->
-          <path d="M 30 200 Q 80 180 120 200" stroke="var(--maroon)" stroke-width="1" fill="none" opacity="0.06"/>
-          <path d="M 350 300 Q 400 280 440 300" stroke="var(--gold-soft)" stroke-width="1" fill="none" opacity="0.08"/>
         </svg>
       </div>
     </div>
@@ -877,20 +454,22 @@
 
     <div class="certs-scroll-container">
       <div class="certs-grid">
-        <div class="cert-card reveal" data-cert="product-analytics">
+
+        <!-- 1. Appraisal Letter — ID: 17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR&sz=w1000" alt="Product Analytics Certificate" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR&sz=w1000" alt="Appraisal Letter" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Professional Certificate</span>
-            <h4 class="cert-title">Product Analytics Completion</h4>
-            <p class="cert-desc">Issued by Product School</p>
+            <span class="cert-type">Zindigi · Performance Review</span>
+            <h4 class="cert-title">Appraisal Letter — 2024</h4>
+            <p class="cert-desc">Performance appraisal recognising excellence, impact, and growth across 8 departments at Zindigi by JS Bank.</p>
             <div class="cert-actions">
-              <a href="https://drive.google.com/file/d/1_pDY43gHED5xz3kZC810CuKh2ndKrqdl/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <a href="https://drive.google.com/file/d/17l3tXXg2-rFtXycK_eLHyUMEVxlsAnYR/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Preview
@@ -899,18 +478,19 @@
           </div>
         </div>
 
-        <div class="cert-card reveal" data-cert="appraisal-2024">
+        <!-- 2. Bonus Letter — ID: 1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC&sz=w1000" alt="Appraisal Letter 2024" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC&sz=w1000" alt="Bonus Letter" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Performance Recognition</span>
-            <h4 class="cert-title">Appraisal Letter — 2024</h4>
-            <p class="cert-desc">Recognition of excellence and growth at Zindigi by JS Bank.</p>
+            <span class="cert-type">Zindigi · Recognition</span>
+            <h4 class="cert-title">Bonus Letter — 2024</h4>
+            <p class="cert-desc">Official bonus letter acknowledging outstanding performance and contributions at Zindigi by JS Bank.</p>
             <div class="cert-actions">
               <a href="https://drive.google.com/file/d/1oxZWBDsf3c5v1JT9BbdPnwBD0AL51QgC/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
@@ -921,62 +501,19 @@
           </div>
         </div>
 
-        <div class="cert-card reveal" data-cert="promotion-2024">
+        <!-- 3. Promotion Letter — ID: 1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1_pDY43gHED5xz3kZC810CuKh2ndKrqdl&sz=w1000" alt="Promotion Letter 2024" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr&sz=w1000" alt="Promotion Letter" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Promotion</span>
+            <span class="cert-type">Zindigi · Career Advancement</span>
             <h4 class="cert-title">Promotion Letter — 2024</h4>
-            <p class="cert-desc">Advancement within Zindigi by JS Bank. </p>
-            <div class="cert-actions">
-              <a href="https://drive.google.com/file/d/1_pDY43gHED5xz3kZC810CuKh2ndKrqdl/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
-              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Preview
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="cert-card reveal" data-cert="recommendation">
-          <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy&sz=w1000" alt="Recommendation Letter" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
-            <div class="cert-preview-overlay">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <span>Click to Enlarge</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <span class="cert-type">Recommendation</span>
-            <h4 class="cert-title">Recommendation Letter</h4>
-            <p class="cert-desc">Endorsement from leadership for outstanding contributions.</p>
-            <div class="cert-actions">
-              <a href="https://drive.google.com/file/d/1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
-              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Preview
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="cert-card reveal" data-cert="sbp-nibaf">
-          <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr&sz=w1000" alt="SBP NIBAF Regulatory Certificate" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
-            <div class="cert-preview-overlay">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <span>Click to Enlarge</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <span class="cert-type">Regulatory Training</span>
-            <h4 class="cert-title">SBP Regulatory Framework</h4>
-            <p class="cert-desc">NIBAF Certification on Banking Policy.</p>
+            <p class="cert-desc">Official promotion letter documenting role advancement and increased responsibilities at Zindigi by JS Bank.</p>
             <div class="cert-actions">
               <a href="https://drive.google.com/file/d/1GtN7FAtPpiRTBZNwIP181hQ_ioifToBr/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
@@ -987,18 +524,19 @@
           </div>
         </div>
 
-        <div class="cert-card reveal" data-cert="muasa">
+        <!-- 4. Recommendation Letter — ID: 1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt&sz=w1000" alt="Muasa Solutions Certificate" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt&sz=w1000" alt="Recommendation Letter" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Internship</span>
-            <h4 class="cert-title">Muasa Solutions Certificate</h4>
-            <p class="cert-desc">Completion of internship program.</p>
+            <span class="cert-type">Zindigi · Leadership Endorsement</span>
+            <h4 class="cert-title">Recommendation Letter</h4>
+            <p class="cert-desc">Leadership recommendation endorsing outstanding contributions, initiative, and cross-functional impact.</p>
             <div class="cert-actions">
               <a href="https://drive.google.com/file/d/1cpnM3YKOM_1EolgHk0oGr_HcQmSpictt/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
@@ -1009,18 +547,42 @@
           </div>
         </div>
 
-        <div class="cert-card reveal" data-cert="screenwriting">
+        <!-- 5. Product Analytics — ID: 1_pDY43gHED5xz3kZC810CuKh2ndKrqdl -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid&sz=w1000" alt="Fundamentals of Screenwriting Certificate" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1_pDY43gHED5xz3kZC810CuKh2ndKrqdl&sz=w1000" alt="Product Analytics Certificate" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Media Training</span>
-            <h4 class="cert-title">Fundamentals of Screenwriting</h4>
-            <p class="cert-desc">Creative writing and production certification.</p>
+            <span class="cert-type">Professional Certificate</span>
+            <h4 class="cert-title">Product Analytics Micro-Certification</h4>
+            <p class="cert-desc">Issued by Product School.</p>
+            <div class="cert-actions">
+              <a href="https://drive.google.com/file/d/1_pDY43gHED5xz3kZC810CuKh2ndKrqdl/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. SBP NIBAF — ID: 14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid -->
+        <div class="cert-card reveal">
+          <div class="cert-preview" onclick="openCertModal(this)">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid&sz=w1000" alt="SBP NIBAF Certificate" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
+            <div class="cert-preview-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Click to Enlarge</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Regulatory Training</span>
+            <h4 class="cert-title">SBP Regulatory Framework</h4>
+            <p class="cert-desc">NIBAF Certification on Banking Policy.</p>
             <div class="cert-actions">
               <a href="https://drive.google.com/file/d/14VxiTT6NaTHcQWXiXIMBVIq76kL8Afid/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
@@ -1031,18 +593,65 @@
           </div>
         </div>
 
-        <div class="cert-card reveal" data-cert="media-bootcamp">
+        <!-- 7. Internship Certificate (Muasa) — ID: 1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy -->
+        <div class="cert-card reveal">
           <div class="cert-preview" onclick="openCertModal(this)">
-            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR&sz=w1000" alt="Media Bootcamp Certificate Preview" loading="lazy" onerror="this.src=\'https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview\';this.onerror=null;">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy&sz=w1000" alt="Muasa Solutions Internship Certificate" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
             <div class="cert-preview-overlay">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <span>Click to Enlarge</span>
             </div>
           </div>
           <div class="cert-body">
-            <span class="cert-type">Media Workshop</span>
-            <h4 class="cert-title">Media Production Bootcamp</h4>
-            <p class="cert-desc">Intensive training in film and digital media.</p>
+            <span class="cert-type">Internship</span>
+            <h4 class="cert-title">Muasa Solutions Certificate</h4>
+            <p class="cert-desc">Completion of internship program at Muasa Solutions.</p>
+            <div class="cert-actions">
+              <a href="https://drive.google.com/file/d/1BH7-wBicKgJvDs7Up8UORu0jzj4sTwcy/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. American Film Showcase 2022 — ID: 1CveSd7m7pBOzF00pxh6ka7PFTqcc_zxi -->
+        <div class="cert-card reveal">
+          <div class="cert-preview" onclick="openCertModal(this)">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1CveSd7m7pBOzF00pxh6ka7PFTqcc_zxi&sz=w1000" alt="American Film Showcase 2022" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
+            <div class="cert-preview-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Click to Enlarge</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Film Training · 2022</span>
+            <h4 class="cert-title">American Film Showcase</h4>
+            <p class="cert-desc">A Practical Guide for Creating Short Films — workshop certification.</p>
+            <div class="cert-actions">
+              <a href="https://drive.google.com/file/d/1CveSd7m7pBOzF00pxh6ka7PFTqcc_zxi/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. U.S. Embassy BookBus Digital Bootcamp — ID: 1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR -->
+        <div class="cert-card reveal">
+          <div class="cert-preview" onclick="openCertModal(this)">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR&sz=w1000" alt="U.S. Embassy BookBus Digital Bootcamp" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
+            <div class="cert-preview-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Click to Enlarge</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Digital Skills · U.S. Embassy</span>
+            <h4 class="cert-title">BookBus Digital Bootcamp</h4>
+            <p class="cert-desc">Essential Skills for Social Media — U.S. Embassy programme certification.</p>
             <div class="cert-actions">
               <a href="https://drive.google.com/file/d/1m7IRUDp28gYMVvrO8XHZXbThJcIkKMsR/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
               <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
@@ -1052,6 +661,53 @@
             </div>
           </div>
         </div>
+
+        <!-- 10. Fundamentals of Screenwriting — ID: 1o0nObZG3EAGnEHrcwUAEYT3tKF2ULDM7 -->
+        <div class="cert-card reveal">
+          <div class="cert-preview" onclick="openCertModal(this)">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1o0nObZG3EAGnEHrcwUAEYT3tKF2ULDM7&sz=w1000" alt="Fundamentals of Screenwriting" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
+            <div class="cert-preview-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Click to Enlarge</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Media Training</span>
+            <h4 class="cert-title">Fundamentals of Screenwriting</h4>
+            <p class="cert-desc">Hamza Baig Screenwriting Workshop — creative writing and storytelling certification.</p>
+            <div class="cert-actions">
+              <a href="https://drive.google.com/file/d/1o0nObZG3EAGnEHrcwUAEYT3tKF2ULDM7/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Lights Camera Action VFX Workshop — ID: 1YhKnmdA7PXwesbryCYhpEIbTA15eu9EA -->
+        <div class="cert-card reveal">
+          <div class="cert-preview" onclick="openCertModal(this)">
+            <img class="cert-preview-img" src="https://drive.google.com/thumbnail?id=1YhKnmdA7PXwesbryCYhpEIbTA15eu9EA&sz=w1000" alt="Lights Camera Action VFX Workshop" loading="lazy" onerror="this.src='https://placehold.co/400x250/6B1F2C/FBF6EE?text=Certificate+Preview';this.onerror=null;">
+            <div class="cert-preview-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Click to Enlarge</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Media Workshop</span>
+            <h4 class="cert-title">Lights, Camera, Action</h4>
+            <p class="cert-desc">Online VFX Workshop — visual effects and film production certification.</p>
+            <div class="cert-actions">
+              <a href="https://drive.google.com/file/d/1YhKnmdA7PXwesbryCYhpEIbTA15eu9EA/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Document</a>
+              <button class="cert-view-btn" onclick="openCertModal(this.closest('.cert-card').querySelector('.cert-preview'))">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1105,7 +761,6 @@
   </div>
 </div>
 
-<!-- TIMELINE -->
 <footer>
   <div class="ornament">✦ · · · ✦ · · · ✦</div>
   <p class="footer-main">© 2026 Rajaa Khan · Project & Operations @ Aik by Bank Islami · Islamabad, Pakistan</p>
@@ -1120,32 +775,23 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Animated stat counters
   const statObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         const el = entry.target;
         const target = parseInt(el.dataset.target);
-        const suffix = el.parentElement.querySelector('.stat-label').textContent.includes('growth') ? '%' : '+';
         let current = 0;
         const increment = target / 60;
         const timer = setInterval(() => {
           current += increment;
-          if(current >= target){
-            current = target;
-            clearInterval(timer);
-          }
-          if(target === 7576){
-            el.textContent = Math.floor(current).toLocaleString() + '%';
-          } else {
-            el.textContent = Math.floor(current) + '+';
-          }
+          if(current >= target){ current = target; clearInterval(timer); }
+          if(target === 7576){ el.textContent = Math.floor(current).toLocaleString() + '%'; }
+          else { el.textContent = Math.floor(current) + '+'; }
         }, 30);
         statObserver.unobserve(el);
       }
@@ -1153,7 +799,6 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 
-  // Floating particles
   (function(){
     const container = document.getElementById('particles');
     for(let i = 0; i < 25; i++){
@@ -1168,45 +813,22 @@
     }
   })();
 
-  // Navbar scroll shadow
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
     if(window.scrollY > 50) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
   });
 
-  // Resume Modal
   (function(){
     const btn = document.getElementById('resumeBtn');
     const modal = document.getElementById('resumeModal');
     const close = document.getElementById('modalClose');
-
-    btn.addEventListener('click', () => {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    close.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if(e.target === modal){
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && modal.classList.contains('active')){
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+    btn.addEventListener('click', () => { modal.classList.add('active'); document.body.style.overflow = 'hidden'; });
+    close.addEventListener('click', () => { modal.classList.remove('active'); document.body.style.overflow = ''; });
+    modal.addEventListener('click', (e) => { if(e.target === modal){ modal.classList.remove('active'); document.body.style.overflow = ''; } });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('active')){ modal.classList.remove('active'); document.body.style.overflow = ''; } });
   })();
 
-  // Certificate Image Modal
   function openCertModal(previewEl){
     const img = previewEl.querySelector('img');
     const modal = document.getElementById('certModal');
@@ -1214,7 +836,6 @@
     const caption = document.getElementById('certModalCaption');
     const card = previewEl.closest('.cert-card');
     const title = card.querySelector('.cert-title').textContent;
-
     modalImg.src = img.src;
     caption.textContent = title;
     modal.classList.add('active');
@@ -1224,28 +845,11 @@
   (function(){
     const modal = document.getElementById('certModal');
     const close = document.getElementById('certModalClose');
-
-    close.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if(e.target === modal){
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && modal.classList.contains('active')){
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+    close.addEventListener('click', () => { modal.classList.remove('active'); document.body.style.overflow = ''; });
+    modal.addEventListener('click', (e) => { if(e.target === modal){ modal.classList.remove('active'); document.body.style.overflow = ''; } });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('active')){ modal.classList.remove('active'); document.body.style.overflow = ''; } });
   })();
 
-  // Mobile menu
   (function(){
     var toggle = document.getElementById('menuToggle');
     var links  = document.getElementById('navLinks');
