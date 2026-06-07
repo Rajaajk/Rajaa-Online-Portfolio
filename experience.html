@@ -63,7 +63,7 @@
   /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line);transition:box-shadow .3s}
   nav.scrolled{box-shadow:0 4px 30px rgba(107,31,44,0.08)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .nav-wrap{margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
   .logo-mark{width:40px;height:40px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600;position:relative;overflow:hidden;transition:transform .3s}
   .logo:hover .logo-mark{transform:rotate(10deg) scale(1.05)}
@@ -78,7 +78,7 @@
   .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon);border-radius:30px}
   .nav-cta:hover{background:transparent;color:var(--maroon)}
 
-  section{position:relative;z-index:1;padding:140px 0 100px}
+  section{position:relative;z-index:1;padding:3.5rem 4rem}
   .container{max-width:1400px;margin:0 auto;padding:0 16px}
 
   .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
@@ -93,7 +93,7 @@
   /* Page Header */
   .page-header{
     background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 100%);
-    padding:160px 32px 100px;position:relative;overflow:hidden;z-index:1;
+    padding:10rem 4rem 2rem;margin-top:0;position:relative;overflow:hidden;z-index:1;
   }
   .page-header::before{
     content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;
@@ -434,14 +434,14 @@
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
-    .page-header{padding:120px 16px 70px}
+    .page-header{padding:6.5rem 20px 3rem !important}
     .page-header .container{grid-template-columns:1fr !important}
     .header-graphic{display:none}
     .section-head{grid-template-columns:1fr !important;text-align:center !important}
     .section-head h2{text-align:center !important}
     .section-head p{text-align:center !important;margin:0 auto !important}
     .trajectory-graphic{display:none}
-    .timeline-section,.stats-section,.certs-section{padding:70px 16px}
+    .timeline-section,.stats-section,.certs-section{padding:2.5rem 20px !important}
     .tl-item,.tl-item:nth-child(even){flex-direction:column;gap:0;direction:ltr;max-width:100%}
     .tl-item:nth-child(even) > *{direction:ltr}
     .timeline-line{left:50%;transform:translateX(-50%)}
@@ -457,6 +457,7 @@
     .deco-graphic{display:none}
   }
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -488,7 +489,7 @@
 </nav>
 
 <div class="page-header">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative">
     <div>
       <div class="eyebrow left" style="color:var(--gold-soft)">Career Journey</div>
       <h1>Beyond <em>boundaries.</em></h1>
@@ -630,7 +631,6 @@
       </svg>
     </div>
   </div>
-</div>
 
 <!-- RESUME DOWNLOAD SECTION -->
 <section class="resume-section">
