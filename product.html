@@ -46,7 +46,7 @@
   /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line);transition:all .3s ease}
   nav.scrolled{padding:12px 0;box-shadow:var(--shadow-sm)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+  .nav-wrap{margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none;transition:transform .3s ease}
   .logo:hover{transform:scale(1.02)}
   .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600;transition:transform .3s ease}
@@ -63,18 +63,24 @@
   @media(max-width:880px){
     .menu-toggle{display:flex}
     .nav-cta{display:none}
-    .nav-links{
-      position:fixed;top:0;left:0;right:0;bottom:0;
-      background:var(--cream);
-      padding:100px 40px 40px;
-      flex-direction:column;gap:20px;
-      opacity:0;pointer-events:none;
-      transition:opacity .3s var(--ease);
-      z-index:105;
-      list-style:none
+    .nav-links{display:none}
+    .nav-links.mobile-active{
+      display:flex;
+      flex-direction:column;
+      position:fixed;
+      top:61px;
+      left:0;right:0;
+      background:var(--cream,#FBF6EE);
+      padding:28px 24px;
+      gap:20px;
+      border-bottom:1px solid rgba(107,31,44,0.15);
+      box-shadow:0 12px 40px rgba(107,31,44,0.15);
+      text-align:center;
+      z-index:99;
+      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
     }
-    .nav-links.mobile-active{opacity:1;pointer-events:all}
-    .nav-links a{font-size:22px;color:var(--ink);font-weight:500}
+    .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
+    @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
   }
 
   /* Page Header with Geometric Design */
@@ -452,33 +458,6 @@
 
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important}html{scroll-behavior:auto}}
 
-  /* Mobile Menu Toggle */
-  .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
-  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
-
-  /* Mobile nav open state */
-  @media(max-width:880px){
-    .menu-toggle{display:flex}
-    .nav-cta{display:none}
-    .nav-links{display:none}
-    .nav-links.mobile-active{
-      display:flex;
-      flex-direction:column;
-      position:fixed;
-      top:61px;
-      left:0;right:0;
-      background:var(--cream,#FBF6EE);
-      padding:28px 24px;
-      gap:20px;
-      border-bottom:1px solid rgba(107,31,44,0.15);
-      box-shadow:0 12px 40px rgba(107,31,44,0.15);
-      text-align:center;
-      z-index:99;
-      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
-    }
-    .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
-    @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-  }
 
 </style>
 </head>
@@ -815,11 +794,13 @@
     if (!toggle || !links) return;
     function closeMenu(){
       links.classList.remove('mobile-active');
+      toggle.setAttribute('aria-expanded','false');
       var s = toggle.querySelectorAll('span');
       s[0].style.transform=''; s[1].style.opacity=''; s[2].style.transform='';
     }
     toggle.addEventListener('click', function(){
       var open = links.classList.toggle('mobile-active');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       var s = toggle.querySelectorAll('span');
       if(open){
         s[0].style.transform='rotate(45deg) translate(5px,6px)';
