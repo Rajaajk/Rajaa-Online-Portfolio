@@ -34,7 +34,7 @@
 
   /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .nav-wrap{margin:0 auto;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
   .logo-mark{width:40px;height:40px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600;position:relative;overflow:hidden}
   .logo-mark::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle, rgba(251,246,238,0.3), transparent 70%);border-radius:50%}
@@ -48,7 +48,7 @@
   .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon);border-radius:30px}
   .nav-cta:hover{background:transparent;color:var(--maroon)}
 
-  section{position:relative;z-index:1;padding:140px 32px 100px}
+  section{position:relative;z-index:1;padding:3.5rem 4rem}
   .container{max-width:1240px;margin:0 auto}
 
   .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
@@ -68,7 +68,7 @@
   /* Page Header with abstract shapes */
   .page-header{
     background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 100%);
-    color:var(--cream);padding:180px 32px 100px;margin-top:0;position:relative;overflow:hidden;
+    color:var(--cream);padding:10rem 4rem 2rem;margin-top:0;position:relative;overflow:hidden;
   }
   .page-header::before{
     content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;
@@ -248,8 +248,8 @@
   @media(max-width:880px){
     .cx-hero-stats,.comp-grid,.tools-grid,.cx-role{grid-template-columns:1fr}
     .nav-links{display:none}
-    section{padding:90px 20px 70px}
-    .page-header{padding:140px 20px 80px}
+    section{padding:2.5rem 20px !important}
+    .page-header{padding:6.5rem 20px 3rem !important}
     .circle-accent{display:none}
   }
 
@@ -282,6 +282,7 @@
   }
 
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -309,11 +310,9 @@
   <div class="circle-accent circle-1"></div>
   <div class="circle-accent circle-2"></div>
   <div class="circle-accent circle-3"></div>
-  <div class="container">
-    <div class="eyebrow left" style="color:var(--gold-soft)">Customer Experience</div>
-    <h1>Built on <em>service.</em></h1>
-    <p>Before product management, I honed my craft in customer-facing roles across fintech and banking — understanding user pain points from the front lines.</p>
-  </div>
+  <div class="eyebrow left" style="color:var(--gold-soft)">Customer Experience</div>
+  <h1>Built on <em>service.</em></h1>
+  <p>Before product management, I honed my craft in customer-facing roles across fintech and banking — understanding user pain points from the front lines.</p>
 </div>
 
 <!-- CX OVERVIEW -->
