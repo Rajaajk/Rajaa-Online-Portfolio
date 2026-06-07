@@ -6,131 +6,343 @@
 <title>Contact — Rajaa Khan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --maroon:#6B1F2C; --maroon-deep:#4A1520; --maroon-soft:#8B2D3D;
-    --gold:#B8893E; --gold-soft:#D4A961; --cream:#FBF6EE; --cream-2:#F5EDE0;
+    --maroon-muted:#8B3A4A; --maroon-light:#7A2A3E;
+    --gold:#B8893E; --gold-soft:#D4A961; --gold-light:#E8C98A;
+    --cream:#FBF6EE; --cream-2:#F5EDE0; --cream-3:#EBE0D1;
     --ink:#2A1A1E; --ink-soft:#5C4A4F; --line:rgba(107,31,44,0.15); --line-strong:rgba(107,31,44,0.3);
+    --shadow-sm:0 4px 12px rgba(107,31,44,0.08);
+    --shadow-md:0 12px 40px rgba(107,31,44,0.15);
+    --shadow-lg:0 24px 80px rgba(107,31,44,0.25);
+    --transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+    --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
   body::before{
     content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-    background-image: radial-gradient(ellipse at top left, rgba(184,137,62,0.06), transparent 50%), radial-gradient(ellipse at bottom right, rgba(107,31,44,0.05), transparent 50%);
+    background-image: 
+      radial-gradient(ellipse at 20% 0%, rgba(184,137,62,0.06), transparent 50%), 
+      radial-gradient(ellipse at 80% 100%, rgba(107,31,44,0.04), transparent 50%);
   }
   ::selection{background:var(--maroon);color:var(--cream)}
-  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.5px}
+  h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-0.02em}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.82);border-bottom:1px solid var(--line)}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:.5px;display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:18px;font-weight:600}
-  .nav-links{display:flex;gap:26px;list-style:none}
-  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:.3px;transition:color .25s;position:relative}
-  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--maroon);transition:width .3s}
-  .nav-links a:hover{color:var(--maroon)}
-  .nav-links a:hover::after{width:100%}
-  .nav-links a.active{color:var(--maroon)}
-  .nav-links a.active::after{width:100%}
-  .nav-cta{padding:10px 22px;background:var(--maroon);color:var(--cream);font-weight:500;text-decoration:none;font-size:13px;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;border:1px solid var(--maroon)}
-  .nav-cta:hover{background:transparent;color:var(--maroon)}
-
-  section{position:relative;z-index:1;padding:140px 32px 100px}
-  .container{max-width:1240px;margin:0 auto}
-
-  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
-  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
-  .eyebrow.left::before,.eyebrow.left::after{display:none}
-
-  .contact-wrap{background:var(--maroon);color:var(--cream);padding:100px 50px;text-align:center;position:relative;overflow:hidden;margin-top:80px}
-  .contact-wrap::before{content:'';position:absolute;top:20px;left:20px;right:20px;bottom:20px;border:1px solid rgba(251,246,238,0.15);pointer-events:none}
-  .contact-wrap::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,169,97,0.15),transparent 60%);top:-200px;left:-200px}
-  .contact-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:24px;position:relative}
-  .contact-eyebrow::before,.contact-eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold-soft)}
-  .contact-wrap h2{font-size:clamp(38px,5vw,64px);font-weight:500;margin-bottom:16px;letter-spacing:-1px;color:var(--cream);position:relative}
-  .contact-wrap h2 em{font-style:italic;color:var(--gold-soft)}
-  .contact-wrap p{color:rgba(251,246,238,0.75);max-width:520px;margin:0 auto 36px;position:relative}
-  .contact-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
-  .contact-wrap .btn-primary{background:var(--gold);border-color:var(--gold);color:var(--maroon-deep)}
-  .contact-wrap .btn-primary:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
-  .contact-wrap .btn-ghost{border-color:var(--cream);color:var(--cream)}
-  .contact-wrap .btn-ghost:hover{background:var(--cream);color:var(--maroon)}
-
-  .btn{padding:15px 30px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:all .3s;border-radius:0}
-
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:60px}
-  .contact-info h3{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--ink);margin-bottom:20px}
-  .contact-info h3 em{font-style:italic;color:var(--maroon)}
-  .contact-info p{color:var(--ink-soft);font-size:15px;line-height:1.8;margin-bottom:30px}
-  .contact-detail{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:20px;background:var(--cream-2);border:1px solid var(--line);transition:all .3s}
-  .contact-detail:hover{border-color:var(--maroon);transform:translateX(4px)}
-  .contact-detail-icon{width:48px;height:48px;background:var(--maroon);color:var(--cream);display:grid;place-items:center;font-size:20px;border-radius:0}
-  .contact-detail-text h4{font-size:14px;color:var(--ink);margin-bottom:4px;font-weight:600}
-  .contact-detail-text a{color:var(--ink-soft);text-decoration:none;font-size:14px;transition:color .25s}
-  .contact-detail-text a:hover{color:var(--maroon)}
+  /* --- NAVIGATION --- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(24px) saturate(180%);background:rgba(251,246,238,0.88);border-bottom:1px solid var(--line);transition:var(--transition)}
+  nav.scrolled{padding:8px 0;box-shadow:var(--shadow-sm);background:rgba(251,246,238,0.95)}
   
-  .contact-form{background:var(--cream-2);border:1px solid var(--line);padding:40px}
-  .form-group{margin-bottom:24px}
-  .form-group label{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;font-weight:600}
-  .form-group input,.form-group textarea{width:100%;padding:14px 16px;background:var(--cream);border:1px solid var(--line);font-family:inherit;font-size:15px;color:var(--ink);transition:all .25s}
-  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--maroon)}
-  .form-group textarea{min-height:140px;resize:vertical}
-  .submit-btn{width:100%;padding:16px;background:var(--maroon);color:var(--cream);border:1px solid var(--maroon);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s}
-  .submit-btn:hover{background:var(--maroon-deep)}
-
-  .page-header{background:var(--maroon-deep);color:var(--cream);padding:160px 32px 80px;margin-top:0}
-  .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px}
-  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
-  .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
-
-  footer{text-align:center;padding:50px 32px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2)}
-  footer a{color:var(--maroon);text-decoration:none}
-  footer .ornament{color:var(--gold);font-size:18px;margin-bottom:16px;letter-spacing:8px}
-
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s, transform .8s}
-  .reveal.in{opacity:1;transform:none}
-
-  @media(max-width:880px){
-    .contact-grid{grid-template-columns:1fr}
-    .nav-links{display:none}
-    section{padding:90px 20px 70px}
+  .nav-wrap{
+    margin:0 auto;
+    padding:18px 48px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
   }
+  
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;color:var(--maroon);letter-spacing:0.5px;display:flex;align-items:center;gap:12px;text-decoration:none;transition:var(--transition)}
+  .logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));color:var(--cream);display:grid;place-items:center;font-style:italic;font-size:20px;font-weight:600;box-shadow:0 4px 16px rgba(107,31,44,0.3);transition:var(--transition);position:relative;overflow:hidden}
+  .logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.15) 50%,transparent 60%);transform:translateX(-100%);transition:transform 0.6s}
+  .logo:hover .logo-mark{transform:rotate(15deg) scale(1.05)}
+  .logo:hover .logo-mark::after{transform:translateX(100%)}
+
+  .nav-links{display:flex;gap:36px;list-style:none;margin:0;padding:0}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px;letter-spacing:0.3px;transition:var(--transition);position:relative;padding:4px 0;white-space:nowrap}
+  .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--maroon),var(--gold));transition:width 0.4s var(--ease-out-expo);border-radius:2px}
+  .nav-links a:hover, .nav-links a.active{color:var(--maroon)}
+  .nav-links a:hover::after, .nav-links a.active::after{width:100%}
+
+  .nav-cta{
+    margin-left:60px;
+    padding:12px 28px;
+    background:var(--maroon);
+    color:var(--cream);
+    font-weight:500;
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:var(--transition);
+    border:1px solid var(--maroon);
+    border-radius:30px;
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+  }
+  .nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--maroon-soft),var(--maroon-light));transform:translateY(100%);transition:transform 0.4s var(--ease-out-expo)}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--maroon-soft)}
+  .nav-cta:hover::before{transform:translateY(0)}
+  .nav-cta span{position:relative;z-index:1}
 
   /* Mobile Menu Toggle */
   .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:10px;z-index:101}
-  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
+  .menu-toggle span{display:block;width:25px;height:2px;background:var(--maroon);transition:all 0.4s var(--ease-out-expo);border-radius:1px}
 
-  /* Mobile nav open state */
-  @media(max-width:880px){
+  /* --- SVG DECORATIVE ELEMENTS --- */
+  .svg-deco{position:absolute;pointer-events:none;z-index:0}
+  
+  /* Gold leaf/floral pattern */
+  .gold-leaf{
+    position:absolute;right:-5%;top:10%;width:400px;height:400px;opacity:0.08;
+    animation:sway 12s ease-in-out infinite;pointer-events:none;z-index:0;
+  }
+  @keyframes sway{
+    0%,100%{transform:rotate(-2deg) translateY(0)}
+    50%{transform:rotate(2deg) translateY(-15px)}
+  }
+
+  /* --- PAGE LAYOUT --- */
+  section{
+    position:relative;
+    z-index:1;
+    padding:140px 32px 100px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  
+  .container{width:100%;margin:0 auto;}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px;position:relative}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
+  .eyebrow.left::before,.eyebrow.left::after{display:none}
+
+  /* Full-width Page Header */
+  .page-header{
+    background:var(--maroon-deep);
+    color:var(--cream);
+    padding:10rem 4rem 5rem;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+  }
+  .page-header::before{
+    content:'';position:absolute;inset:0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(184,137,62,0.1), transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(107,31,44,0.4), transparent 50%);
+    pointer-events:none;
+  }
+  .page-header::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+    opacity:0.4;
+  }
+  .page-header .header-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 32px}
+  .page-header h1{font-size:clamp(42px,6vw,76px);font-weight:500;letter-spacing:-2px;margin-bottom:20px;line-height:1.1}
+  .page-header h1 em{font-style:italic;color:var(--gold-soft)}
+  .page-header p{font-size:18px;color:rgba(251,246,238,0.75);max-width:600px;line-height:1.7;font-weight:300}
+
+  /* Floating decorative circles */
+  .page-header .deco-circle{
+    position:absolute;border-radius:50%;border:1px solid rgba(184,137,62,0.12);
+    animation:float 8s ease-in-out infinite;
+  }
+  .page-header .deco-circle:nth-child(1){width:300px;height:300px;top:-100px;right:10%;animation-delay:0s}
+  .page-header .deco-circle:nth-child(2){width:150px;height:150px;bottom:20%;right:25%;animation-delay:-3s;opacity:0.6}
+  .page-header .deco-circle:nth-child(3){width:80px;height:80px;top:30%;right:5%;animation-delay:-5s;opacity:0.4}
+  
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(0deg)}
+    50%{transform:translateY(-20px) rotate(5deg)}
+  }
+
+  /* Marquee divider */
+  .marquee-bar{
+    background:var(--maroon);color:var(--gold-soft);padding:14px 0;overflow:hidden;white-space:nowrap;position:relative;
+  }
+  .marquee-bar::before,.marquee-bar::after{
+    content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
+  }
+  .marquee-bar::before{left:0;background:linear-gradient(90deg,var(--maroon),transparent)}
+  .marquee-bar::after{right:0;background:linear-gradient(-90deg,var(--maroon),transparent)}
+  .marquee-content{
+    display:inline-block;animation:marquee 20s linear infinite;
+    font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;
+  }
+  .marquee-content span{margin:0 40px;opacity:0.7}
+  .marquee-content span::before{content:'✦';margin-right:40px;color:var(--gold)}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  /* Contact Grid */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:60px}
+  
+  .contact-info h3{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--ink);margin-bottom:20px;line-height:1.2}
+  .contact-info h3 em{font-style:italic;color:var(--maroon)}
+  .contact-info > p{color:var(--ink-soft);font-size:15.5px;line-height:1.8;margin-bottom:36px}
+  
+  .contact-detail{
+    display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;padding:20px;
+    background:var(--cream-2);border:1px solid var(--line);
+    transition:all 0.4s var(--ease-out-expo);position:relative;overflow:hidden;
+  }
+  .contact-detail::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--maroon),var(--gold-soft));
+    transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s var(--ease-out-expo);
+  }
+  .contact-detail:hover{border-color:var(--maroon);transform:translateX(6px);box-shadow:var(--shadow-sm)}
+  .contact-detail:hover::before{transform:scaleY(1)}
+  
+  .contact-detail-icon{
+    width:48px;height:48px;min-width:48px;background:var(--maroon);color:var(--cream);
+    display:grid;place-items:center;font-size:18px;border-radius:0;position:relative;z-index:1;
+    transition:transform 0.4s var(--ease-out-expo);
+  }
+  .contact-detail:hover .contact-detail-icon{transform:scale(1.08) rotate(-3deg)}
+  
+  .contact-detail-text{position:relative;z-index:1}
+  .contact-detail-text h4{font-size:13px;color:var(--ink);margin-bottom:4px;font-weight:600;letter-spacing:0.5px}
+  .contact-detail-text a, .contact-detail-text span{color:var(--ink-soft);text-decoration:none;font-size:14px;transition:color .25s;display:inline-block}
+  .contact-detail-text a:hover{color:var(--maroon)}
+
+  /* Contact Form */
+  .contact-form{background:var(--cream-2);border:1px solid var(--line);padding:44px;position:relative}
+  .contact-form::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--maroon),var(--gold),var(--maroon));
+    opacity:0.6;
+  }
+  .form-group{margin-bottom:24px;position:relative}
+  .form-group label{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;font-weight:600}
+  .form-group input,.form-group textarea{
+    width:100%;padding:16px 18px;background:var(--cream);border:1.5px solid var(--line);
+    font-family:inherit;font-size:15px;color:var(--ink);transition:all 0.3s var(--ease-out-expo);border-radius:2px;
+  }
+  .form-group input:focus,.form-group textarea:focus{
+    outline:none;border-color:var(--maroon);box-shadow:0 0 0 4px rgba(107,31,44,0.08);
+    transform:translateY(-1px);
+  }
+  .form-group textarea{min-height:140px;resize:vertical;line-height:1.6}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(92,74,79,0.45)}
+  
+  .submit-btn{
+    width:100%;padding:18px;background:var(--maroon);color:var(--cream);border:1.5px solid var(--maroon);
+    font-family:inherit;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    cursor:pointer;transition:all 0.4s var(--ease-out-expo);position:relative;overflow:hidden;border-radius:2px;
+  }
+  .submit-btn::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,var(--maroon-soft),var(--maroon-light));
+    transform:translateX(-100%);transition:transform 0.5s var(--ease-out-expo);
+  }
+  .submit-btn:hover{background:var(--maroon-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .submit-btn:hover::before{transform:translateX(0)}
+  .submit-btn span{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px}
+
+  /* CTA Section */
+  .contact-wrap{
+    background:var(--maroon);color:var(--cream);padding:100px 50px;text-align:center;
+    position:relative;overflow:hidden;margin-top:100px;
+  }
+  .contact-wrap::before{
+    content:'';position:absolute;top:24px;left:24px;right:24px;bottom:24px;
+    border:1px solid rgba(251,246,238,0.12);pointer-events:none;z-index:1;
+  }
+  .contact-wrap::after{
+    content:'';position:absolute;width:700px;height:700px;border-radius:50%;
+    background:radial-gradient(circle,rgba(212,169,97,0.12),transparent 60%);
+    top:-250px;left:-200px;pointer-events:none;
+  }
+  .contact-wrap .deco-orb{
+    position:absolute;width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(212,169,97,0.08),transparent 60%);
+    bottom:-150px;right:-100px;pointer-events:none;
+  }
+  /* SVG pattern overlay */
+  .contact-wrap .pattern-overlay{
+    position:absolute;inset:0;opacity:0.03;pointer-events:none;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .contact-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:24px;position:relative;z-index:2}
+  .contact-eyebrow::before,.contact-eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold-soft)}
+  .contact-wrap h2{font-size:clamp(36px,5vw,58px);font-weight:500;margin-bottom:18px;letter-spacing:-1px;color:var(--cream);position:relative;z-index:2;line-height:1.15}
+  .contact-wrap h2 em{font-style:italic;color:var(--gold-soft)}
+  .contact-wrap p{color:rgba(251,246,238,0.7);max-width:520px;margin:0 auto 40px;position:relative;z-index:2;font-size:16px;line-height:1.7}
+  .contact-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;z-index:2}
+  
+  .btn{
+    padding:16px 32px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:all 0.4s var(--ease-out-expo);
+    border-radius:0;position:relative;overflow:hidden;border:1.5px solid transparent;
+  }
+  .contact-wrap .btn-primary{background:var(--gold);border-color:var(--gold);color:var(--maroon-deep)}
+  .contact-wrap .btn-primary:hover{background:var(--gold-soft);border-color:var(--gold-soft);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+  .contact-wrap .btn-ghost{border-color:rgba(251,246,238,0.35);color:var(--cream)}
+  .contact-wrap .btn-ghost:hover{background:var(--cream);color:var(--maroon);border-color:var(--cream);transform:translateY(-2px)}
+
+  /* Footer */
+  footer{text-align:center;padding:60px 32px 50px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);background:var(--cream-2);position:relative}
+  footer::before{
+    content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:120px;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  footer a{color:var(--maroon);text-decoration:none;transition:color 0.3s}
+  footer a:hover{color:var(--gold)}
+  footer .ornament{color:var(--gold);font-size:20px;margin-bottom:20px;letter-spacing:10px;opacity:0.8}
+
+  /* Scroll Reveal */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Stagger children */
+  .stagger-children > *{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo)}
+  .stagger-children.in > *{opacity:1;transform:none}
+  .stagger-children.in > *:nth-child(1){transition-delay:0.1s}
+  .stagger-children.in > *:nth-child(2){transition-delay:0.2s}
+  .stagger-children.in > *:nth-child(3){transition-delay:0.3s}
+  .stagger-children.in > *:nth-child(4){transition-delay:0.4s}
+  .stagger-children.in > *:nth-child(5){transition-delay:0.5s}
+
+  /* --- RESPONSIVE --- */
+  @media(max-width:1024px){
+    .nav-links{gap:24px}
+    .nav-cta{margin-left:32px}
+    .nav-wrap{padding:16px 32px}
+    .gold-leaf{width:250px;height:250px;opacity:0.06}
+  }
+
+  @media(max-width:767px){
+    .contact-grid{grid-template-columns:1fr;gap:48px}
+    .nav-links{display:none}
     .menu-toggle{display:flex}
     .nav-cta{display:none}
-    .nav-links{display:none}
+    
+    .nav-wrap { padding: 12px 16px !important; gap: 0 !important; }
+    .logo { font-size: 18px !important; gap: 8px !important; }
+    .logo-mark { width: 32px !important; height: 32px !important; font-size: 15px !important; }
+    
     .nav-links.mobile-active{
-      display:flex;
-      flex-direction:column;
-      position:fixed;
-      top:61px;
-      left:0;right:0;
-      background:var(--cream,#FBF6EE);
-      padding:28px 24px;
-      gap:20px;
-      border-bottom:1px solid rgba(107,31,44,0.15);
-      box-shadow:0 12px 40px rgba(107,31,44,0.15);
-      text-align:center;
-      z-index:99;
-      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
+      display:flex;flex-direction:column;position:fixed;top:57px;left:0;right:0;
+      background:var(--cream);padding:28px 24px;gap:20px;
+      border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
+      text-align:center;z-index:99;
+      animation:mobileNavSlide 0.4s var(--ease-out-expo) forwards
     }
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    
+    .page-header { padding: 7rem 20px 4rem !important; }
+    .page-header h1{font-size:clamp(32px,8vw,48px)}
+    .gold-leaf{display:none}
+    
+    section{padding:80px 20px 60px}
+    .contact-form{padding:28px}
+    .contact-wrap{padding:70px 24px}
+    .contact-wrap::before{top:16px;left:16px;right:16px;bottom:16px}
+    .marquee-bar{padding:10px 0}
+    .marquee-content{font-size:13px}
   }
-
 </style>
 </head>
 <body>
 
-<nav id="navbar">
+<<nav id="navbar">
   <div class="nav-wrap">
     <a href="index.html" class="logo"><span class="logo-mark">R</span> Rajaa Khan</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -145,64 +357,100 @@
       <li><a href="experience.html">Experience</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta"><span>Get in touch</span></a>
+    <a href="contact.html" class="nav-cta"><span>Get in Touch</span></a>
   </div>
 </nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="container">
+  <div class="deco-circle"></div>
+  <div class="deco-circle"></div>
+  <div class="deco-circle"></div>
+  
+  <!-- SVG Gold Leaf Decoration -->
+  <svg class="gold-leaf" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M350 200C350 200 320 100 200 80C80 60 50 150 50 150" stroke="var(--gold-soft)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M340 220C340 220 300 120 200 100C100 80 70 170 70 170" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    <path d="M200 80C200 80 180 40 200 20C220 40 200 80 200 80Z" fill="var(--gold-soft)" opacity="0.3"/>
+    <path d="M200 100C200 100 230 130 260 120C240 150 200 100 200 100Z" fill="var(--gold)" opacity="0.2"/>
+    <circle cx="200" cy="80" r="4" fill="var(--gold-light)" opacity="0.5"/>
+    <circle cx="180" cy="95" r="2" fill="var(--gold-soft)" opacity="0.4"/>
+    <circle cx="220" cy="85" r="3" fill="var(--gold)" opacity="0.3"/>
+    <path d="M150 150C150 150 170 180 200 170C230 160 250 130 250 130" stroke="var(--gold-soft)" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    <path d="M100 200C100 200 130 230 160 220C190 210 210 180 210 180" stroke="var(--gold)" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+  </svg>
+
+  <div class="header-content">
     <div class="eyebrow left" style="color:var(--gold-soft)">Let's Build</div>
     <h1>Have a product or story? <em>Let's talk.</em></h1>
     <p>Open to fintech product roles, telco VAS, OTT collaborations, or creative production work.</p>
   </div>
 </div>
 
+<!-- MARQUEE DIVIDER -->
+<div class="marquee-bar">
+  <div class="marquee-content">
+    <span>Product Coordinator</span><span>OTT Strategist</span><span>Creative Producer</span><span>Fintech Specialist</span><span>Digital Banking</span><span>Telco VAS</span><span>Product Coordinator</span><span>OTT Strategist</span><span>Creative Producer</span><span>Fintech Specialist</span><span>Digital Banking</span><span>Telco VAS</span>
+  </div>
+</div>
+
 <!-- CONTACT CONTENT -->
-<section style="padding-top:80px">
+<section>
   <div class="container">
-    <div class="contact-grid reveal">
-      <div class="contact-info">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
         <h3>Get in <em>touch.</em></h3>
         <p>Whether you're looking for a product coordinator, OTT strategist, or creative producer — I'd love to hear about your project.</p>
         
-        <div class="contact-detail">
-          <div class="contact-detail-icon">✉</div>
-          <div class="contact-detail-text">
-            <h4>Email</h4>
-            <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
+        <div class="stagger-children" id="contactDetails">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <h4>Email</h4>
+              <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="contact-detail">
-          <div class="contact-detail-icon">☎</div>
-          <div class="contact-detail-text">
-            <h4>Phone</h4>
-            <a href="tel:+923135461538">+92 313 5461538</a>
+          
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <h4>Phone</h4>
+              <a href="tel:+923135461538">+92 313 5461538</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="contact-detail">
-          <div class="contact-detail-icon">in</div>
-          <div class="contact-detail-text">
-            <h4>LinkedIn</h4>
-            <a href="https://www.linkedin.com/in/rajaa-j-khan" target="_blank">linkedin.com/in/rajaa-j-khan</a>
+          
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/rajaa-j-khan" target="_blank">linkedin.com/in/rajaa-j-khan</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="contact-detail">
-          <div class="contact-detail-icon">ig</div>
-          <div class="contact-detail-text">
-            <h4>Instagram</h4>
-            <a href="https://www.instagram.com/rajaa.jk/" target="_blank">@rajaa.jk</a>
+          
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/rajaa.jk/" target="_blank">@rajaa.jk</a>
+            </div>
           </div>
-        </div>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📍</div>
-          <div class="contact-detail-text">
-            <h4>Location</h4>
-            <span style="color:var(--ink-soft);font-size:14px">Islamabad, Pakistan</span>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <h4>Location</h4>
+              <span>Islamabad, Pakistan</span>
+            </div>
           </div>
         </div>
       </div>
@@ -225,12 +473,25 @@
             <label>Message</label>
             <textarea name="message" placeholder="Tell me about your project..." required></textarea>
           </div>
-          <button type="submit" class="submit-btn">Send Message →</button>
+          <button type="submit" class="submit-btn"><span>Send Message →</span></button>
         </form>
       </div>
     </div>
 
     <div class="contact-wrap reveal" style="margin-top:100px">
+      <div class="pattern-overlay"></div>
+      <div class="deco-orb"></div>
+      
+      <!-- Decorative corner SVGs -->
+      <svg class="svg-deco" style="top:20px;left:20px;width:60px;height:60px;opacity:0.15" viewBox="0 0 60 60" fill="none">
+        <path d="M0 60V20C0 8.95 8.95 0 20 0H60" stroke="var(--gold-soft)" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="var(--gold-soft)"/>
+      </svg>
+      <svg class="svg-deco" style="bottom:20px;right:20px;width:60px;height:60px;opacity:0.15" viewBox="0 0 60 60" fill="none">
+        <path d="M60 0V40C60 51.05 51.05 60 40 60H0" stroke="var(--gold-soft)" stroke-width="1"/>
+        <circle cx="40" cy="40" r="3" fill="var(--gold-soft)"/>
+      </svg>
+      
       <div class="contact-eyebrow">Available for Work</div>
       <h2>Looking for a <em>product storyteller?</em></h2>
       <p>Currently coordinating digital banking products at Aik by Bank Islami, but always open to meaningful collaborations.</p>
@@ -242,20 +503,32 @@
   </div>
 </section>
 
-<footer>
+<<footer>
   <div class="ornament">· · · ✦ · · ·</div>
   © 2025 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br/>
   <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a>
 </footer>
 
 <script>
+  // Intersection Observer for reveals
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
+    entries.forEach(e => { 
+      if(e.isIntersecting){ 
+        e.target.classList.add('in'); 
+        io.unobserve(e.target); 
+      } 
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+  document.querySelectorAll('.stagger-children').forEach(el => io.observe(el));
 
-<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+  });
+
   // Mobile menu
   (function(){
     var toggle = document.getElementById('menuToggle');
@@ -263,11 +536,13 @@
     if (!toggle || !links) return;
     function closeMenu(){
       links.classList.remove('mobile-active');
+      toggle.setAttribute('aria-expanded', 'false');
       var s = toggle.querySelectorAll('span');
       s[0].style.transform=''; s[1].style.opacity=''; s[2].style.transform='';
     }
     toggle.addEventListener('click', function(){
       var open = links.classList.toggle('mobile-active');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       var s = toggle.querySelectorAll('span');
       if(open){
         s[0].style.transform='rotate(45deg) translate(5px,6px)';
@@ -280,7 +555,6 @@
       if(!toggle.contains(e.target) && !links.contains(e.target)) closeMenu();
     });
   })();
-
 </script>
 </body>
 </html>
