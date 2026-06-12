@@ -216,7 +216,7 @@
     .playlist-item:hover .playlist-item-thumb::after{opacity:1}
     .playlist-item.active .playlist-item-thumb::after{content:"✓";opacity:1;color:var(--gold);background:rgba(26,10,14,0.6)}
     .playlist-item-thumb .thumb-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold-soft);font-size:11px;text-align:center;padding:8px;background:linear-gradient(135deg,#1a0a0e,#2a1418)}
-    .playlist-item-number{position:absolute;top:4px;left:4px;background:rgba(26,10,14,0.8);color:var(--gold-soft);font-size:9px;padding:2px 5px;border-radius:3px;font-weight:600;letter-spacing:0.5px}
+    .playlist-item-number{position:absolute;top:4px;left:4px;background:rgba(26,10,14,0.8);color:var(--gold-soft);font-size:9px;padding:2px 5px;border-radius:3px;font-weight:600;letter-spacing:0.5px;z-index:2}
 
     .playlist-item-info{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:2px 0}
     .playlist-item-title{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--cream);line-height:1.25;margin-bottom:4px;transition:color .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -882,89 +882,100 @@
   </footer>
 
   <script>
-    // ===== VIDEO DATA =====
-    const videoData = [
-      {
-        id: 'marblous-four',
-        title: 'The Marblous Four',
-        titleEm: 'The Marblous <em>Four</em>',
-        type: 'TV Movie · Assistant Director',
-        context: 'Pareidolia Films | Supported director Hamza Baig on pre-pro, on-set coordination, and post workflow',
-        src: 'https://www.imdb.com/videoembed/vi2163553305',
-        poster: 'https://m.media-amazon.com/images/M/MV5BYmY0ZDA0OTgtN2Y0Ni00NzU0LWE5YzgtMjQ0ZDA0ZTUzODA3XkEyXkFqcGdeQXVyMTUzOTczNDk1._V1_.jpg',
-        tags: [{text: '22min · Fantasy', link: null}, {text: 'IMDb ↗', link: 'https://www.imdb.com/title/tt37484575/'}]
-      },
-      {
-        id: 'rafay',
-        title: 'Rafay',
-        titleEm: '<em>Rafay</em>',
-        type: 'Short Film · Actor, Co-Writer, Editor',
-        context: 'Played lead role; co-wrote script; handled post-production & sound design',
-        src: 'https://drive.google.com/file/d/1rVfX81N5TpDTh4wG4w3QWt7YxKDQ0X3B/preview',
-        poster: null,
-        tags: [{text: '1080p · 30fps', link: null}]
-      },
-      {
-        id: 'starcode',
-        title: 'StarCode 1',
-        titleEm: 'StarCode <em>1</em>',
-        type: 'Infographic Ad · Writer, Editor, Sound',
-        context: 'Scripted narrative flow; edited motion graphics; mixed audio for digital platforms',
-        src: 'https://drive.google.com/file/d/1aor7OkG0f_Jy04Qe1JLWlR_EnLDgy9Zu/preview',
-        poster: null,
-        tags: [{text: '1080p · 60fps', link: null}]
-      },
-      {
-        id: 'decade-media',
-        title: 'A Decade in Pakistan Media',
-        titleEm: 'A Decade in Pakistan <em>Media</em>',
-        type: 'Documentary · Writer, Director, Editor',
-        context: 'Researched, scripted, and edited 10-year media landscape retrospective',
-        src: 'https://drive.google.com/file/d/1RoGd_QpRpS_lRuHhIW59l5DNE33yPsmc/preview',
-        poster: null,
-        tags: [{text: '1080p · 30fps', link: null}]
-      },
-      {
-        id: 'entrepreneur',
-        title: 'Entrepreneur Interview',
-        titleEm: 'Entrepreneur <em>Interview</em>',
-        type: 'Interview Series · Director, Editor, Sound',
-        context: 'Directed on-camera interviews; edited multi-cam footage; cleaned and mastered audio',
-        src: 'https://drive.google.com/file/d/1mN4nLqxcgW6r4ZZ1Q2fxXYmbfgrGPQAT/preview',
-        poster: null,
-        tags: [{text: '1080p · 30fps', link: null}]
-      },
-      {
-        id: 'mamool',
-        title: "Ma'mool",
-        titleEm: "Ma'<em>mool</em>",
-        type: '360° Experience · Cinematographer, Editor',
-        context: 'Shot immersive 360° footage; edited spatial video for VR-compatible platforms',
-        src: 'https://www.youtube.com/embed/XcvP17sn8G0',
-        poster: 'https://img.youtube.com/vi/XcvP17sn8G0/hqdefault.jpg',
-        tags: [{text: '2880p · 60fps', link: null}]
-      },
-      {
-        id: 'recording',
-        title: 'Recording',
-        titleEm: '<em>Recording</em>',
-        type: 'Short Film · Director, Writer, Sound Engineer',
-        context: 'Wrote psychological thriller script; directed cast/crew; designed atmospheric sound',
-        src: 'https://drive.google.com/file/d/1gtwNYIii9cCMO_vyvfq0AJyLwMSe8kDr/preview',
-        poster: null,
-        tags: [{text: '1080p · 60fps', link: null}]
-      },
-      {
-        id: 'english-teacher',
-        title: 'English Teacher',
-        titleEm: 'English <em>Teacher</em>',
-        type: 'Short Film · Director, Writer, Editor',
-        context: 'Complete production: script, shot lists, rushes, edit project, final deliverables',
-        src: 'https://drive.google.com/file/d/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW/preview',
-        poster: null,
-        tags: [{text: '1080p · 60fps', link: null}, {text: 'Drive ↗', link: 'https://drive.google.com/drive/folders/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW'}]
-      }
-    ];
+    // ===== VIDEO DATA WITH THUMBNAILS =====
+const videoData = [
+  {
+    id: 'youtube-1',
+    title: 'The Marblous Four | Ep. 01 | Punjabi Drama Series',
+    titleEm: '<em>The Marblous Four | Ep. 01 | Punjabi Drama Series</em>',
+    type: 'Short Series',
+    context: 'Assistant Director on this production, that premiered in Berlin at Forecast in 2022',
+    src: 'https://www.youtube.com/embed/HXSExjCUEsU',
+    poster: 'https://img.youtube.com/vi/HXSExjCUEsU/hqdefault.jpg',
+    tags: [{text: 'YouTube', link: 'https://www.youtube.com/watch?v=HXSExjCUEsU'}]
+  },
+  {
+    id: 'youtube-2',
+    title: 'The Marblous Four | Trailer| Punjabi Short Film',
+    titleEm: '<em>The Marblous Four | Trailer| Punjabi Short Film</em>',
+    type: 'Trailer for Short Series',
+    context: 'Assistant Director on this trailer',
+    src: 'https://www.youtube.com/embed/TcoEZEtBcZQ',
+    poster: 'https://img.youtube.com/vi/TcoEZEtBcZQ/hqdefault.jpg',
+    tags: [{text: 'YouTube', link: 'https://www.youtube.com/watch?v=TcoEZEtBcZQ'}]
+  },
+  {
+    id: 'rafay',
+    title: 'Rafay',
+    titleEm: '<em>Rafay</em>',
+    type: 'Short Film · Actor, Co-Writer, Editor',
+    context: 'Played lead role; co-wrote script; handled post-production & sound design',
+    src: 'https://drive.google.com/file/d/1rVfX81N5TpDTh4wG4w3QWt7YxKDQ0X3B/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1rVfX81N5TpDTh4wG4w3QWt7YxKDQ0X3B&sz=w400',
+    tags: [{text: '1080p · 30fps', link: null}]
+  },
+  {
+    id: 'starcode',
+    title: 'StarCode 1',
+    titleEm: 'StarCode <em>1</em>',
+    type: 'Infographic Ad · Writer, Editor, Sound',
+    context: 'Scripted narrative flow; edited motion graphics; mixed audio for digital platforms',
+    src: 'https://drive.google.com/file/d/1aor7OkG0f_Jy04Qe1JLWlR_EnLDgy9Zu/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1aor7OkG0f_Jy04Qe1JLWlR_EnLDgy9Zu&sz=w400',
+    tags: [{text: '1080p · 60fps', link: null}]
+  },
+  {
+    id: 'decade-media',
+    title: 'A Decade in Pakistan Media',
+    titleEm: 'A Decade in Pakistan <em>Media</em>',
+    type: 'Documentary · Writer, Director, Editor',
+    context: 'Researched, scripted, and edited 10-year media landscape retrospective',
+    src: 'https://drive.google.com/file/d/1RoGd_QpRpS_lRuHhIW59l5DNE33yPsmc/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1RoGd_QpRpS_lRuHhIW59l5DNE33yPsmc&sz=w400',
+    tags: [{text: '1080p · 30fps', link: null}]
+  },
+  {
+    id: 'entrepreneur',
+    title: 'Entrepreneur Interview',
+    titleEm: 'Entrepreneur <em>Interview</em>',
+    type: 'Interview Series · Director, Editor, Sound',
+    context: 'Directed on-camera interviews; edited multi-cam footage; cleaned and mastered audio',
+    src: 'https://drive.google.com/file/d/1mN4nLqxcgW6r4ZZ1Q2fxXYmbfgrGPQAT/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1mN4nLqxcgW6r4ZZ1Q2fxXYmbfgrGPQAT&sz=w400',
+    tags: [{text: '1080p · 30fps', link: null}]
+  },
+  {
+    id: 'mamool',
+    title: "Ma'mool",
+    titleEm: "Ma'<em>mool</em>",
+    type: '360° Experience · Cinematographer, Editor',
+    context: 'Shot immersive 360° footage; edited spatial video for VR-compatible platforms',
+    src: 'https://www.youtube.com/embed/XcvP17sn8G0',
+    poster: 'https://img.youtube.com/vi/XcvP17sn8G0/hqdefault.jpg',
+    tags: [{text: '2880p · 60fps', link: null}]
+  },
+  {
+    id: 'recording',
+    title: 'Recording',
+    titleEm: '<em>Recording</em>',
+    type: 'Short Film · Director, Writer, Sound Engineer',
+    context: 'Wrote psychological thriller script; directed cast/crew; designed atmospheric sound',
+    src: 'https://drive.google.com/file/d/1gtwNYIii9cCMO_vyvfq0AJyLwMSe8kDr/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1gtwNYIii9cCMO_vyvfq0AJyLwMSe8kDr&sz=w400',
+    tags: [{text: '1080p · 60fps', link: null}]
+  },
+  {
+    id: 'english-teacher',
+    title: 'English Teacher',
+    titleEm: 'English <em>Teacher</em>',
+    type: 'Short Film · Director, Writer, Editor',
+    context: 'Complete production: script, shot lists, rushes, edit project, final deliverables',
+    src: 'https://drive.google.com/file/d/1fWqvhd9BCp5cEW64-7q3Yv3dQMeS_D1q/preview',
+    poster: 'https://drive.google.com/thumbnail?id=1fWqvhd9BCp5cEW64-7q3Yv3dQMeS_D1q&sz=w400',
+    tags: [{text: '1080p · 60fps', link: null}, {text: 'Drive ↗', link: 'https://drive.google.com/drive/folders/1Nun0UqjuEBCLn8mUGB8FwaErj9Q2SxDW'}]
+  }
+];
+
 
     // ===== VIDEO PLAYER LOGIC =====
     let currentVideoIndex = 0;
@@ -1016,7 +1027,7 @@
       playlistList.innerHTML = videoData.map((video, index) => {
         const isActive = index === currentVideoIndex ? ' active' : '';
         const thumbContent = video.poster 
-          ? `<img src="${video.poster}" alt="${video.title}" loading="lazy">`
+          ? `<img src="${video.poster}" alt="${video.title}" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-fallback').style.display='flex'"><div class="thumb-fallback" style="display:none">${video.title}</div>`
           : `<div class="thumb-fallback">${video.title}</div>`;
 
         return `
