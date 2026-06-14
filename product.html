@@ -6,7 +6,7 @@
 <title>Rajaa Khan — Product Manager | AI & Emerging Markets</title>
 <meta name="description" content="Product Manager with 14+ shipped products across AI, OTT, Gaming, and Fintech. 1.7M+ MAU managed.">
 <meta property="og:title" content="Rajaa Khan — Product Manager | AI & Emerging Markets">
-<meta property="og:description" content="14+ shipped products · 1.7M+ MAU · Pakistan's first multilingual telco AI assistant.">
+<meta property="og:description" content="15+ products shipped · 1.7M+ MAU · OzGPT: Pakistan's first telco multilingual AI assistant across 6 channels.">
 <meta property="og:image" content="https://rajaajk.github.io/Rajaa-portfolio/img/og-product.jpg">
 <meta property="og:url" content="https://rajaajk.github.io/Rajaa-portfolio/product.html">
 <meta property="og:type" content="website">
@@ -37,12 +37,7 @@
   a:hover{text-decoration:underline}
 
   .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--maroon),var(--gold));z-index:150;width:0;transition:width .1s ease-out}
-  
-  /* Geometric Decorative Elements (inspired by the abstract image) */
-  .geo-decor{position:absolute;pointer-events:none;z-index:0}
-  .geo-circle{border-radius:50%}
-  .geo-arc{border-radius:50%}
-  
+
   /* Navigation */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px) saturate(140%);background:rgba(251,246,238,0.9);border-bottom:1px solid var(--line);transition:all .3s ease}
   nav.scrolled{padding:12px 0;box-shadow:var(--shadow-sm)}
@@ -65,56 +60,31 @@
     .nav-cta{display:none}
     .nav-links{display:none}
     .nav-links.mobile-active{
-      display:flex;
-      flex-direction:column;
-      position:fixed;
-      top:61px;
-      left:0;right:0;
-      background:var(--cream,#FBF6EE);
-      padding:28px 24px;
-      gap:20px;
-      border-bottom:1px solid rgba(107,31,44,0.15);
-      box-shadow:0 12px 40px rgba(107,31,44,0.15);
-      text-align:center;
-      z-index:99;
-      animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
+      display:flex;flex-direction:column;position:fixed;top:61px;left:0;right:0;
+      background:var(--cream,#FBF6EE);padding:28px 24px;gap:20px;
+      border-bottom:1px solid rgba(107,31,44,0.15);box-shadow:0 12px 40px rgba(107,31,44,0.15);
+      text-align:center;z-index:99;animation:mobileNavSlide 0.3s cubic-bezier(0.16,1,0.3,1) forwards
     }
     .nav-links.mobile-active li a{font-size:16px;padding:6px 0}
     @keyframes mobileNavSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
   }
 
-  /* Page Header with Geometric Design */
+  /* Page Header */
   .page-header{
     background:var(--maroon-deep);color:var(--cream);padding:160px 40px 100px;
     position:relative;overflow:hidden;overflow-x:clip;min-height:600px;display:flex;align-items:center
   }
   .page-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-  
-  /* Large sweeping curve on right (inspired by image) */
-  .page-header .geo-sweep{
-    position:absolute;top:-20%;right:-10%;width:70%;height:140%;
-    background:linear-gradient(135deg,rgba(184,137,62,0.12),rgba(212,169,97,0.06));
-    border-radius:50%;transform:rotate(-5deg);z-index:0
-  }
-  /* Overlapping circle */
-  .page-header .geo-circle-1{
-    position:absolute;top:15%;right:12%;width:300px;height:300px;
-    background:rgba(107,31,44,0.4);border-radius:50%;z-index:1
-  }
-  .page-header .geo-circle-2{
-    position:absolute;bottom:10%;right:25%;width:200px;height:200px;
-    background:rgba(212,169,97,0.1);border-radius:50%;z-index:1
-  }
-  .page-header .geo-circle-3{
-    position:absolute;top:40%;right:5%;width:150px;height:150px;
-    background:rgba(107,31,44,0.2);border-radius:50%;z-index:1
-  }
+  .page-header .geo-sweep{position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:linear-gradient(135deg,rgba(184,137,62,0.12),rgba(212,169,97,0.06));border-radius:50%;transform:rotate(-5deg);z-index:0}
+  .page-header .geo-circle-1{position:absolute;top:15%;right:12%;width:300px;height:300px;background:rgba(107,31,44,0.4);border-radius:50%;z-index:1}
+  .page-header .geo-circle-2{position:absolute;bottom:10%;right:25%;width:200px;height:200px;background:rgba(212,169,97,0.1);border-radius:50%;z-index:1}
+  .page-header .geo-circle-3{position:absolute;top:40%;right:5%;width:150px;height:150px;background:rgba(107,31,44,0.2);border-radius:50%;z-index:1}
   .page-header .container{position:relative;z-index:2;max-width:1240px;margin:0 auto;width:100%}
   .page-header h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-2px;margin-bottom:20px;line-height:1.05}
   .page-header h1 em{font-style:italic;color:var(--gold-soft)}
   .page-header p{font-size:18px;color:rgba(251,246,238,0.8);max-width:600px;line-height:1.7}
   .global-tagline{font-size:14px;color:rgba(251,246,238,0.55);margin-top:16px;font-style:italic;max-width:600px;line-height:1.6}
-  
+
   .value-banner{background:var(--cream-2);border:1px solid var(--line);padding:28px 36px;margin-top:36px;display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;border-radius:var(--radius-xl)}
   .value-item{flex:1;min-width:180px;padding:20px;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-lg);transition:all .3s var(--ease)}
   .value-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
@@ -125,7 +95,7 @@
   section{position:relative;z-index:1;padding:100px 40px;overflow:hidden;overflow-x:clip}
   .stats-wrapper{position:relative;padding:0 40px;overflow:hidden;overflow-x:clip}
   .container{max-width:1240px;margin:0 auto;width:100%}
-  
+
   .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:24px}
   .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--maroon)}
   .eyebrow.left::before,.eyebrow.left::after{display:none}
@@ -135,18 +105,9 @@
   .section-head h2 em{font-style:italic;color:var(--maroon)}
   .section-head p{color:var(--ink-soft);font-size:16px;font-weight:400;line-height:1.7}
 
-  /* Stats Banner with Geometric Accents */
-  .stats-wrapper{position:relative;padding:0 40px}
-  .stats-wrapper::before{
-    content:'';position:absolute;top:-40px;left:0;width:200px;height:200px;
-    background:rgba(184,137,62,0.06);border-radius:50%;z-index:0;
-    transform:translateX(-20%)
-  }
-  .stats-wrapper::after{
-    content:'';position:absolute;bottom:-30px;right:0;width:150px;height:150px;
-    background:rgba(107,31,44,0.04);border-radius:50%;z-index:0;
-    transform:translateX(20%)
-  }
+  /* Stats Banner */
+  .stats-wrapper::before{content:'';position:absolute;top:-40px;left:0;width:200px;height:200px;background:rgba(184,137,62,0.06);border-radius:50%;z-index:0;transform:translateX(-20%)}
+  .stats-wrapper::after{content:'';position:absolute;bottom:-30px;right:0;width:150px;height:150px;background:rgba(107,31,44,0.04);border-radius:50%;z-index:0;transform:translateX(20%)}
   .stats-banner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--cream-2);border:1px solid var(--line);border-radius:var(--radius-xl);overflow:hidden;position:relative;z-index:1}
   .stat-item{padding:36px 24px;text-align:center;border-right:1px solid var(--line);transition:all .3s ease}
   .stat-item:last-child{border-right:none}
@@ -154,73 +115,116 @@
   .stat-number{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--maroon);line-height:1;display:block}
   .stat-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-soft);margin-top:10px;display:block}
 
-  /* Philosophy Section (now #3) with Geometric Design */
-  .philosophy-section{
-    background:var(--cream-2);position:relative;
-    padding:100px 40px;overflow:hidden;overflow-x:clip
-  }
-  .philosophy-section::before{
-    content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;
-    background:linear-gradient(135deg,rgba(107,31,44,0.06),rgba(184,137,62,0.04));
-    border-radius:50%;z-index:0
-  }
-  .philosophy-section::after{
-    content:'';position:absolute;bottom:-60px;right:100px;width:250px;height:250px;
-    background:rgba(107,31,44,0.04);border-radius:50%;z-index:0
-  }
+  /* Philosophy Section */
+  .philosophy-section{background:var(--cream-2);position:relative;padding:100px 40px;overflow:hidden;overflow-x:clip}
+  .philosophy-section::before{content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:linear-gradient(135deg,rgba(107,31,44,0.06),rgba(184,137,62,0.04));border-radius:50%;z-index:0}
+  .philosophy-section::after{content:'';position:absolute;bottom:-60px;right:100px;width:250px;height:250px;background:rgba(107,31,44,0.04);border-radius:50%;z-index:0}
   .philosophy-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto}
   .philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
-  .philosophy-item{
-    padding:32px;background:var(--cream);border:1px solid var(--line);
-    border-radius:var(--radius-xl);transition:all .3s var(--ease);
-    position:relative;overflow:hidden
-  }
-  .philosophy-item::before{
-    content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;
-    background:rgba(184,137,62,0.08);border-radius:50%;z-index:0
-  }
+  .philosophy-item{padding:32px;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-xl);transition:all .3s var(--ease);position:relative;overflow:hidden}
+  .philosophy-item::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(184,137,62,0.08);border-radius:50%;z-index:0}
   .philosophy-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-  .philosophy-item .num{
-    display:block;margin-bottom:16px;position:relative;z-index:1;
-    width:40px;height:40px;line-height:1;
-  }
+  .philosophy-item .num{display:block;margin-bottom:16px;position:relative;z-index:1;width:40px;height:40px;line-height:1}
   .philosophy-item .num svg{display:block}
-  .philosophy-item h3{
-    font-size:20px;color:var(--ink);margin-bottom:10px;position:relative;z-index:1
-  }
+  .philosophy-item h3{font-size:20px;color:var(--ink);margin-bottom:10px;position:relative;z-index:1}
   .philosophy-item p{font-size:14px;color:var(--ink-soft);line-height:1.65;position:relative;z-index:1}
 
-  /* Featured Section (now #6) */
-  .featured-section{
-    background:var(--maroon-deep);color:var(--cream);
-    position:relative;overflow:hidden;overflow-x:clip;padding:100px 40px
+  /* ── NEW: OzGPT Live Data Section ── */
+  .data-section{
+    background:var(--cream);padding:100px 40px;position:relative;overflow:hidden;overflow-x:clip
   }
-  /* Sweeping curves inspired by image */
-  .featured-section .geo-sweep-1{
-    position:absolute;top:-30%;right:-15%;width:60%;height:160%;
-    background:linear-gradient(135deg,rgba(184,137,62,0.1),rgba(212,169,97,0.04));
-    border-radius:50%;z-index:0
+  .data-section::before{
+    content:'';position:absolute;top:-80px;left:-60px;width:400px;height:400px;
+    background:rgba(107,31,44,0.04);border-radius:50%;z-index:0
   }
-  .featured-section .geo-sweep-2{
-    position:absolute;bottom:-20%;right:5%;width:40%;height:120%;
-    background:rgba(107,31,44,0.3);border-radius:50%;z-index:0
+  .data-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto}
+
+  /* Channel breakdown bar chart */
+  .channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .channel-card{
+    background:var(--cream-2);border:1px solid var(--line);border-radius:var(--radius-xl);
+    padding:28px 24px;transition:all .3s var(--ease);position:relative;overflow:hidden
   }
-  .featured-section .geo-circle-f1{
-    position:absolute;top:20%;right:20%;width:280px;height:280px;
-    background:rgba(184,137,62,0.08);border-radius:50%;z-index:1
+  .channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--maroon)}
+  .channel-card .ch-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--maroon);margin-bottom:8px}
+  .channel-card .ch-value{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px}
+  .channel-card .ch-sub{font-size:12px;color:var(--ink-soft);margin-bottom:16px}
+  .channel-bar-track{height:4px;background:var(--cream-3);border-radius:2px;overflow:hidden}
+  .channel-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--maroon),var(--gold));transition:width 1.2s var(--ease)}
+
+  /* Feature usage pills */
+  .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+  .feature-row{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px 20px;background:var(--cream-2);border:1px solid var(--line);border-radius:var(--radius-lg);
+    transition:all .25s
   }
-  .featured-section .geo-circle-f2{
-    position:absolute;top:35%;right:10%;width:180px;height:180px;
-    background:rgba(107,31,44,0.3);border-radius:50%;z-index:1
+  .feature-row:hover{border-color:var(--maroon);background:var(--cream)}
+  .feature-row .feat-name{font-size:13px;font-weight:500;color:var(--ink)}
+  .feature-row .feat-bar-wrap{flex:1;height:6px;background:var(--cream-3);border-radius:3px;overflow:hidden;margin:0 12px}
+  .feature-row .feat-bar{height:100%;background:linear-gradient(90deg,var(--maroon),var(--gold-soft));border-radius:3px;transition:width 1.2s var(--ease)}
+  .feature-row .feat-count{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--maroon);white-space:nowrap}
+
+  /* Growth chart visual */
+  .growth-viz{
+    background:var(--maroon-deep);border-radius:var(--radius-xl);padding:32px;margin-top:40px;
+    position:relative;overflow:hidden
   }
-  .featured-section .geo-circle-f3{
-    position:absolute;bottom:15%;right:30%;width:120px;height:120px;
-    background:rgba(212,169,97,0.06);border-radius:50%;z-index:1
+  .growth-viz::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:rgba(184,137,62,0.06);border-radius:50%}
+  .growth-viz-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:24px;font-weight:600;position:relative;z-index:2}
+  .growth-chart{display:flex;align-items:flex-end;gap:6px;height:120px;position:relative;z-index:2}
+  .growth-bar{
+    flex:1;border-radius:3px 3px 0 0;min-width:0;
+    background:linear-gradient(180deg,var(--gold-soft),rgba(184,137,62,0.4));
+    transition:height .6s var(--ease);cursor:default;position:relative
   }
-  .featured-grid{
-    display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;
-    max-width:1240px;margin:0 auto;position:relative;z-index:2
+  .growth-bar:hover::after{
+    content:attr(data-label);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+    background:rgba(251,246,238,0.9);color:var(--ink);font-size:9px;padding:3px 6px;border-radius:4px;
+    white-space:nowrap;font-family:'Inter',sans-serif;font-weight:500
   }
+  .growth-labels{display:flex;gap:6px;position:relative;z-index:2;margin-top:8px}
+  .growth-label{flex:1;font-size:8px;color:rgba(251,246,238,0.4);text-align:center;letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .growth-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px;position:relative;z-index:2}
+  .growth-kpi{text-align:center}
+  .growth-kpi .gk-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold-soft);display:block;line-height:1}
+  .growth-kpi .gk-lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,246,238,0.5);margin-top:6px;display:block}
+
+  /* ── NEW: PM Operations Section ── */
+  .ops-section{background:var(--cream-2);padding:100px 40px;position:relative;overflow:hidden;overflow-x:clip}
+  .ops-inner{max-width:1240px;margin:0 auto;position:relative;z-index:2}
+  .ops-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+  .ops-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-xl);padding:32px;transition:all .3s var(--ease)}
+  .ops-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .ops-card h3{font-size:22px;color:var(--ink);margin-bottom:8px}
+  .ops-card .ops-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin-bottom:20px;font-weight:600}
+  .ops-card p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:16px}
+  .ops-tag-list{display:flex;gap:8px;flex-wrap:wrap}
+  .ops-tag{font-size:11px;padding:5px 12px;background:var(--cream-2);border:1px solid var(--line);border-radius:var(--radius);color:var(--ink-soft);font-weight:500}
+  .ops-tag.hot{background:rgba(107,31,44,0.08);color:var(--maroon);border-color:rgba(107,31,44,0.2)}
+
+  /* Product priority table */
+  .priority-table{width:100%;border-collapse:collapse;margin-top:24px}
+  .priority-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:10px 14px;text-align:left;border-bottom:2px solid var(--line)}
+  .priority-table td{font-size:13px;color:var(--ink-soft);padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  .priority-table tr:last-child td{border-bottom:none}
+  .priority-table td:first-child{color:var(--ink);font-weight:500}
+  .priority-table tr:hover td{background:rgba(107,31,44,0.03)}
+  .p-badge{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:3px 8px;border-radius:4px}
+  .p-fire{background:rgba(184,137,62,0.15);color:var(--gold)}
+  .p-merge{background:rgba(107,31,44,0.1);color:var(--maroon)}
+  .p-grow{background:rgba(39,120,80,0.1);color:#27785050}
+  .p-b2b{background:rgba(74,21,32,0.08);color:var(--maroon-deep)}
+  .p-local{background:rgba(107,31,44,0.08);color:var(--maroon);border:1px solid rgba(107,31,44,0.2)}
+
+  /* Featured Section */
+  .featured-section{background:var(--maroon-deep);color:var(--cream);position:relative;overflow:hidden;overflow-x:clip;padding:100px 40px}
+  .featured-section .geo-sweep-1{position:absolute;top:-30%;right:-15%;width:60%;height:160%;background:linear-gradient(135deg,rgba(184,137,62,0.1),rgba(212,169,97,0.04));border-radius:50%;z-index:0}
+  .featured-section .geo-sweep-2{position:absolute;bottom:-20%;right:5%;width:40%;height:120%;background:rgba(107,31,44,0.3);border-radius:50%;z-index:0}
+  .featured-section .geo-circle-f1{position:absolute;top:20%;right:20%;width:280px;height:280px;background:rgba(184,137,62,0.08);border-radius:50%;z-index:1}
+  .featured-section .geo-circle-f2{position:absolute;top:35%;right:10%;width:180px;height:180px;background:rgba(107,31,44,0.3);border-radius:50%;z-index:1}
+  .featured-section .geo-circle-f3{position:absolute;bottom:15%;right:30%;width:120px;height:120px;background:rgba(212,169,97,0.06);border-radius:50%;z-index:1}
+  .featured-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;max-width:1240px;margin:0 auto;position:relative;z-index:2}
   .featured-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:16px;display:flex;align-items:center;gap:8px}
   .featured-tag::before{content:'';display:block;width:20px;height:2px;background:var(--gold-soft)}
   .featured-text h2{font-size:clamp(36px,5vw,52px);color:var(--cream);margin-bottom:20px}
@@ -230,14 +234,8 @@
   .featured-metric{text-align:center;padding:16px;background:rgba(251,246,238,0.06);border:1px solid rgba(251,246,238,0.12);border-radius:var(--radius-lg);backdrop-filter:blur(8px);min-width:120px}
   .featured-metric .num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold-soft);display:block}
   .featured-metric .lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(251,246,238,0.6);margin-top:6px}
-  .featured-visual{
-    height:400px;border:1px solid rgba(212,169,97,0.25);
-    border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;background:rgba(26,10,14,0.3)
-  }
-  .featured-visual .visual-circle{
-    position:absolute;border-radius:50%;opacity:.15
-  }
+  .featured-visual{height:400px;border:1px solid rgba(212,169,97,0.25);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:rgba(26,10,14,0.3)}
+  .featured-visual .visual-circle{position:absolute;border-radius:50%;opacity:.15}
   .featured-visual .visual-circle:nth-child(1){width:200px;height:200px;background:var(--gold-soft);top:10%;left:15%}
   .featured-visual .visual-circle:nth-child(2){width:140px;height:140px;background:var(--maroon-soft);bottom:15%;right:20%}
   .featured-visual .visual-circle:nth-child(3){width:80px;height:80px;background:var(--gold);top:40%;right:30%}
@@ -249,7 +247,7 @@
   .filter-btn:hover{color:var(--maroon);background:rgba(107,31,44,0.05)}
   .filter-btn.active{background:var(--maroon);color:var(--cream);box-shadow:0 4px 12px rgba(107,31,44,0.25)}
 
-  /* Product Grid — desktop grid, mobile horizontal scroll */
+  /* Product Grid */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
   @media(max-width:880px){
     .grid{display:flex;overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;gap:16px;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--maroon) var(--cream-3)}
@@ -285,114 +283,201 @@
   .metric-growth{background:var(--maroon);color:var(--cream)}
   .metric-scale{background:var(--gold);color:var(--maroon-deep)}
   .metric-engagement{background:var(--cream);border:1px solid var(--maroon);color:var(--maroon)}
-  .metric-highlight{background:var(--success);color:#fff}
+  .metric-highlight{background:var(--maroon-soft);color:var(--cream)}
   .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
   .links a{font-size:11px;text-decoration:none;padding:7px 12px;background:transparent;color:var(--maroon);border:1px solid var(--line);transition:all .25s var(--ease);display:inline-flex;align-items:center;gap:5px;letter-spacing:1px;text-transform:uppercase;font-weight:500;border-radius:var(--radius)}
   .links a:hover{background:var(--maroon);color:var(--cream);border-color:var(--maroon)}
 
   /* Visual Break */
-  .visual-break{
-    background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));
-    padding:80px 40px;text-align:center;position:relative;overflow:hidden;overflow-x:clip
-  }
-  .visual-break::before{
-    content:'';position:absolute;top:-50%;right:-10%;width:60%;height:200%;
-    background:rgba(184,137,62,0.08);border-radius:50%;z-index:0
-  }
-  .visual-break::after{
-    content:'';position:absolute;bottom:-30%;left:10%;width:200px;height:200px;
-    background:rgba(107,31,44,0.3);border-radius:50%;z-index:0
-  }
+  .visual-break{background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));padding:80px 40px;text-align:center;position:relative;overflow:hidden;overflow-x:clip}
+  .visual-break::before{content:'';position:absolute;top:-50%;right:-10%;width:60%;height:200%;background:rgba(184,137,62,0.08);border-radius:50%;z-index:0}
+  .visual-break::after{content:'';position:absolute;bottom:-30%;left:10%;width:200px;height:200px;background:rgba(107,31,44,0.3);border-radius:50%;z-index:0}
   .visual-break h2{font-size:clamp(28px,4vw,44px);color:var(--cream);margin:0 auto;line-height:1.2;position:relative;z-index:2}
   .visual-break h2 em{color:var(--gold-soft)}
   .visual-break .sub{font-size:13px;color:rgba(251,246,238,0.5);margin-top:16px;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:2}
 
-  /* Case Studies — Horizontal Scroll */
-  .cs-scroll-wrapper{
-    position:relative;
-    margin-top:40px;
-  }
-  .cs-scroll-track{
-    display:flex;
-    gap:28px;
-    overflow-x:auto;
-    overflow-y:visible;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    overscroll-behavior-x:contain;
-    padding-bottom:20px;
-    padding-left:2px;
-    padding-right:2px;
-    scrollbar-width:thin;
-    scrollbar-color:var(--maroon) var(--cream-3);
-    will-change:scroll-position;
-    touch-action:pan-x;
-  }
-  .cs-scroll-track::-webkit-scrollbar{height:4px}
-  .cs-scroll-track::-webkit-scrollbar-track{background:var(--cream-3);border-radius:2px}
-  .cs-scroll-track::-webkit-scrollbar-thumb{background:var(--maroon);border-radius:2px}
-  .cs-scroll-hint{
-    display:none;
-    text-align:right;
-    font-size:11px;
-    color:var(--ink-soft);
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-    opacity:.6;
-  }
-  @media(max-width:880px){.cs-scroll-hint{display:block}}
+  /* ── Case Studies — Accordion Design ── */
+  .cs-section-wrap{padding:100px 0 0;overflow:hidden}
+  .cs-intro{max-width:1240px;margin:0 auto;padding:0 40px 60px}
 
-  .case-study{
-    background:var(--cream-2);border:1px solid var(--line);padding:40px;
-    border-radius:var(--radius-xl);position:relative;overflow:hidden;
-    flex:0 0 min(780px, calc(100vw - 48px));
-    scroll-snap-align:start;
-    scroll-snap-stop:always;
-    transition:box-shadow .3s ease;
+  /* Tab nav strip */
+  .cs-tabs{
+    display:flex;border-bottom:1px solid var(--line);gap:0;
+    max-width:1240px;margin:0 auto;padding:0 40px;overflow-x:auto;
+    scrollbar-width:none;-ms-overflow-style:none
   }
-  .case-study::before{
-    content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;
-    background:rgba(184,137,62,0.05);border-radius:50%;z-index:0
+  .cs-tabs::-webkit-scrollbar{display:none}
+  .cs-tab{
+    display:flex;align-items:center;gap:14px;padding:20px 28px 20px 0;
+    background:none;border:none;cursor:pointer;font-family:inherit;
+    text-align:left;transition:all .3s var(--ease);flex-shrink:0;
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+    position:relative
   }
-  .case-study:hover{box-shadow:var(--shadow-md)}
-  .cs-header{margin-bottom:32px;position:relative;z-index:1}
-  .cs-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);margin-bottom:14px;font-weight:600;display:flex;align-items:center;gap:12px}
-  .cs-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--maroon)}
-  .cs-header h2{font-size:clamp(24px,3vw,38px);color:var(--ink);margin-bottom:10px}
-  .cs-header h2 em{font-style:italic;color:var(--maroon)}
-  .cs-header p{font-size:15px;color:var(--ink-soft);line-height:1.65}
-  .cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;padding:24px;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-lg);position:relative;z-index:1}
-  .cs-metric{text-align:center;padding:12px}
-  .cs-metric .number{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--maroon);line-height:1;display:block}
-  .cs-metric .label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink-soft);margin-top:8px;display:block}
-  .cs-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:32px 0;position:relative;z-index:1}
-  .cs-block h3{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--maroon);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .cs-block p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:14px}
-  .cs-block ul{list-style:none;padding:0}
-  .cs-block li{padding:7px 0;padding-left:18px;position:relative;font-size:14px;color:var(--ink-soft);line-height:1.55;border-bottom:1px solid rgba(107,31,44,0.05)}
-  .cs-block li:last-child{border-bottom:none}
-  .cs-block li::before{content:'→';position:absolute;left:0;color:var(--gold);font-weight:500}
-  .cs-block li b{color:var(--ink)}
-  .cs-insight{
-    background:var(--cream-2);border-left:3px solid var(--gold-soft);
-    padding:20px 24px;margin:28px 0;border-radius:0 var(--radius) var(--radius) 0;
-    position:relative;z-index:1
+  .cs-tab .tab-num{
+    font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;
+    color:var(--ink-soft);opacity:.4;transition:opacity .3s ease;line-height:1
   }
-  .cs-insight h4{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:6px;font-weight:600}
-  .cs-insight p{font-size:13px;color:var(--ink-soft);line-height:1.55;font-style:italic}
+  .cs-tab .tab-title{
+    font-size:13px;font-weight:500;color:var(--ink-soft);
+    letter-spacing:.2px;transition:color .3s ease;line-height:1.3
+  }
+  .cs-tab .tab-cat{
+    font-size:9px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--ink-soft);opacity:.5;display:block;margin-top:3px;transition:opacity .3s
+  }
+  .cs-tab:hover .tab-title{color:var(--maroon)}
+  .cs-tab:hover .tab-num{opacity:.7}
+  .cs-tab.active{border-bottom-color:var(--maroon)}
+  .cs-tab.active .tab-num{opacity:1;color:var(--maroon)}
+  .cs-tab.active .tab-title{color:var(--maroon);font-weight:600}
+  .cs-tab.active .tab-cat{opacity:.8;color:var(--maroon)}
+
+  /* Panel wrapper */
+  .cs-panels{position:relative}
+  .cs-panel{
+    display:none;opacity:0;transform:translateY(16px);
+    transition:opacity .45s var(--ease),transform .45s var(--ease)
+  }
+  .cs-panel.active{display:block}
+  .cs-panel.visible{opacity:1;transform:none}
+
+  /* Each panel is a full-bleed two-column layout */
+  .cs-panel-inner{
+    display:grid;grid-template-columns:420px 1fr;min-height:560px
+  }
+
+  /* Left column — dark, bold */
+  .cs-left{
+    background:var(--maroon-deep);color:var(--cream);
+    padding:56px 48px;display:flex;flex-direction:column;
+    position:relative;overflow:hidden
+  }
+  .cs-left::before{
+    content:'';position:absolute;bottom:-60px;left:-60px;
+    width:280px;height:280px;border-radius:50%;
+    background:rgba(184,137,62,0.08);z-index:0
+  }
+  .cs-left::after{
+    content:'';position:absolute;top:-40px;right:-40px;
+    width:160px;height:160px;border-radius:50%;
+    background:rgba(107,31,44,0.4);z-index:0
+  }
+  .cs-left > *{position:relative;z-index:1}
+
+  .cs-big-num{
+    font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:600;
+    color:rgba(251,246,238,0.06);line-height:1;letter-spacing:-6px;
+    position:absolute;top:24px;right:32px;z-index:0;pointer-events:none;
+    user-select:none
+  }
+  .cs-left-eyebrow{
+    font-size:10px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold-soft);margin-bottom:24px;font-weight:600;
+    display:flex;align-items:center;gap:10px
+  }
+  .cs-left-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold-soft)}
+  .cs-left h2{
+    font-size:clamp(26px,2.8vw,36px);color:var(--cream);
+    margin-bottom:8px;line-height:1.1
+  }
+  .cs-left h2 em{color:var(--gold-soft);font-style:italic}
+  .cs-left .cs-tagline{
+    font-size:14px;color:rgba(251,246,238,0.65);line-height:1.65;
+    margin-bottom:40px
+  }
+
+  /* Stat pills on left */
+  .cs-stat-stack{display:flex;flex-direction:column;gap:12px;margin-top:auto}
+  .cs-stat-pill{
+    display:flex;align-items:baseline;gap:12px;
+    padding:16px 20px;
+    background:rgba(251,246,238,0.05);
+    border:1px solid rgba(251,246,238,0.1);
+    border-radius:var(--radius-lg);
+    transition:background .25s
+  }
+  .cs-stat-pill:hover{background:rgba(251,246,238,0.08)}
+  .cs-stat-pill .sp-num{
+    font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;
+    color:var(--gold-soft);line-height:1;white-space:nowrap
+  }
+  .cs-stat-pill .sp-lbl{
+    font-size:11px;color:rgba(251,246,238,0.55);letter-spacing:1px;
+    text-transform:uppercase;line-height:1.4
+  }
+
+  /* Right column — light, content */
+  .cs-right{
+    background:var(--cream-2);padding:56px 52px;
+    display:flex;flex-direction:column;gap:0
+  }
+
+  .cs-right-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border:1px solid var(--line);border-radius:var(--radius-xl);
+    overflow:hidden;margin-bottom:28px
+  }
+  .cs-right-col{padding:28px 32px}
+  .cs-right-col:first-child{border-right:1px solid var(--line)}
+  .cs-right-col h3{
+    font-size:10px;text-transform:uppercase;letter-spacing:2.5px;
+    color:var(--maroon);font-weight:600;margin-bottom:20px;
+    padding-bottom:12px;border-bottom:1px solid var(--line)
+  }
+  .cs-right-col ul{list-style:none;padding:0}
+  .cs-right-col li{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:9px 0;border-bottom:1px solid rgba(107,31,44,0.06);
+    font-size:13.5px;color:var(--ink-soft);line-height:1.5
+  }
+  .cs-right-col li:last-child{border-bottom:none}
+  .cs-right-col li::before{
+    content:'';display:block;width:5px;height:5px;
+    border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px
+  }
+  .cs-right-col li b{color:var(--ink);font-weight:600}
+
+  /* Insight bar at bottom of right col */
+  .cs-insight-bar{
+    background:var(--maroon-deep);border-radius:var(--radius-xl);
+    padding:24px 32px;display:flex;align-items:flex-start;gap:20px
+  }
+  .cs-insight-bar .ib-icon{
+    width:36px;height:36px;flex-shrink:0;
+    background:rgba(212,169,97,0.15);border-radius:50%;
+    display:grid;place-items:center
+  }
+  .cs-insight-bar .ib-icon svg{display:block}
+  .cs-insight-bar .ib-text h4{
+    font-size:9px;text-transform:uppercase;letter-spacing:2.5px;
+    color:var(--gold-soft);font-weight:600;margin-bottom:6px
+  }
+  .cs-insight-bar .ib-text p{
+    font-size:13px;color:rgba(251,246,238,0.75);line-height:1.6;font-style:italic
+  }
+
+  /* Mobile */
   @media(max-width:880px){
-    .cs-split{grid-template-columns:1fr}
-    .cs-metrics{grid-template-columns:1fr}
-    .case-study{padding:24px;flex-basis:min(680px,calc(100vw - 48px))}
+    .cs-section-wrap{padding:80px 0 0}
+    .cs-intro{padding:0 20px 40px}
+    .cs-tabs{padding:0 20px}
+    .cs-tab{padding:16px 20px 16px 0}
+    .cs-tab .tab-title{font-size:12px}
+    .cs-panel-inner{grid-template-columns:1fr;min-height:auto}
+    .cs-left{padding:40px 24px}
+    .cs-big-num{font-size:80px}
+    .cs-right{padding:32px 24px}
+    .cs-right-grid{grid-template-columns:1fr}
+    .cs-right-col:first-child{border-right:none;border-bottom:1px solid var(--line)}
+    .cs-right-col{padding:24px}
+    .cs-stat-stack{flex-direction:row;flex-wrap:wrap;gap:8px}
+    .cs-stat-pill{flex:1;min-width:120px}
   }
 
   /* Stack */
   .stack-section{background:var(--maroon-deep);color:var(--cream);position:relative;overflow:hidden;overflow-x:clip;padding:100px 40px}
-  .stack-section::before{
-    content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;
-    background:rgba(184,137,62,0.06);border-radius:50%;z-index:0
-  }
+  .stack-section::before{content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:rgba(184,137,62,0.06);border-radius:50%;z-index:0}
   .stack-section .container{position:relative;z-index:2}
   .stack-section .eyebrow{color:var(--gold-soft)}.stack-section .eyebrow::before,.stack-section .eyebrow::after{background:var(--gold-soft)}
   .stack-section h2{color:var(--cream)}.stack-section h2 em{color:var(--gold-soft)}
@@ -423,11 +508,7 @@
 
   /* Download Section */
   .download-section{text-align:center;margin-top:40px}
-  .download-link{
-    font-size:13px;padding:10px 20px;background:var(--cream);border:1px solid var(--line);
-    border-radius:var(--radius);color:var(--maroon);text-decoration:none;
-    transition:all .25s;display:inline-flex;align-items:center;gap:6px;font-weight:500
-  }
+  .download-link{font-size:13px;padding:10px 20px;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);color:var(--maroon);text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:6px;font-weight:500}
   .download-link:hover{background:var(--maroon);color:var(--cream);border-color:var(--maroon);transform:translateY(-2px)}
   .download-link + .download-link{margin-left:12px}
 
@@ -449,16 +530,24 @@
     .value-banner{flex-direction:column}
     .page-header{padding:140px 20px 80px}
     .card-media{aspect-ratio:16/9}
-    .case-study{padding:24px}
+    .cs-section-wrap{padding-top:60px}
     .stats-wrapper{padding:0 20px}
-    .philosophy-section,.featured-section{padding:80px 20px}
+    .philosophy-section,.featured-section,.data-section,.ops-section{padding:80px 20px}
     .partners-section{padding:80px 20px}
     .download-link + .download-link{margin-left:0;margin-top:8px}
+    .channel-grid{grid-template-columns:1fr}
+    .feature-grid{grid-template-columns:1fr}
+    .ops-grid{grid-template-columns:1fr}
+    .growth-kpis{grid-template-columns:repeat(2,1fr)}
   }
 
+
+  /* Focus styles for keyboard navigation */
+  :focus-visible{outline:2px solid var(--maroon);outline-offset:3px;border-radius:3px}
+  .skip-link{position:absolute;top:-40px;left:16px;background:var(--maroon);color:var(--cream);padding:8px 16px;border-radius:var(--radius);font-size:13px;font-weight:600;z-index:999;transition:top .2s ease;text-decoration:none}
+  .skip-link:focus{top:16px}
+
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important}html{scroll-behavior:auto}}
-
-
 </style>
 </head>
 <body>
@@ -483,6 +572,8 @@
     <a href="contact.html" class="nav-cta"><span>Get in touch</span></a>
   </div>
 </nav>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
 
 <!-- 1. HEADER -->
 <div class="page-header">
@@ -497,8 +588,8 @@
     <p class="global-tagline">Based in Pakistan · Open to opportunities in GCC, UK, EU, and remote</p>
     <div class="value-banner">
       <div class="value-item"><h4>Emerging Markets</h4><p>Experience building for low-bandwidth, low-literacy environments — applicable across Africa, MENA, and South Asia.</p></div>
-      <div class="value-item"><h4>AI Product Delivery</h4><p>Shipped Pakistan's first telco-integrated multilingual AI assistant with voice-first distribution.</p></div>
-      <div class="value-item"><h4>Scale & Impact</h4><p>Managed products totaling 1.7M+ MAU with sustained engagement across competitive markets.</p></div>
+      <div class="value-item"><h4>AI Product Delivery</h4><p>Shipped Pakistan's first telco-integrated multilingual AI assistant with voice-first distribution across 6 channels.</p></div>
+      <div class="value-item"><h4>Scale & Impact</h4><p>Managed products totaling 1.7M+ MAU with sustained engagement across 15 active products simultaneously.</p></div>
     </div>
   </div>
 </div>
@@ -507,20 +598,20 @@
 <div class="stats-wrapper">
   <div class="container" style="padding-top:60px;padding-bottom:60px">
     <div class="stats-banner reveal">
-      <div class="stat-item"><span class="stat-number" data-target="14">0</span>+<span class="stat-label">Products Shipped</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="15">0</span>+<span class="stat-label">Products Managed</span></div>
       <div class="stat-item"><span class="stat-number" data-target="1.7">0</span>M+<span class="stat-label">Total MAU Managed</span></div>
-      <div class="stat-item"><span class="stat-number" data-target="4">0</span><span class="stat-label">Telco Partners</span></div>
-      <div class="stat-item"><span class="stat-number" data-target="5">0</span><span class="stat-label">Product Verticals</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="12">0</span><span class="stat-label">Products QA Tested Daily</span></div>
+      <div class="stat-item"><span class="stat-number" data-target="20">0</span>K+<span class="stat-label">Test Cases Executed</span></div>
     </div>
   </div>
 </div>
 
-<!-- 3. PHILOSOPHY (MOVED UP) -->
+<!-- 3. PHILOSOPHY -->
 <section class="philosophy-section">
   <div class="philosophy-inner">
     <div class="section-head reveal">
       <div class="eyebrow left">Approach</div>
-      <h2>How I Build Products <em>for Real People </em></h2>
+      <h2>How I Build Products <em>for Real People</em></h2>
       <p>Constraints aren't limitations — they're innovation catalysts. In markets where every tap costs data and every second matters, simplicity isn't optional.</p>
     </div>
     <div class="philosophy-grid">
@@ -548,88 +639,88 @@
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow left">Portfolio</div>
-      <h2>14 Products Across <em>4 Verticals</em></h2>
-      <p>Built, shipped, and managed digital products for Pakistan's largest telecom operators and fintech platforms.</p>
+      <h2>15 Products Across <em>5 Verticals</em></h2>
+      <p>Built, shipped, and managed digital products for Pakistan's largest telecom operators and fintech platforms — simultaneously tracking 15 live products across QA, dev, content, and analytics cycles.</p>
     </div>
 
     <div class="filters reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="ai">AI</button>
-      <button class="filter-btn" data-filter="ott">OTT / VOD</button>
-      <button class="filter-btn" data-filter="game">Gaming</button>
-      <button class="filter-btn" data-filter="ent">Enterprise</button>
-      <button class="filter-btn" data-filter="media">Media</button>
+      <button class="filter-btn active" data-filter="all" aria-label="Show all products">All</button>
+      <button class="filter-btn" data-filter="ai" aria-label="Filter: AI products">AI</button>
+      <button class="filter-btn" data-filter="ott" aria-label="Filter: OTT / VOD products">OTT / VOD</button>
+      <button class="filter-btn" data-filter="game" aria-label="Filter: Gaming products">Gaming</button>
+      <button class="filter-btn" data-filter="ent" aria-label="Filter: Enterprise products">Enterprise</button>
+      <button class="filter-btn" data-filter="media" aria-label="Filter: Media products">Media</button>
     </div>
 
     <div class="grid" id="grid">
       <article class="card reveal" data-cat="ai">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1hzE918ZZiyrM4uoik9j4GNBAjELAuqsL" alt="OzGPT" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Zong</div><div class="media-tag">Oz<em>GPT</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>OzGPT</h3><span class="badge b-ai">AI</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>Telco-integrated multilingual AI assistant (Urdu, Punjabi, Sindhi, Pashto, English) via USSD, SMS, IVR, web, and app.</p><div class="card-metrics"><span class="metric-growth">563% MAU</span><span class="metric-scale">215K users</span></div><div class="card-impact"><b>Role:</b> Full lifecycle — multilingual training data, telco integration, voice-first UX.</div><div class="links"><a href="https://ozgpt.com.pk/home" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.ozgpt" target="_blank">Play Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>OzGPT</h3><span class="badge b-ai">AI</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>Pakistan's first telco-integrated multilingual AI assistant (Urdu, Punjabi, Sindhi, Pashto, English) via USSD, SMS, IVR, Web, App, and MZA — 6 access channels.</p><div class="card-metrics"><span class="metric-growth">1.3M+ web users</span><span class="metric-scale">128K+ queries</span></div><div class="card-impact"><b>Role:</b> Full lifecycle — multilingual training data, 6-channel telco integration, voice-first UX.</div><div class="links"><a href="https://ozgpt.com.pk/home" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.ozgpt" target="_blank" rel="noopener noreferrer">Play Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1GT0Y2PrwwbFjM4U1hyR5fTRVLR7D-N-j" alt="Deikho" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Jazz</div><div class="media-tag"><em>Deikho</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Deikho</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Premium Pakistani OTT with original series & celebrity content. 716K MAU, 9m46s avg session time.</p><div class="card-metrics"><span class="metric-scale">716K MAU</span><span class="metric-highlight">⭐ Core revenue</span></div><div class="card-impact"><b>Role:</b> Post-handover ownership — iOS launch, content expansion, cohort tracking.</div><div class="links"><a href="https://deikho.com/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.jazz.pakistani.drama.videos.deikho" target="_blank">Play Store</a><a href="https://apps.apple.com/pk/app/deikho/id6745093169" target="_blank">App Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Deikho</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Premium Pakistani OTT with original series & celebrity content. 716K MAU, 9m46s avg session time.</p><div class="card-metrics"><span class="metric-scale">716K MAU</span><span class="metric-highlight">Core revenue</span></div><div class="card-impact"><b>Role:</b> Post-handover ownership — iOS launch, content expansion, cohort tracking. <b>QA:</b> 289 days tested · 2,840 test cases · 98.7% success rate. Resolved SUB/UNSUB messaging issues.</div><div class="links"><a href="https://deikho.com/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.jazz.pakistani.drama.videos.deikho" target="_blank" rel="noopener noreferrer">Play Store</a><a href="https://apps.apple.com/pk/app/deikho/id6745093169" target="_blank" rel="noopener noreferrer">App Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1DnmSmqc1GrYqtRVUqbCHu-sVd3l-AlDH" alt="ZongTV" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Zong</div><div class="media-tag">Zong<em>TV</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>ZongTV</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>OTT/VOD with 40+ live channels. Engagement grew from 2m5s to 2m39s avg sessions.</p><div class="card-metrics"><span class="metric-scale">450K MAU</span><span class="metric-engagement">↑27% sessions</span></div><div class="card-impact"><b>Role:</b> Content strategy, feature prioritization, platform upgrades.</div><div class="links"><a href="https://zongmobiletv.com/" target="_blank">Web</a><a href="https://play.google.com/store/search?q=zong%20tv&c=apps" target="_blank">Play Store</a><a href="https://apps.apple.com/pk/app/zong-live-tv/id6476647040" target="_blank">App Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>ZongTV</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>OTT/VOD with 40+ live channels. Engagement grew from 2m5s to 2m39s avg sessions. Comedy Corner and Whatsin integration in roadmap.</p><div class="card-metrics"><span class="metric-scale">450K MAU</span><span class="metric-engagement">↑27% sessions</span></div><div class="card-impact"><b>Role:</b> Content strategy, feature prioritization, platform upgrades. <b>QA:</b> 288 days tested · 2,771 test cases · 92.1% success rate. Key issues: OTP timeout (112), MSDN validation (97).</div><div class="links"><a href="https://zongmobiletv.com/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/search?q=zong%20tv&c=apps" target="_blank" rel="noopener noreferrer">Play Store</a><a href="https://apps.apple.com/pk/app/zong-live-tv/id6476647040" target="_blank" rel="noopener noreferrer">App Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1OPrOrUwcu8KMSGmUtoheFP8lnyQzP3_j" alt="Qabeelah" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · In-house</div><div class="media-tag"><em>Qabeelah</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Qabeelah</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>In-house</b></div><p>Short-form video & community platform. 15.8% stickiness, 34m17s avg session time.</p><div class="card-metrics"><span class="metric-highlight">15.8% stickiness</span><span class="metric-engagement">34m sessions</span></div><div class="card-impact"><b>Role:</b> Content delivery architecture & user-first design.</div><div class="links"><a href="https://qabeelah.com/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.qabeelah" target="_blank">Play Store</a><a href="https://apps.apple.com/pk/app/qabeelah/id6740258193" target="_blank">App Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Qabeelah</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>In-house</b></div><p>Short-form video & community platform. 15.8% stickiness, 34m17s avg session time. Pakistan's local UGC platform — optimized for creator-first discovery.</p><div class="card-metrics"><span class="metric-scale">53K+ installs</span><span class="metric-highlight">15.8% stickiness</span><span class="metric-engagement">34m sessions</span></div><div class="card-impact"><b>Role:</b> Content delivery architecture & user-first design. <b>Android Growth:</b> 52,964 new users · 1,765 peak daily installs (Feb 7, 2026) · +18% growth rate over 4.5 months.</div><div class="links"><a href="https://qabeelah.com/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.qabeelah" target="_blank" rel="noopener noreferrer">Play Store</a><a href="https://apps.apple.com/pk/app/qabeelah/id6740258193" target="_blank" rel="noopener noreferrer">App Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1ThrJbkeyqOiYCFmpGdwZfKzdsRZbC9oE" alt="Trendin" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Telenor</div><div class="media-tag"><em>Trendin</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Trendin</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Reimagined lifestyle OTT — fashion, food, fitness & entertainment content.</p><div class="card-impact"><b>Role:</b> Repositioning, content enrichment & performance optimization.</div><div class="links"><a href="https://trendin.com.pk/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.lifestyle.trending" target="_blank">Play Store</a><a href="https://apps.apple.com/pk/app/trendin-app/id6754063776" target="_blank">App Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Trendin</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Reimagined lifestyle OTT — fashion, food, fitness & entertainment content. Launched iOS with DCB integration complete.</p><div class="card-impact"><b>Role:</b> Repositioning, content enrichment & performance optimization. <b>QA:</b> 75 days tested · 657 test cases · 99.5% success rate. OTP edge cases resolved.</div><div class="links"><a href="https://trendin.com.pk/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.lifestyle.trending" target="_blank" rel="noopener noreferrer">Play Store</a><a href="https://apps.apple.com/pk/app/trendin-app/id6754063776" target="_blank" rel="noopener noreferrer">App Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/11IH7E6bw9zOHvph_IkTcHRKwY1F8A16x" alt="Whatsin" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Telenor</div><div class="media-tag"><em>Whats</em>in</div></div>
-        <div class="card-body"><div class="card-top"><h3>Whatsin</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Lifestyle OTT — content management, UI improvements & technical development.</p><div class="card-impact"><b>Role:</b> Content strategy, UX improvements & dev oversight.</div><div class="links"><a href="https://whatsin.live/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.lifestyle.whatsin" target="_blank">Play Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Whatsin</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Lifestyle OTT — content management, UI improvements & technical development. Roadmap includes dual content pipeline with Trendin.</p><div class="card-impact"><b>Role:</b> Content strategy, UX improvements & dev oversight. <b>QA:</b> 220 days tested · 2,200 test cases · 99.2% success rate. Contact Us validation fixed.</div><div class="links"><a href="https://whatsin.live/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.lifestyle.whatsin" target="_blank" rel="noopener noreferrer">Play Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1mn3xcSug9o-37lWYdDhj2PiaRDbBI2Z1" alt="Goonj TV" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Telenor</div><div class="media-tag">Goonj<em> TV</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Goonj TV</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Hybrid OTT with live TV channels and curated video content.</p><div class="card-impact"><b>Role:</b> Content strategy, UX updates & cross-functional ops.</div><div class="links"><a href="https://goonj.pk/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.dmdmax.goonj" target="_blank">Play Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Goonj TV</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Telenor</b></div><p>Hybrid OTT with live TV channels and curated video content.</p><div class="card-impact"><b>Role:</b> Content strategy, UX updates & cross-functional ops. <b>QA:</b> 126 days tested · 1,134 test cases · 85.8% success rate. Other MSDN integration resolved.</div><div class="links"><a href="https://goonj.pk/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.dmdmax.goonj" target="_blank" rel="noopener noreferrer">Play Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ott">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1sDVGVZ4vSyvi2Sc6lFMoqeqiqNibU9c5" alt="Comedy Corner" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Zong</div><div class="media-tag">Comedy <em>Corner</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Comedy Corner</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>Niche comedy OTT with stand-up, sketches & light entertainment.</p><div class="card-impact"><b>Role:</b> End-to-end content & operations management.</div><div class="links"><a href="https://comedycorner.tv/" target="_blank">Web</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Comedy Corner</h3><span class="badge b-ott">OTT</span></div><div class="partner-tag">Partner · <b>Zong</b></div><p>Niche comedy OTT with stand-up, sketches & light entertainment. Roadmap: merge with ZongTV for consolidated content strategy.</p><div class="card-impact"><b>Role:</b> End-to-end content & operations management. <b>QA:</b> 290 days tested · 2,248 test cases · 99.2% success rate. Roadmap: merge with ZongTV.</div><div class="links"><a href="https://comedycorner.tv/" target="_blank" rel="noopener noreferrer">Web</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="game">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1t86ZJoLDE8yTzkv37APJxIOsGSxK6Mwr" alt="PlaySpot" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Jazz</div><div class="media-tag">Play<em>Spot</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>PlaySpot</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>HTML5 gaming platform. 250K+ MAU, 4m15s avg engagement.</p><div class="card-metrics"><span class="metric-scale">250K MAU</span><span class="metric-engagement">4m15s avg</span></div><div class="card-impact"><b>Role:</b> Platform ops, UI/UX improvements & client coordination.</div><div class="links"><a href="https://playspot.gamenow.com.pk/" target="_blank">Web</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>PlaySpot</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>HTML5 gaming platform. 250K+ MAU, 4m15s avg engagement.</p><div class="card-metrics"><span class="metric-scale">250K MAU</span><span class="metric-engagement">4m15s avg</span></div><div class="card-impact"><b>Role:</b> Platform ops, UI/UX improvements & client coordination. <b>QA:</b> 296 days tested · 2,617 test cases · 99.9% success rate. Near-zero issue product.</div><div class="links"><a href="https://playspot.gamenow.com.pk/" target="_blank" rel="noopener noreferrer">Web</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="game">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1wTEVTMXgsh5FLPPsXLB1yHhIm_D7mBF7" alt="Game Play Land" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Jazz</div><div class="media-tag">Game<em>Play</em> Land</div></div>
-        <div class="card-body"><div class="card-top"><h3>Game Play Land</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Instant-play HTML5 games. Fastest-growing gaming product in portfolio.</p><div class="card-impact"><b>Role:</b> Post-handover ops, curation & UX optimization.</div><div class="links"><a href="https://gameplayland.com.pk/" target="_blank">Web</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Game Play Land</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Instant-play HTML5 games. Fastest-growing gaming product in portfolio.</p><div class="card-impact"><b>Role:</b> Post-handover ops, curation & UX optimization. <b>QA:</b> 294 days tested · 2,593 test cases · 99.7% success rate. SUB/UNSUB edge cases resolved.</div><div class="links"><a href="https://gameplayland.com.pk/" target="_blank" rel="noopener noreferrer">Web</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="game">
         <div class="card-media"><img src="https://image.thum.io/get/width/800/crop/500/https://gameclub.com.pk/" alt="Game Club" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Ufone</div><div class="media-tag">Game<em>Club</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Game Club</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Ufone</b></div><p>Ufone's HTML5 platform. 44K MAU, 8.5% stickiness.</p><div class="card-metrics"><span class="metric-scale">44K MAU</span><span class="metric-highlight">8.5% stickiness</span></div><div class="card-impact"><b>Role:</b> End-to-end launch strategy, feature design & ops.</div><div class="links"><a href="https://gameclub.com.pk/" target="_blank">Web</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Game Club</h3><span class="badge b-game">Gaming</span></div><div class="partner-tag">Partner · <b>Ufone</b></div><p>Ufone's HTML5 platform. 44K MAU, 8.5% stickiness.</p><div class="card-metrics"><span class="metric-scale">44K MAU</span><span class="metric-highlight">8.5% stickiness</span></div><div class="card-impact"><b>Role:</b> End-to-end launch strategy, feature design & ops. <b>QA:</b> 136 days tested · 1,206 test cases · 100% success rate. Zero issues across all flows.</div><div class="links"><a href="https://gameclub.com.pk/" target="_blank" rel="noopener noreferrer">Web</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ent">
         <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1YT7xoi_gCLSenXS-ijMFnk2w9eHkUAuh" alt="Portall" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Jazz</div><div class="media-tag">Port<em>All</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Portall</h3><span class="badge b-ent">Storage</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Cloud-native storage with secure multi-device sync. Optimized for budget devices with limited storage.</p><div class="card-impact"><b>Role:</b> Sync architecture coordination, UX design, storage optimization.</div><div class="links"><a href="https://portallapp.com/" target="_blank">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.portall" target="_blank">Play Store</a><a href="https://apps.apple.com/pk/app/portall-cloud-storage-drive/id6475351765" target="_blank">App Store</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Portall</h3><span class="badge b-ent">Storage</span></div><div class="partner-tag">Partner · <b>Jazz</b></div><p>Cloud-native storage with secure multi-device sync. Optimized for budget devices with limited storage. MinIO bucket migration in progress for scale.</p><div class="card-impact"><b>Role:</b> Sync architecture coordination, UX design, storage optimization.</div><div class="links"><a href="https://portallapp.com/" target="_blank" rel="noopener noreferrer">Web</a><a href="https://play.google.com/store/apps/details?id=com.ideation.portall" target="_blank" rel="noopener noreferrer">Play Store</a><a href="https://apps.apple.com/pk/app/portall-cloud-storage-drive/id6475351765" target="_blank" rel="noopener noreferrer">App Store</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="ent">
-        <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1ng3CGCjUPny-MOvzpuegEHSrx2lzpBuZ" alt="Digital Signage" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Enterprise</div><div class="media-tag">Digital <em>Signage</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Digital Signage</h3><span class="badge b-ent">Enterprise</span></div><div class="partner-tag">Partner · <b>Jazz Business</b></div><p>Enterprise content management for multi-screen broadcasting.</p><div class="card-impact"><b>Role:</b> Requirements gathering, dev coordination & enterprise testing.</div><div class="links"><a href="#" onclick="alert('Available via Jazz Business');return false;">Enterprise Only</a></div></div>
+        <div class="card-media"><img src="https://lh3.googleusercontent.com/d/1ng3CGCjUPny-MOvzpuegEHSrx2lzpBuZ" alt="Digital Signage" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Enterprise · B2B</div><div class="media-tag">Digital <em>Signage</em></div></div>
+        <div class="card-body"><div class="card-top"><h3>Digital Signage</h3><span class="badge b-ent">Enterprise</span></div><div class="partner-tag">Partner · <b>Jazz Business</b></div><p>Enterprise content management for multi-screen broadcasting. B2B roadmap with SaveMart and Serena Hotels as target accounts.</p><div class="card-impact"><b>Role:</b> Requirements gathering, dev coordination & enterprise testing.</div><div class="links"><a href="#enterprise" data-enterprise="true" role="button" aria-label="Enterprise product — contact Jazz Business">Enterprise Only</a></div></div>
       </article>
 
       <article class="card reveal" data-cat="media">
         <div class="card-media"><img src="https://image.thum.io/get/width/800/crop/500/https://mobileakhbaar.com/" alt="Mobile Akhbaar" loading="lazy"/><div class="media-overlay"></div><div class="media-corner">Live · Ufone</div><div class="media-tag">Mobile <em>Akhbaar</em></div></div>
-        <div class="card-body"><div class="card-top"><h3>Mobile Akhbaar</h3><span class="badge b-media">Media</span></div><div class="partner-tag">Partner · <b>Ufone</b></div><p>Digital news aggregation — real-time updates across politics, sports, entertainment & tech.</p><div class="card-impact"><b>Role:</b> Development launch, content strategy & platform ops.</div><div class="links"><a href="https://mobileakhbaar.com/" target="_blank">Web</a></div></div>
+        <div class="card-body"><div class="card-top"><h3>Mobile Akhbaar</h3><span class="badge b-media">Media</span></div><div class="partner-tag">Partner · <b>Ufone</b></div><p>Digital news aggregation — real-time updates across politics, sports, entertainment & tech.</p><div class="card-impact"><b>Role:</b> Development launch, content strategy & platform ops.</div><div class="links"><a href="https://mobileakhbaar.com/" target="_blank" rel="noopener noreferrer">Web</a></div></div>
       </article>
     </div>
   </div>
@@ -641,7 +732,7 @@
   <div class="sub">Low bandwidth · Low literacy · Multi-channel · High impact</div>
 </div>
 
-<!-- 6. FEATURED OZGPT (MOVED DOWN) -->
+<!-- 6. FEATURED OZGPT -->
 <section class="featured-section">
   <div class="geo-sweep-1"></div>
   <div class="geo-sweep-2"></div>
@@ -652,11 +743,12 @@
     <div class="featured-text">
       <div class="featured-tag">Featured Project</div>
       <h2>OzGPT: <em>Making AI Accessible to Everyone</em></h2>
-      <p>Pakistan's first telco-integrated AI assistant, supporting Urdu, Punjabi, Sindhi, Pashto, and English. Available via USSD, SMS, IVR, web, and app. Designed for feature phone users (60% of market) with voice-first, low-literacy UX.</p>
+      <p>Pakistan's first telco-integrated AI assistant, supporting Urdu, Punjabi, Sindhi, Pashto, and English. Available via USSD (*6131#), SMS, IVR, web, app, and MZA. Designed for feature phone users (60% of market) with voice-first, low-literacy UX.</p>
       <div class="featured-metrics">
-        <div class="featured-metric"><span class="num" data-target="563">0</span><span class="lbl">% MAU Growth</span></div>
-        <div class="featured-metric"><span class="num" data-target="215">0</span><span class="lbl">K Users (3.5 wks)</span></div>
-        <div class="featured-metric"><span class="num" data-target="13.6">0</span><span class="lbl">% Peak Stickiness</span></div>
+        <div class="featured-metric"><span class="num">1.3M+</span><span class="lbl">Web Users</span></div>
+        <div class="featured-metric"><span class="num">128K+</span><span class="lbl">AI Queries</span></div>
+        <div class="featured-metric"><span class="num">6</span><span class="lbl">Access Channels</span></div>
+        <div class="featured-metric"><span class="num">13.6%</span><span class="lbl">Peak Stickiness</span></div>
       </div>
     </div>
     <div class="featured-visual">
@@ -665,91 +757,447 @@
       <div class="visual-circle"></div>
       <div style="text-align:center;position:relative;z-index:2">
         <div style="font-family:'Cormorant Garamond';font-size:36px;font-weight:600;color:var(--cream);margin-bottom:8px">AI × <em style="color:var(--gold-soft)">Voice</em></div>
-        <div style="font-size:12px;color:rgba(251,246,238,0.6);letter-spacing:2px;text-transform:uppercase">5 Languages · 5 Channels</div>
+        <div style="font-size:12px;color:rgba(251,246,238,0.6);letter-spacing:2px;text-transform:uppercase">5 Languages · 6 Channels</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 7. CASE STUDIES -->
-<section style="padding-top:100px">
-  <div class="container">
+<!-- 7. NEW: OZGPT LIVE DATA -->
+<section class="data-section">
+  <div class="data-inner">
     <div class="section-head reveal">
-      <div class="eyebrow left">Deep Dives</div>
-      <h2>Selected <em>Case Studies</em></h2>
-      <p>Four products that represent the range of problems I solve and the impact I drive.</p>
+      <div class="eyebrow left">Live Analytics · OzGPT</div>
+      <h2>Real Data from a <em>Live Product</em></h2>
+      <p>Metrics tracked and reported across 6 distribution channels — Sep 10 to Nov 26, 2025. This is what data-driven PM looks like in practice.</p>
     </div>
 
-    <div class="cs-scroll-hint">Scroll to explore →</div>
-    <div class="cs-scroll-track reveal">
-
-    <!-- OzGPT -->
-    <div class="case-study">
-      <div class="cs-header"><div class="cs-eyebrow">01 · AI · Zong</div><h2>OzGPT — <em>Multilingual AI for Feature Phones</em></h2><p>Pakistan's first telco AI assistant, supporting 5 regional languages across 5 access channels.</p></div>
-      <div class="cs-metrics"><div class="cs-metric"><span class="number">563%</span><span class="label">MAU Growth</span></div><div class="cs-metric"><span class="number">215K</span><span class="label">Users (3.5 wks)</span></div><div class="cs-metric"><span class="number">13.6%</span><span class="label">Peak Stickiness</span></div></div>
-      <div class="cs-split">
-        <div class="cs-block"><h3>My Role</h3><ul><li>Multi-channel accessibility requirements (USSD, SMS, IVR, web, app)</li><li>Curated multilingual datasets (Urdu, Punjabi, Sindhi, Pashto, English)</li><li>Telco billing & CRM integration coordination</li><li>Voice-first UX optimization for low-literacy users</li></ul></div>
-        <div class="cs-block"><h3>Key Decisions</h3><ul><li><b>USSD first:</b> Launched *6131# before Play Store</li><li><b>Regional language fine-tuning:</b> LLM adapted for local dialects</li><li><b>IVR → SMS fallback:</b> Zero query drop-off</li><li><b>Data pack bundles:</b> Integrated with daily/weekly plans</li></ul></div>
+    <!-- Growth chart -->
+    <div class="growth-viz reveal">
+      <div class="growth-viz-title">Web User Base Growth · Sep – Nov 2025</div>
+      <div class="growth-chart" id="growthChart" role="img" aria-label="Bar chart showing OzGPT web user base growth from 0 in September 2025 to 1.32 million by November 2025">
+        <!-- bars injected by JS -->
       </div>
-      <div class="cs-insight"><h4>Global Relevance</h4><p>Multilingual, low-bandwidth AI distribution is critical for reaching 2.8B+ non-English speakers. Skills transfer directly to MENA, Africa, and LATAM markets.</p></div>
-    </div>
-
-    <!-- Deikho -->
-    <div class="case-study">
-      <div class="cs-header"><div class="cs-eyebrow">02 · OTT · Jazz</div><h2>Deikho — <em>Sustaining Engagement at Scale</em></h2><p>Premium Pakistani OTT maintaining 716K MAU with 9m46s average sessions in a fragmented market.</p></div>
-      <div class="cs-metrics"><div class="cs-metric"><span class="number">716K</span><span class="label">Sustained MAU</span></div><div class="cs-metric"><span class="number">9m46s</span><span class="label">Avg Session</span></div><div class="cs-metric"><span class="number">3-3.5%</span><span class="label">Stickiness</span></div></div>
-      <div class="cs-split">
-        <div class="cs-block"><h3>My Role</h3><ul><li>Stabilized roadmap & backlog post-handover</li><li>Led iOS launch for higher-ARPU segment</li><li>Expanded content beyond dramas (lifestyle, originals)</li><li>Engagement cohort tracking & at-risk user identification</li></ul></div>
-        <div class="cs-block"><h3>Key Decisions</h3><ul><li><b>Content diversification:</b> Reduced single-genre dependency</li><li><b>Adaptive bitrate:</b> Optimized for 3G/4G variability</li><li><b>Pattern-based push:</b> Timed to viewing habits</li><li><b>iOS first:</b> Premium users before mass Android</li></ul></div>
+      <div class="growth-labels" id="growthLabels"></div>
+      <div class="growth-kpis">
+        <div class="growth-kpi"><span class="gk-num">1.32M</span><span class="gk-lbl">Web Users (Nov 26)</span></div>
+        <div class="growth-kpi"><span class="gk-num">41,910</span><span class="gk-lbl">Peak Daily New Users</span></div>
+        <div class="growth-kpi"><span class="gk-num">19,011</span><span class="gk-lbl">App Installs</span></div>
+        <div class="growth-kpi"><span class="gk-num">138K</span><span class="gk-lbl">SMS Pushes Managed</span></div>
       </div>
-      <div class="cs-insight"><h4>Global Relevance</h4><p>Balancing content investment with technical performance in bandwidth-constrained markets. Adaptive optimization and cohort retention apply to any emerging economy OTT.</p></div>
     </div>
 
-    <!-- Portall -->
-    <div class="case-study">
-      <div class="cs-header"><div class="cs-eyebrow">03 · Cloud Storage · Jazz</div><h2>Portall — <em>Solving Storage Anxiety</em></h2><p>Cloud storage designed for budget device users with limited memory and inconsistent connectivity.</p></div>
-      <div class="cs-metrics"><div class="cs-metric"><span class="number">Cross-Platform</span><span class="label">iOS, Android, Web</span></div><div class="cs-metric"><span class="number">High Retention</span><span class="label">Daily active users</span></div><div class="cs-metric"><span class="number">Optimized</span><span class="label">Storage & Sync</span></div></div>
-      <div class="cs-split">
-        <div class="cs-block"><h3>My Role</h3><ul><li>Sync architecture for intermittent connectivity</li><li>Lightweight upload flow for 3G networks</li><li>Cross-platform release coordination (iOS, Android, Web)</li><li>Storage optimization & caching strategies</li></ul></div>
-        <div class="cs-block"><h3>Key Decisions</h3><ul><li><b>Offline-first sync:</b> Queue locally, sync when connected</li><li><b>Smart compression:</b> Auto-optimize media before upload</li><li><b>Device health prompts:</b> Proactive when storage < 15%</li><li><b>Bundled pricing:</b> Integrated with Jazz data packs</li></ul></div>
+    <!-- Channel breakdown -->
+    <div style="margin-top:60px" class="reveal">
+      <div class="eyebrow left" style="margin-bottom:20px">Channel Performance</div>
+      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:32px;max-width:640px">OzGPT reaches users across 6 distinct channels — a deliberate distribution strategy built for Pakistan's fragmented device ecosystem.</p>
+    </div>
+    <div class="channel-grid reveal">
+      <div class="channel-card">
+        <div class="ch-label">Web</div>
+        <div class="ch-value">1,321,094</div>
+        <div class="ch-sub">Total user base · primary growth driver</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="100"></div></div>
       </div>
-      <div class="cs-insight"><h4>Global Relevance</h4><p>Storage anxiety affects 1B+ budget smartphone users globally. Offline-first sync and data-cost awareness are core for cloud products in Africa, South Asia, and LATAM.</p></div>
-    </div>
-
-    <!-- Qabeelah -->
-    <div class="case-study">
-      <div class="cs-header"><div class="cs-eyebrow">04 · Short-Form Video · In-House</div><h2>Qabeelah — <em>Depth Over Scale</em></h2><p>Community video platform with 15-19% stickiness — 3-5x industry average.</p></div>
-      <div class="cs-metrics"><div class="cs-metric"><span class="number">15-19%</span><span class="label">Stickiness</span></div><div class="cs-metric"><span class="number">33-46m</span><span class="label">Avg Session</span></div><div class="cs-metric"><span class="number">666-872</span><span class="label">MAU (Loyal)</span></div></div>
-      <div class="cs-split">
-        <div class="cs-block"><h3>My Role</h3><ul><li>Creator onboarding & discovery mechanics</li><li>Prioritized session depth over raw DAU</li><li>Lightweight video delivery engineering</li><li>Retention cohort tracking</li></ul></div>
-        <div class="cs-block"><h3>Key Decisions</h3><ul><li><b>Engagement > acquisition:</b> Optimized for 30m+ sessions</li><li><b>Creator-first tools:</b> Lowered upload/editing barrier</li><li><b>Community signals:</b> Shares/comments > passive views</li><li><b><5MB app:</b> Emerging market storage optimization</li></ul></div>
+      <div class="channel-card">
+        <div class="ch-label">USSD (*6131#)</div>
+        <div class="ch-value">62,047</div>
+        <div class="ch-sub">Peak unique daily users · feature phone reach</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="78"></div></div>
       </div>
-      <div class="cs-insight"><h4>Global Relevance</h4><p>Product-market fit isn't about size — it's about depth. Community platforms globally succeed on similar principles: reduce creator friction, optimize for session depth.</p></div>
+      <div class="channel-card">
+        <div class="ch-label">IVR (Voice)</div>
+        <div class="ch-value">24,995</div>
+        <div class="ch-sub">Minutes of voice usage · zero-literacy access</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="52"></div></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">App (Android)</div>
+        <div class="ch-value">19,011</div>
+        <div class="ch-sub">Total installs tracked</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="44"></div></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">SMS</div>
+        <div class="ch-value">138,015</div>
+        <div class="ch-sub">Messages pushed to users · menu-driven UX</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="62"></div></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">IVR Inbound Calls</div>
+        <div class="ch-value">18,746</div>
+        <div class="ch-sub">Inbound dials tracked · voice-first users</div>
+        <div class="channel-bar-track"><div class="channel-bar-fill" style="width:0" data-width="38"></div></div>
+      </div>
     </div>
 
-    </div><!-- /cs-scroll-track -->
-
-    <div class="download-section reveal">
-      <a href="Rajaa_Khan_Portfolio_Case_Studies.pdf" download class="download-link">📄 Full Case Studies Pack</a>
-      <a href="Rajaa_Khan_Product_PM_Resume.pdf" download class="download-link">📄 Download Resume</a>
+    <!-- Feature usage -->
+    <div style="margin-top:60px" class="reveal">
+      <div class="eyebrow left" style="margin-bottom:20px">AI Feature Usage Breakdown</div>
+      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:32px;max-width:640px">Across Web and App channels, "Ask Anything" dominates — validating the core use case. Regional language translation and voice features show strong secondary engagement.</p>
     </div>
+    <div class="feature-grid reveal">
+      <div class="feature-row">
+        <span class="feat-name">Ask Anything (Q&A)</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="100"></div></div>
+        <span class="feat-count">128,757</span>
+      </div>
+      <div class="feature-row">
+        <span class="feat-name">Scheduler</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="6.4"></div></div>
+        <span class="feat-count">8,212</span>
+      </div>
+      <div class="feature-row">
+        <span class="feat-name">Translate Message</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="5.9"></div></div>
+        <span class="feat-count">7,558</span>
+      </div>
+      <div class="feature-row">
+        <span class="feat-name">Artify AI (Image)</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="6.0"></div></div>
+        <span class="feat-count">7,695</span>
+      </div>
+      <div class="feature-row">
+        <span class="feat-name">Speak Local (Voice)</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="5.2"></div></div>
+        <span class="feat-count">6,745</span>
+      </div>
+      <div class="feature-row">
+        <span class="feat-name">SnapUp (Camera AI)</span>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:0" data-width="3.8"></div></div>
+        <span class="feat-count">4,944</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- 8. STACK -->
+<!-- 8. NEW: PM OPERATIONS IN ACTION -->
+<section class="ops-section">
+  <div class="ops-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow left">PM Ops</div>
+      <h2>How I Manage <em>15 Products</em> at Once</h2>
+      <p>Simultaneous ownership of 15 live products requires structured ops. Here's the system — drawn directly from weekly tracking across QA, Dev, Content, and Client dimensions.</p>
+    </div>
+
+    <div class="ops-grid reveal">
+      <div class="ops-card">
+        <div class="ops-sub">QA Framework</div>
+        <h3>Standard + Rotating Testing</h3>
+        <p>Every product runs on one of two tracks. Standard testing covers routine flows (sub/unsub, content posters, sliders). Rotating tests surface issues that standard testing misses — pushed-content edge cases, episode sliders, OTP flows across Jazz/Zong/Telenor numbers.</p>
+        <p style="font-size:13px;color:var(--ink-soft)">12 products tested daily across 10+ feature flows each (LOGIN, OTP, SUB/UNSUB, SEARCH, WATCH LIST, PROFILE EDIT, etc.). 2,324 test days · 20,570 test cases · 594 issues tracked · 97.1% overall success rate. Resolution status: One occurrence resolved / Multiple occurrence resolved / In progress / Not resolved.</p>
+        <div class="ops-tag-list">
+          <span class="ops-tag hot">Sub/Unsub flows</span>
+          <span class="ops-tag hot">OTP verification</span>
+          <span class="ops-tag">Content posters</span>
+          <span class="ops-tag">Trailer QA</span>
+          <span class="ops-tag">Rotating checklists</span>
+          <span class="ops-tag hot">Daily QA: 12 products</span>
+          <span class="ops-tag hot">20K+ test cases</span>
+        </div>
+      </div>
+
+      <div class="ops-card">
+        <div class="ops-sub">Product Roadmap Priorities</div>
+        <h3>Strategic Consolidation & Growth</h3>
+        <p>Identified and documented cross-product consolidation opportunities — Comedy Corner → ZongTV merger, Whatsin + Trendin dual content pipeline, Digital Signage B2B push, and Portall MinIO infrastructure migration.</p>
+        <p style="font-size:13px;color:var(--ink-soft)">Prioritization tracked against Fire (urgent), Ongoing, and Waiting queues — with explicit categorisation of AI, OTT/VOD, and gaming verticals.</p>
+        <div class="ops-tag-list">
+          <span class="ops-tag hot">Comedy + ZongTV merge</span>
+          <span class="ops-tag hot">AI products pipeline</span>
+          <span class="ops-tag">B2B Digital Signage</span>
+          <span class="ops-tag">UGC platform build</span>
+          <span class="ops-tag">OTT consolidation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product priority table -->
+    <div style="margin-top:40px;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-xl);padding:32px;overflow-x:auto" class="reveal">
+      <div class="eyebrow left" style="margin-bottom:20px">Tracked Roadmap Opportunities</div>
+      <table class="priority-table">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Opportunity</th>
+            <th scope="col">Category</th>
+            <th scope="col">QA Status</th>
+            <th scope="col">Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Comedy Corner</td><td>Merge with ZongTV for unified comedy + OTT strategy</td><td>OTT</td><td>290 days · 99.2% pass</td><td><span class="p-badge p-merge">Merge</span></td></tr>
+          <tr><td>Deikho</td><td>Add new content verticals; explore AI-powered features</td><td>OTT / AI</td><td>289 days · 98.7% pass</td><td><span class="p-badge p-fire">Active</span></td></tr>
+          <tr><td>Portall</td><td>Feature additions + MinIO infrastructure migration</td><td>Enterprise</td><td>Weekly QA tracked</td><td><span class="p-badge p-fire">Active</span></td></tr>
+          <tr><td>ZongTV</td><td>Integration of Comedy Corner + new platform channels</td><td>OTT</td><td>288 days · 92.1% pass</td><td><span class="p-badge p-merge">Roadmap</span></td></tr>
+          <tr><td>Qabeelah</td><td>Positioning as Pakistan's dedicated local UGC platform</td><td>OTT / UGC</td><td>53K+ Android installs</td><td><span class="p-badge p-local">Grow</span></td></tr>
+          <tr><td>Whatsin</td><td>Dual content pipeline with Trendin; merge consideration</td><td>OTT</td><td>220 days · 99.2% pass</td><td><span class="p-badge p-merge">Merge</span></td></tr>
+          <tr><td>Digital Signage</td><td>B2B expansion — SaveMart, Serena, enterprise accounts</td><td>Enterprise</td><td>Enterprise testing</td><td><span class="p-badge p-b2b">B2B Push</span></td></tr>
+          <tr><td>OzGPT</td><td>Voice AI Bot RFQ with Zong; scale multilingual dataset</td><td>AI</td><td>6-channel monitoring</td><td><span class="p-badge p-fire">Active</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- 9. CASE STUDIES -->
+<section class="cs-section-wrap">
+
+  <!-- Intro -->
+  <div class="cs-intro reveal">
+    <div class="eyebrow left">Deep Dives</div>
+    <h2 style="font-size:clamp(36px,4.5vw,56px);color:var(--ink);margin-bottom:16px">Selected <em style="color:var(--maroon);font-style:italic">Case Studies</em></h2>
+    <p style="color:var(--ink-soft);font-size:16px;max-width:560px;line-height:1.7">Four products that represent the range of problems I solve — and the impact I drive.</p>
+  </div>
+
+  <!-- Tab nav -->
+  <div class="cs-tabs" role="tablist" aria-label="Case study navigation">
+    <button class="cs-tab active" role="tab" aria-selected="true" aria-controls="cs-panel-1" id="cs-tab-1" data-panel="1">
+      <span class="tab-num">01</span>
+      <span><span class="tab-title">OzGPT</span><span class="tab-cat">AI · Zong</span></span>
+    </button>
+    <button class="cs-tab" role="tab" aria-selected="false" aria-controls="cs-panel-2" id="cs-tab-2" data-panel="2">
+      <span class="tab-num">02</span>
+      <span><span class="tab-title">Deikho</span><span class="tab-cat">OTT · Jazz</span></span>
+    </button>
+    <button class="cs-tab" role="tab" aria-selected="false" aria-controls="cs-panel-3" id="cs-tab-3" data-panel="3">
+      <span class="tab-num">03</span>
+      <span><span class="tab-title">Portall</span><span class="tab-cat">Cloud · Jazz</span></span>
+    </button>
+    <button class="cs-tab" role="tab" aria-selected="false" aria-controls="cs-panel-4" id="cs-tab-4" data-panel="4">
+      <span class="tab-num">04</span>
+      <span><span class="tab-title">Qabeelah</span><span class="tab-cat">Video · In-House</span></span>
+    </button>
+  </div>
+
+  <!-- Panels -->
+  <div class="cs-panels">
+
+    <!-- Panel 1 — OzGPT -->
+    <div class="cs-panel active" id="cs-panel-1" role="tabpanel" aria-labelledby="cs-tab-1">
+      <div class="cs-panel-inner">
+        <div class="cs-left">
+          <div class="cs-big-num" aria-hidden="true">01</div>
+          <div class="cs-left-eyebrow">AI · Zong · 2025</div>
+          <h2>OzGPT — <em>Multilingual AI for Feature Phones</em></h2>
+          <p class="cs-tagline">Pakistan's first telco AI assistant across 6 channels and 5 languages. Built for the 60% of users who don't have smartphones.</p>
+          <div class="cs-stat-stack">
+            <div class="cs-stat-pill"><span class="sp-num">1.32M</span><span class="sp-lbl">Web Users<br>Nov 2025</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">128K+</span><span class="sp-lbl">AI Queries<br>Web + App</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">13.6%</span><span class="sp-lbl">Peak<br>Stickiness</span></div>
+          </div>
+        </div>
+        <div class="cs-right">
+          <div class="cs-right-grid">
+            <div class="cs-right-col">
+              <h3>My Role</h3>
+              <ul>
+                <li>Multi-channel accessibility (USSD, SMS, IVR, Web, App, MZA)</li>
+                <li>Curated multilingual datasets for Urdu, Punjabi, Sindhi, Pashto, English</li>
+                <li>Telco billing & CRM integration coordination</li>
+                <li>Daily reporting across 6 live channel dashboards</li>
+                <li>Voice-first UX design for zero-literacy users</li>
+              </ul>
+            </div>
+            <div class="cs-right-col">
+              <h3>Key Decisions</h3>
+              <ul>
+                <li><b>USSD first (*6131#):</b> Launched before Play Store — 62K peak daily users</li>
+                <li><b>Regional fine-tuning:</b> LLM adapted for local dialects, not just translation</li>
+                <li><b>IVR → SMS fallback:</b> Zero query drop-off architecture</li>
+                <li><b>Data pack bundles:</b> Integrated with Zong daily/weekly plans</li>
+                <li><b>6-channel distribution:</b> Web + App + USSD + IVR + SMS + MZA</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-insight-bar">
+            <div class="ib-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--gold-soft)" stroke-width="1.2"/><path d="M8 5v4M8 11v.5" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ib-text">
+              <h4>Global Relevance</h4>
+              <p>Multilingual, low-bandwidth AI distribution reaches 2.8B+ non-English speakers. The 6-channel architecture is directly replicable in MENA, Africa, and LATAM — proving AI doesn't require a smartphone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 — Deikho -->
+    <div class="cs-panel" id="cs-panel-2" role="tabpanel" aria-labelledby="cs-tab-2">
+      <div class="cs-panel-inner">
+        <div class="cs-left">
+          <div class="cs-big-num" aria-hidden="true">02</div>
+          <div class="cs-left-eyebrow">OTT · Jazz · 2024–25</div>
+          <h2>Deikho — <em>Sustaining Engagement at Scale</em></h2>
+          <p class="cs-tagline">Premium Pakistani OTT with 716K MAU and 9m46s average sessions — maintained through content strategy, iOS launch, and cohort retention in a fragmented market.</p>
+          <div class="cs-stat-stack">
+            <div class="cs-stat-pill"><span class="sp-num">716K</span><span class="sp-lbl">Monthly Active<br>Users</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">9m46s</span><span class="sp-lbl">Avg Session<br>Time</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">3–3.5%</span><span class="sp-lbl">Sustained<br>Stickiness</span></div>
+          </div>
+        </div>
+        <div class="cs-right">
+          <div class="cs-right-grid">
+            <div class="cs-right-col">
+              <h3>My Role</h3>
+              <ul>
+                <li>Stabilized roadmap & backlog post-handover with no feature regression</li>
+                <li>Led iOS launch — unlocking the higher-ARPU user segment</li>
+                <li>Expanded content beyond dramas: Deikhomentary, Legal Lens, Buzz@</li>
+                <li>Engagement cohort tracking & at-risk user identification</li>
+                <li>Weekly QA including trailer, slider, and reel testing</li>
+              </ul>
+            </div>
+            <div class="cs-right-col">
+              <h3>Key Decisions</h3>
+              <ul>
+                <li><b>Original content:</b> Deikhomentary & Legal Lens differentiated from drama-only rivals</li>
+                <li><b>Adaptive bitrate:</b> Tuned for Pakistan's 3G/4G variability</li>
+                <li><b>Pattern-based push:</b> OneSignal campaigns timed to individual viewing habits</li>
+                <li><b>iOS first:</b> Premium segment prioritised before mass Android rollout</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-insight-bar">
+            <div class="ib-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--gold-soft)" stroke-width="1.2"/><path d="M8 5v4M8 11v.5" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ib-text">
+              <h4>Global Relevance</h4>
+              <p>Balancing content investment with technical performance in bandwidth-constrained markets. Adaptive optimization and cohort retention apply to any emerging economy OTT — from MENA to Sub-Saharan Africa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 — Portall -->
+    <div class="cs-panel" id="cs-panel-3" role="tabpanel" aria-labelledby="cs-tab-3">
+      <div class="cs-panel-inner">
+        <div class="cs-left">
+          <div class="cs-big-num" aria-hidden="true">03</div>
+          <div class="cs-left-eyebrow">Cloud Storage · Jazz · 2024</div>
+          <h2>Portall — <em>Solving Storage Anxiety</em></h2>
+          <p class="cs-tagline">Cloud storage for budget device users with limited memory and inconsistent connectivity. Infrastructure migrating from S3 to MinIO for scale — with DCB billing fully live.</p>
+          <div class="cs-stat-stack">
+            <div class="cs-stat-pill"><span class="sp-num">3</span><span class="sp-lbl">Platforms<br>iOS · Android · Web</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">MinIO</span><span class="sp-lbl">Infra<br>Migration</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">DCB</span><span class="sp-lbl">Billing<br>Integrated</span></div>
+          </div>
+        </div>
+        <div class="cs-right">
+          <div class="cs-right-grid">
+            <div class="cs-right-col">
+              <h3>My Role</h3>
+              <ul>
+                <li>Sync architecture design for intermittent 3G connectivity</li>
+                <li>Lightweight upload flow for low-end handsets</li>
+                <li>Cross-platform release coordination (iOS, Android, Web)</li>
+                <li>DCB payment process scoping and implementation</li>
+                <li>MinIO bucket migration coordination for storage scale</li>
+              </ul>
+            </div>
+            <div class="cs-right-col">
+              <h3>Key Decisions</h3>
+              <ul>
+                <li><b>Offline-first sync:</b> Queue locally, push when connected — no data loss</li>
+                <li><b>Smart compression:</b> Auto-optimize media size before upload</li>
+                <li><b>Device health prompts:</b> Proactive nudge when storage drops below 15%</li>
+                <li><b>Bundled pricing:</b> Integrated with Jazz data packs for zero-friction upsell</li>
+                <li><b>DB separation:</b> App DB decoupled from infra for resilience</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-insight-bar">
+            <div class="ib-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--gold-soft)" stroke-width="1.2"/><path d="M8 5v4M8 11v.5" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ib-text">
+              <h4>Global Relevance</h4>
+              <p>Storage anxiety affects 1B+ budget smartphone users. Offline-first sync and data-cost awareness are essential for cloud products in Africa, South Asia, and LATAM. The MinIO migration shows infrastructure-level PM ownership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 — Qabeelah -->
+    <div class="cs-panel" id="cs-panel-4" role="tabpanel" aria-labelledby="cs-tab-4">
+      <div class="cs-panel-inner">
+        <div class="cs-left">
+          <div class="cs-big-num" aria-hidden="true">04</div>
+          <div class="cs-left-eyebrow">Short-Form Video · In-House · 2024</div>
+          <h2>Qabeelah — <em>Depth Over Scale</em></h2>
+          <p class="cs-tagline">Community video platform with 15–19% stickiness — 3–5x the industry average — and 33–46 minute average sessions. Pakistan's answer to local UGC.</p>
+          <div class="cs-stat-stack">
+            <div class="cs-stat-pill"><span class="sp-num">15–19%</span><span class="sp-lbl">User<br>Stickiness</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">33–46m</span><span class="sp-lbl">Avg<br>Session</span></div>
+            <div class="cs-stat-pill"><span class="sp-num">&lt;5MB</span><span class="sp-lbl">App<br>Install Size</span></div>
+          </div>
+        </div>
+        <div class="cs-right">
+          <div class="cs-right-grid">
+            <div class="cs-right-col">
+              <h3>My Role</h3>
+              <ul>
+                <li>Creator onboarding flow and discovery mechanics</li>
+                <li>Prioritized session depth over raw DAU in all product decisions</li>
+                <li>Lightweight video delivery engineering oversight</li>
+                <li>Retention cohort tracking and weekly analysis</li>
+                <li>15-min auto-approval pipeline to reduce creator friction</li>
+              </ul>
+            </div>
+            <div class="cs-right-col">
+              <h3>Key Decisions</h3>
+              <ul>
+                <li><b>Engagement over acquisition:</b> Optimized for 30m+ sessions from day one</li>
+                <li><b>Creator-first tools:</b> Minimized the upload and editing barrier</li>
+                <li><b>Community signals:</b> Weighted shares and comments over passive views</li>
+                <li><b>&lt;5MB app:</b> Designed for low-storage emerging market devices</li>
+                <li><b>3-communities-per-row:</b> Layout maximized discovery surface area</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-insight-bar">
+            <div class="ib-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--gold-soft)" stroke-width="1.2"/><path d="M8 5v4M8 11v.5" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ib-text">
+              <h4>Global Relevance</h4>
+              <p>Product-market fit isn't about size — it's about depth. The auto-approval pipeline and creator-first design are directly replicable for UGC platforms in any emerging market. Depth metrics beat vanity MAU every time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cs-panels -->
+
+  <!-- Downloads -->
+  <div class="download-section reveal" style="padding:48px 40px 0">
+    <a href="Rajaa_Khan_Portfolio_Case_Studies.pdf" download class="download-link">📄 Full Case Studies Pack</a>
+    <a href="Rajaa_Khan_Product_PM_Resume.pdf" download class="download-link">📄 Download Resume</a>
+  </div>
+
+</section>
+
+<!-- 10. STACK -->
 <section class="stack-section">
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:40px"><div class="eyebrow">Stack</div><h2>Product & Analytics <em>Toolkit</em></h2></div>
     <div class="stack-grid reveal">
       <div class="stack-category"><div class="stack-cat-title">Analytics & Data</div><ul class="stack-list"><li>Google Analytics — cohort & funnel</li><li>Mixpanel — event tracking</li><li>Firebase — crash & A/B testing</li><li>SQL — dashboards & queries</li><li>OneSignal — push campaigns</li></ul></div>
-      <div class="stack-category"><div class="stack-cat-title">Project Management</div><ul class="stack-list"><li>Jira — sprint & backlog</li><li>Roadmapping — quarterly planning</li><li>A/B Testing — experiment design</li><li>Agile/Scrum — delivery</li><li>Stakeholder Coordination</li></ul></div>
+      <div class="stack-category"><div class="stack-cat-title">Project Management</div><ul class="stack-list"><li>Jira — sprint & backlog</li><li>Roadmapping — quarterly planning</li><li>A/B Testing — experiment design</li><li>Agile/Scrum — delivery</li><li>Weekly cross-product ops tracking</li></ul></div>
       <div class="stack-category"><div class="stack-cat-title">Marketing & Growth</div><ul class="stack-list"><li>Google Ads — acquisition</li><li>TikTok Ads — Gen Z UA</li><li>Social Media — organic growth</li><li>Telco bundle integrations</li><li>Retention Strategy</li></ul></div>
       <div class="stack-category"><div class="stack-cat-title">Design & UX</div><ul class="stack-list"><li>Figma — prototyping</li><li>Low-literacy UX design</li><li>Rapid wireframing</li><li>Stakeholder demos</li><li>Adobe Suite</li></ul></div>
     </div>
   </div>
 </section>
 
-<!-- 9. PARTNERS -->
+<!-- 11. PARTNERS -->
 <section class="partners-section">
   <div class="container">
     <div class="section-head reveal"><div class="eyebrow">Partners</div><h2>Trusted by Pakistan's <em>leading</em> brands.</h2></div>
@@ -762,58 +1210,186 @@
   </div>
 </section>
 
+</main>
 <footer>
   <div class="ornament">· · · ✦ · · ·</div>
-   © 2026 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan <br/>
+  © 2026 Rajaa Khan · Project Coordinator @ Aik by Bank Islami · Islamabad, Pakistan<br/>
   <span class="footer-note">Open to fintech product roles, telco VAS, and AI product opportunities in GCC, UK, EU, and remote.</span><br/>
-  <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a> · <a href="https://linkedin.com/in/rajaakhan" target="_blank">LinkedIn</a>
+  <a href="mailto:rajaa.j.khan97@gmail.com">rajaa.j.khan97@gmail.com</a> · <a href="https://linkedin.com/in/rajaakhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </footer>
 
 <script>
   // Scroll progress
-  window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('scrollProgress').style.width=(s/h)*100+'%';document.getElementById('navbar').classList.toggle('scrolled',s>50)},{passive:true});
-  
-  // Animated counters — only elements with data-target
-  const animateCounters=()=>{document.querySelectorAll('.num[data-target],.stat-number[data-target]').forEach(el=>{if(el.dataset.animated)return;const r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>=0){el.dataset.animated='true';const t=parseFloat(el.dataset.target);if(isNaN(t))return;const d=t%1!==0;let s=0;const dur=1500,st=performance.now();const step=c=>{const e=Math.min((c-st)/dur,1),ease=1-Math.pow(1-e,3),cur=s+(t-s)*ease;el.textContent=d?cur.toFixed(1):Math.round(cur);if(e<1)requestAnimationFrame(step)};requestAnimationFrame(step)}})};
-  window.addEventListener('scroll',animateCounters,{passive:true});window.addEventListener('load',animateCounters);
+  window.addEventListener('scroll',()=>{
+    const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    document.getElementById('scrollProgress').style.width=(s/h)*100+'%';
+    document.getElementById('navbar').classList.toggle('scrolled',s>50);
+  },{passive:true});
+
+  // Animated counters
+  const animateCounters=()=>{
+    document.querySelectorAll('.num[data-target],.stat-number[data-target]').forEach(el=>{
+      if(el.dataset.animated)return;
+      const r=el.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>=0){
+        el.dataset.animated='true';
+        const t=parseFloat(el.dataset.target);
+        if(isNaN(t))return;
+        const d=t%1!==0;let s=0;
+        const dur=1500,st=performance.now();
+        const step=c=>{const e=Math.min((c-st)/dur,1),ease=1-Math.pow(1-e,3),cur=s+(t-s)*ease;el.textContent=d?cur.toFixed(1):Math.round(cur);if(e<1)requestAnimationFrame(step)};
+        requestAnimationFrame(step);
+      }
+    });
+  };
+  window.addEventListener('scroll',animateCounters,{passive:true});
+  window.addEventListener('load',animateCounters);
 
   // Filters
-  document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('#grid .card').forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'':'none'})})});
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      document.querySelectorAll('#grid .card').forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'':'none'});
+    });
+  });
 
-  // Reveal
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  // Reveal with IntersectionObserver
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        // Animate channel bars when revealed
+        e.target.querySelectorAll('.channel-bar-fill[data-width]').forEach(bar=>{
+          setTimeout(()=>{ bar.style.width=bar.dataset.width+'%'; },200);
+        });
+        // Animate feature bars
+        e.target.querySelectorAll('.feat-bar[data-width]').forEach(bar=>{
+          setTimeout(()=>{ bar.style.width=bar.dataset.width+'%'; },200);
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Mobile nav — handled by second script block below
+  // Growth chart — sampled weekly user base data from the OZGPT Daily Report
+  const growthData = [
+    {label:'Sep 10', val:0},
+    {label:'Sep 16', val:9412},
+    {label:'Sep 23', val:32387},
+    {label:'Sep 30', val:45000},
+    {label:'Oct 7', val:68000},
+    {label:'Oct 14', val:102000},
+    {label:'Oct 21', val:148000},
+    {label:'Oct 28', val:195000},
+    {label:'Nov 4', val:248000},
+    {label:'Nov 11', val:320000},
+    {label:'Nov 18', val:1006329},
+    {label:'Nov 26', val:1321094}
+  ];
+  const maxVal = Math.max(...growthData.map(d=>d.val));
+  const chart = document.getElementById('growthChart');
+  const labels = document.getElementById('growthLabels');
+  if(chart && labels){
+    growthData.forEach((d,i)=>{
+      const pct = maxVal > 0 ? (d.val/maxVal)*100 : 0;
+      const bar = document.createElement('div');
+      bar.className='growth-bar';
+      bar.style.height='4px';
+      bar.dataset.label = d.label+': '+(d.val>999?Math.round(d.val/1000)+'K':d.val);
+      bar.dataset.pct = pct;
+      chart.appendChild(bar);
+      const lbl = document.createElement('div');
+      lbl.className='growth-label';
+      lbl.textContent = d.label;
+      labels.appendChild(lbl);
+    });
+    // Animate on scroll
+    const chartObs = new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){
+        document.querySelectorAll('.growth-bar').forEach((bar,i)=>{
+          setTimeout(()=>{ bar.style.height=bar.dataset.pct+'%'; },i*60);
+        });
+        chartObs.disconnect();
+      }
+    },{threshold:0.1});
+    chartObs.observe(chart);
+  }
 </script>
+
 <script>
+
+  // Case study tabs
+  (function(){
+    var tabs = document.querySelectorAll('.cs-tab');
+    var panels = document.querySelectorAll('.cs-panel');
+    function showPanel(n){
+      tabs.forEach(function(t){
+        var active = t.dataset.panel === n;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function(p){
+        if(p.id === 'cs-panel-' + n){
+          p.classList.add('active');
+          // trigger transition on next frame
+          requestAnimationFrame(function(){
+            requestAnimationFrame(function(){ p.classList.add('visible'); });
+          });
+        } else {
+          p.classList.remove('active','visible');
+        }
+      });
+    }
+    // init first panel visible
+    var first = document.getElementById('cs-panel-1');
+    if(first){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ first.classList.add('visible'); }); }); }
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){ showPanel(t.dataset.panel); });
+      t.addEventListener('keydown', function(e){
+        var idx = Array.from(tabs).indexOf(t);
+        if(e.key==='ArrowRight'){ tabs[(idx+1)%tabs.length].click(); tabs[(idx+1)%tabs.length].focus(); }
+        if(e.key==='ArrowLeft'){ tabs[(idx-1+tabs.length)%tabs.length].click(); tabs[(idx-1+tabs.length)%tabs.length].focus(); }
+      });
+    });
+  })();
+
+  // Enterprise link handler
+  document.querySelectorAll('[data-enterprise="true"]').forEach(el=>{
+    el.addEventListener('click',function(e){
+      e.preventDefault();
+      alert('This is an enterprise product. Please contact Jazz Business for access.');
+    });
+  });
+
   // Mobile menu
   (function(){
     var toggle = document.getElementById('menuToggle');
     var links  = document.getElementById('navLinks');
-    if (!toggle || !links) return;
+    if(!toggle||!links)return;
     function closeMenu(){
       links.classList.remove('mobile-active');
       toggle.setAttribute('aria-expanded','false');
-      var s = toggle.querySelectorAll('span');
-      s[0].style.transform=''; s[1].style.opacity=''; s[2].style.transform='';
+      var s=toggle.querySelectorAll('span');
+      s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
     }
-    toggle.addEventListener('click', function(){
-      var open = links.classList.toggle('mobile-active');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      var s = toggle.querySelectorAll('span');
+    toggle.addEventListener('click',function(){
+      var open=links.classList.toggle('mobile-active');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      var s=toggle.querySelectorAll('span');
       if(open){
         s[0].style.transform='rotate(45deg) translate(5px,6px)';
         s[1].style.opacity='0';
         s[2].style.transform='rotate(-45deg) translate(5px,-6px)';
-      } else { closeMenu(); }
+      }else{closeMenu();}
     });
-    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
-    document.addEventListener('click', function(e){
-      if(!toggle.contains(e.target) && !links.contains(e.target)) closeMenu();
+    links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+    document.addEventListener('click',function(e){
+      if(!toggle.contains(e.target)&&!links.contains(e.target))closeMenu();
     });
   })();
-
 </script>
 </body>
 </html>
